@@ -1,0 +1,3 @@
+Memberの下に各個人のscene,prefab,scriptフォルダーがあるのでそこで管理してください
+shareprefubの中にテスト用のでっかい表面あります
+modsはストアでimportしたもの
