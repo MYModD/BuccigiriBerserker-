@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
-    private float threshold = 0.5f;
+    //private const float threshold = 0.5f;
 
     private Rigidbody rb;
 
@@ -39,25 +39,27 @@ public class PlayerMove : MonoBehaviour
 
         VerticalValue = Input.GetAxisRaw("Vertical");
 
-        if (HolizontalValue > 0)
+        //transform.Translate(0f, 0f, 0);
+
+        if (HolizontalValue > 0.5f)
         {
 
-           transform.Translate(-speed  , 0f, -speed *5);
+           transform.Translate(-speed, 0f,0);
         }
 
-        if (HolizontalValue < 0)
+        if (HolizontalValue < -0.5f)
         {
-            transform.Translate(speed , 0f, -speed *5);
+            transform.Translate(speed, 0f,0);
         }
 
-        if (VerticalValue > 0)
+        if (VerticalValue > 0.5)
         {
-            transform.Translate(0, speed , -speed *5);
+            transform.Translate(0, speed , 0);
         }
 
-        if (VerticalValue < 0)
+        if (VerticalValue < -0.5f)
         {
-            transform.Translate(0, -speed, -speed *5);
+            transform.Translate(0,-speed, 0);
         }
     }
 }
