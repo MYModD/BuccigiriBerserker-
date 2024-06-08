@@ -1,70 +1,40 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
 
-public class MissleMove : MonoBehaviour
+public class Missile : MonoBehaviour
 {
-    
-    Rigidbody Rigidbody;
-    Vector3 target_Pos;
-    public GameObject targetObj;
-    public float raito;
-
-    [Range(0f, 1f)]
-    public float lerpfloat;
-
-
+    public Transform target;
+    public float torqueRatio;
     public float speed;
 
-    
-    
-    // Start is called before the first frame update
-    void Start()
+    private Rigidbody rb;
+
+    void Awake()
     {
-        Rigidbody = GetComponent<Rigidbody>();
-        
+        rb = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
+        print(rb.velocity.magnitude);
+        if (rb.velocity.magnitude > 20f) return;
         
-    }
+        if (target == null)
+            return;
 
-    private void FixedUpdate()
-    {
-        //if (Rigidbody.velocity.magnitude > 50f) return;
-        Debug.Log(Rigidbody.velocity.magnitude);
-        
-        target_Pos = targetObj.transform.position;
-        var diff = target_Pos - transform.position;
-        var target_rot = Quaternion.LookRotation(diff);
+        // ターゲットの方向を向く
+        Vector3 diff = target.position - transform.position;
+        Quaternion targetRotation = Quaternion.LookRotation(diff);
+        Quaternion deltaRotation = targetRotation * Quaternion.Inverse(transform.rotation);
 
-        transform.rotation = Quaternion.Lerp(transform.rotation, target_rot, lerpfloat);
-        
-        
-        /*var q = target_rot * Quaternion.Inverse(transform.rotation);
-        var torque = new Vector3(q.x, q.y, q.z) * raito;
-
-        Rigidbody.AddTorque(torque);時間があったらここをアップグレード*/
-
-
-        Rigidbody.velocity = Rigidbody.rotation * new Vector3(0, 0, speed);
-
-    }
-
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (deltaRotation.w < 0f)
         {
-            Debug.Log("hit");
-            Destroy(gameObject);
+            deltaRotation = new Quaternion(-deltaRotation.x, -deltaRotation.y, -deltaRotation.z, -deltaRotation.w);
         }
-        
-        
-        //gameObject.GetComponent<MeshRenderer>().enabled = false;
-        //gameObject.GetComponent<Rigidbody>().isKinematic = true;
+
+        Vector3 torque = new Vector3(deltaRotation.x, deltaRotation.y, deltaRotation.z) * torqueRatio;
+        rb.AddTorque(torque);
+
+        // 前進する
+        rb.velocity = transform.forward * speed;
     }
 }
