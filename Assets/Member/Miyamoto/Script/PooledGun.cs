@@ -15,7 +15,7 @@ public class PooledGun : MonoBehaviour
     [Header("最大数")][SerializeField] private int maxSize = 100;
 
 
-    private float nextTimeToShoot ;//後で書く
+    private float nextTimeToShoot ;//つぎの時間計算するやつ
 
 
 
@@ -74,8 +74,6 @@ public class PooledGun : MonoBehaviour
     {
         Destroy(pooledObject);
         Debug.LogError("最大数を超えたので削除するよ");
-
-
     }
 
     #endregion
@@ -98,7 +96,7 @@ public class PooledGun : MonoBehaviour
 
 
 
-            //発射されたら今の時間にクールダウンを追加する
+            //発射されたら今の時間にクールダウンを追加する 賢いスクリプト
             nextTimeToShoot = Time.time + cooldownFire;
         }
 

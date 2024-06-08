@@ -30,7 +30,7 @@ public class Bullet : MonoBehaviour
     {
         rigidbody.AddForce(new Vector3(0, -gravity, 0),ForceMode.Acceleration);//弾丸のみの重力実装
 
-        timeValue =  Mathf.Max(0, timeValue - Time.fixedDeltaTime);
+        timeValue =  Mathf.Max(0, timeValue - Time.fixedDeltaTime);    //賢いタイマースクリプト
 
         if(timeValue == 0)
         {
@@ -51,7 +51,7 @@ public class Bullet : MonoBehaviour
     }
     private void OnEnable()
     {
-        timeValue = timer;
+        timeValue = timer;//ONになったら時間リセット
         print("生成");
     }
 
@@ -62,7 +62,7 @@ public class Bullet : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
 
-        PoolReurn();
+        PoolReurn();//ぶつかったらプールに返す tagつけたいので追記する
 
 
     }
