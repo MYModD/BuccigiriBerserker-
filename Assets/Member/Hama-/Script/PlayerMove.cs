@@ -12,7 +12,8 @@ public class PlayerMove : MonoBehaviour
 
     private float VerticalValue;
 
-    public float speed = 15f;
+    public float speedX ;
+    public float speedY ;
 
     // Start is called before the first frame update
     void Start()
@@ -39,27 +40,27 @@ public class PlayerMove : MonoBehaviour
 
         VerticalValue = Input.GetAxisRaw("Vertical");
 
-        //transform.Translate(0f, 0f, 0);
+        transform.Translate(speedX, speedY, -3f);
 
         if (HolizontalValue > 0.5f)
         {
 
-           transform.Translate(-speed, 0f,0);
+            speedX -= Time.deltaTime * 10f;
         }
 
         if (HolizontalValue < -0.5f)
         {
-            transform.Translate(speed, 0f,0);
+            speedX += Time.deltaTime * 10f; 
         }
 
         if (VerticalValue > 0.5)
         {
-            transform.Translate(0, speed , 0);
+            speedY += Time.deltaTime * 10f; 
         }
 
         if (VerticalValue < -0.5f)
         {
-            transform.Translate(0,-speed, 0);
+            speedY -= Time.deltaTime * 10f; 
         }
     }
 }
