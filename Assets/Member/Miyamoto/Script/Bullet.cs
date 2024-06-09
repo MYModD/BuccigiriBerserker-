@@ -41,7 +41,7 @@ public class Bullet : MonoBehaviour
 
     }
 
-    private void PoolReurn()  //各情報をリセットしてオブジェクトプールに戻す
+    private void PoolReurn()  //各情報をリセットしてオブジェクトプールに戻す処理
     {
         rigidbody.velocity = Vector3.zero;
         rigidbody.angularVelocity = Vector3.zero;  //オブジェクトをfalseにする直前までここに付け足すかも
@@ -63,7 +63,6 @@ public class Bullet : MonoBehaviour
     {
 
         PoolReurn();//ぶつかったらプールに返す tagつけたいので追記する
-
 
     }
 }
