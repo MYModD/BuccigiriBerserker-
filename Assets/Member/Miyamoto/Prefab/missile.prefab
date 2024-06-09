@@ -4852,7 +4852,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: e8700a7247f43a9478f3f91f47aa6a2e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e8700a7247f43a9478f3f91f47aa6a2e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4900,7 +4900,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: e8700a7247f43a9478f3f91f47aa6a2e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4937,8 +4937,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  torqueRatio: 0.72
-  speed: 36.3
+  hissatsu: 0
+  lerpT: 0.1
+  speed: 100
+  timer: 3
+  maxAcceleration: 10
 --- !u!54 &7883338570026377371
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4981,7 +4984,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2

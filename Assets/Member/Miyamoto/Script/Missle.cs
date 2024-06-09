@@ -1,32 +1,37 @@
 using UnityEngine;
+using UnityEngine.Pool;
 using UnityEngine.UIElements;
 
 public class Missile : MonoBehaviour
 {
-    [Header("必中の場合チェック")] 
-    [SerializeField]private bool hissatsu = true;
+    
+    [Header("目標ターゲット")]
+    [SerializeField] private Transform target;
 
-    [Header("あたりやすさ")]
+    [Header("必中の場合チェック")]
+    [SerializeField] private bool hissatsu = true;
+
+    [Header("あたりやすさ 0.1デフォ")]
     [Range(0f, 1f)]
     [SerializeField] private float lerpT = 0.1f;
 
-    [Header("Gforceの最大値")]
-    [SerializeField] private float maxAcceleration = 10f;
+    [Header("スピード")]
+    [SerializeField] private float speed;
 
     [Header("飛行時間")]
     [SerializeField] private float timer = 10f;
 
+    [Header("Gforceの最大値")]
+    [SerializeField] private float maxAcceleration = 10f;
 
-    public Transform target;
-    
-    public float speed;
-    public float rotationSpeed;
+    private IObjectPool<Missile> objectPool;
+    public IObjectPool<Missile> ObjectPool { set => objectPool = value; }  //外部から値を変えた場合、上のobjectpoolに代入される
+
 
 
 
     private new  Rigidbody rigidbody;
-    private float timeValue; //時間計算
-    
+    private float timeValue; //時間計算用
     private Vector3 previousVelocity; //前の加速度
     void Awake()
     {
@@ -40,6 +45,7 @@ public class Missile : MonoBehaviour
         timeValue = Mathf.Max(0, timeValue - Time.fixedDeltaTime);
 
         if(timeValue == 0) PoolReurn();
+
 
         CalculationFlying();
 
@@ -65,10 +71,10 @@ public class Missile : MonoBehaviour
 
         //加速度の大きさを1G=9.81 m/s2で割る
         float gForce = acceleration.magnitude / 9.81f;
-        print(gForce);
+        //print(gForce);
 
-        //Gforceが10超えている かつhissatsuがfalseのとき return 
-        if (gForce > 10f && !hissatsu) return;
+        //GforceがmaxAcceleration超えている かつhissatsuがfalseのとき return 
+        if (gForce > maxAcceleration && !hissatsu) return;
 
         var diff = target.position - transform.position;
 
@@ -87,7 +93,10 @@ public class Missile : MonoBehaviour
     private void PoolReurn()
     {
 
-
+        rigidbody.velocity = Vector3.zero;
+        rigidbody.angularVelocity = Vector3.zero;  //オブジェクトをfalseにする直前までここに付け足すかも
+        transform.rotation = new Quaternion(0, 0, 0, 0);
+        //objectPool.Release(this);
 
     }
 
