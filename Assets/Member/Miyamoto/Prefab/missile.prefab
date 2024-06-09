@@ -4940,7 +4940,7 @@ MonoBehaviour:
   hissatsu: 0
   lerpT: 0.1
   speed: 100
-  timer: 3
+  timer: 20
   maxAcceleration: 10
 --- !u!54 &7883338570026377371
 Rigidbody:

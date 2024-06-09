@@ -11,8 +11,9 @@ public class PooledMissile : MonoBehaviour
     
     [Header("class参照")]
     [SerializeField] private Missile missilePrefab;
-    [Header("弾丸の速さ")]
-    [SerializeField] private float muzzleVelocity = 100f;
+
+    [SerializeField] private List<Transform> targetObjectList = new List<Transform>();
+
     [Header("発射位置")]
     [SerializeField] private Transform muzzlePosition;
     [Header("クールタイム")]
@@ -85,18 +86,28 @@ public class PooledMissile : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Space) && Time.time > nextTimeToShoot && objectPool != null)
         {
-            // Missileクラスのオブジェクトを取得
-            Missile missileObject = objectPool.Get();
-            if (missileObject == null) return;
+            foreach (var target in targetObjectList)
+            {
+                // Missileクラスのオブジェクトを取得
+                Missile missileObject = objectPool.Get();
+                if (missileObject == null) return;
 
-            // SetPositionAndRotationのほうが大量に生成したとき軽い
-            missileObject.transform.SetPositionAndRotation(muzzlePosition.position, muzzlePosition.rotation);
 
-            // 弾丸に前進*velocityのベクトル力を加える ForceModeをこれにするとMass関係なく飛ぶ
-            missileObject.GetComponent<Rigidbody>().AddForce(missileObject.transform.forward * muzzleVelocity, ForceMode.Acceleration);
+                missileObject.target = target;//とりあえず一つから 
 
-            // 発射されたら今の時間にクールダウンを追加する
-            nextTimeToShoot = Time.time + cooldownFire;
+                // SetPositionAndRotationのほうが大量に生成したとき軽い
+                missileObject.transform.SetPositionAndRotation(muzzlePosition.position, muzzlePosition.rotation);
+
+
+
+                // 発射されたら今の時間にクールダウンを追加する
+                nextTimeToShoot = Time.time + cooldownFire;
+            }
+            
+            
+            
+            
+            
         }
     }
 }

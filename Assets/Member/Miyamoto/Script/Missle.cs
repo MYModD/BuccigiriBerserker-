@@ -6,7 +6,7 @@ public class Missile : MonoBehaviour
 {
     
     [Header("目標ターゲット")]
-    [SerializeField] private Transform target;
+    public Transform target;                //あとでset = value get privateに変えるかも
 
     [Header("必中の場合チェック")]
     [SerializeField] private bool hissatsu = true;
@@ -96,7 +96,7 @@ public class Missile : MonoBehaviour
         rigidbody.velocity = Vector3.zero;
         rigidbody.angularVelocity = Vector3.zero;  //オブジェクトをfalseにする直前までここに付け足すかも
         transform.rotation = new Quaternion(0, 0, 0, 0);
-        //objectPool.Release(this);
+        objectPool.Release(this);
 
     }
 
@@ -105,7 +105,7 @@ public class Missile : MonoBehaviour
         if (other.gameObject.CompareTag("Enemy"))
         {
             print("敵と衝突");
-            Destroy(this.gameObject);
+            PoolReurn();
         }
     }
 
