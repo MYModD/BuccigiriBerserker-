@@ -44,7 +44,7 @@ public class Missile : MonoBehaviour
 
         timeValue = Mathf.Max(0, timeValue - Time.fixedDeltaTime);
 
-        if(timeValue == 0) PoolReurn();
+        if(timeValue == 0) PoolReurn();//ŽžŠÔØ‚ê‚É‚È‚Á‚½‚ç•Ô‚·
 
 
         CalculationFlying();
@@ -73,7 +73,7 @@ public class Missile : MonoBehaviour
         float gForce = acceleration.magnitude / 9.81f;
         //print(gForce);
 
-        //Gforce‚ªmaxAcceleration’´‚¦‚Ä‚¢‚é ‚©‚Âhissatsu‚ªfalse‚Ì‚Æ‚« return 
+        //Gforce‚ªmaxAcceleration’´‚¦‚Ä‚¢‚é ‚©‚Âhissatsu‚ªfalse‚Ì‚Æ‚« return ˆ—‚È‚­‚·
         if (gForce > maxAcceleration && !hissatsu) return;
 
         var diff = target.position - transform.position;
