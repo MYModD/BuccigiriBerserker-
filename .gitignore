@@ -5,8 +5,8 @@
 /[Bb]uilds/
 /[Ll]ogs/
 /[Mm]emoryCaptures/
-/[Al]lsky/
-/[As]setPacks/
+/Assets/Allsky/
+/Assets/AssetPacks/
 
 # Never ignore Asset meta data
 !/[Aa]ssets/**/*.meta
