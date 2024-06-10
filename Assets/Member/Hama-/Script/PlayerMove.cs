@@ -40,25 +40,25 @@ public class PlayerMove : MonoBehaviour
 
         VerticalValue = Input.GetAxisRaw("Vertical");
 
-        transform.Translate(speedX, speedY, -3f);
+        transform.Translate(speedX, speedY, 0f);
 
-        if (HolizontalValue > 0.5f)
+        if (HolizontalValue > 0.6f)
         {
 
             speedX -= Time.deltaTime * 10f;
         }
 
-        if (HolizontalValue < -0.5f)
+        if (HolizontalValue < -0.6f)
         {
             speedX += Time.deltaTime * 10f; 
         }
 
-        if (VerticalValue > 0.5)
+        if (VerticalValue > 0.6f)
         {
             speedY += Time.deltaTime * 10f; 
         }
 
-        if (VerticalValue < -0.5f)
+        if (VerticalValue < -0.6f)
         {
             speedY -= Time.deltaTime * 10f; 
         }
