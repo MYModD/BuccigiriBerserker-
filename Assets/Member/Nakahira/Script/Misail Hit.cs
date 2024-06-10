@@ -18,12 +18,19 @@ public class MisailHit : MonoBehaviour
     {
         Vector3 targetPos = player.position;
     }
-    public void OnCollisionEnter(Collision coll)
+    private void OnTriggerEnter(Collider coll)
     {
         if (coll.gameObject.tag == "missile")
         {
-          
+            PooledReturn();
+            
         }
-        
     }
+  public void PooledReturn()
+    {
+        this.gameObject.SetActive(false);
+    }  
+        
+        
+    
 }
