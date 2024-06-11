@@ -14,13 +14,18 @@ public class SetOn : MonoBehaviour
     {
         tekimmes.enabled = false;
         tekihako.enabled = false;
-        GameObject.FindWithTag("teki");
+        GameObject[] tekif = GameObject.FindGameObjectsWithTag("teki");
+        foreach (GameObject obj in tekif)
+        {
+            Collider collider = obj.GetComponent<Collider>();
+            MeshRenderer meshRenderer = obj.GetComponent<MeshRenderer>();
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-      ///*  GameObject child = transform.GetChild(0).gameObjec*/t;
+     
         Vector3 targetPos = teki.position;
         
         Setonp();
