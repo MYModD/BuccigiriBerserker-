@@ -31,12 +31,12 @@ public class PlayerLockon : MonoBehaviour
       LayerMask.GetMask("Enemy")
       );
 
-        List<GameObject> hits = hitsArray.Select(h => h.transform.gameObject).ToList();
-
+        List<GameObject> _hits = hitsArray.Select(h => h.transform.gameObject).ToList();
+        Debug.Log(_hits);
     }
 
-    bool IsListEmpty(List<GameObject> list)
-    {
-        return list != null && list.Count >= 1;
-    }
+    //bool IsListEmpty(List<GameObject> list)
+    //{
+    //    return list != null && list.Count >= 1;
+    //}
 }

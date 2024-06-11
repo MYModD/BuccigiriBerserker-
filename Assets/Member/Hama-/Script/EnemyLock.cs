@@ -35,7 +35,7 @@ public class EnemyLock : MonoBehaviour
 
         if (isVisible)
         {
-            Debug.Log("utut");
+            //Debug.Log("utut");
             _isLock = true;
         }
     }
@@ -43,7 +43,7 @@ public class EnemyLock : MonoBehaviour
     void OnBecameInvisible()
     {
         // オブジェクトがビューから見えなくなったときの処理を記述
-        Debug.Log("Object became invisible!");
+        //Debug.Log("Object became invisible!");
         _isLock = false;
     }
 }
