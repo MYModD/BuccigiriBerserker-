@@ -6,28 +6,37 @@ using System.Linq; // LINQを使用するために必要
 
 public class PlayerLockon : MonoBehaviour
 {
-    public float serch_distance = 30f;
+    [SerializeField]
+    float _serch_distance = 30f;
 
     [SerializeField]
-    public GameObject player;
+    GameObject _player;
 
+    public List<GameObject> _hits;
     // Start is called before the first frame update
     void Start()
     {
-       
+
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
 
-        var hits = Physics.SphereCastAll(
-            player.transform.position,
-            serch_distance,
-            player.transform.forward,
-            0.01f,
-            LayerMask.GetMask("Enemy")
-        ).Select(h => h.transform.gameObject).ToList();
+       RaycastHit[] hitsArray = Physics.SphereCastAll(
+      _player.transform.position,
+      _serch_distance,
+      _player.transform.forward,
+      0.01f,
+      LayerMask.GetMask("Enemy")
+      );
 
+        List<GameObject> hits = hitsArray.Select(h => h.transform.gameObject).ToList();
+
+    }
+
+    bool IsListEmpty(List<GameObject> list)
+    {
+        return list != null && list.Count >= 1;
     }
 }
