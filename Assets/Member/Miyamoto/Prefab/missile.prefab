@@ -4941,6 +4941,8 @@ MonoBehaviour:
   lerpT: 0.1
   speed: 100
   timer: 20
+  randomPower: 0
+  randomTimer: 10
   maxAcceleration: 10
 --- !u!54 &7883338570026377371
 Rigidbody:

@@ -32,7 +32,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 175.7, y: 29.8, z: 205.9}
-  m_LocalScale: {x: 6.55, y: 6.55, z: 6.55}
+  m_LocalScale: {x: 10.35, y: 10.35, z: 10.35}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -115,11 +115,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1425042379606537574}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 059d9bd750601a3468278fbc48882746, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  red: {fileID: 2100000, guid: c852af001dae0064e9acaa832f1dadb7, type: 2}
+  blue: {fileID: 2100000, guid: 663834164c6a04740aaa1b778249ce7e, type: 2}
 --- !u!54 &116999228547888698
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -155,7 +157,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1425042379606537574}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 52c81923d19110b449cfc60981157b65, type: 2}
   m_CullingMode: 0

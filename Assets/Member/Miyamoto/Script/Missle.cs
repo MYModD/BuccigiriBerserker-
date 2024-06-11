@@ -1,4 +1,6 @@
+using System;
 using UnityEngine;
+
 using UnityEngine.Pool;
 using UnityEngine.UIElements;
 
@@ -21,6 +23,12 @@ public class Missile : MonoBehaviour
     [Header("飛行時間")]
     [SerializeField] private float timer = 10f;
 
+    [Header("ランダムの範囲、力")]
+    [SerializeField] private float randomPower = 5f;
+
+    [Header("ランダムが適用される時間")]
+    [SerializeField] private float randomTimer = 10f;
+
     [Header("Gforceの最大値")]
     [SerializeField] private float maxAcceleration = 10f;
 
@@ -31,8 +39,11 @@ public class Missile : MonoBehaviour
 
 
     private new  Rigidbody rigidbody;
-    private float timeValue; //時間計算用
+    private float OFFtimeValue; //ミサイルの時間計算用
+    private float OFFtimeRandomValue; //ミサイルの時間計算用
     private Vector3 previousVelocity; //前の加速度
+
+    private const float oneG = 9.81f;
     void Awake()
     {
         rigidbody = GetComponent<Rigidbody>();
@@ -42,9 +53,9 @@ public class Missile : MonoBehaviour
     {
         if (target == null) { Debug.LogError("アタッチされてないよ"); return; }
 
-        timeValue = Mathf.Max(0, timeValue - Time.fixedDeltaTime);
+        OFFtimeValue = Mathf.Max(0, OFFtimeValue - Time.fixedDeltaTime);
 
-        if(timeValue == 0) PoolReurn();//時間切れになったら返す
+        if(OFFtimeValue == 0) PoolReurn();//時間切れになったら返す
 
 
         CalculationFlying();
@@ -70,7 +81,7 @@ public class Missile : MonoBehaviour
 
 
         //加速度の大きさを1G=9.81 m/s2で割る
-        float gForce = acceleration.magnitude / 9.81f;
+        float gForce = acceleration.magnitude / oneG;
         //print(gForce);
 
         //GforceがmaxAcceleration超えている かつhissatsuがfalseのとき return 処理なくす
@@ -79,7 +90,6 @@ public class Missile : MonoBehaviour
         var diff = target.position - transform.position;
 
         var targetRotation = Quaternion.LookRotation(diff);
-
 
 
         // 球面線形補間を使って回転を徐々にターゲットに向ける
@@ -112,6 +122,7 @@ public class Missile : MonoBehaviour
 
     private void OnEnable()
     {
-        timeValue = timer;
+        OFFtimeValue = timer;
+        OFFtimeRandomValue = randomTimer;
     }
 }
