@@ -5,11 +5,11 @@ using UnityEngine;
 public class SphereMove : MonoBehaviour
 {
     [SerializeField] GameObject target;
-    public float speed;
+    public float speed = 0.05f;
 
     void Start()
     {
-        speed = 0.05f;
+        
     }
 
     void Update()
