@@ -5,10 +5,10 @@ using UnityEngine;
 public class StageDestroy : MonoBehaviour
 {
     // Update is called once per frame
-    public GameObject player;
+    public GameObject _player;
 
     // プレイヤーとの最大距離
-    public float maxDistance = 7000f;
+    public float _maxDistance = 7000f;
 
     // Start is called before the first frame update
     void Start()
@@ -19,10 +19,10 @@ public class StageDestroy : MonoBehaviour
     
     void Update()
     {
-        if (player != null)
+        if (_player != null)
         {
             // プレイヤーのz座標を取得
-            float playerZ = player.transform.position.z;
+            float playerZ = _player.transform.position.z;
 
             // 自分のz座標を取得
             float myZ = transform.position.z;
@@ -31,7 +31,7 @@ public class StageDestroy : MonoBehaviour
             float distance = Mathf.Abs(playerZ - myZ);
 
             // プレイヤーとの距離が最大距離より大きい場合
-            if (distance >= maxDistance)
+            if (distance >= _maxDistance)
             {
                 // 自分を破壊する
                 Destroy(gameObject);

@@ -5,10 +5,10 @@ using UnityEngine;
 
 public class Mapgen : MonoBehaviour
 {   
-    public GameObject Stage; // 生成するプレハブのオブジェクト
-    public Transform spawnPoint; // 生成する位置
-    float zPos;
-    float genPos;
+    public GameObject _Stage; // 生成するプレハブのオブジェクト
+    public Transform _spawnPoint; // 生成する位置
+    float _zPos;
+    float _genPos;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +16,7 @@ public class Mapgen : MonoBehaviour
 
         // Cubeオブジェクトのz座標を取得
         
-        genPos = -2000;
+        _genPos = -2000;
 
 
 
@@ -27,23 +27,23 @@ public class Mapgen : MonoBehaviour
     void Update()
     {
         Transform cubeTransform = gameObject.transform;
-        zPos = cubeTransform.position.z;
+        _zPos = cubeTransform.position.z;
         //if(Input.GetMouseButtonDown(1))
         //{
         //SpawnStage();
         //}
-        if (zPos > genPos)
+        if (_zPos > _genPos)
         {
             SpawnStage();
         }
-        Debug.Log(zPos);
-        Debug.Log(genPos);
+        Debug.Log(_zPos);
+        Debug.Log(_genPos);
     } 
     public void SpawnStage()
         {
             // 指定された位置にプレハブのオブジェクトを生成する
-            Instantiate(Stage, spawnPoint.position, spawnPoint.rotation);
-            spawnPoint.position = new Vector3(spawnPoint.position.x, spawnPoint.position.y, spawnPoint.position.z + 1000);
-            genPos += 1000;
+            Instantiate(_Stage, _spawnPoint.position, _spawnPoint.rotation);
+            _spawnPoint.position = new Vector3(_spawnPoint.position.x, _spawnPoint.position.y, _spawnPoint.position.z + 1000);
+            _genPos += 1000;
         }
 }
