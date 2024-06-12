@@ -22,4 +22,9 @@ public class PlayerLife : MonoBehaviour
         }
 
     }
+
+    private void OnTriggerEnter(Collider colider)
+    {
+        if(GameObject.FindGameObjectsWithTag)
+    }
 }
