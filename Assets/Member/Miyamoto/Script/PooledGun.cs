@@ -81,7 +81,7 @@ public class PooledGun : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(Input.GetKey(KeyCode.Space) && Time.time > nextTimeToShoot && objectPool != null)
+        if((Input.GetKey(KeyCode.Space) || Input.GetButtonDown("Fire2"))&& Time.time > nextTimeToShoot && objectPool != null)
         {
             //bullertクラスのオブジェクト？を取得
             Bullet bulletObject = objectPool.Get();
