@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.Pool;
+using UnityEngine.UI;
 
 public class PooledMissile : MonoBehaviour
 {
@@ -12,7 +14,9 @@ public class PooledMissile : MonoBehaviour
     [Header("class参照")]
     [SerializeField] private Missile missilePrefab;
 
-    [SerializeField] private List<Transform> targetObjectList = new List<Transform>();
+    [Header("ターゲット目標publicなのでテスト")]
+    public   List<Transform> targetObjectList = new List<Transform>();//本来このclass内で変わるものではないので
+                                                                      //ターゲット判定が終わったらpublic hoge >= getする
 
     [Header("発射位置")]
     [SerializeField] private Transform muzzlePosition;
@@ -28,6 +32,8 @@ public class PooledMissile : MonoBehaviour
     [SerializeField] private int maxSize = 100;
 
     private float nextTimeToShoot; // 次の時間計算するやつ
+
+    public KeyCode keyToCheck = KeyCode.Space;
 
     void Awake()
     {
@@ -84,9 +90,11 @@ public class PooledMissile : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (Input.GetKey(KeyCode.Space) && Time.time > nextTimeToShoot && objectPool != null)
+        bool testBool = Input.GetKey(KeyCode.Space) || Input.GetButtonDown("Fire2");
+
+        if ( testBool && Time.time > nextTimeToShoot && objectPool != null)
         {
-            foreach (var target in targetObjectList)
+            foreach (Transform target in targetObjectList)
             {
                 // Missileクラスのオブジェクトを取得
                 Missile missileObject = objectPool.Get();
