@@ -206,7 +206,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 201234587}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.0528263, y: -0.00043822327, z: 0.000023182087, w: 0.99860364}
+  m_LocalRotation: {x: 0.05282628, y: -0.0004382578, z: 0.0000231839, w: 0.99860364}
   m_LocalPosition: {x: 0.03, y: 3.6264038, z: 283.82}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -311,7 +311,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 215242732}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.0528263, y: -0.00043822327, z: 0.000023182087, w: 0.99860364}
+  m_LocalRotation: {x: 0.05282628, y: -0.0004382578, z: 0.0000231839, w: 0.99860364}
   m_LocalPosition: {x: 0.03, y: 3.6264038, z: 283.82}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -970,7 +970,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunPrefab: {fileID: 2144050541}
-  muzzleVelocity: 1316.8
+  muzzleVelocity: 100
   muzzlePosition: {fileID: 960175495}
   cooldownFire: 3
   defaultCapacity: 20
