@@ -25,6 +25,9 @@ public class TrackingUI : MonoBehaviour
         {
             _uiTransform[i].GetComponent<RectTransform>().position = RectTransformUtility.WorldToScreenPoint(Camera.main, _enemyTransfrom[i].transform.position);
 
+            print($"{ Camera.main.transform.position}" + "main camera");
+            print($"{Camera.main.ScreenToWorldPoint(new Vector3(Screen.width/2,Screen.height/2,1))}" + "main’[ƒJƒƒ‰");
+
 
             
             if(Camera.main.transform.position.z > _enemyTransfrom[i].position.z)
