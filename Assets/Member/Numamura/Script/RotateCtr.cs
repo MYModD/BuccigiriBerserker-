@@ -16,7 +16,7 @@ public class RotateCtr : MonoBehaviour
             float PlayerRot = Mathf.Clamp(Horizontal * _rotationSpeed, -_maxRotation, _maxRotation);
 
             // yŽ²‚Ì‰ñ“]‚ð“K—p
-            transform.rotation = Quaternion.Euler(0f, PlayerRot * 20, 0f);
+            transform.rotation = Quaternion.Euler(0f, PlayerRot * 4, 0f);
             //transform.Rotate(Vector3.up, mappedRotation * 135 * Time.deltaTime);
 
     }
