@@ -32,7 +32,7 @@ public class PlayerLockon : MonoBehaviour
       );
 
         List<GameObject> _hits = hitsArray.Select(h => h.transform.gameObject).ToList();
-        Debug.Log(_hits);
+        Debug.Log(hitsArray[0].transform.position);
     }
 
     //bool IsListEmpty(List<GameObject> list)
