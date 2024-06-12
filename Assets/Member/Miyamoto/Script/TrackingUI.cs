@@ -27,9 +27,13 @@ public class TrackingUI : MonoBehaviour
 
 
             
-            if(Camera.main.transform.position.z < _uiTransform[i].GetComponent<RectTransform>().position.z)
+            if(Camera.main.transform.position.z > _enemyTransfrom[i].position.z)
             {
                 _uiTransform[i].GetComponent<Image>().enabled = false;
+            }
+            else
+            {
+                _uiTransform[i].GetComponent<Image>().enabled = true;
             }
         }
     }
