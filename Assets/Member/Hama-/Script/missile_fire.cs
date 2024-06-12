@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class missile_fire : MonoBehaviour
+public class Missile_fire : MonoBehaviour
 {
 
     [SerializeField]
