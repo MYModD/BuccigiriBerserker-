@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TrackingUI : MonoBehaviour
 {
@@ -23,6 +24,13 @@ public class TrackingUI : MonoBehaviour
         for (int i = 0; i < _enemyTransfrom.Length; i++)
         {
             _uiTransform[i].GetComponent<RectTransform>().position = RectTransformUtility.WorldToScreenPoint(Camera.main, _enemyTransfrom[i].transform.position);
+
+
+            
+            if(Camera.main.transform.position.z < _uiTransform[i].GetComponent<RectTransform>().position.z)
+            {
+                _uiTransform[i].GetComponent<Image>().enabled = false;
+            }
         }
     }
 }

@@ -15,8 +15,7 @@ public class cubeMove : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        speed = 1;
-        radius = 2;
+        
 
         defPosition = transform.position;    //defPosition‚ğ©•ª‚Ì‚¢‚éˆÊ’u‚Éİ’è‚·‚éB
     }
