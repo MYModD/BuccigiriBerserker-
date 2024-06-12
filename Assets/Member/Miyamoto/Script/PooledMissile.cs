@@ -84,7 +84,7 @@ public class PooledMissile : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (Input.GetKey(KeyCode.Space) && Time.time > nextTimeToShoot && objectPool != null)
+        if ((Input.GetKey(KeyCode.Space)|| Input.GetButtonDown("Fire2")) && Time.time > nextTimeToShoot && objectPool != null)
         {
             foreach (var target in targetObjectList)
             {
@@ -110,4 +110,6 @@ public class PooledMissile : MonoBehaviour
             
         }
     }
+
+    
 }
