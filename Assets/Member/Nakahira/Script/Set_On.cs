@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SetOn : MonoBehaviour
+public class Set_On : MonoBehaviour
 {
-    
     public BoxCollider tekihako;
     public MeshRenderer tekimmes;
     public Transform teki;
@@ -25,15 +24,15 @@ public class SetOn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-     
+
         Vector3 targetPos = teki.position;
-        
+
         Setonp();
     }
     public void Setonp()
     {
         //Transform target3 = teki.transform.Find("tekiko");
-        float distance = Vector3.Distance(transform.position, teki.position); 
+        float distance = Vector3.Distance(transform.position, teki.position);
         if (distance < tekikyuri)
         {
             tekihako.enabled = true;

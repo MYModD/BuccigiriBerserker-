@@ -2,15 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MisailHit : MonoBehaviour
+public class Misail_Hit : MonoBehaviour
 {
     //public Transform missile;
     public Transform player;
     // Start is called before the first frame update
-    
+
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -23,14 +23,11 @@ public class MisailHit : MonoBehaviour
         if (coll.gameObject.tag == "missile")
         {
             PooledReturn();
-            
+
         }
     }
-  public void PooledReturn()
+    public void PooledReturn()
     {
         this.gameObject.SetActive(false);
-    }  
-        
-        
-    
+    }
 }

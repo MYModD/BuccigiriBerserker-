@@ -177,7 +177,7 @@ Transform:
   m_GameObject: {fileID: 259841998}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 16.5, y: 2.91, z: 7.3}
+  m_LocalPosition: {x: 81.1, y: 54.4, z: 7.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -216,6 +216,7 @@ GameObject:
   - component: {fileID: 263046473}
   - component: {fileID: 263046472}
   - component: {fileID: 263046471}
+  - component: {fileID: 263046475}
   m_Layer: 0
   m_Name: tekiko
   m_TagString: teki
@@ -303,12 +304,35 @@ Transform:
   m_GameObject: {fileID: 263046470}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 14.734739, y: 0, z: -312.3}
+  m_LocalPosition: {x: 14.734739, y: 0, z: -890}
   m_LocalScale: {x: -21.67, y: -26.07, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &263046475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 263046470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7294f0627a5d2e749afb3d2d2e842706, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  beside: 0
+  besidenaga: 0
+  vertical: 0
+  verticalnega: 0
+  target: {fileID: 392218891}
+  moveSpeed: 50
+  stop: 100
+  mo: 0
+  st: 0
+  target2: {fileID: 259841999}
+  thisobj: {fileID: 0}
 --- !u!1 &392218889 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 82f0fddd728e8e84a9c1d816836ff73d, type: 3}
@@ -546,6 +570,7 @@ GameObject:
   - component: {fileID: 1786035982}
   - component: {fileID: 1786035981}
   - component: {fileID: 1786035980}
+  - component: {fileID: 1786035986}
   - component: {fileID: 1786035985}
   m_Layer: 0
   m_Name: Capsule
@@ -561,7 +586,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1786035979}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8566d1778dfcac24489159da1286b462, type: 3}
   m_Name: 
@@ -682,6 +707,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1786035986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1786035979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: beb5c5f235cbd33449a1150a4f8d61f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 392218891}
 --- !u!1 &1838946512
 GameObject:
   m_ObjectHideFlags: 0
@@ -723,13 +761,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1838946512}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f0a70b0a153c7de40961692c4b521f9c, type: 3}
+  m_Script: {fileID: 11500000, guid: 952984110c960874884a05a7077acbc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   tekihako: {fileID: 263046471}
   tekimmes: {fileID: 263046472}
   teki: {fileID: 263046474}
-  tekikyuri: 274.6
+  tekikyuri: 500
 --- !u!1 &1949533197
 GameObject:
   m_ObjectHideFlags: 0
