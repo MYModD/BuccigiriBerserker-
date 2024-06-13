@@ -334,6 +334,7 @@ MonoBehaviour:
   st: 0
   target2: {fileID: 259841999}
   thisobj: {fileID: 263046474}
+  speed: 0
 --- !u!114 &263046476
 MonoBehaviour:
   m_ObjectHideFlags: 0

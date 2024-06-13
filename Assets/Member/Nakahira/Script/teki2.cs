@@ -6,8 +6,8 @@ public class teki2 : MonoBehaviour
 {
     [SerializeField,Range(0,500)] private float beside;
     [SerializeField, Range(-500,0)] private float besidenaga;
-    [SerializeField, Range(-500, 500)] private float vertical;
-    [SerializeField, Range(-500, 500)] private float verticalnega;
+    [SerializeField, Range(0, 500)] private float vertical;
+    [SerializeField, Range(-500,0)] private float verticalnega;
     public Transform target;
     public float moveSpeed;
     public float stop;
@@ -15,9 +15,10 @@ public class teki2 : MonoBehaviour
     public float st;
     public Transform target2;
     public Transform thisobj;
+    public float speed;
     private void Start()
     {
-      
+        speed = 10.0f;
     }
 
     void Update()
@@ -32,7 +33,7 @@ public class teki2 : MonoBehaviour
         float myPosv = Vector3.Distance(transform.up, thisobj.position);
         if (myPos > beside || myPos < besidenaga || myPosv > vertical || myPosv < verticalnega)
         {
-
+           
         }
         if (distance > stop)
         {
