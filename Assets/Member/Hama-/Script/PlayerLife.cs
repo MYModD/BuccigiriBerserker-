@@ -10,21 +10,26 @@ public class PlayerLife : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(_playerlife == 0)
+        if (_playerlife == 0)
         {
-            Debug.Log("ぐわーー");
+            //Debug.Log("ぐわーー");
+            _playerlife = 5;
         }
 
     }
 
     private void OnTriggerEnter(Collider colider)
     {
-        //if(GameObject.FindGameObjectsWithTag)
+       if(colider.gameObject.tag == "Enemy")
+        {
+            _playerlife = _playerlife - 1;
+        }
+
     }
 }
