@@ -82,7 +82,7 @@ public class PooledGun : MonoBehaviour
     private void FixedUpdate()
     {
 
-        bool testBool = Input.GetKey(KeyCode.Space) || Input.GetButtonDown("Fire2");
+        bool testBool = Input.GetKey(KeyCode.G) || Input.GetButtonDown("Fire2");
         if (testBool && Time.time > nextTimeToShoot && objectPool != null)
         {
             //bullertクラスのオブジェクト？を取得

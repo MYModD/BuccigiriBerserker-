@@ -42,7 +42,8 @@ public class TrackingUI : MonoBehaviour
                 _uiTransform[i].GetComponent<Image>().enabled = false;
             }
         }
-        for(int i = _enemyTransform.Count; i < _uiTransform.Length;i++)
+        
+        for(int i = _enemyTransform.Count; i < _uiTransform.Length;i++)//‚¢‚ç‚È‚¢‚â‚Â‚ÍOFF‚É‚·‚é
         {
             _uiTransform[i].GetComponent<Image>().enabled = false;
         }
