@@ -76,6 +76,7 @@ providers = {
 objectSelectors = {
 }
 recentSearches = [
+	"GeometryUtility.TestPlanesAABB"
 	""
 ]
 searchItemFavorites = [
