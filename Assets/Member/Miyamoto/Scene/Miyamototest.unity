@@ -3519,7 +3519,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6917192709797687176, guid: ca4273f3325fef74cb376f2f8bade236, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3623,6 +3623,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1400747944959988947, guid: 79ed6e4da1bc6a24fb24c3c8e22509fe, type: 3}
+      propertyPath: targetObjectList.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1400747944959988947, guid: 79ed6e4da1bc6a24fb24c3c8e22509fe, type: 3}
+      propertyPath: 'targetObjectList.Array.data[0]'
+      value: 
+      objectReference: {fileID: 329389493}
+    - target: {fileID: 1400747944959988947, guid: 79ed6e4da1bc6a24fb24c3c8e22509fe, type: 3}
+      propertyPath: 'targetObjectList.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1625438996}
+    - target: {fileID: 1400747944959988947, guid: 79ed6e4da1bc6a24fb24c3c8e22509fe, type: 3}
+      propertyPath: 'targetObjectList.Array.data[2]'
+      value: 
+      objectReference: {fileID: 2036109503}
+    - target: {fileID: 1400747944959988947, guid: 79ed6e4da1bc6a24fb24c3c8e22509fe, type: 3}
+      propertyPath: 'targetObjectList.Array.data[3]'
+      value: 
+      objectReference: {fileID: 1995600425}
+    - target: {fileID: 1400747944959988947, guid: 79ed6e4da1bc6a24fb24c3c8e22509fe, type: 3}
+      propertyPath: 'targetObjectList.Array.data[4]'
+      value: 
+      objectReference: {fileID: 1991567558}
     - target: {fileID: 1489961496109342615, guid: 79ed6e4da1bc6a24fb24c3c8e22509fe, type: 3}
       propertyPath: m_Name
       value: MissileFireCube(test
