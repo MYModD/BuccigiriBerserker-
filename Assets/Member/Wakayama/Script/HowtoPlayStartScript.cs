@@ -19,7 +19,7 @@ public class HowtoPlayStartScript : MonoBehaviour
 
     public void SceneChange()
     {
-        SceneManager.LoadScene("HowToPlayScene");
+        SceneManager.LoadScene("HowToPlayScene");//‘€ìà–¾‰æ–Ê‚ÖˆÚ“®
         return;
     }
 }
