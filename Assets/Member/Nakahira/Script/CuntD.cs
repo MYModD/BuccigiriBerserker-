@@ -9,11 +9,13 @@ public class CuntD : MonoBehaviour
 
     float timer = 0.0f;
     float interval = 0.2f;
-
+    public Text countText;
+    private int count;
     // Start is called before the first frame update
     void Start()
     {
-
+        count = 0;  
+        countText.text = "Count: 0";
     }
 
 
@@ -32,9 +34,10 @@ public class CuntD : MonoBehaviour
     void Check(string tagname)
     {
         tagObjects = GameObject.FindGameObjectsWithTag(tagname);
-        if (tagObjects.Length == 0)
-        {
-            
-        }
+        countText.text = "Count: 0";
+        //if (tagObjects.Length == 0)
+        //{
+
+        //}
     }
 }
