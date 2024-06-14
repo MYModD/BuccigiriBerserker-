@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Roll_Move : MonoBehaviour
 {
-    private float _speed = 10f;
+    private float _speed = 20f;
 
-    private float _rolling = 20f;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -25,7 +25,7 @@ public class Roll_Move : MonoBehaviour
         {
 
             this.gameObject.GetComponent<CapsuleCollider>().enabled = true;
-            this.transform.Rotate(0, 0, 360 * _rolling);
+            this.transform.Rotate(Vector3.left * _speed * Time.deltaTime);
 
         }
 
@@ -33,7 +33,7 @@ public class Roll_Move : MonoBehaviour
         {
 
             this.gameObject.GetComponent<CapsuleCollider>().enabled = true;
-            this.transform.Rotate(0, 0, 360 * _rolling);
+            this.transform.Rotate(Vector3.right * _speed * Time.deltaTime);
 
         }
 
