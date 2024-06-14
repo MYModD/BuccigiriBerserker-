@@ -4,12 +4,9 @@ using UnityEngine;
 
 public class EnemyListTest : MonoBehaviour
 {
-    [SerializeField]
-    private Camera _camera;
+   
 
-    [SerializeField]
-    private GameObject _player;
-
+    
     [SerializeField]
     private float _searchDistance = 95f;
 
@@ -22,7 +19,7 @@ public class EnemyListTest : MonoBehaviour
     {
         // 球状の範囲内にあるゲームオブジェクトを取得
         RaycastHit[] hits = Physics.SphereCastAll(
-            _player.transform.position,
+            transform.position,
             _searchDistance,
             Vector3.up, //球状だから関係ないやつ
             0.01f,
@@ -42,8 +39,8 @@ public class EnemyListTest : MonoBehaviour
         // カメラの中心からカメラの向きに円錐の範囲を取ってフィルタリング
         _filteredObjects.Clear();
 
-        Vector3 cameraPosition = _camera.transform.position;
-        Vector3 cameraForward = _camera.transform.forward;
+        Vector3 cameraPosition = Camera.main.transform.position;
+        Vector3 cameraForward = Camera.main.transform.forward;
 
         foreach (Transform obj in allObjects)
         {
