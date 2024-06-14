@@ -22,7 +22,7 @@ public class TrackingUI : MonoBehaviour
     void Update()
     {
         planes = GeometryUtility.CalculateFrustumPlanes(Camera.main);
-        Debug.Log(string.Join("", planes));
+        //Debug.Log(string.Join("", planes));
 
 
 
