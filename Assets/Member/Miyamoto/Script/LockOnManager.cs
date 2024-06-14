@@ -125,7 +125,7 @@ public class LockOnManager : MonoBehaviour
 
             var hoge = transform.position.z + Z;
             var hoge2 = new Vector3(transform.position.x, transform.position.y, hoge);
-            GizmosExtensions.DrawWireCircle(hoge2, _coneAngle,20,Quaternion.Euler(-90,0,0));
+            GizmosExtensions.DrawWireCircle(_camera.transform.position + (_camera.transform.forward * _searchRadius), _coneAngle,20,Quaternion.Euler(-90,0,0));
             
             // â~êçÇÃîÕàÕÇï`âÊ
             Gizmos.color = Color.red;

@@ -1,48 +1,50 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Animations;
 using UnityEngine.UI;
 
 public class TrackingUI : MonoBehaviour
 {
-    public List<Transform> _enemyTransform = new List<Transform>();
-    [SerializeField] private Transform[] _uiTransform;
-
-    private Plane[] planes;
+    [SerializeField] private GameObject[] _enemyIncameraUI; // 視錐台内の敵のUI要素
+    [SerializeField] private GameObject[] _enemyInCone; // 円錐内の敵のUI要素
 
     public LockOnManager lockOnManager;
 
-    // Start is called before the first frame update
     void Start()
     {
+        InitializeUIElements(_enemyIncameraUI);
+        InitializeUIElements(_enemyInCone);
     }
 
-    // Update is called once per frame
     void Update()
     {
-        planes = GeometryUtility.CalculateFrustumPlanes(Camera.main);
-        //Debug.Log(string.Join("", planes));
+        UpdateUIPositions(lockOnManager.targetsInCamera, _enemyIncameraUI);
+        UpdateUIPositions(lockOnManager.targetsInCone, _enemyInCone);
+    }
 
-
-
-
-        for (int i = 0; i < lockOnManager.targetsInCamera.Count; i++)
+    private void InitializeUIElements(GameObject[] uiElements)
+    {
+        foreach (GameObject uiElement in uiElements)
         {
-            Vector3 enemyScreenPosition = RectTransformUtility.WorldToScreenPoint(Camera.main, lockOnManager.targetsInCamera[i].position);
-            _uiTransform[i].GetComponent<RectTransform>().position = enemyScreenPosition;
-
-
-
-            // AABB 軸平行境界ボックス Axis-Aligned Bounding Box   六面体同士で判定を行うものらしいです
-            // boundsはcolliderのサイズ、中心データが入ってる コライダーなかったらとれない
-
-            
+            uiElement.GetComponent<Image>().enabled = false;
         }
-        
-        //for(int i = _enemyTransform.Count; i < _uiTransform.Length;i++)//いらないやつはOFFにする
-        //{
-        //    _uiTransform[i].GetComponent<Image>().enabled = false;
-        //}
+    }
+
+    private void UpdateUIPositions(List<Transform> targets, GameObject[] uiElements)
+    {
+        for (int i = 0; i < targets.Count; i++)
+        {
+            if (i < uiElements.Length)
+            {
+                Vector3 enemyScreenPosition = RectTransformUtility.WorldToScreenPoint(Camera.main, targets[i].position);
+                uiElements[i].transform.position = enemyScreenPosition;
+                uiElements[i].GetComponent<Image>().enabled = true;
+            }
+        }
+
+        // 余ったUI要素を非表示にする
+        for (int i = targets.Count; i < uiElements.Length; i++)
+        {
+            uiElements[i].GetComponent<Image>().enabled = false;
+        }
     }
 }
