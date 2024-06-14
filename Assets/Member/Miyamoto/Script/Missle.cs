@@ -11,7 +11,7 @@ public class Missile : MonoBehaviour
     public Transform target;                //あとでset = value get privateに変えるかも
 
     [Header("必中の場合チェック")]
-    [SerializeField] private bool hissatsu = true;
+    public bool hissatsu = true;
 
     [Header("あたりやすさ 0.1デフォ")]
     [Range(0f, 1f)]
@@ -59,10 +59,6 @@ public class Missile : MonoBehaviour
 
 
         CalculationFlying();
-
-
-
-
 
     }
     

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Roll_Move : MonoBehaviour
 {
+    private float speed = 10f;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +14,6 @@ public class Roll_Move : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if()
     }
 }

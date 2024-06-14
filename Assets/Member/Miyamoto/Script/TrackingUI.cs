@@ -1,43 +1,51 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class TrackingUI : MonoBehaviour
 {
-    RectTransform rectTransform ;
-    [SerializeField] private Transform[] _enemyTransfrom;
+    public List<Transform> _enemyTransform = new List<Transform>();
+    [SerializeField] private Transform[] _uiTransform;
 
-    [SerializeField] private Transform[] _uiTransform; 
+    private Plane[] planes;
 
     // Start is called before the first frame update
     void Start()
     {
-        
-        
     }
 
     // Update is called once per frame
     void Update()
     {
-        for (int i = 0; i < _enemyTransfrom.Length; i++)
+        planes = GeometryUtility.CalculateFrustumPlanes(Camera.main);
+        Debug.Log(string.Join("", planes));
+
+        for (int i = 0; i < _enemyTransform.Count; i++)
         {
-            _uiTransform[i].GetComponent<RectTransform>().position = RectTransformUtility.WorldToScreenPoint(Camera.main, _enemyTransfrom[i].transform.position);
-
-            print($"{ Camera.main.transform.position}" + "main camera");
-            print($"{Camera.main.ScreenToWorldPoint(new Vector3(Screen.width/2,Screen.height/2,1))}" + "main端カメラ");
+            Vector3 enemyScreenPosition = RectTransformUtility.WorldToScreenPoint(Camera.main, _enemyTransform[i].position);
+            _uiTransform[i].GetComponent<RectTransform>().position = enemyScreenPosition;
 
 
+
+            // AABB 軸平行境界ボックス Axis-Aligned Bounding Box   六面体同士で判定を行うものらしいです
+            // boundsはcolliderのサイズ、中心データが入ってる コライダーなかったらとれない
+
+            bool inPlanes = GeometryUtility.TestPlanesAABB(planes, _enemyTransform[i].GetComponent<Collider>().bounds);
             
-            if(Camera.main.transform.position.z > _enemyTransfrom[i].position.z)
-            {
-                _uiTransform[i].GetComponent<Image>().enabled = false;
-            }
-            else
+            if (inPlanes)
             {
                 _uiTransform[i].GetComponent<Image>().enabled = true;
             }
+            else
+            {
+                _uiTransform[i].GetComponent<Image>().enabled = false;
+            }
+        }
+        
+        for(int i = _enemyTransform.Count; i < _uiTransform.Length;i++)//いらないやつはOFFにする
+        {
+            _uiTransform[i].GetComponent<Image>().enabled = false;
         }
     }
 }

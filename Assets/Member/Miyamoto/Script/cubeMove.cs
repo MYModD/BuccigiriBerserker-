@@ -6,7 +6,7 @@ public class cubeMove : MonoBehaviour
 {
 
 
-    public int speed;                //オブジェクトのスピード
+    public float speed;                //オブジェクトのスピード
     public int radius;               //円を描く半径
     private Vector3 defPosition;      //defPositionをVector3で定義する。
     float x;

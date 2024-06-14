@@ -12,7 +12,7 @@ public class PlayerLockon : MonoBehaviour
     [SerializeField]
     GameObject _player;
 
-    private float _search_distance = 80f;
+    private float _search_distance = 95f;
     // 前のフレームで視錐台内にあったオブジェクトのリスト
     List<Transform> previousVisibleObjects = new List<Transform>();
 
