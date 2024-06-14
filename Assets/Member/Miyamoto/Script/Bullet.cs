@@ -62,7 +62,7 @@ public class Bullet : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
 
-        PoolReurn();//ぶつかったらプールに返す tagつけたいので追記する
+        //PoolReurn();//ぶつかったらプールに返す tagつけたいので追記する
 
     }
 }
