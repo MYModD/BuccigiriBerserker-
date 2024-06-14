@@ -225,8 +225,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 201234587}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.0528263, y: -0.00043822327, z: 0.000023182087, w: 0.99860364}
-  m_LocalPosition: {x: 0.03, y: 3.6264038, z: 283.82}
+  m_LocalRotation: {x: 0.05282628, y: -0.0004388463, z: 0.000023215034, w: 0.99860364}
+  m_LocalPosition: {x: -13.990468, y: 5.1390243, z: 283.82}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -330,8 +330,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 215242732}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.0528263, y: -0.00043822327, z: 0.000023182087, w: 0.99860364}
-  m_LocalPosition: {x: 0.03, y: 3.6264038, z: 283.82}
+  m_LocalRotation: {x: 0.05282628, y: -0.0004388463, z: 0.000023215034, w: 0.99860364}
+  m_LocalPosition: {x: -13.990468, y: 5.1390243, z: 283.82}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -355,7 +355,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!20 &235546411
 Camera:
   m_ObjectHideFlags: 0
@@ -1005,9 +1005,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   missilePrefab: {fileID: 363352097}
-  targetObjectList: []
-  muzzlePosition: {fileID: 960175495}
-  cooldownFire: 5
   defaultCapacity: 20
   maxSize: 100
 --- !u!114 &1025315018
@@ -1074,6 +1071,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _lockcamera: {fileID: 2086112403}
   _player: {fileID: 1025315011}
+--- !u!114 &1025315022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1025315011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08fbf81f3d5177249b6ad98bab54efd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1084692888
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1511,11 +1520,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 82f0fddd728e8e84a9c1d816836ff73d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -14.020511
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 82f0fddd728e8e84a9c1d816836ff73d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1.5126203
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 82f0fddd728e8e84a9c1d816836ff73d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1523,11 +1532,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 82f0fddd728e8e84a9c1d816836ff73d, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.0000006194299
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 82f0fddd728e8e84a9c1d816836ff73d, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -3.330669e-15
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 82f0fddd728e8e84a9c1d816836ff73d, type: 3}
       propertyPath: m_LocalRotation.y
@@ -1535,7 +1544,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 82f0fddd728e8e84a9c1d816836ff73d, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 82f0fddd728e8e84a9c1d816836ff73d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1587,6 +1596,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 82f0fddd728e8e84a9c1d816836ff73d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1025315016}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 82f0fddd728e8e84a9c1d816836ff73d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1025315022}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 82f0fddd728e8e84a9c1d816836ff73d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1025315019}
@@ -1683,7 +1695,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!20 &2086112403
 Camera:
   m_ObjectHideFlags: 0
@@ -1713,11 +1725,11 @@ Camera:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 40.12
+    width: 1
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 21.582691
+  field of view: 10
   orthographic: 0
   orthographic size: 5
   m_Depth: -10
