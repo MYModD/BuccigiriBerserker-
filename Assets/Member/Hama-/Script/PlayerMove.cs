@@ -46,26 +46,27 @@ public class PlayerMove : MonoBehaviour
 
         if (HolizontalValue > 0.6f)
         {
-            transform.Translate(speed*Time.deltaTime*20, 0f, -speed);
+            transform.Translate(Vector3.right * speed *Time.deltaTime);
+            transform.Translate(Vector3.back);
             //speedX -= Time.deltaTime * 10f;
         }
 
         if (HolizontalValue < -0.6f)
         {
-            transform.Translate(speed * -Time.deltaTime*20, 0f, -speed);
-            //speedX += Time.deltaTime * 10f; 
+            transform.Translate(Vector3.left * speed * Time.deltaTime);
+            transform.Translate(Vector3.back);
         }
 
         if (VerticalValue > 0.6f)
         {
-            transform.Translate(0f,speed * Time.deltaTime*20, -speed);
-            //speedY += Time.deltaTime * 10f; 
+            transform.Translate(Vector3.up * speed * Time.deltaTime);
+            transform.Translate(Vector3.back);
         }
 
         if (VerticalValue < -0.6f)
         {
-            transform.Translate(0f, speed * -Time.deltaTime*20, -speed);
-            //speedY -= Time.deltaTime * 10f; 
+            transform.Translate(Vector3.down * speed * Time.deltaTime);
+            transform.Translate(Vector3.back);
         }
     }
 }

@@ -47,6 +47,7 @@ public class Roll_Move : MonoBehaviour
         {
             float rotationFrame = _rotationSpeed * Time.deltaTime;
             transform.Rotate(Vector3.forward, rotationFrame);
+
             totalRotation += rotationFrame;
             yield return null;
         }
