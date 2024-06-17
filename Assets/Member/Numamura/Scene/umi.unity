@@ -137,7 +137,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 200281999}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a7fc0b9fa1c18f74493dd5951780887a, type: 3}
   m_Name: 
@@ -405,6 +405,10 @@ PrefabInstance:
     - target: {fileID: 2548921254879719447, guid: 24ae5639c0e12804394ffa49cf72b8da, type: 3}
       propertyPath: _speed_z
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2548921254879719447, guid: 24ae5639c0e12804394ffa49cf72b8da, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8130753886585120612, guid: 24ae5639c0e12804394ffa49cf72b8da, type: 3}
       propertyPath: m_Enabled
@@ -869,8 +873,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 234.08899, y: -166.33759}
-  m_SizeDelta: {x: 228.178, y: 162.6754}
+  m_AnchoredPosition: {x: 360.49554, y: -166.33759}
+  m_SizeDelta: {x: 480.9911, y: 162.6754}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1619630972
 MonoBehaviour:

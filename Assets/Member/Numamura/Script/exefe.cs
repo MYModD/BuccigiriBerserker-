@@ -17,6 +17,8 @@ public class exefe : MonoBehaviour
         {
             GameObject explosion = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
             Destroy(explosion, 3.0f); // 爆発エフェクトを3秒後に破棄する（任意の時間）
+            //Destroy(this.gameObject,0.5f);
+
         }
 
         // ここに他の処理を追加する（例えば、音の再生、オブジェクトの破壊など）
