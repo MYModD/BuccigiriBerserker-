@@ -2,16 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-public class Misail_Hit : MonoBehaviour
+public class Misail_Hit2 : MonoBehaviour
 {
-   
     //public Collider mehako;
     //public MeshRenderer memmes;
     //public string tagname; // タグ名を指定するための変数
     //public TextMeshProUGUI countTexts; // カウントを表示するテキスト要素
+    //private int count; // カウントする数
+
     //void Start()
     //{
+    //    // タグ名に対応するゲームオブジェクトの配列を取得
+    //    GameObject[] tagObjects = GameObject.FindGameObjectsWithTag(tagname);
 
+    //    // ゲームオブジェクトの総数を取得
+    //    count = tagObjects.Length;
+
+    //    // 総数を表示するテキストを更新する
+    //    UpdateCountText();
     //}
 
     //// Update is called once per frame
@@ -24,12 +32,14 @@ public class Misail_Hit : MonoBehaviour
     //    if (coll.gameObject.tag == "missile")
     //    {
     //        PooledReturn();
-    //        UpdateCount();
+    //        count--;
+    //        UpdateCountText(); // UIを更新する
     //    }
     //    if (coll.gameObject.tag == "????")
     //    {
     //        PooledReturn();
-    //        UpdateCount();
+    //        count--;
+    //        UpdateCountText(); // UIを更新する
     //    }
     //}
     //public void PooledReturn()
@@ -38,15 +48,8 @@ public class Misail_Hit : MonoBehaviour
     //    memmes.enabled = false;
     //    mehako.enabled = false;
     //}
-    //void UpdateCount()
+    //void UpdateCountText()
     //{
-    //    // タグ名に対応するゲームオブジェクトを探す
-    //    GameObject[] tagObjects = GameObject.FindGameObjectsWithTag(tagname);
-
-    //    // ゲームオブジェクトの総数を取得
-    //    int count = tagObjects.Length;
-
-    //    // 総数を表示するテキストを更新する
-    //    countTexts.text = "" + count.ToString();
+    //    countTexts.text = "" + count.ToString(); // テキストを更新する
     //}
 }
