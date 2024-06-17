@@ -18,6 +18,8 @@ public class FireMissle : MonoBehaviour
     [Header("クールタイム")]
     [SerializeField] private float cooldownFire;
 
+   
+
 
     private float nextTimeToShoot; // 次の時間計算するやつ
 
@@ -52,7 +54,7 @@ public class FireMissle : MonoBehaviour
     {
         targetObjectList = lockOnManager.targetsInCone;
 
-
+        
 
         bool testBool = Input.GetKey(KeyCode.Space) || Input.GetButtonDown("Fire2");//ここ分かりづらすぎるのであとで直します
 

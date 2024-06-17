@@ -18,7 +18,7 @@ public class LockOnManager : MonoBehaviour
     [SerializeField, Range(0f, 180f)]
     private float _coneAngle = 45f; // 円錐の角度
 
-
+    private  Vector3 DrawOrigin = new Vector3 (90,0,0);
 
     /// <summary>
     /// 描画するものだからupdate
@@ -38,14 +38,14 @@ public class LockOnManager : MonoBehaviour
 
         targetsInCamera.Clear();
         targetsInCone.Clear();
-       
+
         Collider[] hits = GetSphereOverlapHits();    //colliderが返り値
 
         foreach (Collider hit in hits)
         {
             // ヒットしたオブジェクトを処理
             ProcessHit(hit, planes);
-            
+
         }
     }
 
@@ -68,7 +68,7 @@ public class LockOnManager : MonoBehaviour
     /// </summary>
     /// <param name="hit">コライダー型 オブジェクトを識別する</param>
     /// <param name="planes">カメラの図形をPlane型で表したもの</param>
-     
+
     private void ProcessHit(Collider hit, Plane[] planes)
     {
         if (hit.CompareTag("Enemy"))
@@ -100,22 +100,36 @@ public class LockOnManager : MonoBehaviour
     /// <summary>
     /// オブジェクトが円錐内にあるかどうかを確認するメソッド
     /// </summary>
+    /// <param name="target">確認するオブジェクトのTransform</param>
+    /// <returns>オブジェクトが円錐内にある場合はtrue、それ以外の場合はfalse</returns>
     private bool IsInCone(Transform target)
     {
-        Vector3 cameraPosition = _camera.transform.position;
-        Vector3 cameraForward = _camera.transform.forward;
 
-        Vector3 toObject = target.position - cameraPosition;
-        float distanceToObject = toObject.magnitude;
+        Vector3 cameraPosition = _camera.transform.position;  // カメラの位置を取得
+        Vector3 cameraForward = _camera.transform.forward;   // カメラの前方向ベクトルを取得
 
-        if (distanceToObject <= _searchRadius)
+        Debug.Log($"{cameraPosition}+{cameraForward}");      // デバッグ用にカメラの位置と方向をログに出力
+
+        Vector3 toObject = target.position - cameraPosition; // カメラ位置からターゲット位置へのベクトルを計算
+
+        // ターゲットまでの距離を計算
+        float distanceToObject = toObject.magnitude;                     // ベクトルの長さ（距離）
+
+        if (distanceToObject <= _searchRadius)                           // ターゲットが検索半径内にあるかどうかを確認
         {
-            Vector3 toObjectNormalized = toObject.normalized;
-            float angle = Vector3.Angle(cameraForward, toObjectNormalized);
-            return angle <= _coneAngle / 2;
+            Vector3 toObjectNormalized = toObject.normalized;                // ターゲットへのベクトルを正規化（方向のみを取得）
+
+            float angle = Vector3.Angle(cameraForward, toObjectNormalized); // カメラの前方向とターゲットへの方向との角度を計算
+            return angle <= _coneAngle / 2;                                // 角度がコーンの半分の角度以下であればtrueを返す
         }
+
+
+        
+
+        // ターゲットが検索半径外にある場合はfalseを返す
         return false;
     }
+
 
     // デバッグ用のギズモを描画するメソッド
     void OnDrawGizmos()
@@ -126,12 +140,12 @@ public class LockOnManager : MonoBehaviour
             Gizmos.color = Color.blue;
             Gizmos.DrawWireSphere(_camera.transform.position, _searchRadius);
 
-            
+
             //コーン上の円周を描画
-            Gizmos.color = Color.yellow;    
-            
-            GizmosExtensions.DrawWireCircle(_camera.transform.position + (_camera.transform.forward * _searchRadius), _coneAngle,20,Quaternion.Euler(90,0,0));
-            
+            Gizmos.color = Color.yellow;
+            var hoge = DrawOrigin + transform.rotation.eulerAngles;
+            GizmosExtensions.DrawWireCircle(_camera.transform.position + (_camera.transform.forward * _searchRadius), _coneAngle, 20, Quaternion.Euler(hoge));
+
             // 円錐の範囲を描画
             Gizmos.color = Color.red;
             Vector3 forward = _camera.transform.forward * _searchRadius;
