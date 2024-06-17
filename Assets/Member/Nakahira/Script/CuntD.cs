@@ -7,7 +7,7 @@ public class CuntD : MonoBehaviour
 {
    
     public string tagname; // タグ名を指定するための変数
-    public TextMeshProUGUI countText; // カウントを表示するテキスト要素
+    public TextMeshProUGUI CountText; // カウントを表示するテキスト要素
 
     
     void Start()
@@ -19,7 +19,7 @@ public class CuntD : MonoBehaviour
         int count = tagObjects.Length;
 
         // 総数を表示するテキストを更新する
-        countText.text = "/ " + count.ToString();
+        CountText.text = "/ " + count.ToString();
     }
 
 
