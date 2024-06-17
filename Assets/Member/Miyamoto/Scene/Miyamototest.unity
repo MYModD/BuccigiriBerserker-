@@ -342,7 +342,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 82f0fddd728e8e84a9c1d816836ff73d, type: 3}
       propertyPath: m_Name
-      value: "f15\u305F\u3060\u304A\u3044\u3066\u308B\u3060\u3051"
+      value: f15ObjectOlnly
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -411,7 +411,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d94144ad983c55045aea668740105f7a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 70e637370af41ba40bff15b3d2db60ff, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -607,7 +607,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d94144ad983c55045aea668740105f7a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 70e637370af41ba40bff15b3d2db60ff, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -693,33 +693,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0a25891e35dfce4aa253e8ad00e2d0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemyTransform:
-  - {fileID: 329389493}
-  - {fileID: 1625438996}
-  - {fileID: 2036109503}
-  - {fileID: 1995600425}
-  - {fileID: 1991567558}
-  _uiTransform:
-  - {fileID: 1433886196}
-  - {fileID: 364343725}
-  - {fileID: 2064836094}
-  - {fileID: 587861761}
-  - {fileID: 1412601416}
-  - {fileID: 906994577}
-  - {fileID: 787131391}
-  - {fileID: 912619888}
-  - {fileID: 1706473199}
-  - {fileID: 1127966916}
-  - {fileID: 1158390671}
-  - {fileID: 673145845}
-  - {fileID: 813876536}
-  - {fileID: 1473916298}
-  - {fileID: 895161414}
-  - {fileID: 1277859319}
-  - {fileID: 2144542105}
-  - {fileID: 1388709052}
-  - {fileID: 277688503}
-  - {fileID: 937465162}
+  _enemyIncameraUI:
+  - {fileID: 1158390670}
+  - {fileID: 673145844}
+  - {fileID: 813876535}
+  - {fileID: 1473916297}
+  - {fileID: 895161413}
+  - {fileID: 1277859318}
+  - {fileID: 2144542104}
+  - {fileID: 1388709051}
+  - {fileID: 277688502}
+  - {fileID: 937465161}
+  _enemyInCone:
+  - {fileID: 1433886195}
+  - {fileID: 364343724}
+  - {fileID: 2064836093}
+  - {fileID: 587861760}
+  - {fileID: 1412601415}
+  - {fileID: 906994576}
+  - {fileID: 787131390}
+  - {fileID: 912619887}
+  - {fileID: 1706473198}
+  - {fileID: 1127966915}
   lockOnManager: {fileID: 1611937059}
 --- !u!1 &673145844
 GameObject:
@@ -947,7 +942,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d94144ad983c55045aea668740105f7a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 70e637370af41ba40bff15b3d2db60ff, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1172,7 +1167,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d94144ad983c55045aea668740105f7a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 70e637370af41ba40bff15b3d2db60ff, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1247,7 +1242,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d94144ad983c55045aea668740105f7a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 70e637370af41ba40bff15b3d2db60ff, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1752,7 +1747,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d94144ad983c55045aea668740105f7a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 70e637370af41ba40bff15b3d2db60ff, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2425,7 +2420,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d94144ad983c55045aea668740105f7a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 70e637370af41ba40bff15b3d2db60ff, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2500,7 +2495,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d94144ad983c55045aea668740105f7a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 70e637370af41ba40bff15b3d2db60ff, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2604,7 +2599,6 @@ GameObject:
   - component: {fileID: 1611937057}
   - component: {fileID: 1611937059}
   - component: {fileID: 1611937056}
-  - component: {fileID: 1611937058}
   m_Layer: 0
   m_Name: Virtual Camera
   m_TagString: Untagged
@@ -2667,21 +2661,6 @@ Transform:
   - {fileID: 2125705453}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1611937058
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1611937055}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef279cf7108135c4cae289e7bf07f30f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _searchDistance: 95
-  _coneAngle: 45
-  _filteredObjects: []
 --- !u!114 &1611937059
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2814,7 +2793,7 @@ GameObject:
   - component: {fileID: 1663680051}
   - component: {fileID: 1663680050}
   m_Layer: 0
-  m_Name: "\u3053\u3053\u306B\u6A5F\u9283\u56DE\u8EE2\u306E\u30B9\u30AF\u30EA\u30D7\u30C8\u3042\u308A\u307E\u3059"
+  m_Name: kijuuKaiten
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2964,7 +2943,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d94144ad983c55045aea668740105f7a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 70e637370af41ba40bff15b3d2db60ff, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3133,7 +3112,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d94144ad983c55045aea668740105f7a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 70e637370af41ba40bff15b3d2db60ff, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
