@@ -4942,7 +4942,7 @@ MonoBehaviour:
   target: {fileID: 0}
   hissatsu: 0
   lerpT: 0.1
-  speed: 6.79
+  speed: 30
   timer: 10
   randomPower: 5
   randomTimer: 10
