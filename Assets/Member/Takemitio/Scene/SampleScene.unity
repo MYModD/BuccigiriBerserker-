@@ -172,7 +172,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: SINf15
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5590597769812727181, guid: 90d5ca663351cd9478d16518160b9945, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -264,7 +265,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: SINf15 (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5590597769812727181, guid: 90d5ca663351cd9478d16518160b9945, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -666,7 +668,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: SINf15 (2)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5590597769812727181, guid: 90d5ca663351cd9478d16518160b9945, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:

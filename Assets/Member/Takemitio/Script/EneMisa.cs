@@ -1,25 +1,30 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EneMisa : MonoBehaviour
 {
-    public GameObject objectToSpawn;
-    public float interval = 5f; // インスタンス化間隔
-    GameObject missile;
+    public GameObject missilePrefab;  // Missileプレハブを設定するための変数
+    private Transform defaultTarget;  // デフォルトのターゲットを設定するための変数
+    public float spawnInterval = 2f; // ミサイルの生成間隔
 
     void Start()
     {
-        missile = GameObject.FindGameObjectWithTag("missile");
-        // interval秒ごとにSpawnObject関数を呼び出す
-        InvokeRepeating("SpawnObject", 0f, interval);
+        defaultTarget = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        // spawnInterval秒ごとにSpawnMissile関数を呼び出す
+        InvokeRepeating("SpawnMissile", 0f, spawnInterval);
     }
 
-    void SpawnObject()
+    void SpawnMissile()
     {
-        // objectToSpawnをインスタンス化する処理
-        Instantiate(objectToSpawn, transform.position, transform.rotation);
-        missile.GetComponent<Missile>().target = GameObject.FindGameObjectWithTag("player").transform;
+        print("a");
+        // missilePrefabをインスタンス化し、Missileコンポーネントを取得
+        GameObject newMissile = Instantiate(missilePrefab, transform.position, transform.rotation);
+        EnemyMissile missileComponent = newMissile.GetComponent<EnemyMissile>();
+
+        // デフォルトのターゲットを設定
+        if (missileComponent != null && defaultTarget != null)
+        {
+            print("b");
+            missileComponent.target = defaultTarget;
+        }
     }
 }
-

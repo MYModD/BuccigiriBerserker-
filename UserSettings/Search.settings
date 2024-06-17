@@ -10,13 +10,13 @@ showStatusBar = false
 scopes = {
 	"last_search.6DF93126" = ""
 	"OpenInspectorPreview.6DF93126" = "0"
-	"currentGroup.6DF93126" = null
-	"last_search.98CF4AA6" = ""
-	"OpenInspectorPreview.98CF4AA6" = "0"
-	"currentGroup.98CF4AA6" = "scene"
+	"currentGroup.6DF93126" = "scene"
 	"last_search.45C55C1A" = ""
 	"OpenInspectorPreview.45C55C1A" = "0"
 	"currentGroup.45C55C1A" = "asset"
+	"last_search.98CF4AA6" = ""
+	"OpenInspectorPreview.98CF4AA6" = "0"
+	"currentGroup.98CF4AA6" = "scene"
 }
 providers = {
 	asset = {
@@ -73,14 +73,6 @@ providers = {
 objectSelectors = {
 }
 recentSearches = [
-<<<<<<< HEAD
-=======
-	"find:"
-	"p:"
-	""
-	"in ase"
-	"GeometryUtility.TestPlanesAABB"
->>>>>>> main
 ]
 searchItemFavorites = [
 ]
@@ -91,7 +83,7 @@ expandedQueries = [
 ]
 queryBuilder = false
 ignoredProperties = "id;name;classname;imagecontentshash"
-helperWidgetCurrentArea = "find:"
+helperWidgetCurrentArea = "all"
 disabledIndexers = ""
 minIndexVariations = 2
 findProviderIndexHelper = true
