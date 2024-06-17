@@ -42,29 +42,29 @@ public class PlayerMove : MonoBehaviour
 
         VerticalValue = Input.GetAxisRaw("Vertical");
 
-        //transform.Translate(speedX, speedY, 0f);
+        transform.Translate(Vector3.back);
 
         if (HolizontalValue > 0.6f)
         {
-            transform.Translate(speed*Time.deltaTime*20, 0f, 0f);
+            transform.Translate(speed*Time.deltaTime*20, 0f, -speed);
             //speedX -= Time.deltaTime * 10f;
         }
 
         if (HolizontalValue < -0.6f)
         {
-            transform.Translate(speed * -Time.deltaTime*20, 0f, 0f);
+            transform.Translate(speed * -Time.deltaTime*20, 0f, -speed);
             //speedX += Time.deltaTime * 10f; 
         }
 
         if (VerticalValue > 0.6f)
         {
-            transform.Translate(0f,speed * Time.deltaTime*20, 0f);
+            transform.Translate(0f,speed * Time.deltaTime*20, -speed);
             //speedY += Time.deltaTime * 10f; 
         }
 
         if (VerticalValue < -0.6f)
         {
-            transform.Translate(0f, speed * -Time.deltaTime*20, 0f);
+            transform.Translate(0f, speed * -Time.deltaTime*20, -speed);
             //speedY -= Time.deltaTime * 10f; 
         }
     }
