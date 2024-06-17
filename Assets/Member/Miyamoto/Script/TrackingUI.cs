@@ -3,9 +3,9 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class TrackingUI : MonoBehaviour
-{
-    [SerializeField] private GameObject[] _enemyIncameraUI; // ‹‘ä“à‚Ì“G‚ÌUI—v‘f
-    [SerializeField] private GameObject[] _enemyInCone; // ‰~“à‚Ì“G‚ÌUI—v‘f
+{    [SerializeField] private GameObject[] _enemyIncameraUI; // ‹‘ä“à‚Ì“G‚ÌImage
+
+    [SerializeField] private GameObject[] _enemyInCone; // ‰~“à‚Ì“G‚ÌImage
 
     public LockOnManager lockOnManager;
 
@@ -21,6 +21,10 @@ public class TrackingUI : MonoBehaviour
         UpdateUIPositions(lockOnManager.targetsInCone, _enemyInCone);
     }
 
+
+    /// <summary>
+    /// UI“à‚ÌimageƒRƒ“ƒ|[ƒlƒ“ƒg‚ğ‰Šú‰»
+    /// </summary>
     private void InitializeUIElements(GameObject[] uiElements)
     {
         foreach (GameObject uiElement in uiElements)
