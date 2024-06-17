@@ -6,7 +6,7 @@
 /[Ll]ogs/
 /[Mm]emoryCaptures/
 /Assets/Mods
-/UserSettings/*
+/[Us]erSettings/
 
 
 # Never ignore Asset meta data
