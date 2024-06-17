@@ -12,7 +12,7 @@ public class TargetLockimage : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        List<GameObject> _enemyList = _playerLockon._hits;
+        //List<GameObject> _enemyList = _playerLockon._hits;
         _enemyLock = GetComponent<EnemyLock>();
     }
 

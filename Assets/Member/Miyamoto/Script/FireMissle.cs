@@ -1,0 +1,81 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.Pool;
+using UnityEngine.Rendering;
+
+public class FireMissle : MonoBehaviour
+{
+    private IObjectPool<Missile> objectPool;
+
+    [Header("ターゲット目標")]
+    public List<Transform> targetObjectList ;
+
+    public LockOnManager lockOnManager;//つぎここ直す
+
+    [Header("発射位置")]
+    [SerializeField] private Transform muzzlePosition;
+    [Header("クールタイム")]
+    [SerializeField] private float cooldownFire;
+
+
+    private float nextTimeToShoot; // 次の時間計算するやつ
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        PooledMissile pooledMissile = GetComponent<PooledMissile>();//FireMissleとPooledMissileが同じオブジェクトにないとダメだよ
+        objectPool = pooledMissile.objectPool;
+
+        var pipelineAsset = GraphicsSettings.renderPipelineAsset;
+
+        if (pipelineAsset == null)
+        {
+            Debug.Log("Using Built-in Render Pipeline");
+        }
+        else if (pipelineAsset.GetType().ToString().Contains("HDRenderPipelineAsset"))
+        {
+            Debug.Log("Using High Definition Render Pipeline (HDRP)");
+        }
+        else if (pipelineAsset.GetType().ToString().Contains("UniversalRenderPipelineAsset"))
+        {
+            Debug.Log("Using Universal Render Pipeline (URP)");
+        }
+        else
+        {
+            Debug.Log("Unknown Render Pipeline");
+        }
+    }
+
+    // Update is called once per frame
+    void FixedUpdate()
+    {
+        targetObjectList = lockOnManager.targetsInCone;
+
+
+
+        bool testBool = Input.GetKey(KeyCode.Space) || Input.GetButtonDown("Fire2");//ここ分かりづらすぎるのであとで直します
+
+        if (testBool && Time.time > nextTimeToShoot && objectPool != null)
+        {
+            foreach (Transform target in lockOnManager.targetsInCone)
+            {
+                // Missileクラスのオブジェクトを取得
+                Missile missileObject = objectPool.Get();
+                if (missileObject == null) Debug.Log("オブジェクトがないよ");
+
+
+                missileObject.target = target;//とりあえず一つから 
+
+                // SetPositionAndRotationのほうが大量に生成したとき軽い
+                missileObject.transform.SetPositionAndRotation(muzzlePosition.position, muzzlePosition.rotation);
+
+                // 発射されたら今の時間にクールダウンを追加する
+                nextTimeToShoot = Time.time + cooldownFire;
+            }
+
+        }
+    }
+
+    
+}
