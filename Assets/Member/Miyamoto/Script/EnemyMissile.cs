@@ -2,11 +2,10 @@ using System;
 using UnityEngine;
 
 using UnityEngine.Pool;
-using UnityEngine.UIElements;
 
-public class Missile : MonoBehaviour
+public class EnemyMissile : MonoBehaviour
 {
-    
+
     [Header("目標ターゲット")]
     public Transform target;                //あとでset = value get privateに変えるかも
 
@@ -32,13 +31,13 @@ public class Missile : MonoBehaviour
     [Header("Gforceの最大値")]
     public float maxAcceleration = 10f;
 
-    private IObjectPool<Missile> objectPool;
-    public IObjectPool<Missile> ObjectPool { set => objectPool = value; }  //外部から値を変えた場合、上のobjectpoolに代入される
+    //private IObjectPool<Missile> objectPool;
+    //public IObjectPool<Missile> ObjectPool { set => objectPool = value; }  //外部から値を変えた場合、上のobjectpoolに代入される
 
 
 
 
-    private new  Rigidbody rigidbody;
+    private new Rigidbody rigidbody;
     private float OFFtimeValue; //ミサイルの時間計算用
     private float OFFtimeRandomValue; //ミサイルの時間計算用
     private Vector3 previousVelocity; //前の加速度
@@ -51,17 +50,21 @@ public class Missile : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (target == null) { Debug.LogError("アタッチされてないよ"); return; }
+        if (target == null) { Debug.LogError("目標アタッチされてないよ"); return; }
 
         OFFtimeValue = Mathf.Max(0, OFFtimeValue - Time.fixedDeltaTime);
 
-        if(OFFtimeValue == 0) PoolReurn();//時間切れになったら返す
+        if (OFFtimeValue == 0) //時間切れになったら返す
+        {
+            Destroy(this.gameObject);
+
+        }
 
 
         CalculationFlying();
 
     }
-    
+
 
 
     private void CalculationFlying()
@@ -96,7 +99,7 @@ public class Missile : MonoBehaviour
 
 
 
-    private void PoolReurn()
+    /*private void PoolReurn()       敵が打つミサイルはプール使ってない 追加したい
     {
 
         rigidbody.velocity = Vector3.zero;
@@ -104,14 +107,14 @@ public class Missile : MonoBehaviour
         transform.rotation = new Quaternion(0, 0, 0, 0);
         objectPool.Release(this);
 
-    }
+    }*/
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
             print("敵と衝突");
-            PoolReurn();
+            Destroy(this.gameObject);
         }
     }
 

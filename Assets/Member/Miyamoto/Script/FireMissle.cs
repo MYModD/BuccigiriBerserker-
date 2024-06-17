@@ -9,7 +9,9 @@ public class FireMissle : MonoBehaviour
     private IObjectPool<Missile> objectPool;
 
     [Header("ターゲット目標")]
-    public List<Transform> targetObjectList = new List<Transform>();
+    public List<Transform> targetObjectList ;
+
+    public LockOnManager lockOnManager;//つぎここ直す
 
     [Header("発射位置")]
     [SerializeField] private Transform muzzlePosition;
@@ -48,11 +50,15 @@ public class FireMissle : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        targetObjectList = lockOnManager.targetsInCone;
+
+
+
         bool testBool = Input.GetKey(KeyCode.Space) || Input.GetButtonDown("Fire2");//ここ分かりづらすぎるのであとで直します
 
         if (testBool && Time.time > nextTimeToShoot && objectPool != null)
         {
-            foreach (Transform target in targetObjectList)
+            foreach (Transform target in lockOnManager.targetsInCone)
             {
                 // Missileクラスのオブジェクトを取得
                 Missile missileObject = objectPool.Get();
