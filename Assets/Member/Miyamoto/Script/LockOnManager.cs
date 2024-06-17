@@ -18,24 +18,16 @@ public class LockOnManager : MonoBehaviour
     [SerializeField, Range(0f, 180f)]
     private float _coneAngle = 45f; // 円錐の角度
 
-    public float Z;
 
+
+    /// <summary>
+    /// 描画するものだからupdate
+    /// </summary>
     void Update()
     {
         // ターゲットリストを更新
         UpdateTargets();
 
-        // カメラの視界に入っているターゲットを赤色にする
-        for (int i = 0; i < targetsInCamera.Count; i++)
-        {
-            targetsInCamera[i].GetComponent<MeshRenderer>().material.color = Color.red;
-        }
-
-        // 円錐内に入っているターゲットを青色にする
-        for (int j = 0; j < targetsInCone.Count; j++)
-        {
-            targetsInCone[j].GetComponent<MeshRenderer>().material.color = Color.blue;
-        }
     }
 
     // ターゲットリストを更新するメソッド
@@ -46,29 +38,37 @@ public class LockOnManager : MonoBehaviour
 
         targetsInCamera.Clear();
         targetsInCone.Clear();
-
-        // 球状の範囲内のヒットしたコライダーを取得
-        Collider[] hits = GetSphereOverlapHits();
+       
+        Collider[] hits = GetSphereOverlapHits();    //colliderが返り値
 
         foreach (Collider hit in hits)
         {
             // ヒットしたオブジェクトを処理
             ProcessHit(hit, planes);
-            hit.gameObject.GetComponent<MeshRenderer>().material.color = Color.white;
+            
         }
     }
 
-    // 球状の範囲内のヒットしたコライダーを取得するメソッド
+    /// <summary>
+    /// 球状の範囲内のヒットしたコライダーを取得するメソッド
+    /// </summary>
     private Collider[] GetSphereOverlapHits()
     {
         return Physics.OverlapSphere(
             _camera.transform.position,
             _searchRadius,
-            LayerMask.GetMask("Enemy")
+            LayerMask.GetMask("Enemy")                        //レイヤーマスクがenemyかつtagがenemyのとき
         );
     }
 
-    // ヒットしたオブジェクトを処理するメソッド
+
+
+    /// <summary>
+    /// ヒットしたオブジェクトを処理するメソッド  
+    /// </summary>
+    /// <param name="hit">コライダー型 オブジェクトを識別する</param>
+    /// <param name="planes">カメラの図形をPlane型で表したもの</param>
+     
     private void ProcessHit(Collider hit, Plane[] planes)
     {
         if (hit.CompareTag("Enemy"))
@@ -78,23 +78,28 @@ public class LockOnManager : MonoBehaviour
 
             if (renderer != null && IsInFrustum(renderer, planes))
             {
-                targetsInCamera.Add(target);
+                targetsInCamera.Add(target);              //カメラ範囲内のリストにいれる
 
                 if (IsInCone(target))
                 {
-                    targetsInCone.Add(target);
+                    targetsInCone.Add(target);            //コーン内のリストにいれる
                 }
             }
         }
     }
 
-    // オブジェクトが視錐台内にあるかどうかを確認するメソッド
+
+    /// <summary>
+    /// オブジェクトが視錐台内にあるかどうかを確認するメソッド
+    /// </summary>
     private bool IsInFrustum(Renderer renderer, Plane[] planes)
     {
-        return GeometryUtility.TestPlanesAABB(planes, renderer.bounds);
+        return GeometryUtility.TestPlanesAABB(planes, renderer.bounds);    //testPlanesAABBでカメラの形とcoliderのboundsで見えているかを判断する
     }
 
-    // オブジェクトが円錐内にあるかどうかを確認するメソッド
+    /// <summary>
+    /// オブジェクトが円錐内にあるかどうかを確認するメソッド
+    /// </summary>
     private bool IsInCone(Transform target)
     {
         Vector3 cameraPosition = _camera.transform.position;
@@ -121,11 +126,11 @@ public class LockOnManager : MonoBehaviour
             Gizmos.color = Color.blue;
             Gizmos.DrawWireSphere(_camera.transform.position, _searchRadius);
 
-            Gizmos.color = Color.yellow;
-
-            var hoge = transform.position.z + Z;
-            var hoge2 = new Vector3(transform.position.x, transform.position.y, hoge);
-            GizmosExtensions.DrawWireCircle(_camera.transform.position + (_camera.transform.forward * _searchRadius), _coneAngle,20,Quaternion.Euler(-90,0,0));
+            
+            //コーン上の円周を描画
+            Gizmos.color = Color.yellow;    
+            
+            GizmosExtensions.DrawWireCircle(_camera.transform.position + (_camera.transform.forward * _searchRadius), _coneAngle,20,Quaternion.Euler(90,0,0));
             
             // 円錐の範囲を描画
             Gizmos.color = Color.red;
