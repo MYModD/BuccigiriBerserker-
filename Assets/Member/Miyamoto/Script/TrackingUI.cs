@@ -3,7 +3,8 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class TrackingUI : MonoBehaviour
-{    [SerializeField] private GameObject[] _enemyIncameraUI; // ‹‘ä“à‚Ì“G‚ÌImage
+{
+    [SerializeField] private GameObject[] _enemyIncameraUI; // ‹‘ä“à‚Ì“G‚ÌImage
 
     [SerializeField] private GameObject[] _enemyInCone; // ‰~“à‚Ì“G‚ÌImage
 
