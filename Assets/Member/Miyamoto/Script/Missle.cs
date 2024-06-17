@@ -15,22 +15,22 @@ public class Missile : MonoBehaviour
 
     [Header("あたりやすさ 0.1デフォ")]
     [Range(0f, 1f)]
-    [SerializeField] private float lerpT = 0.1f;
+    public float lerpT = 0.1f;
 
     [Header("スピード")]
-    [SerializeField] private float speed;
+    public float speed;
 
     [Header("飛行時間")]
-    [SerializeField] private float timer = 10f;
+    public float timer = 10f;
 
     [Header("ランダムの範囲、力")]
-    [SerializeField] private float randomPower = 5f;
+    public float randomPower = 5f;
 
     [Header("ランダムが適用される時間")]
-    [SerializeField] private float randomTimer = 10f;
+    public float randomTimer = 10f;
 
     [Header("Gforceの最大値")]
-    [SerializeField] private float maxAcceleration = 10f;
+    public float maxAcceleration = 10f;
 
     private IObjectPool<Missile> objectPool;
     public IObjectPool<Missile> ObjectPool { set => objectPool = value; }  //外部から値を変えた場合、上のobjectpoolに代入される
@@ -43,7 +43,7 @@ public class Missile : MonoBehaviour
     private float OFFtimeRandomValue; //ミサイルの時間計算用
     private Vector3 previousVelocity; //前の加速度
 
-    private const float oneG = 9.81f;
+    private const float oneG = 9.81f;  //1Gの加速度
     void Awake()
     {
         rigidbody = GetComponent<Rigidbody>();
