@@ -44,9 +44,9 @@ public class Misail_Hit2 : MonoBehaviour
     }
     public void PooledReturn()
     {
-        //this.gameObject.SetActive(false);
-        memmes.enabled = false;
-        mehako.enabled = false;
+        this.gameObject.SetActive(false);
+        //memmes.enabled = false;
+        //mehako.enabled = false;
     }
     //void UpdateCountText()
     //{
