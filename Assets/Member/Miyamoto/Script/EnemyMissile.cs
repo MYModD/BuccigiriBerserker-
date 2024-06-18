@@ -57,9 +57,6 @@ public class EnemyMissile : MonoBehaviour
         if (OFFtimeValue == 0) //ŠÔØ‚ê‚É‚È‚Á‚½‚ç•Ô‚·
         {
             Destroy(this.gameObject);
-
-
-
         }
 
 
