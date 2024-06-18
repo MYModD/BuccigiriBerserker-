@@ -5,8 +5,11 @@ using UnityEngine;
 public class Roll_Move : MonoBehaviour
 {
     public float _rotationSpeed = 360f; // 回転速度 (1秒で360度回転)
+
     public int _numberRotations = 3; // 回転回数
+
     private bool _isRotating = false; // 回転中かどうかを示すフラグ
+
     private Collider objectCollider; // オブジェクトのコライダー
 
     // Start is called before the first frame update
@@ -39,22 +42,30 @@ public class Roll_Move : MonoBehaviour
     {
         _isRotating = true;
         objectCollider.enabled = false;
+      
 
         float totalRotation = 0f;
         float targetRotation = 360f * _numberRotations;
 
-        while(totalRotation < targetRotation)
-        {
-            float rotationFrame = _rotationSpeed * Time.deltaTime;
-            transform.Rotate(Vector3.forward, rotationFrame);
+       
 
-            totalRotation += rotationFrame;
+
+        while (totalRotation < targetRotation)
+        {
+            float _rotationFrame = _rotationSpeed * Time.deltaTime;
+            //transform.Rotate(Vector3.forward, _rotationFrame);
+            Quaternion deltaRotation = Quaternion.AngleAxis(_rotationFrame, Vector3.forward);
+            transform.rotation *= deltaRotation;
+            totalRotation += _rotationFrame;
             yield return null;
         }
 
-        transform.Rotate(Vector3.forward, targetRotation - totalRotation);
+        //transform.Rotate(Vector3.forward, targetRotation - totalRotation);
 
-        objectCollider.enabled = true;
+        //objectCollider.enabled = true;
+
+        Quaternion finalRotation = Quaternion.AngleAxis(targetRotation - totalRotation, Vector3.forward);
+        transform.rotation *= finalRotation;
 
         _isRotating = false;
     }
@@ -69,13 +80,19 @@ public class Roll_Move : MonoBehaviour
 
         while (totalRotation < targetRotation)
         {
-            float rotationFrame = _rotationSpeed * Time.deltaTime;
-            transform.Rotate(Vector3.back, rotationFrame);
-            totalRotation += rotationFrame;
+            float _rotationFrame = _rotationSpeed * Time.deltaTime;
+            //transform.Rotate(Vector3.back,_rotationFrame);
+            Quaternion deltaRotation = Quaternion.AngleAxis(_rotationFrame, Vector3.back);
+            transform.rotation *= deltaRotation;
+            totalRotation += _rotationFrame;
             yield return null;
         }
 
-        transform.Rotate(Vector3.back, targetRotation - totalRotation);
+        //transform.Rotate(Vector3.back, targetRotation - totalRotation);
+
+        // 最終的な微調整
+        Quaternion finalRotation = Quaternion.AngleAxis(targetRotation - totalRotation, Vector3.back);
+        transform.rotation *= finalRotation;
 
         objectCollider.enabled = true;
 

@@ -4,26 +4,29 @@ using UnityEngine;
 
 public class Rotate5 : MonoBehaviour
 {
-    public float _maxRotation = 60f; // 最大回転角度
-    public float _rotationSpeed = 5f; // 回転速度
-    float zRot = 0;
-    float nowTime;
-    float TimeReset = 1;
+    // 角速度
+    [SerializeField] private float _angleSpeed = 90;
 
-    void Update()
+    // 回転軸
+    [SerializeField] private Vector3 _axis = Vector3.forward;
+
+    private Transform _transform;
+
+    // 初期化
+    private void Awake()
     {
-        nowTime = nowTime + Time.deltaTime * 360;
+        // transformに毎回アクセスすると重いので、キャッシュしておく
+        _transform = transform;
+    }
 
-        float Horizontal = Input.GetAxis("Horizontal");
+    // 回転処理
+    private void Update()
+    {
+        // １フレームで回転する角度を角速度から計算
+        var angle = _angleSpeed * Time.deltaTime;
 
-        // Horizontalの値を-60から60の範囲にマッピング
-        float PlayerRot = Mathf.Clamp(Horizontal * _rotationSpeed, -_maxRotation, _maxRotation);
-
-        // y軸の回転を適用
-        transform.rotation = Quaternion.Euler(0f, PlayerRot * 4, nowTime);
-
-
-
-        //transform.Rotate(Vector3.up, mappedRotation * 135 * Time.deltaTime);
+        // 既存のrotationに軸回転のクォータニオンを掛ける
+        // クォータニオンを掛ける順序に注意
+        _transform.rotation = Quaternion.AngleAxis(angle, _axis) * _transform.rotation;
     }
 }
