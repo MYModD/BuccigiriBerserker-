@@ -19,6 +19,8 @@ public class PooledMissile : MonoBehaviour
 
     public IObjectPool<Missile> objectPool; //MissileƒNƒ‰ƒXŒ^‚Ì‚Ýˆµ‚¤
 
+    public List<GameObject> testList = new List<GameObject>();
+
 
     void Awake()
     {
@@ -35,6 +37,7 @@ public class PooledMissile : MonoBehaviour
         for (int i = 0; i < defaultCapacity; i++)
         {
             Missile missile = CreateProjectile();
+            testList.Add(missile.gameObject);
             objectPool.Release(missile);
         }
     }
