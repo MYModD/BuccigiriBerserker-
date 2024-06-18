@@ -434,8 +434,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00b874a804cab824093f87758b122037, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _lockcamera: {fileID: 0}
-  _player: {fileID: 0}
+  _lockcamera: {fileID: 201234589}
+  _player: {fileID: 1025315011}
 --- !u!1 &333534307
 GameObject:
   m_ObjectHideFlags: 0
@@ -1950,10 +1950,10 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 674892394}
+  - {fileID: 215242734}
   - {fileID: 333534313}
   - {fileID: 201234590}
   - {fileID: 1946937773}
-  - {fileID: 215242734}
   - {fileID: 235546412}
   - {fileID: 1873153359}
   - {fileID: 1372026669}
