@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Pool;
+using UnityEngine.Rendering;
 
 public class PooledMissile : MonoBehaviour
 {
@@ -19,7 +20,12 @@ public class PooledMissile : MonoBehaviour
 
     public IObjectPool<Missile> objectPool; //MissileƒNƒ‰ƒXŒ^‚Ì‚Ýˆµ‚¤
 
-    public List<GameObject> testList = new List<GameObject>();
+    public List<Transform> testList = new List<Transform>();
+
+    public List<Missile> missileList = new List<Missile>();
+    public List<MeshRenderer> renderList = new List<MeshRenderer>();
+    public List<Rigidbody> rigidbodyList = new List<Rigidbody>();
+    public List<CapsuleCollider> coliderList = new List<CapsuleCollider>();
 
 
     void Awake()
@@ -37,7 +43,11 @@ public class PooledMissile : MonoBehaviour
         for (int i = 0; i < defaultCapacity; i++)
         {
             Missile missile = CreateProjectile();
-            testList.Add(missile.gameObject);
+            testList.Add(missile.transform);
+            missileList.Add(missile.GetComponent<Missile>());
+            renderList.Add(missile.GetComponent<MeshRenderer>());
+            rigidbodyList.Add(missile.GetComponent<Rigidbody>());
+            coliderList.Add(missile.GetComponent<CapsuleCollider>());
             objectPool.Release(missile);
         }
     }
