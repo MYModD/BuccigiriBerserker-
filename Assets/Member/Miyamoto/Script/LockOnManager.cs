@@ -32,6 +32,7 @@ public class LockOnManager : MonoBehaviour
         {
             _coneRange = _searchRadius;
         }
+
     }
     void Update()
     {
