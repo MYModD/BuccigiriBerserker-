@@ -546,4 +546,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   missilePrefab: {fileID: 8100528506423630510, guid: 1ce4a43987288294d9682339feebe9cb, type: 3}
-  spawnInterval: 5
+  spawnInterval: 100

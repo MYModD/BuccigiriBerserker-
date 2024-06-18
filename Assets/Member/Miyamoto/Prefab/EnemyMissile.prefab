@@ -4938,9 +4938,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   hissatsu: 0
-  lerpT: 0.1
-  speed: 0
-  timer: 10
+  lerpT: 0.02
+  speed: 50
+  timer: 6
   randomPower: 5
   randomTimer: 10
   maxAcceleration: 10
