@@ -4937,10 +4937,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  hissatsu: 0
-  lerpT: 0.02
-  speed: 50
-  timer: 6
+  hissatsu: 1
+  lerpT: 0.03
+  speed: 100
+  timer: 10
   randomPower: 5
   randomTimer: 10
   maxAcceleration: 10

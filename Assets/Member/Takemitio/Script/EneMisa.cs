@@ -15,16 +15,10 @@ public class EneMisa : MonoBehaviour
 
     void SpawnMissile()
     {
-        print("a");
         // missilePrefabをインスタンス化し、Missileコンポーネントを取得
         GameObject newMissile = Instantiate(missilePrefab, transform.position, transform.rotation);
-        EnemyMissile missileComponent = newMissile.GetComponent<EnemyMissile>();
-
-        // デフォルトのターゲットを設定
-        if (missileComponent != null && defaultTarget != null)
-        {
-            print("b");
-            missileComponent.target = defaultTarget;
-        }
+        
+        
+        newMissile.GetComponent<EnemyMissile>().target = defaultTarget;
     }
 }
