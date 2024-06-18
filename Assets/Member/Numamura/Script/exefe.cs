@@ -14,6 +14,7 @@ public class exefe : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         // 衝突時に爆発エフェクトを生成する
+        Debug.Log("ok");
         Explode();
     }
 
