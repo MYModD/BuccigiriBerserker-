@@ -9,24 +9,37 @@ public class LockOnManager : MonoBehaviour
     // 錐体内に入っているターゲットのリスト
     public List<Transform> targetsInCone = new List<Transform>();
 
-    [SerializeField]
+    [SerializeField, Header("なんのカメラ")]
     private Camera _camera;
 
-    [SerializeField]
-    private float _searchRadius = 95f; // 球状の範囲の半径
+    [SerializeField, Header("spherecastの半径")]
+    private float _searchRadius = 95f; 
 
     [SerializeField, Range(0f, 180f)]
-    private float _coneAngle = 45f; // 円錐の角度
+    [Header("コーンの角度")]
+    private float _coneAngle = 45f; 
 
-    private  Vector3 DrawOrigin = new Vector3 (90,0,0);
+    [SerializeField]
+    [Header("コーンの長さ、半径")]
+    private float _coneRange;
 
-    /// <summary>
-    /// 描画するものだからupdate
-    /// </summary>
+     private Vector3 DrawOrigin = new Vector3 (90,0,0);    //コーンの円周を向けるためのやつ offset
+
+    
+    private void OnValidate()
+    {
+        if (_coneRange > _searchRadius)//coneRangeをspherecast以下にする制御スクリプト
+        {
+            _coneRange = _searchRadius;
+        }
+
+    }
     void Update()
     {
         // ターゲットリストを更新
         UpdateTargets();
+        DebugMatarialChange();
+
 
     }
 
@@ -115,7 +128,7 @@ public class LockOnManager : MonoBehaviour
         // ターゲットまでの距離を計算
         float distanceToObject = toObject.magnitude;                     // ベクトルの長さ（距離）
 
-        if (distanceToObject <= _searchRadius)                           // ターゲットが検索半径内にあるかどうかを確認
+        if (distanceToObject <= _coneRange)                           // ターゲットが検索半径内にあるかどうかを確認
         {
             Vector3 toObjectNormalized = toObject.normalized;                // ターゲットへのベクトルを正規化（方向のみを取得）
 
@@ -123,15 +136,14 @@ public class LockOnManager : MonoBehaviour
             return angle <= _coneAngle / 2;                                // 角度がコーンの半分の角度以下であればtrueを返す
         }
 
-
-        
-
         // ターゲットが検索半径外にある場合はfalseを返す
         return false;
     }
 
 
-    // デバッグ用のギズモを描画するメソッド
+    /// <summary>
+    /// デバッグ用のギズモを描画するメソッド unity側のメソッド
+    /// </summary>
     void OnDrawGizmos()
     {
         if (_camera != null)
@@ -144,19 +156,34 @@ public class LockOnManager : MonoBehaviour
             //コーン上の円周を描画
             Gizmos.color = Color.yellow;
             var hoge = DrawOrigin + transform.rotation.eulerAngles;
-            GizmosExtensions.DrawWireCircle(_camera.transform.position + (_camera.transform.forward * _searchRadius), _coneAngle, 20, Quaternion.Euler(hoge));
+            hoge.z = 0;                                                         //magicnum Z軸だけ0にする
+            GizmosExtensions.DrawWireCircle(_camera.transform.position + (_camera.transform.forward * _coneRange), _coneAngle, 20, Quaternion.Euler(hoge));
 
-            // 円錐の範囲を描画
+            // コーンの範囲を描画
             Gizmos.color = Color.red;
-            Vector3 forward = _camera.transform.forward * _searchRadius;
+            Vector3 forward = _camera.transform.forward * _coneRange;
             Vector3 up = Quaternion.Euler(0, _coneAngle / 2, 0) * forward;
             Vector3 down = Quaternion.Euler(0, -_coneAngle / 2, 0) * forward;
 
             Gizmos.DrawLine(_camera.transform.position, _camera.transform.position + forward);
             Gizmos.DrawLine(_camera.transform.position, _camera.transform.position + up);
             Gizmos.DrawLine(_camera.transform.position, _camera.transform.position + down);
-
             Gizmos.DrawLine(_camera.transform.position + up, _camera.transform.position + down);
+        }
+    }
+
+    /// <summary>
+    /// debug用にマテリアル変えるだけ いずれ消す
+    /// </summary>
+    private void DebugMatarialChange()
+    {
+        for (int i = 0; i < targetsInCamera.Count; i++) 
+        {
+            targetsInCamera[i].GetComponent<MeshRenderer>().material.color = Color.blue;
+        }
+        for (int i = 0; i < targetsInCone.Count; i++)
+        {
+            targetsInCone[i].GetComponent<MeshRenderer>().material.color = Color.red;
         }
     }
 }
