@@ -11,7 +11,6 @@ scopes = {
 	"last_search.6DF93126" = ""
 	"OpenInspectorPreview.6DF93126" = "0"
 	"currentGroup.6DF93126" = "scene"
-<<<<<<< HEAD
 	"last_search.98CF4AA6" = ""
 	"OpenInspectorPreview.98CF4AA6" = "0"
 	"currentGroup.98CF4AA6" = "scene"
@@ -21,14 +20,6 @@ scopes = {
 	"last_search.8DF93126" = "GeometryUtility.TestPlanesAABB"
 	"OpenInspectorPreview.8DF93126" = "0"
 	"currentGroup.8DF93126" = "settings"
-=======
-	"last_search.45C55C1A" = ""
-	"OpenInspectorPreview.45C55C1A" = "0"
-	"currentGroup.45C55C1A" = "asset"
-	"last_search.98CF4AA6" = ""
-	"OpenInspectorPreview.98CF4AA6" = "0"
-	"currentGroup.98CF4AA6" = "scene"
->>>>>>> main
 }
 providers = {
 	asset = {
@@ -85,11 +76,8 @@ providers = {
 objectSelectors = {
 }
 recentSearches = [
-<<<<<<< HEAD
 	"GeometryUtility.TestPlanesAABB"
 	""
-=======
->>>>>>> main
 ]
 searchItemFavorites = [
 ]
