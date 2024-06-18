@@ -4,6 +4,7 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
+<<<<<<< HEAD
   m_Scenes:
   - enabled: 1
     path: Assets/Member/Wakayama/Scene/TitleScene.unity
@@ -14,5 +15,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Member/Wakayama/Scene/ResultScene.unity
     guid: ca88f868fbefc1c45b8fd097dcc75550
+=======
+  m_Scenes: []
+>>>>>>> main
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
