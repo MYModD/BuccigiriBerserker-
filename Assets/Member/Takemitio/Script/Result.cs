@@ -8,13 +8,13 @@ public class GameManager : MonoBehaviour
     private bool timeUp = false;
     private bool allEnemiesDefeated = false;
     private int cntenemy;
-    CuntUD cntud;
+    //CuntUD cntud;
 
     void Start()
     {
         // ゲーム開始時に時間のカウントダウンを開始する
         Invoke("CheckGameTime", gameTime);
-        cntenemy = cntud.currentCount;
+        //cntenemy = cntud.currentCount;
     }
 
     void Update()
