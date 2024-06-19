@@ -3,23 +3,54 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public Text scoreText; // Text オブジェクトへの参照
-    private int score = 0; // 倒した敵の数
+    public Text infoText;
+    [SerializeField]private float gameTime = 180f; // ゲームの時間（秒）を設定（3分 = 180秒）
+    private bool timeUp = false;
+    private bool allEnemiesDefeated = false;
 
     void Start()
     {
-        // 初期スコアの表示
-        UpdateScoreText();
+        // ゲーム開始時に時間のカウントダウンを開始する
+        Invoke("CheckGameTime", gameTime);
     }
 
-    public void AddScore(int amount)
+    void Update()
     {
-        score += amount; // スコアを増やす
-        UpdateScoreText(); // Text を更新
+        // 敵を全部倒した場合の条件判定
+        if (!allEnemiesDefeated)
+        {
+            allEnemiesDefeated = true;
+            ShowAllEnemiesDefeatedUI();
+        }
     }
 
-    void UpdateScoreText()
+    void CheckGameTime()
     {
-        scoreText.text = "Score: " + score.ToString(); // スコアを Text に表示
+        // 時間がゼロになった場合の条件判定
+        if (!timeUp)
+        {
+            timeUp = true;
+            ShowTimeUpUI();
+        }
+    }
+
+    //bool AllEnemiesDefeated()
+    //{
+    //    // 敵を全部倒したかどうかを判定する処理（例として、EnemyManagerが管理する敵の数が0になったとする）
+    //    //return EnemyManager.Instance.EnemyCount == 0;
+    //}
+
+    void ShowTimeUpUI()
+    {
+        // 「Time's Up!」のUIを表示する処理（例として、Textコンポーネントの表示を切り替える）
+        infoText.text = "Time's Up!";
+        infoText.gameObject.SetActive(true);
+    }
+
+    void ShowAllEnemiesDefeatedUI()
+    {
+        // 「All enemies defeated!」のUIを表示する処理（例として、Textコンポーネントの表示を切り替える）
+        infoText.text = "All enemies defeated!";
+        infoText.gameObject.SetActive(true);
     }
 }
