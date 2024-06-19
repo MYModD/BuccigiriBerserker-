@@ -18,14 +18,6 @@ public class GameExitScript : MonoBehaviour
 
     public void GameEnd()
     {
-
-        if (UnityEditor.EditorApplication.isPlaying)//エディターで起動しているか
-        {
-            UnityEditor.EditorApplication.isPlaying = false;//エディターのテストプレイを終了
-        }
-        else
-        {
             Application.Quit();//ビルドされたゲームプレイを終了
-        }
     }
 }
