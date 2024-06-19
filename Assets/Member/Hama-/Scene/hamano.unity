@@ -1375,10 +1375,6 @@ MonoBehaviour:
   defaultCapacity: 20
   maxSize: 100
   testList: []
-  missileList: []
-  renderList: []
-  rigidbodyList: []
-  coliderList: []
 --- !u!114 &1025315018
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1844,10 +1840,6 @@ MonoBehaviour:
   defaultCapacity: 20
   maxSize: 100
   testList: []
-  missileList: []
-  renderList: []
-  rigidbodyList: []
-  coliderList: []
 --- !u!4 &1492061186
 Transform:
   m_ObjectHideFlags: 0
@@ -2077,6 +2069,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnergyLasers
       objectReference: {fileID: 0}
+    - target: {fileID: 1855533658944316, guid: e46b3a1399c8e724b819e3cf1fd23af6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4934553133834374, guid: e46b3a1399c8e724b819e3cf1fd23af6, type: 3}
       propertyPath: m_LocalScale.x
       value: 5
@@ -2144,6 +2140,10 @@ PrefabInstance:
     - target: {fileID: 114591102454184916, guid: e46b3a1399c8e724b819e3cf1fd23af6, type: 3}
       propertyPath: shaderProgressCurve.m_RotationOrder
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 199478285846573912, guid: e46b3a1399c8e724b819e3cf1fd23af6, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
