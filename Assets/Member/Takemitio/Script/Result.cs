@@ -7,17 +7,20 @@ public class GameManager : MonoBehaviour
     [SerializeField]private float gameTime = 180f; // ゲームの時間（秒）を設定（3分 = 180秒）
     private bool timeUp = false;
     private bool allEnemiesDefeated = false;
+    private int cntenemy;
+    CuntUD cntud;
 
     void Start()
     {
         // ゲーム開始時に時間のカウントダウンを開始する
         Invoke("CheckGameTime", gameTime);
+        cntenemy = cntud.currentCount;
     }
 
     void Update()
     {
         // 敵を全部倒した場合の条件判定
-        if (!allEnemiesDefeated)
+        if (!allEnemiesDefeated )
         {
             allEnemiesDefeated = true;
             ShowAllEnemiesDefeatedUI();
