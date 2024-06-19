@@ -30,7 +30,7 @@ public class PooledMissile : MonoBehaviour
 
     void Awake()
     {
-        objectPool = new ObjectPool<Missile>(
+        objectPool = new  ObjectPool<Missile>(
             CreateProjectile,
             OnGetFromPool,
             OnReleaseToPool,
