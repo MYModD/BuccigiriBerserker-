@@ -7,11 +7,12 @@ public class CuntUD : MonoBehaviour
    
     public string tagname; // タグ名を指定するための変数
     public TextMeshProUGUI countTexts; // カウントを表示するテキスト要素
+    public TextMeshProUGUI homekotoba;
     private int count; // カウントする数
     private int previousCount; // 前回のカウント数
-    private int currentCount; // 現在のカウント数
-
-
+    public int currentCount; // 現在のカウント数
+    private int counthome;
+    private int juu = 10;
     void Start()
     {
 
@@ -34,10 +35,14 @@ public class CuntUD : MonoBehaviour
       
         // 現在のカウント数を取得
         currentCount = CountObjectsWithTag();
-
+        if(counthome == juu)
+        {
+            homekotoba.text = "Excellent!";
+        }
         // カウントが減少した場合のみ更新する
         if (currentCount < previousCount)
         {
+            counthome += 1;
             previousCount = currentCount; // 前回のカウントを更新
             UpdateCountText(); // テキストを更新
             print("a");
@@ -52,6 +57,6 @@ public class CuntUD : MonoBehaviour
     void UpdateCountText()
     {
         countTexts.text = "" + currentCount.ToString(); // 現在のカウントでテキストを更新する
-        print("s");
+        
     }
 }

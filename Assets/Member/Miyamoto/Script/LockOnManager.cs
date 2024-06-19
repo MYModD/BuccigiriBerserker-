@@ -13,19 +13,19 @@ public class LockOnManager : MonoBehaviour
     private Camera _camera;
 
     [SerializeField, Header("spherecastの半径")]
-    private float _searchRadius = 95f; 
+    private float _searchRadius = 95f;
 
     [SerializeField, Range(0f, 180f)]
     [Header("コーンの角度")]
-    private float _coneAngle = 45f; 
+    private float _coneAngle = 45f;
 
     [SerializeField]
     [Header("コーンの長さ、半径")]
     private float _coneRange;
 
-     private Vector3 DrawOrigin = new Vector3 (90,0,0);    //コーンの円周を向けるためのやつ offset
+    private Vector3 DrawOrigin = new Vector3(90, 0, 0);    //コーンの円周を向けるためのやつ offset
 
-    
+
     private void OnValidate()
     {
         if (_coneRange > _searchRadius)//coneRangeをspherecast以下にする制御スクリプト
@@ -157,7 +157,11 @@ public class LockOnManager : MonoBehaviour
             Gizmos.color = Color.yellow;
             var hoge = DrawOrigin + transform.rotation.eulerAngles;
             hoge.z = 0;                                                         //magicnum Z軸だけ0にする
-            GizmosExtensions.DrawWireCircle(_camera.transform.position + (_camera.transform.forward * _coneRange), _coneAngle, 20, Quaternion.Euler(hoge));
+
+            float coneAngleRad = Mathf.Deg2Rad * _coneAngle;
+
+            
+            GizmosExtensions.DrawWireCircle(_camera.transform.position + (_camera.transform.forward * _coneRange), _coneRange * Mathf.Tan(coneAngleRad), 20, Quaternion.Euler(hoge));
 
             // コーンの範囲を描画
             Gizmos.color = Color.red;
@@ -177,7 +181,7 @@ public class LockOnManager : MonoBehaviour
     /// </summary>
     private void DebugMatarialChange()
     {
-        for (int i = 0; i < targetsInCamera.Count; i++) 
+        for (int i = 0; i < targetsInCamera.Count; i++)
         {
             targetsInCamera[i].GetComponent<MeshRenderer>().material.color = Color.blue;
         }

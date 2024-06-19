@@ -4,6 +4,7 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
+<<<<<<< HEAD
   m_Scenes:
   - enabled: 1
     path: Assets/Member/Numamura/Scene/Title.unity
@@ -18,4 +19,9 @@ EditorBuildSettings:
     path: Assets/Member/Numamura/Scene/Result.unity
     guid: 9d72e00c8c8404542a82d78c456667f6
   m_configObjects: {}
+=======
+  m_Scenes: []
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: 5f5e24ad997d191419cc613155f9e192, type: 2}
+>>>>>>> main
   m_UseUCBPForAssetBundles: 0
