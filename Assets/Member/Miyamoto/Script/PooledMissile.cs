@@ -22,10 +22,7 @@ public class PooledMissile : MonoBehaviour
 
     public List<Transform> testList = new List<Transform>();
 
-    public List<Missile> missileList = new List<Missile>();
-    public List<MeshRenderer> renderList = new List<MeshRenderer>();
-    public List<Rigidbody> rigidbodyList = new List<Rigidbody>();
-    public List<CapsuleCollider> coliderList = new List<CapsuleCollider>();
+   
 
 
     void Awake()
@@ -43,11 +40,7 @@ public class PooledMissile : MonoBehaviour
         for (int i = 0; i < defaultCapacity; i++)
         {
             Missile missile = CreateProjectile();
-            testList.Add(missile.transform);
-            missileList.Add(missile.GetComponent<Missile>());
-            renderList.Add(missile.GetComponent<MeshRenderer>());
-            rigidbodyList.Add(missile.GetComponent<Rigidbody>());
-            coliderList.Add(missile.GetComponent<CapsuleCollider>());
+           
             objectPool.Release(missile);
         }
     }
@@ -59,21 +52,41 @@ public class PooledMissile : MonoBehaviour
     {
         Missile missileInstance = Instantiate(missilePrefab);
         missileInstance.ObjectPool = objectPool;
-        missileInstance.gameObject.SetActive(false);
+
+        //missileInstance.gameObject.SetActive(false);
+
+        missileInstance.GetComponent<Missile>().enabled = false;
+        missileInstance.GetComponent<MeshRenderer>().enabled = false;
+        missileInstance.GetComponent<Rigidbody>().isKinematic = true;
+        missileInstance.GetComponent<CapsuleCollider>().enabled = false;
+
         return missileInstance;
     }
 
     // プールから貸し出す時の処理
     private void OnGetFromPool(Missile missileObject)
     {
-        missileObject.gameObject.SetActive(true);
+        //missileObject.gameObject.SetActive(true);
+
+        missileObject.GetComponent<Missile>().enabled = true;
+        missileObject.GetComponent<MeshRenderer>().enabled = true;
+        missileObject.GetComponent<Rigidbody>().isKinematic = false;
+        missileObject.GetComponent<CapsuleCollider>().enabled = true;
+
+
         Debug.Log("Missile activated: " + missileObject.gameObject.name);
     }
 
     // プールに返却する時の処理
     private void OnReleaseToPool(Missile pooledObject)
     {
-        pooledObject.gameObject.SetActive(false);
+        //pooledObject.gameObject.SetActive(false);
+
+        pooledObject.GetComponent<Missile>().enabled = false;
+        pooledObject.GetComponent<MeshRenderer>().enabled = false;
+        pooledObject.GetComponent<Rigidbody>().isKinematic = true;
+        pooledObject.GetComponent<CapsuleCollider>().enabled = false;
+
         Debug.Log("Missile returned to pool: " + pooledObject.gameObject.name);
     }
 

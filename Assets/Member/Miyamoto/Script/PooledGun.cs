@@ -18,8 +18,6 @@ public class PooledGun : MonoBehaviour
     private float nextTimeToShoot ;//つぎの時間計算するやつ
 
 
-
-
     void Awake()
     {
         objectPool = new ObjectPool<Bullet>(
@@ -57,7 +55,13 @@ public class PooledGun : MonoBehaviour
     // プールから貸し出す時の処理
     private void OnGetFromPool(Bullet bulletObject)
     {
-        bulletObject.gameObject.SetActive(true);
+        //bulletObject.gameObject.SetActive(true);
+
+        bulletObject.GetComponent<Bullet>().enabled = true;
+        bulletObject.GetComponent<MeshRenderer>().enabled = true;
+        bulletObject.GetComponent<SphereCollider>().enabled = true;
+        bulletObject.GetComponent<Rigidbody>().isKinematic = false;
+
         Debug.Log("Bullet activated: " + bulletObject.gameObject.name);
     }
 
@@ -65,7 +69,13 @@ public class PooledGun : MonoBehaviour
     //プールに返却する時の処理
     private void OnReleaseToPool(Bullet pooledObject)
     {
-        pooledObject.gameObject.SetActive(false);
+        //pooledObject.gameObject.SetActive(false);
+
+        pooledObject.GetComponent<Bullet>().enabled = false;
+        pooledObject.GetComponent<MeshRenderer>().enabled = false;
+        pooledObject.GetComponent<SphereCollider>().enabled = false;
+        pooledObject.GetComponent<Rigidbody>().isKinematic = true;
+
         print("返却");
     }
 
