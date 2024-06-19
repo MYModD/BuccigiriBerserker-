@@ -144,7 +144,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1425042379606537574, guid: 3982e962871e0614d94790663928a426, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 31
       objectReference: {fileID: 0}
     - target: {fileID: 1425042379606537574, guid: 3982e962871e0614d94790663928a426, type: 3}
       propertyPath: m_IsActive
@@ -588,7 +588,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 524874580}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 552465ab89de15a4f814b99b785e02d2, type: 3}
   m_Name: 
@@ -1397,6 +1397,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8100528506423630510, guid: 8bcb95d99c810c94289b2af4d9549090, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8100528506423630510, guid: 8bcb95d99c810c94289b2af4d9549090, type: 3}
       propertyPath: m_Name
       value: missile
       objectReference: {fileID: 0}
@@ -1699,7 +1703,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1425042379606537574, guid: 3982e962871e0614d94790663928a426, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 31
       objectReference: {fileID: 0}
     - target: {fileID: 1425042379606537574, guid: 3982e962871e0614d94790663928a426, type: 3}
       propertyPath: m_IsActive
@@ -2099,7 +2103,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1425042379606537574, guid: 3982e962871e0614d94790663928a426, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 31
       objectReference: {fileID: 0}
     - target: {fileID: 1425042379606537574, guid: 3982e962871e0614d94790663928a426, type: 3}
       propertyPath: m_IsActive
@@ -2729,7 +2733,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1425042379606537574, guid: 3982e962871e0614d94790663928a426, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 31
       objectReference: {fileID: 0}
     - target: {fileID: 1425042379606537574, guid: 3982e962871e0614d94790663928a426, type: 3}
       propertyPath: m_IsActive
@@ -3282,6 +3286,10 @@ PrefabInstance:
       propertyPath: muzzleVelocity
       value: 10000
       objectReference: {fileID: 0}
+    - target: {fileID: 457460188443662405, guid: e77ebb491679d7f45b614f6f5127c7a7, type: 3}
+      propertyPath: defaultCapacity
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 1268434831018561964, guid: e77ebb491679d7f45b614f6f5127c7a7, type: 3}
       propertyPath: m_LocalPosition.x
       value: -13.973617
@@ -3418,7 +3426,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1425042379606537574, guid: 3982e962871e0614d94790663928a426, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 31
       objectReference: {fileID: 0}
     - target: {fileID: 1425042379606537574, guid: 3982e962871e0614d94790663928a426, type: 3}
       propertyPath: m_IsActive
@@ -3517,6 +3525,10 @@ PrefabInstance:
       propertyPath: testHage
       value: 
       objectReference: {fileID: 8100528506423630510, guid: 9b1b9f1001ab9ee41971ef355b8d5e28, type: 3}
+    - target: {fileID: 1400747944959988947, guid: 79ed6e4da1bc6a24fb24c3c8e22509fe, type: 3}
+      propertyPath: cooldownFire
+      value: 11.02
+      objectReference: {fileID: 0}
     - target: {fileID: 1400747944959988947, guid: 79ed6e4da1bc6a24fb24c3c8e22509fe, type: 3}
       propertyPath: lockOnManager
       value: 

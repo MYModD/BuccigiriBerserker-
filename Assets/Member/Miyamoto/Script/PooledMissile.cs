@@ -27,7 +27,7 @@ public class PooledMissile : MonoBehaviour
 
     void Awake()
     {
-        objectPool = new ObjectPool<Missile>(
+        objectPool = new  UnityEngine.Pool.ObjectPool<Missile>(
             CreateProjectile,
             OnGetFromPool,
             OnReleaseToPool,

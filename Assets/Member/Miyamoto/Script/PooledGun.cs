@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Pool;
 
@@ -68,6 +69,8 @@ public class PooledGun : MonoBehaviour
         bulletObject.GetComponent<MeshRenderer>().enabled = true;
         bulletObject.GetComponent<SphereCollider>().enabled = true;
         bulletObject.GetComponent<Rigidbody>().isKinematic = false;
+
+        
 
         Debug.Log("Bullet activated: " + bulletObject.gameObject.name);
     }
