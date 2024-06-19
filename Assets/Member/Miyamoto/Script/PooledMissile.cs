@@ -53,7 +53,7 @@ public class PooledMissile : MonoBehaviour
         Missile missileInstance = Instantiate(missilePrefab);
         missileInstance.ObjectPool = objectPool;
 
-        //missileInstance.gameObject.SetActive(false);
+        //missileInstance.gameObject.SetActive(false); 下の方が処理軽いのでコメント化
 
         missileInstance.GetComponent<Missile>().enabled = false;
         missileInstance.GetComponent<MeshRenderer>().enabled = false;
@@ -66,7 +66,7 @@ public class PooledMissile : MonoBehaviour
     // プールから貸し出す時の処理
     private void OnGetFromPool(Missile missileObject)
     {
-        //missileObject.gameObject.SetActive(true);
+        //missileObject.gameObject.SetActive(true);下の方が処理軽いのでコメント化
 
         missileObject.GetComponent<Missile>().enabled = true;
         missileObject.GetComponent<MeshRenderer>().enabled = true;
@@ -80,7 +80,7 @@ public class PooledMissile : MonoBehaviour
     // プールに返却する時の処理
     private void OnReleaseToPool(Missile pooledObject)
     {
-        //pooledObject.gameObject.SetActive(false);
+        //pooledObject.gameObject.SetActive(false);下の方が処理軽いのでコメント化
 
         pooledObject.GetComponent<Missile>().enabled = false;
         pooledObject.GetComponent<MeshRenderer>().enabled = false;
