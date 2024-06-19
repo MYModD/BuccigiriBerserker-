@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: cd7292cede5bbe44cb888e1e40efac1e
+timeCreated: 1489754021
+licenseType: Store
+ShaderImporter:
+  defaultTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 102387
+  packageName: Magic Missiles and Lasers
+  packageVersion: 1.2
+  assetPath: Assets/SineVFX/PostProcessingV2/Shaders/API/XboxOne.hlsl
+  uploadId: 626937
