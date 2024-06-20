@@ -86,7 +86,7 @@ public class PooledGun : MonoBehaviour
         pooledObject.GetComponent<SphereCollider>().enabled = false;
         pooledObject.GetComponent<Rigidbody>().isKinematic = true;
 
-        print("•Ô‹p");
+        //print("•Ô‹p");
     }
 
     // ƒv[ƒ‹‚Ì‹–—e—Ê‚ğ’´‚¦‚½‚Ìíœˆ—
