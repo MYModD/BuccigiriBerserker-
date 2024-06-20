@@ -4,14 +4,19 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-
   m_Scenes:
   - enabled: 1
-    path: Assets/Member/Wakayama/Scene/TitleScene.unity
-    guid: f2d646795bc14b84abb80e4bc5c1a6e9
+    path: Assets/Marge/Scene/TitleScene.unity
+    guid: 9a3d060bd94d5eb4bbe904015a98010e
   - enabled: 1
-    path: Assets/Member/Wakayama/Scene/HowtoPlayScene.unity
-    guid: 3aeff230590c98f41b692e4e6a39516e
-
-  m_configObjects: {}
+    path: Assets/Marge/Scene/HowtoPlayScene.unity
+    guid: 48e2221fedcb4c742b72aa3018ac4096
+  - enabled: 1
+    path: Assets/Marge/Scene/Enemy.unity
+    guid: 0cade0330648a31448789746516963cd
+  - enabled: 1
+    path: Assets/Marge/Scene/ResultScene.unity
+    guid: 4c86784b04be5d84299a9309db267214
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: 5f5e24ad997d191419cc613155f9e192, type: 2}
   m_UseUCBPForAssetBundles: 0
