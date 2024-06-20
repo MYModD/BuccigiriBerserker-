@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LeftEnemy : MonoBehaviour
+public class NewEnemyMove : MonoBehaviour
 {
-    [Header("¶‚ÉˆÚ“®‚³‚¹‚é‹——£")]
+    [Header("ˆÚ“®‚³‚¹‚é‹——£")]
     [SerializeField] private float distanceToLeft; // ¶‚ÉˆÚ“®‚·‚é‹——£
     [Header("ˆÚ“®‘¬“x")]
     [SerializeField] private float moveSpeed; // ˆÚ“®‘¬“x
