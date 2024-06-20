@@ -170,7 +170,7 @@ public class LockOnManager : MonoBehaviour
 
             GizmosExtensions.DrawWireCircle(coneBaseCenter, _coneRange * Mathf.Tan(coneAngleRad), 20, Quaternion.Euler(hoge));
 
-            Debug.LogError(_coneRange * Mathf.Sin(coneAngleRad));
+            //Debug.LogError(_coneRange * Mathf.Sin(coneAngleRad));
 
             // ƒR[ƒ“‚Ì”ÍˆÍ‚ğ•`‰æ
             Gizmos.color = Color.red;
