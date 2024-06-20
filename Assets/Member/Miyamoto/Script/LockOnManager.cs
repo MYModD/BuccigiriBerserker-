@@ -41,6 +41,8 @@ public class LockOnManager : MonoBehaviour
         DebugMatarialChange();
 
 
+        
+
     }
 
     // ターゲットリストを更新するメソッド
@@ -50,7 +52,7 @@ public class LockOnManager : MonoBehaviour
         Plane[] planes = GeometryUtility.CalculateFrustumPlanes(_camera);
 
         targetsInCamera.Clear();
-        targetsInCone.Clear();
+        
 
         Collider[] hits = GetSphereOverlapHits();    //colliderが返り値
 
@@ -89,12 +91,15 @@ public class LockOnManager : MonoBehaviour
             Transform target = hit.transform;
             Renderer renderer = target.GetComponent<Renderer>();
 
-            if (renderer != null && IsInFrustum(renderer, planes))
+            if (renderer != null && IsInFrustum(renderer, planes))         //&& renderer.GetComponent<hogehoge>.isdead == false
+                                                                           //死んでなかったら追加
             {
                 targetsInCamera.Add(target);              //カメラ範囲内のリストにいれる
 
-                if (IsInCone(target))
+                if (IsInCone(target))                     
                 {
+                    if(!targetsInCone.Contains(target))
+                    
                     targetsInCone.Add(target);            //コーン内のリストにいれる
                 }
             }
@@ -121,18 +126,23 @@ public class LockOnManager : MonoBehaviour
         Vector3 cameraPosition = _camera.transform.position;  // カメラの位置を取得
         Vector3 cameraForward = _camera.transform.forward;   // カメラの前方向ベクトルを取得
 
-        Debug.Log($"{cameraPosition}+{cameraForward}");      // デバッグ用にカメラの位置と方向をログに出力
+        //Debug.Log($"{cameraPosition}+{cameraForward}");      // デバッグ用にカメラの位置と方向をログに出力
 
         Vector3 toObject = target.position - cameraPosition; // カメラ位置からターゲット位置へのベクトルを計算
 
         // ターゲットまでの距離を計算
         float distanceToObject = toObject.magnitude;                     // ベクトルの長さ（距離）
 
+        Debug.Log($"{"ターゲットの距離の長さ  "}{distanceToObject}+{"  "}{target.gameObject.name}");
+        
+
         if (distanceToObject <= _coneRange)                           // ターゲットが検索半径内にあるかどうかを確認
         {
             Vector3 toObjectNormalized = toObject.normalized;                // ターゲットへのベクトルを正規化（方向のみを取得）
 
             float angle = Vector3.Angle(cameraForward, toObjectNormalized); // カメラの前方向とターゲットへの方向との角度を計算
+
+            Debug.Log(angle);
             return angle <= _coneAngle / 2;                                // 角度がコーンの半分の角度以下であればtrueを返す
         }
 
@@ -152,29 +162,31 @@ public class LockOnManager : MonoBehaviour
             Gizmos.color = Color.blue;
             Gizmos.DrawWireSphere(_camera.transform.position, _searchRadius);
 
-
-            //コーン上の円周を描画
+            // コーン上の円周を描画
             Gizmos.color = Color.yellow;
+            float coneAngleRad = Mathf.Deg2Rad * _coneAngle/2;
+
+            Vector3 coneBaseCenter = _camera.transform.position + _camera.transform.forward * _coneRange;
+
             var hoge = DrawOrigin + transform.rotation.eulerAngles;
-            hoge.z = 0;                                                         //magicnum Z軸だけ0にする
+            hoge.z = 0;
 
-            float coneAngleRad = Mathf.Deg2Rad * _coneAngle;
+            GizmosExtensions.DrawWireCircle(coneBaseCenter, _coneRange * Mathf.Tan(coneAngleRad), 20, Quaternion.Euler(hoge));
 
-            
-            GizmosExtensions.DrawWireCircle(_camera.transform.position + (_camera.transform.forward * _coneRange), _coneRange * Mathf.Tan(coneAngleRad), 20, Quaternion.Euler(hoge));
+            //Debug.LogError(_coneRange * Mathf.Sin(coneAngleRad));
 
             // コーンの範囲を描画
             Gizmos.color = Color.red;
             Vector3 forward = _camera.transform.forward * _coneRange;
-            Vector3 up = Quaternion.Euler(0, _coneAngle / 2, 0) * forward;
-            Vector3 down = Quaternion.Euler(0, -_coneAngle / 2, 0) * forward;
+            Vector3 rightBoundary = Quaternion.Euler(0, _coneAngle / 2, 0) * forward;
+            Vector3 leftBoundary = Quaternion.Euler(0, -_coneAngle / 2, 0) * forward;
 
             Gizmos.DrawLine(_camera.transform.position, _camera.transform.position + forward);
-            Gizmos.DrawLine(_camera.transform.position, _camera.transform.position + up);
-            Gizmos.DrawLine(_camera.transform.position, _camera.transform.position + down);
-            Gizmos.DrawLine(_camera.transform.position + up, _camera.transform.position + down);
+            Gizmos.DrawLine(_camera.transform.position, _camera.transform.position + rightBoundary);
+            Gizmos.DrawLine(_camera.transform.position, _camera.transform.position + leftBoundary);
         }
     }
+
 
     /// <summary>
     /// debug用にマテリアル変えるだけ いずれ消す
@@ -189,5 +201,7 @@ public class LockOnManager : MonoBehaviour
         {
             targetsInCone[i].GetComponent<MeshRenderer>().material.color = Color.red;
         }
+
+
     }
 }
