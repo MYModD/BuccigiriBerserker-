@@ -95,7 +95,7 @@ public class PooledGun : MonoBehaviour
         if (testBool && Time.time > nextTimeToShoot && objectPool != null)
         {
             Bullet bulletObject = objectPool.Get();
-            if (bulletObject == null) return;
+            if (bulletObject == null) return; Debug.LogError("ã Ç™nullÇæÇ…ÇÂ");
 
             // ÇŒÇÁÇØÇË
             Vector3 randomSpread = new Vector3(
@@ -105,8 +105,12 @@ public class PooledGun : MonoBehaviour
             );
             Vector3 shootDirection = muzzlePosition.forward + randomSpread;
 
+
+            //SetPositionAndRotationÇÃÇŸÇ§Ç™åyÇ¢ÇÁÇµÇ¢Ç¡Ç∑ÇÊ
             bulletObject.transform.SetPositionAndRotation(muzzlePosition.position, Quaternion.LookRotation(shootDirection));
 
+
+            //forceÉÇÅ[ÉhÇAccelerationÇ…Ç∑ÇÈÇ∆èdÇ≥ä÷åWÇ»Ç≠îÚÇ‘
             bulletObject.GetComponent<Rigidbody>().AddForce(shootDirection.normalized * muzzleVelocity, ForceMode.Acceleration);
 
             nextTimeToShoot = Time.time + cooldownFire;
