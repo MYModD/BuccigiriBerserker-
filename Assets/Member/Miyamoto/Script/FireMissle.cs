@@ -6,13 +6,15 @@ using UnityEngine.Rendering;
 
 public class FireMissle : MonoBehaviour
 {
-    private IObjectPool<Missile> objectPool;
+    
 
     [Header("ターゲット目標")]
     public List<Transform> targetObjectList ;
 
-    public LockOnManager lockOnManager;//つぎここ直す
+    [Header("lockOnMnager参照")]
+    public LockOnManager lockOnManager;
 
+    [Header("音つけるクラス参照")]
     public Fire1SE fire1SE;
 
     [Header("発射位置")]
@@ -20,8 +22,8 @@ public class FireMissle : MonoBehaviour
     [Header("クールタイム")]
     [SerializeField] private float cooldownFire;
 
-   
 
+    private IObjectPool<Missile> objectPool;
 
     private float nextTimeToShoot; // 次の時間計算するやつ
 
@@ -38,9 +40,6 @@ public class FireMissle : MonoBehaviour
     void FixedUpdate()
     {
         targetObjectList = lockOnManager.targetsInCone;
-
-       
-
 
         bool testBool = Input.GetKey(KeyCode.Space) || Input.GetButtonDown("Fire1");//ここ分かりづらすぎるのであとで直します
 
