@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -6480015846113932924}
   - component: {fileID: 6583616707314997417}
   - component: {fileID: -270520324573595726}
-  m_Layer: 0
+  m_Layer: 31
   m_Name: EnemyPoint (8)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -152,5 +152,3 @@ MonoBehaviour:
   mymmes: {fileID: 6976653920383044024}
   plyer: {fileID: 7418900790480846265, guid: e0133808cc682e04895488bb403505df, type: 3}
   plykyori: 100
-  plykstn: 100
-  moveSpeed: 100
