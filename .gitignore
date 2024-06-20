@@ -57,3 +57,5 @@ crashlytics-build.properties
 ~*
 .DS_Store
 /UserSettings/Layouts
+/UserSettings/Layouts
+/UserSettings
