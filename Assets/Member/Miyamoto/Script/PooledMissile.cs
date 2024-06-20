@@ -87,7 +87,7 @@ public class PooledMissile : MonoBehaviour
         pooledObject.GetComponent<Rigidbody>().isKinematic = true;
         pooledObject.GetComponent<CapsuleCollider>().enabled = false;
 
-        Debug.Log("Missile returned to pool: " + pooledObject.gameObject.name);
+        //Debug.Log("Missile returned to pool: " + pooledObject.gameObject.name);
     }
 
     // ƒv[ƒ‹‚Ì‹–—e—Ê‚ğ’´‚¦‚½‚Ìíœˆ—

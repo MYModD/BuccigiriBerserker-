@@ -52,7 +52,7 @@ public class Bullet : MonoBehaviour
     private void OnEnable()
     {
         timeValue = timer;//ON‚É‚È‚Á‚½‚çŠÔƒŠƒZƒbƒg
-        print("¶¬");
+        //print("¶¬");
     }
 
 
