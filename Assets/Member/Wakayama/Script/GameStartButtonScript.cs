@@ -6,11 +6,8 @@ using UnityEngine.SceneManagement;
 public class GameStartButtonScript : MonoBehaviour
 {
     // Start is called before the first frame update
-    public AudioClip SE;
-    AudioSource audioSource;
     void Start()
     {
-        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -21,10 +18,6 @@ public class GameStartButtonScript : MonoBehaviour
 
     public void SceneChange()
     {
-        if (SE != null)
-        {
-            audioSource.PlayOneShot(SE);
-        }
         SceneManager.LoadScene("Enemy");
         return;
     }
