@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 981a66a12fced7a45b3c106b67167ab5
+timeCreated: 1497886257
+licenseType: Store
+ShaderImporter:
+  defaultTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 102387
+  packageName: Magic Missiles and Lasers
+  packageVersion: 1.2
+  assetPath: Assets/SineVFX/PostProcessingV2/Shaders/xRLib.hlsl
+  uploadId: 626937

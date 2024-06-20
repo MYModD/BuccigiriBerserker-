@@ -19,7 +19,7 @@ public class GameStartButtonScript : MonoBehaviour
 
     public void SceneChange()
     {
-        SceneManager.LoadScene("ResultScene");
+        SceneManager.LoadScene("Enemy");
         return;
     }
 }
