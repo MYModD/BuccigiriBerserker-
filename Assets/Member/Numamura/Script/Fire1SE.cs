@@ -17,11 +17,11 @@ public class Fire1SE : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            machingunSE();
+            fire1SE();
         }
     }
 
-    void machingunSE()
+    public void fire1SE()
     {
         if (SE != null)
         {
