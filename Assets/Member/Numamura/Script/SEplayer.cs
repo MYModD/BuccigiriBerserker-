@@ -1,13 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class GameStartButtonScript : MonoBehaviour
+public class SEplayer : MonoBehaviour
 {
-    // Start is called before the first frame update
     public AudioClip SE;
     AudioSource audioSource;
+    // Start is called before the first frame update
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -19,13 +18,12 @@ public class GameStartButtonScript : MonoBehaviour
         
     }
 
-    public void SceneChange()
+    void Explode()
     {
         if (SE != null)
         {
             audioSource.PlayOneShot(SE);
         }
-        SceneManager.LoadScene("Enemy");
-        return;
+        // ここに他の処理を追加する（例えば、音の再生、オブジェクトの破壊など）
     }
 }

@@ -22,14 +22,16 @@ public class Misail_Hit2 : MonoBehaviour
     {
         if (coll.gameObject.tag == "missile")
         {
-            PooledReturn();
             Explode();
+            PooledReturn();
+            
 
         }
         if (coll.gameObject.tag == "????")
         {
-            PooledReturn();
             Explode();
+            PooledReturn();
+            
 
         }
     }
