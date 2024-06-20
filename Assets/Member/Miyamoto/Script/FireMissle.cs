@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Pool;
 using UnityEngine.Rendering;
 
+
 public class FireMissle : MonoBehaviour
 {
     private IObjectPool<Missile> objectPool;
@@ -40,9 +41,9 @@ public class FireMissle : MonoBehaviour
        
 
 
-        bool testBool = Input.GetKey(KeyCode.Space) || Input.GetButtonDown("Fire1");//ここ分かりづらすぎるのであとで直します
+        bool testBool = Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Fire2");//ここ分かりづらすぎるのであとで直します
 
-       
+        Debug.Log(testBool);
 
         if (testBool && Time.time > nextTimeToShoot && objectPool != null)
         {
@@ -50,6 +51,7 @@ public class FireMissle : MonoBehaviour
             {
                 // Missileクラスのオブジェクトを取得
                 Missile missileObject = objectPool.Get();
+                
                 if (missileObject == null) Debug.Log("オブジェクトがないよ");
 
 
@@ -57,6 +59,8 @@ public class FireMissle : MonoBehaviour
 
                 // SetPositionAndRotationのほうが大量に生成したとき軽い
                 missileObject.transform.SetPositionAndRotation(muzzlePosition.position, muzzlePosition.rotation);
+
+                Debug.LogWarning($"{missileObject.name}{missileObject.transform.position}");
 
                 // 発射されたら今の時間にクールダウンを追加する
                 nextTimeToShoot = Time.time + cooldownFire;
