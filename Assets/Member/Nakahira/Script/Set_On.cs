@@ -6,7 +6,7 @@ public class Set_On : MonoBehaviour
 {
     // ゲームオブジェクトのボックスコライダーとメッシュレンダラー
     public Collider myhako;
-    public MeshRenderer mymmes;
+    //public MeshRenderer mymmes;
     // プレイヤーの位置とプレイヤーとの距離
     public Transform plyer;
     public float plykyori;
@@ -24,7 +24,7 @@ public class Set_On : MonoBehaviour
     void Start()
     {
         // メッシュレンダラーを非表示にする
-        mymmes.enabled = false;
+        //mymmes.enabled = false;
         myhako.enabled = false;
         //GameObject[] tekif = GameObject.FindGameObjectsWithTag("teki");
         //foreach (GameObject obj in tekif)
@@ -38,7 +38,7 @@ public class Set_On : MonoBehaviour
     void Update()
     {
 
-        Vector3 targetPos = plyer.position;
+        //Vector3 targetPos = plyer.position;
 
         Setonp();
     }
@@ -50,7 +50,7 @@ public class Set_On : MonoBehaviour
         {
             //敵のしゅつげん
             myhako.enabled = true;
-            mymmes.enabled = true;
+            //mymmes.enabled = true;
 
             //Vector3 targetPos = target.position;
             //transform.LookAt(targetPos);
