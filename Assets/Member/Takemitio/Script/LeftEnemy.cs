@@ -48,7 +48,7 @@ public class LeftEnemy : MonoBehaviour
         float distance = Vector3.Distance(transform.position, target.position);
         if (distance <= stopDistance)
         {
-            transform.position = transform.position + transform.forward * moveSpeed * 2 * Time.deltaTime;
+            transform.position = transform.position - transform.forward * moveSpeed * 2 * Time.deltaTime;
         }
     }
 }

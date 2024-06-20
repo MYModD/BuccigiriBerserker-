@@ -29,24 +29,7 @@ public class FireMissle : MonoBehaviour
         PooledMissile pooledMissile = GetComponent<PooledMissile>();//FireMissleとPooledMissileが同じオブジェクトにないとダメだよ
         objectPool = pooledMissile.objectPool;
 
-        var pipelineAsset = GraphicsSettings.renderPipelineAsset;
-
-        if (pipelineAsset == null)
-        {
-            Debug.Log("Using Built-in Render Pipeline");
-        }
-        else if (pipelineAsset.GetType().ToString().Contains("HDRenderPipelineAsset"))
-        {
-            Debug.Log("Using High Definition Render Pipeline (HDRP)");
-        }
-        else if (pipelineAsset.GetType().ToString().Contains("UniversalRenderPipelineAsset"))
-        {
-            Debug.Log("Using Universal Render Pipeline (URP)");
-        }
-        else
-        {
-            Debug.Log("Unknown Render Pipeline");
-        }
+       
     }
 
     // Update is called once per frame
@@ -56,7 +39,7 @@ public class FireMissle : MonoBehaviour
 
         
 
-        bool testBool = Input.GetKey(KeyCode.Space) || Input.GetButtonDown("Fire2");//ここ分かりづらすぎるのであとで直します
+        bool testBool = Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Fire2");//ここ分かりづらすぎるのであとで直します
 
         if (testBool && Time.time > nextTimeToShoot && objectPool != null)
         {
