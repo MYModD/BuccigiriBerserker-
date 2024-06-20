@@ -13,6 +13,8 @@ public class FireMissle : MonoBehaviour
 
     public LockOnManager lockOnManager;//つぎここ直す
 
+    public Fire1SE fire1SE;
+
     [Header("発射位置")]
     [SerializeField] private Transform muzzlePosition;
     [Header("クールタイム")]
@@ -61,7 +63,7 @@ public class FireMissle : MonoBehaviour
                 // 発射されたら今の時間にクールダウンを追加する
                 nextTimeToShoot = Time.time + cooldownFire;
 
-
+                fire1SE.fire1SE();
 
                 lockOnManager.targetsInCone.Clear();
                 Debug.LogWarning(lockOnManager.targetsInCone[0]);
