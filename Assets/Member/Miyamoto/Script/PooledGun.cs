@@ -101,6 +101,8 @@ public class PooledGun : MonoBehaviour
 
     private void FixedUpdate()
     {
+        Debug.Log(Random.insideUnitCircle);
+
 
         bool testBool = Input.GetKey(KeyCode.G) || Input.GetButtonDown("Fire1");
         if (testBool && Time.time > nextTimeToShoot && objectPool != null)
@@ -113,6 +115,10 @@ public class PooledGun : MonoBehaviour
             //SetPositionAndRotationのほうが大量に生成したとき軽いらしい、デモ版これでした
             bulletObject.transform.SetPositionAndRotation(muzzlePosition.position, muzzlePosition.rotation);
 
+            
+            //var hoge = transform.forward * Quaternion
+            
+            
             //弾丸に前進*velocityのベクトル？力を加える forceModeをこれにするとMass関係なく飛ぶ
             bulletObject.GetComponent<Rigidbody>().AddForce(bulletObject.transform.forward * muzzleVelocity, ForceMode.Acceleration);
 

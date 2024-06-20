@@ -40,8 +40,8 @@ public class LockOnManager : MonoBehaviour
         UpdateTargets();
         DebugMatarialChange();
 
-        
 
+        
 
     }
 
@@ -52,7 +52,7 @@ public class LockOnManager : MonoBehaviour
         Plane[] planes = GeometryUtility.CalculateFrustumPlanes(_camera);
 
         targetsInCamera.Clear();
-        targetsInCone.Clear();
+        
 
         Collider[] hits = GetSphereOverlapHits();    //colliderが返り値
 
@@ -91,12 +91,15 @@ public class LockOnManager : MonoBehaviour
             Transform target = hit.transform;
             Renderer renderer = target.GetComponent<Renderer>();
 
-            if (renderer != null && IsInFrustum(renderer, planes))
+            if (renderer != null && IsInFrustum(renderer, planes))         //&& renderer.GetComponent<hogehoge>.isdead == false
+                                                                           //死んでなかったら追加
             {
                 targetsInCamera.Add(target);              //カメラ範囲内のリストにいれる
 
-                if (IsInCone(target))
+                if (IsInCone(target))                     
                 {
+                    if(!targetsInCone.Contains(target))
+                    
                     targetsInCone.Add(target);            //コーン内のリストにいれる
                 }
             }
