@@ -101,7 +101,7 @@ public class PooledGun : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Debug.Log(Random.insideUnitCircle);
+        //Debug.Log(Random.insideUnitCircle);
 
 
         bool testBool = Input.GetKey(KeyCode.G) || Input.GetButtonDown("Fire2");

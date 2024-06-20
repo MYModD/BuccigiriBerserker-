@@ -29,12 +29,19 @@ public class LockOnManager : MonoBehaviour
 
 
     readonly private Vector3 DrawOrigin = new Vector3(90, 0, 0);    //コーンの円周を向けるためのやつ offset
+    
+    
+    private Plane[] cameraPlanes;  //カメラの六面体座標
 
 
     void Update()
     {
         // ターゲットリストを更新
         UpdateTargets();
+
+
+        //コーンがカメラから外れたらリストから削除する
+        RemoveTargetInCone();
 
 
         DebugMatarialChange();
@@ -45,7 +52,7 @@ public class LockOnManager : MonoBehaviour
     private void UpdateTargets()
     {
         // カメラの視錐台平面を取得
-        Plane[] planes = GeometryUtility.CalculateFrustumPlanes(_camera);
+        cameraPlanes = GeometryUtility.CalculateFrustumPlanes(_camera);
 
         targetsInCamera.Clear();
 
@@ -55,7 +62,7 @@ public class LockOnManager : MonoBehaviour
         foreach (Collider hit in hits)
         {
             // ヒットしたオブジェクトを処理
-            ProcessHit(hit, planes);
+            ProcessHit(hit, cameraPlanes);
 
         }
     }
@@ -153,6 +160,31 @@ public class LockOnManager : MonoBehaviour
         return false;
     }
 
+
+
+
+
+    /// <summary>
+    /// inconeにあるターゲットは発射しても消えないのでもう一回AABBで判定を取る
+    /// </summary>
+    private void RemoveTargetInCone()
+    {
+
+        foreach (Transform target in targetsInCone)
+        {
+            if (GeometryUtility.TestPlanesAABB(cameraPlanes, target.GetComponent<Collider>().bounds))
+            {
+                //AABBで取れないものだけListからRemove↓
+            }
+            else
+            {
+                targetsInCone.Remove(target);
+            }
+        }
+
+
+
+    }
 
     /// <summary>
     /// デバッグ用のギズモを描画するメソッド unity側のメソッド
