@@ -7,17 +7,20 @@ public class GameManager : MonoBehaviour
     [SerializeField]private float gameTime = 180f; // ゲームの時間（秒）を設定（3分 = 180秒）
     private bool timeUp = false;
     private bool allEnemiesDefeated = false;
-
+<<<<<<< HEAD
     private int cntenemy;
     //CuntUD cntud;
-
+=======
+>>>>>>> parent of ca91a1b (謨ｵ縺ｮ蜍輔″菫ｮ豁｣)
 
     void Start()
     {
         // ゲーム開始時に時間のカウントダウンを開始する
         Invoke("CheckGameTime", gameTime);
-
+<<<<<<< HEAD
         //cntenemy = cntud.currentCount;
+=======
+>>>>>>> parent of ca91a1b (謨ｵ縺ｮ蜍輔″菫ｮ豁｣)
     }
 
     void Update()
