@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 
 public class GamingMaterialTEst : MonoBehaviour
 {
     MeshRenderer meshRenderer;
     public List<MeshRenderer> meshRenderers = new List<MeshRenderer>();
+
+    public List<Transform> explsionTest = new List<Transform>();
 
     [Range(0, 10f)]
     public float value;
@@ -14,7 +18,14 @@ public class GamingMaterialTEst : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        foreach (var item in explsionTest)
+        {
+            var hoge = item.AddComponent<Rigidbody>();
+            item.AddComponent<MeshCollider>();
+            hoge.useGravity = false;
+            hoge.SetDensity(200f);
+
+        }
     }
 
     // Update is called once per frame

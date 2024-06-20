@@ -64,6 +64,11 @@ public class FireMissle : MonoBehaviour
 
                 // 発射されたら今の時間にクールダウンを追加する
                 nextTimeToShoot = Time.time + cooldownFire;
+
+
+
+                lockOnManager.targetsInCone.Clear();
+                Debug.LogWarning(lockOnManager.targetsInCone[0]);
             }
 
         }

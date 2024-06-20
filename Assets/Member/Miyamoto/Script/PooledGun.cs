@@ -86,7 +86,7 @@ public class PooledGun : MonoBehaviour
         pooledObject.GetComponent<SphereCollider>().enabled = false;
         pooledObject.GetComponent<Rigidbody>().isKinematic = true;
 
-        print("返却");
+        //print("返却");
     }
 
     // プールの許容量を超えた時の削除処理
@@ -101,6 +101,8 @@ public class PooledGun : MonoBehaviour
 
     private void FixedUpdate()
     {
+        Debug.Log(Random.insideUnitCircle);
+
 
         
         
@@ -115,6 +117,10 @@ public class PooledGun : MonoBehaviour
             //SetPositionAndRotationのほうが大量に生成したとき軽いらしい、デモ版これでした
             bulletObject.transform.SetPositionAndRotation(muzzlePosition.position, muzzlePosition.rotation);
 
+            
+            //var hoge = transform.forward * Quaternion
+            
+            
             //弾丸に前進*velocityのベクトル？力を加える forceModeをこれにするとMass関係なく飛ぶ
             bulletObject.GetComponent<Rigidbody>().AddForce(bulletObject.transform.forward * muzzleVelocity, ForceMode.Acceleration);
 
