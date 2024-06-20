@@ -55,42 +55,25 @@ namespace test
             if (HolizontalValue > 0.6f)
             {
                 transform.Translate(Vector3.left * speed * Time.deltaTime);
-<<<<<<< HEAD
-              
-=======
-                //transform.Translate(Vector3.back);
-                //speedX -= Time.deltaTime * 10f;
->>>>>>> main
+
             }
 
             if (HolizontalValue < -0.6f)
             {
                 transform.Translate(Vector3.right * speed * Time.deltaTime);
-<<<<<<< HEAD
-               
-=======
-                //transform.Translate(Vector3.back);
->>>>>>> main
+
             }
 
             if (VerticalValue > 0.6f)
             {
                 transform.Translate(Vector3.up * speed * Time.deltaTime);
-<<<<<<< HEAD
-               
-=======
-                //transform.Translate(Vector3.back);
->>>>>>> main
+
             }
 
             if (VerticalValue < -0.6f)
             {
                 transform.Translate(Vector3.down * speed * Time.deltaTime);
-<<<<<<< HEAD
-               
-=======
-                //transform.Translate(Vector3.back);
->>>>>>> main
+
             }
         }
     }
