@@ -2,38 +2,33 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
-using static UnityEditor.Searcher.SearcherWindow.Alignment;
 
-public class PlaneAnimationTEst : MonoBehaviour
+public class PlaneAnimationTest : MonoBehaviour
 {
+    [Header("‰Â“®•”‚ÌTransform")]
+    public Transform[] rudders; // •ûŒü‘Ç
+    public Transform[] flaps; // ƒtƒ‰ƒbƒv
+    public Transform[] elevator; // ¸~‘Ç
+
+    [Header("‰Â“®”ÍˆÍ")]
+    public Vector2 ruddersDegreeRange = new Vector2(-20, 20); // •ûŒü‘Ç‚Ì‰ñ“]”ÍˆÍ
+    public Vector2 flapsDegreeRange = new Vector2(-20, 20); // ƒtƒ‰ƒbƒv‚Ì‰ñ“]”ÍˆÍ
+    public Vector2 elevatorDegreeRange = new Vector2(-10, 10); // ¸~‘Ç‚Ìã‰º•ûŒü‚Ì‰ñ“]”ÍˆÍ
+    public Vector2 elevator222DegreeRange = new Vector2(-10, 10); // ¸~‘Ç‚Ì¶‰E•ûŒü‚Ì‰ñ“]”ÍˆÍ
+
+    [Header("‰Â“®”{—¦")]
+    public float multiplyValue = 1f; // “ü—Í‚Ì”{—¦
+
+    [Header("•âŠÔ‘¬“x")]
+    public float lerpTRudder = 0.1f; // •ûŒü‘Ç‚Ì•âŠÔ‘¬“x
+    public float lerpTFlaps = 0.1f; // ƒtƒ‰ƒbƒv‚Ì•âŠÔ‘¬“x
+    public float lerpTElevators = 0.1f; // ¸~‘Ç‚Ì•âŠÔ‘¬“x
+    public float lerpTRightLeftElevators = 0.1f; // ¸~‘Çi¶‰Ej‚Ì•âŠÔ‘¬“x
+
     // Start is called before the first frame update
-
-    public Transform[] rudders;
-
-    public Transform[] flaps;
-
-    public Transform[] elevator;
-
-    public Vector2 ruddersDegreeRange = new Vector2(-20, 20);
-
-    public Vector2 flapsDegreeRagne = new Vector2(-20, 20);
-
-    public Vector2 elevatorDegreeRagne = new Vector2(-10, 10);
-
-    public Vector2 elevator222DegreeRagne = new Vector2(-10, 10);
-
-    public float multiplyValue = 1f;
-
-
-    public float lerpTRudder = 0.1f;
-    public float lerpTFlaps = 0.1f; 
-    public float lerptElevators = 0.1f;
-    public float lerpt222Elevators = 0.1f;
-
-
     void Start()
     {
-        
+        // ‰Šú‰»ˆ—‚ª•K—v‚È‚ç‚±‚±‚É‹Lq
     }
 
     // Update is called once per frame
@@ -42,98 +37,67 @@ public class PlaneAnimationTEst : MonoBehaviour
         RotateRudder();
         RotateFlaps();
         RotateElevator();
-
-
-        
-
-
-
-
     }
 
-
+    // •ûŒü‘Ç‚ğ‰ñ“]‚³‚¹‚é
     private void RotateRudder()
     {
-        float hoge = Input.GetAxis("Horizontal") * multiplyValue;
+        float input = Input.GetAxis("Horizontal") * multiplyValue;
+        input = Mathf.Clamp(input, ruddersDegreeRange.x, ruddersDegreeRange.y);
+        Vector3 rotation = new Vector3(0, input, 0);
+        Quaternion targetRotation = Quaternion.Euler(-rotation);
+        Quaternion currentRotation = Quaternion.Lerp(rudders[0].transform.rotation, targetRotation, lerpTRudder);
 
-        hoge = Mathf.Clamp(hoge, ruddersDegreeRange.x, ruddersDegreeRange.y);
-
-        Vector3 hoges = new Vector3(0, hoge, 0);
-
-       
-
-        Quaternion huga = Quaternion.Euler(-1 * hoges);
-
-
-
-
-        var hogehoge = Quaternion.Lerp(rudders[0].transform.rotation, huga, lerpTRudder);
-
-        rudders[0].transform.rotation = hogehoge;
-        rudders[1].transform.rotation = hogehoge;
-
+        rudders[0].transform.rotation = currentRotation;
+        rudders[1].transform.rotation = currentRotation;
     }
 
-
+    // ƒtƒ‰ƒbƒv‚ğ‰ñ“]‚³‚¹‚é
     private void RotateFlaps()
     {
-        float vertical = Input.GetAxis("Vertical") * multiplyValue;
+        float input = Input.GetAxis("Vertical") * multiplyValue;
+        input = Mathf.Clamp(input, flapsDegreeRange.x, flapsDegreeRange.y);
+        Vector3 rotation = new Vector3(input, 0, 0);
+        Quaternion targetRotation = Quaternion.Euler(-rotation);
+        Quaternion currentRotation = Quaternion.Lerp(flaps[1].transform.rotation, targetRotation, lerpTFlaps);
 
-        vertical = Mathf.Clamp(vertical, flapsDegreeRagne.x, flapsDegreeRagne.y);
-
-        Vector3 toQua = new Vector3(vertical, 0, 0);
-
-        Quaternion hugahuga = Quaternion.Euler(-1 * toQua);
-
-        var hogehoge = Quaternion.Lerp(flaps[1].transform.rotation, hugahuga, lerpTFlaps);
-
-        flaps[0].transform.rotation = hogehoge;
-        flaps[1].transform.rotation = hogehoge;
-
+        flaps[0].transform.rotation = currentRotation;
+        flaps[1].transform.rotation = currentRotation;
     }
 
+    // ¸~‘Ç‚ğ‰ñ“]‚³‚¹‚é
     private void RotateElevator()
     {
-        UpDownRoate();
-        LeftRightRoate();
+        RotateElevatorUpDown();
+        RotateElevatorLeftRight();
     }
 
-    private void UpDownRoate()
+    // ¸~‘Ç‚ğã‰º‚É‰ñ“]‚³‚¹‚é
+    private void RotateElevatorUpDown()
     {
-        float vertical = Input.GetAxis("Vertical") * multiplyValue;
+        float input = Input.GetAxis("Vertical") * multiplyValue;
+        input = Mathf.Clamp(input, elevatorDegreeRange.x, elevatorDegreeRange.y);
+        Vector3 rotation = new Vector3(input, 0, 0);
+        Quaternion targetRotation = Quaternion.Euler(-rotation);
+        Quaternion currentRotation = Quaternion.Lerp(elevator[0].transform.rotation, targetRotation, lerpTElevators);
 
-        vertical = Mathf.Clamp(vertical, elevatorDegreeRagne.x, elevatorDegreeRagne.y);
-
-        Vector3 toQua = new Vector3(vertical, 0, 0);
-
-        Quaternion hugahuga = Quaternion.Euler(-1 * toQua);
-
-        var hogehoge = Quaternion.Lerp(elevator[0].transform.rotation, hugahuga, lerptElevators);
-
-        elevator[0].transform.rotation = hogehoge;
-        elevator[1].transform.rotation = hogehoge;
-
+        elevator[0].transform.rotation = currentRotation;
+        elevator[1].transform.rotation = currentRotation;
     }
 
-    private void LeftRightRoate()
+    // ¸~‘Ç‚ğ¶‰E‚É‰ñ“]‚³‚¹‚é
+    private void RotateElevatorLeftRight()
     {
-        float hoge = Input.GetAxis("Horizontal") * 50f;
+        float input = Input.GetAxis("Horizontal") * multiplyValue;
+        input = Mathf.Clamp(input, elevator222DegreeRange.x, elevator222DegreeRange.y);
+        Vector3 rotation = new Vector3(input, 0, 0);
+        Quaternion targetRotation1 = Quaternion.Euler(rotation);
+        Quaternion targetRotation2 = Quaternion.Euler(-rotation);
 
-        hoge = Mathf.Clamp(hoge, elevator222DegreeRagne.x, elevator222DegreeRagne.y);
+        Quaternion currentRotation1 = Quaternion.Lerp(elevator[0].transform.rotation, targetRotation1, lerpTRightLeftElevators);
+        Quaternion currentRotation2 = Quaternion.Lerp(elevator[1].transform.rotation, targetRotation2, lerpTRightLeftElevators);
 
-        Vector3 hoges = new Vector3(hoge, 0, 0);
-
-        Quaternion hugahuga = Quaternion.Euler(hoges);
-        Quaternion hugahuga2 = Quaternion.Euler(hoges * -1);
-
-        Debug.Log($"{hugahuga}{hugahuga2}");
-
-        var hogehoge = Quaternion.Lerp(elevator[0].transform.rotation, hugahuga, lerpt222Elevators);
-        var hohogege2 = Quaternion.Lerp(elevator[1].transform.rotation, hugahuga2, lerpt222Elevators);
-
-        elevator[0].transform.rotation = hogehoge;
-        elevator[1].transform.rotation = hohogege2;
-
-
+        elevator[0].transform.rotation = currentRotation1;
+        elevator[1].transform.rotation = currentRotation2;
     }
 }
