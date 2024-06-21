@@ -6,32 +6,39 @@ using UnityEngine;
 
 public class GamingMaterialTEst : MonoBehaviour
 {
-    
-    public List<MeshRenderer> めっしゅれんだー = new List<MeshRenderer>();
+    MeshRenderer meshRenderer;
+    public List<MeshRenderer> meshRenderers = new List<MeshRenderer>();
 
-    
+    public List<Transform> explsionTest = new List<Transform>();
 
     [Range(0, 10f)]
-    public float ばりゅー;
+    public float value;
 
-    private float かりゅきゅれいとばりゅー = 0;
+    private float calulatevalue = 0;
     // Start is called before the first frame update
     void Start()
     {
-       
+        foreach (var item in explsionTest)
+        {
+            var hoge = item.AddComponent<Rigidbody>();
+            item.AddComponent<MeshCollider>();
+            hoge.useGravity = false;
+            hoge.SetDensity(200f);
+
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        かりゅきゅれいとばりゅー += ばりゅー;
-        if(かりゅきゅれいとばりゅー > 360f)
+        calulatevalue += value;
+        if(calulatevalue > 360f)
         {
-            かりゅきゅれいとばりゅー = 0;
+            calulatevalue = 0;
         }
-        foreach (var item in めっしゅれんだー)
+        foreach (var item in meshRenderers)
         {
-            item.material.color = Color.HSVToRGB(かりゅきゅれいとばりゅー / 360f, 1, 1);
+            item.material.color = Color.HSVToRGB(calulatevalue / 360f, 1, 1);
         }
 
     }

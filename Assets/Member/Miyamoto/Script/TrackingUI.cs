@@ -36,7 +36,6 @@ public class TrackingUI : MonoBehaviour
 
     private void UpdateUIPositions(List<Transform> targets, GameObject[] uiElements)
     {
-            
         for (int i = 0; i < targets.Count; i++)
         {
             if (i < uiElements.Length)
@@ -45,8 +44,6 @@ public class TrackingUI : MonoBehaviour
                 uiElements[i].transform.position = enemyScreenPosition;
                 uiElements[i].GetComponent<Image>().enabled = true;
             }
-
-           
         }
 
         // —]‚Á‚½UI—v‘f‚ð”ñ•\Ž¦‚É‚·‚é

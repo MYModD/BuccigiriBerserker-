@@ -76,16 +76,16 @@ public class Missile : MonoBehaviour
         previousVelocity = currentVelocity;
 
 
-        //加速度の大きさ          1G=9.81 m/s2で割ってる
+        //加速度の大きさを1G=9.81 m/s2で割る
         float gForce = acceleration.magnitude / oneG;
-        
+        //print(gForce);
 
         //GforceがmaxAcceleration超えている かつhissatsuがfalseのとき return 処理なくす
         if (gForce > maxAcceleration && !hissatsu) return;
 
-        Vector3 diff = target.position - transform.position;
+        var diff = target.position - transform.position;
 
-        Quaternion targetRotation = Quaternion.LookRotation(diff);
+        var targetRotation = Quaternion.LookRotation(diff);
 
 
         // 球面線形補間を使って回転を徐々にターゲットに向ける

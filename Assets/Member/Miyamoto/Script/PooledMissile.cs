@@ -6,8 +6,10 @@ using UnityEngine.InputSystem;
 
 public class PooledMissile : MonoBehaviour
 {
-   
-   
+    //弾丸のスクリプトをコピーしただけなのであとでやります
+    //複数目標ターゲットにできていないのでおいおいやる
+
+
     [Header("class参照")]
     [SerializeField] private Missile missilePrefab;
     
@@ -35,8 +37,6 @@ public class PooledMissile : MonoBehaviour
         );
         // 生成初期化 コンストラクタ
 
-
-
         // 最初に大量に生成して使い回す
         for (int i = 0; i < defaultCapacity; i++)
         {
@@ -54,7 +54,7 @@ public class PooledMissile : MonoBehaviour
         Missile missileInstance = Instantiate(missilePrefab);
         missileInstance.ObjectPool = objectPool;
 
-        //missileInstance.gameObject.SetActive(false); (下の方が処理軽いのでコメント化)
+        //missileInstance.gameObject.SetActive(false); 下の方が処理軽いのでコメント化
 
         missileInstance.GetComponent<Missile>().enabled = false;
         missileInstance.GetComponent<MeshRenderer>().enabled = false;
@@ -67,7 +67,7 @@ public class PooledMissile : MonoBehaviour
     // プールから貸し出す時の処理
     private void OnGetFromPool(Missile missileObject)
     {
-        //missileObject.gameObject.SetActive(true);(下の方が処理軽いのでコメント化)
+        //missileObject.gameObject.SetActive(true);下の方が処理軽いのでコメント化
 
         missileObject.GetComponent<Missile>().enabled = true;
         missileObject.GetComponent<MeshRenderer>().enabled = true;
@@ -81,7 +81,7 @@ public class PooledMissile : MonoBehaviour
     // プールに返却する時の処理
     private void OnReleaseToPool(Missile pooledObject)
     {
-        //pooledObject.gameObject.SetActive(false);(下の方が処理軽いのでコメント化)
+        //pooledObject.gameObject.SetActive(false);下の方が処理軽いのでコメント化
 
         pooledObject.GetComponent<Missile>().enabled = false;
         pooledObject.GetComponent<MeshRenderer>().enabled = false;
