@@ -22,10 +22,19 @@ public class GameManager : MonoBehaviour
         cntud = GameObject.FindGameObjectWithTag("EnemyNumber").GetComponent<CuntUD>();
         cntenemy = cntud.currentCount;
         cntdestoroy = cntud.DestoroyEnemies;
+
     }
 
     void Update()
     {
+//<<<<<<< HEAD
+//        // 敵を全部倒した場合の条件判定
+//        if (!allEnemiesDefeated)
+//        {
+//            allEnemiesDefeated = true;
+//            ShowAllEnemiesDefeatedUI();
+//        }
+//=======
         if (cntenemy == 0)
             allEnemiesDefeated = true;
 
@@ -51,18 +60,36 @@ public class GameManager : MonoBehaviour
         {
             cntenemy -= 1;
         }
+
     }
 
     void CheckGameTime()
     {
         // 時間がゼロになった場合の条件判定
+//<<<<<<< HEAD
+//        if (!timeUp)
+//=======
         if (!timeUp && !allEnemiesDefeatedCheck)
+
         {
             timeUp = true;
             ShowTimeUpUI();
         }
     }
 
+//<<<<<<< HEAD
+//    //bool AllEnemiesDefeated()
+//    //{
+//    //    // 敵を全部倒したかどうかを判定する処理（例として、EnemyManagerが管理する敵の数が0になったとする）
+//    //    //return EnemyManager.Instance.EnemyCount == 0;
+//    //}
+
+//    void ShowTimeUpUI()
+//    {
+//        // 「Time's Up!」のUIを表示する処理（例として、Textコンポーネントの表示を切り替える）
+//        infoText.text = "Time's Up!";
+//        infoText.gameObject.SetActive(true);
+//=======
     void ShowTimeUpUI()
     {
         // 「Time's Up!」のUIを表示する処理（例として、Textコンポーネントの表示を切り替える）
@@ -73,11 +100,16 @@ public class GameManager : MonoBehaviour
         TimerText.gameObject.SetActive(true);
         GamejudgeText.gameObject.SetActive(true);
         Button.gameObject.SetActive(true);
+
     }
 
     void ShowAllEnemiesDefeatedUI()
     {
-        // 「All enemies defeated!」のUIを表示する処理（例として、Textコンポーネントの表示を切り替える）
+//        // 「All enemies defeated!」のUIを表示する処理（例として、Textコンポーネントの表示を切り替える）
+//<<<<<<< HEAD
+//        infoText.text = "All enemies defeated!";
+//        infoText.gameObject.SetActive(true);
+//=======
         EnemyText.text = "DestroyEnemies: " + cntdestoroy.ToString();
         TimerText.text = "Time: " + FormatTime(gameTime);
         GamejudgeText.text = "AllEnemiesDestroy!";
@@ -92,5 +124,6 @@ public class GameManager : MonoBehaviour
         int remainingSeconds = Mathf.FloorToInt(seconds % 60); // 秒を取得
 
         return string.Format("{0:00}:{1:00}", minutes, remainingSeconds);
+
     }
 }
