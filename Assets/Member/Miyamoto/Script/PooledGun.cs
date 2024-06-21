@@ -104,7 +104,7 @@ public class PooledGun : MonoBehaviour
         Debug.Log(Random.insideUnitCircle);
 
 
-        bool testBool = Input.GetKey(KeyCode.G) || Input.GetButtonDown("Fire2");
+        bool testBool = Input.GetKey(KeyCode.G) || Input.GetButtonDown("submit");
         if (testBool && Time.time > nextTimeToShoot && objectPool != null)
         {
             //bullertクラスのオブジェクト？を取得
