@@ -949,7 +949,7 @@ MonoBehaviour:
   TimerText: {fileID: 2140653623}
   GamejudgeText: {fileID: 50164652}
   Button: {fileID: 441021602}
-  gameTime: 1
+  gameTime: 5
 --- !u!4 &1765510325
 Transform:
   m_ObjectHideFlags: 0

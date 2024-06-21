@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI TimerText;
     [SerializeField] private TextMeshProUGUI GamejudgeText;
     [SerializeField] private GameObject Button;
-    [SerializeField] private float gameTime = 180f; // ゲームの時間（秒）を設定（3分 = 180秒）
+    [SerializeField] private int gameTime = 180; // ゲームの時間（秒）を設定（3分 = 180秒）
     private bool timeUp = false;
     private bool allEnemiesDefeatedCheck = false;
     private bool allEnemiesDefeated = false;
@@ -33,12 +33,22 @@ public class GameManager : MonoBehaviour
             allEnemiesDefeatedCheck = true;
             ShowAllEnemiesDefeatedUI();
         }
+
+        if (!timeUp && !allEnemiesDefeatedCheck)
+        {
+            gameTime -= (int)Time.deltaTime; // 経過時間を gameTime から減算します
+            if (gameTime <= 0)
+            {
+                gameTime = 0;
+                CheckGameTime();
+            }
+        }
     }
 
     void CheckGameTime()
     {
         // 時間がゼロになった場合の条件判定
-        if (!timeUp)
+        if (!timeUp && !allEnemiesDefeatedCheck)
         {
             timeUp = true;
             ShowTimeUpUI();
@@ -49,8 +59,8 @@ public class GameManager : MonoBehaviour
     {
         // 「Time's Up!」のUIを表示する処理（例として、Textコンポーネントの表示を切り替える）
         EnemyText.text = "99";
-        TimerText.text = "Time's Up!";
-        GamejudgeText.text = "All enemies defeated! ";
+        TimerText.text = "Time: " + FormatTime(gameTime);
+        GamejudgeText.text = "Time Up! ";
         EnemyText.gameObject.SetActive(true);
         TimerText.gameObject.SetActive(true);
         GamejudgeText.gameObject.SetActive(true);
@@ -60,12 +70,19 @@ public class GameManager : MonoBehaviour
     void ShowAllEnemiesDefeatedUI()
     {
         // 「All enemies defeated!」のUIを表示する処理（例として、Textコンポーネントの表示を切り替える）
-        EnemyText.text = "99";
-        TimerText.text = "Time's Up!";
-        GamejudgeText.text = "All enemies defeated! ";
+        EnemyText.text = "99"; // 元のコードの意図が不明なため、そのまま残します
+        TimerText.text = "Time: " + FormatTime(gameTime);
+        GamejudgeText.text = "AllEnemiesDestoroy!";
         EnemyText.gameObject.SetActive(true);
         TimerText.gameObject.SetActive(true);
         GamejudgeText.gameObject.SetActive(true);
         Button.gameObject.SetActive(true);
+    }
+
+    string FormatTime(int seconds)
+    {
+        int minutes = seconds / 60;
+        int remainingSeconds = seconds % 60;
+        return string.Format("{0:00}:{1:00}", minutes, remainingSeconds);
     }
 }
