@@ -1349,6 +1349,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 450796153934759087, guid: 19ecb613f8db77447b350c8b5ae2da1e, type: 3}
+      propertyPath: m_VerticalDamping
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 450796153934759087, guid: 19ecb613f8db77447b350c8b5ae2da1e, type: 3}
+      propertyPath: m_HorizontalDamping
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2828734017463439676, guid: 19ecb613f8db77447b350c8b5ae2da1e, type: 3}
       propertyPath: m_Name
       value: Virtual Camera

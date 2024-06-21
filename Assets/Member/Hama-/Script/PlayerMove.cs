@@ -15,9 +15,9 @@ namespace test
 
         private float VerticalValue;
 
-        [SerializeField] float rotationSpeed = 100f; // ‰ñ“]‘¬“x
+        private Vector3 Player_pos;
 
-        Quaternion targetRotation = Quaternion.identity; // –Ú•W‚Ì‰ñ“]Šp“x
+        private new Rigidbody rigidbody;
 
         [SerializeField]
         float speed = 5f;
@@ -29,6 +29,9 @@ namespace test
         float move_max_y;
         [SerializeField]
         float move_min_y;
+
+        [SerializeField] float rotationSpeed = 100f;
+        [SerializeField] float rotationAngle = 45f;
         //public float speedX ;
         //public float speedY ;
 
@@ -36,6 +39,7 @@ namespace test
         void Start()
         {
             rb = GetComponent<Rigidbody>();
+           
         }
 
         // Update is called once per frame
@@ -55,6 +59,7 @@ namespace test
             transform.position = playerpos;
 
            
+            
         }
 
         private void FixedUpdate()
@@ -74,7 +79,7 @@ namespace test
             if (HolizontalValue < -0.6f)
             {
                 transform.Translate(Vector3.right * speed * Time.deltaTime);
-               
+                
             }
 
             if (VerticalValue > 0.6f)
@@ -89,10 +94,7 @@ namespace test
                
             }
 
-             
-
-
-           
         }
+       
     }
 }
