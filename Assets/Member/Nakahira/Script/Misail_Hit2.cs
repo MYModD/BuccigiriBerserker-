@@ -10,7 +10,10 @@ public class Misail_Hit2 : MonoBehaviour
     AudioSource audioSource;
     void Start()
     {
-       
+        // AudioSourceコンポーネントを取得
+        audioSource = GetComponent<AudioSource>();
+
+        
     }
 
     // Update is called once per frame
@@ -24,14 +27,14 @@ public class Misail_Hit2 : MonoBehaviour
         {
             Explode();
             PooledReturn();
-            
+            audioSource.enabled = true;
 
         }
         if (coll.gameObject.tag == "????")
         {
             Explode();
             PooledReturn();
-            
+            audioSource.enabled = true;
 
         }
     }
@@ -49,7 +52,6 @@ public class Misail_Hit2 : MonoBehaviour
             //Destroy(explosion, 3.0f); // 爆発エフェクトを3秒後に破棄する（任意の時間）
             //Destroy(this.gameObject,0.5f);
         }
-        audioSource.PlayOneShot(Explosion1);
         // ここに他の処理を追加する（例えば、音の再生、オブジェクトの破壊など）
     }
 
