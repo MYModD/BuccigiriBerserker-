@@ -122,7 +122,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distanceToLeft: 0
   moveSpeed: 80
-  target: {fileID: 0}
+  target: {fileID: 7418900790480846265, guid: e0133808cc682e04895488bb403505df, type: 3}
   stopDistance: 80
 --- !u!114 &6583616707314997417
 MonoBehaviour:
@@ -131,7 +131,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1695391852178105936}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4f535339d2e5144478a2fb2367e4f36f, type: 3}
   m_Name: 
@@ -143,12 +143,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1695391852178105936}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 952984110c960874884a05a7077acbc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   myhako: {fileID: 9114622194836791150}
-  mymmes: {fileID: 6976653920383044024}
   plyer: {fileID: 7418900790480846265, guid: e0133808cc682e04895488bb403505df, type: 3}
-  plykyori: 100
+  plykyori: 200
