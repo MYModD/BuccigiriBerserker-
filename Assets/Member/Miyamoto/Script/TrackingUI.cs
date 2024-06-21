@@ -1,43 +1,55 @@
-using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class TrackingUI : MonoBehaviour
 {
-    RectTransform rectTransform ;
-    [SerializeField] private Transform[] _enemyTransfrom;
+    [SerializeField] private GameObject[] _enemyIncameraUI; // 視錐台内の敵のImage
 
-    [SerializeField] private Transform[] _uiTransform; 
+    [SerializeField] private GameObject[] _enemyInCone; // 円錐内の敵のImage
 
-    // Start is called before the first frame update
+    public LockOnManager lockOnManager;
+
     void Start()
     {
-        
-        
+        InitializeUIElements(_enemyIncameraUI);
+        InitializeUIElements(_enemyInCone);
     }
 
-    // Update is called once per frame
     void Update()
     {
-        for (int i = 0; i < _enemyTransfrom.Length; i++)
+        UpdateUIPositions(lockOnManager.targetsInCamera, _enemyIncameraUI);
+        UpdateUIPositions(lockOnManager.targetsInCone, _enemyInCone);
+    }
+
+
+    /// <summary>
+    /// UI内のimageコンポーネントを初期化
+    /// </summary>
+    private void InitializeUIElements(GameObject[] uiElements)
+    {
+        foreach (GameObject uiElement in uiElements)
         {
-            _uiTransform[i].GetComponent<RectTransform>().position = RectTransformUtility.WorldToScreenPoint(Camera.main, _enemyTransfrom[i].transform.position);
+            uiElement.GetComponent<Image>().enabled = false;
+        }
+    }
 
-            print($"{ Camera.main.transform.position}" + "main camera");
-            print($"{Camera.main.ScreenToWorldPoint(new Vector3(Screen.width/2,Screen.height/2,1))}" + "main端カメラ");
-
-
-            
-            if(Camera.main.transform.position.z > _enemyTransfrom[i].position.z)
+    private void UpdateUIPositions(List<Transform> targets, GameObject[] uiElements)
+    {
+        for (int i = 0; i < targets.Count; i++)
+        {
+            if (i < uiElements.Length)
             {
-                _uiTransform[i].GetComponent<Image>().enabled = false;
+                Vector3 enemyScreenPosition = RectTransformUtility.WorldToScreenPoint(Camera.main, targets[i].position);
+                uiElements[i].transform.position = enemyScreenPosition;
+                uiElements[i].GetComponent<Image>().enabled = true;
             }
-            else
-            {
-                _uiTransform[i].GetComponent<Image>().enabled = true;
-            }
+        }
+
+        // 余ったUI要素を非表示にする
+        for (int i = targets.Count; i < uiElements.Length; i++)
+        {
+            uiElements[i].GetComponent<Image>().enabled = false;
         }
     }
 }
