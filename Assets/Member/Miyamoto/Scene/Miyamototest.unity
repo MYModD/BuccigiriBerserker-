@@ -3021,6 +3021,10 @@ PrefabInstance:
       value: GunFireCube(test
       objectReference: {fileID: 0}
     - target: {fileID: 457460188443662405, guid: e77ebb491679d7f45b614f6f5127c7a7, type: 3}
+      propertyPath: spreadAmount
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 457460188443662405, guid: e77ebb491679d7f45b614f6f5127c7a7, type: 3}
       propertyPath: muzzlePosition
       value: 
       objectReference: {fileID: 1047395375}
