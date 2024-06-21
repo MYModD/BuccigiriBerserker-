@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: b7c320268d826444bbc463f762bb0982
-timeCreated: 1507216952
+guid: e46b3a1399c8e724b819e3cf1fd23af6
+timeCreated: 1507461009
 licenseType: Store
 NativeFormatImporter:
   mainObjectFileID: 100100000
@@ -12,5 +12,5 @@ AssetOrigin:
   productId: 102387
   packageName: Magic Missiles and Lasers
   packageVersion: 1.2
-  assetPath: Assets/SineVFX/MagicMissilesAndLasers/Prefabs/LaserShots/LaserShot_Energy.prefab
+  assetPath: Assets/SineVFX/MagicMissilesAndLasers/Prefabs/CompleteEffects/EnergyLasers.prefab
   uploadId: 626937

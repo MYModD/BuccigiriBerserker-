@@ -4,27 +4,27 @@ using UnityEngine.Pool;
 
 public class PooledGun : MonoBehaviour
 {
-    [Header("classQÆ")]
+    [Header("classï¿½Qï¿½ï¿½")]
     [SerializeField] private Bullet gunPrefab;
-    [Header("’eŠÛ‚Ì‘¬‚³")]
+    [Header("ï¿½eï¿½Û‚Ì‘ï¿½ï¿½ï¿½")]
     [SerializeField] private float muzzleVelocity = 100f;
-    [Header("”­ËˆÊ’u")]
+    [Header("ï¿½ï¿½ï¿½ËˆÊ’u")]
     [SerializeField] private Transform muzzlePosition;
-    [Header("ƒN[ƒ‹ƒ^ƒCƒ€")]
+    [Header("ï¿½Nï¿½[ï¿½ï¿½ï¿½^ï¿½Cï¿½ï¿½")]
     [SerializeField] private float cooldownFire;
-    [Header("‚Î‚ç‚¯‚è‚Ì—Ê")]
+    [Header("ï¿½Î‚ç‚¯ï¿½ï¿½Ì—ï¿½")]
     [Range(0, 0.1f)]
     [SerializeField] private float spreadAmount = 0.1f;
 
-    private IObjectPool<Bullet> objectPool; // bulletƒNƒ‰ƒXŒ^‚Ì‚İˆµ‚¤
+    private IObjectPool<Bullet> objectPool; // bulletï¿½Nï¿½ï¿½ï¿½Xï¿½^ï¿½Ì‚İˆï¿½ï¿½ï¿½
 
-    [Header("Å‰‚Ì¶¬”‚É‰‚¶‚Ä")]
-    [Header("missile‚Ìtimer‚ğ•Ï‚¦‚é")]
+    [Header("ï¿½Åï¿½ï¿½Ìï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É‰ï¿½ï¿½ï¿½ï¿½ï¿½")]
+    [Header("missileï¿½ï¿½timerï¿½ï¿½Ï‚ï¿½ï¿½ï¿½")]
     [SerializeField] private int defaultCapacity = 20;
-    [Header("Å‘å”")]
+    [Header("ï¿½Å‘å”")]
     [SerializeField] private int maxSize = 100;
 
-    private float nextTimeToShoot; // ‚Â‚¬‚ÌŠÔŒvZ‚·‚é‚â‚Â
+    private float nextTimeToShoot; // ï¿½Â‚ï¿½ï¿½Ìï¿½ï¿½ÔŒvï¿½Zï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
     void Awake()
     {
@@ -36,7 +36,7 @@ public class PooledGun : MonoBehaviour
             true, defaultCapacity, maxSize
         );
 
-        // Å‰‚É‘å—Ê‚É¶¬‚µ‚Äg‚¢‰ñ‚·
+        // ï¿½Åï¿½ï¿½É‘ï¿½Ê‚Éï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ägï¿½ï¿½ï¿½ï¿½
         for (int i = 0; i < defaultCapacity; i++)
         {
             Bullet projectile = CreateProjectile();
@@ -44,9 +44,9 @@ public class PooledGun : MonoBehaviour
         }
     }
 
-    #region ƒIƒuƒWƒFƒNƒgƒv[ƒ‹‚Ìˆ—
+    #region ï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½vï¿½[ï¿½ï¿½ï¿½Ìï¿½ï¿½ï¿½
 
-    // ¶¬‚ğs‚¤ŠÖ”
+    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½sï¿½ï¿½ï¿½Öï¿½
     private Bullet CreateProjectile()
     {
         Bullet bulletInstance = Instantiate(gunPrefab);
@@ -60,7 +60,7 @@ public class PooledGun : MonoBehaviour
         return bulletInstance;
     }
 
-    // ƒv[ƒ‹‚©‚ç‘İ‚µo‚·‚Ìˆ—
+    // ï¿½vï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½İ‚ï¿½ï¿½oï¿½ï¿½ï¿½ï¿½ï¿½Ìï¿½ï¿½ï¿½
     private void OnGetFromPool(Bullet bulletObject)
     {
         bulletObject.GetComponent<Bullet>().enabled = true;
@@ -71,7 +71,7 @@ public class PooledGun : MonoBehaviour
         Debug.Log("Bullet activated: " + bulletObject.gameObject.name);
     }
 
-    // ƒv[ƒ‹‚É•Ô‹p‚·‚é‚Ìˆ—
+    // ï¿½vï¿½[ï¿½ï¿½ï¿½É•Ô‹pï¿½ï¿½ï¿½éï¿½Ìï¿½ï¿½ï¿½
     private void OnReleaseToPool(Bullet pooledObject)
     {
         pooledObject.GetComponent<Bullet>().enabled = false;
@@ -80,24 +80,33 @@ public class PooledGun : MonoBehaviour
         pooledObject.GetComponent<Rigidbody>().isKinematic = true;
     }
 
-    // ƒv[ƒ‹‚Ì‹–—e—Ê‚ğ’´‚¦‚½‚Ìíœˆ—
+    // ï¿½vï¿½[ï¿½ï¿½ï¿½Ì‹ï¿½ï¿½eï¿½Ê‚ğ’´‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ìíœï¿½ï¿½ï¿½ï¿½
     private void OnDestroyPooledObject(Bullet pooledObject)
     {
         Destroy(pooledObject);
-        Debug.LogError("Å‘å”‚ğ’´‚¦‚½‚Ì‚Åíœ‚·‚é‚æ");
+        Debug.LogError("ï¿½Å‘å”ï¿½ğ’´‚ï¿½ï¿½ï¿½ï¿½Ì‚Åíœï¿½ï¿½ï¿½ï¿½ï¿½");
     }
 
     #endregion
 
     private void FixedUpdate()
     {
-        bool testBool = Input.GetKey(KeyCode.G) || Input.GetButtonDown("Fire2");
+        Debug.Log(Random.insideUnitCircle);
+
+
+
+        bool testBool = Input.GetKey(KeyCode.G) || Input.GetButtonDown("submit");
+
+        
+        
+       
+
         if (testBool && Time.time > nextTimeToShoot && objectPool != null)
         {
             Bullet bulletObject = objectPool.Get();
-            if (bulletObject == null) return; Debug.LogError("‹Ê‚ªnull‚¾‚É‚å");
+            if (bulletObject == null) return; Debug.LogError("ï¿½Ê‚ï¿½nullï¿½ï¿½ï¿½É‚ï¿½");
 
-            // ‚Î‚ç‚¯‚è
+            // ï¿½Î‚ç‚¯ï¿½ï¿½
             Vector3 randomSpread = new Vector3(
                 Random.Range(-spreadAmount, spreadAmount),
                 Random.Range(-spreadAmount, spreadAmount),
@@ -106,11 +115,11 @@ public class PooledGun : MonoBehaviour
             Vector3 shootDirection = muzzlePosition.forward + randomSpread;
 
 
-            //SetPositionAndRotation‚Ì‚Ù‚¤‚ªŒy‚¢‚ç‚µ‚¢‚Á‚·‚æ
+            //SetPositionAndRotationï¿½Ì‚Ù‚ï¿½ï¿½ï¿½ï¿½yï¿½ï¿½ï¿½ç‚µï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             bulletObject.transform.SetPositionAndRotation(muzzlePosition.position, Quaternion.LookRotation(shootDirection));
 
 
-            //forceƒ‚[ƒh‚ğAcceleration‚É‚·‚é‚Æd‚³ŠÖŒW‚È‚­”ò‚Ô
+            //forceï¿½ï¿½ï¿½[ï¿½hï¿½ï¿½Accelerationï¿½É‚ï¿½ï¿½ï¿½Ædï¿½ï¿½ï¿½ÖŒWï¿½È‚ï¿½ï¿½ï¿½ï¿½
             bulletObject.GetComponent<Rigidbody>().AddForce(shootDirection.normalized * muzzleVelocity, ForceMode.Acceleration);
 
             nextTimeToShoot = Time.time + cooldownFire;
