@@ -43,11 +43,11 @@ public class FireMissle : MonoBehaviour
        
 
 
-<<<<<<< HEAD
+
         bool testBool = Input.GetKey(KeyCode.Space) || Input.GetButtonDown("Submit");//‚±‚±•ª‚©‚è‚Ã‚ç‚·‚¬‚é‚Ì‚Å‚ ‚Æ‚Å’¼‚µ‚Ü‚·
-=======
-        bool testBool = Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Fire2");//‚±‚±•ª‚©‚è‚Ã‚ç‚·‚¬‚é‚Ì‚Å‚ ‚Æ‚Å’¼‚µ‚Ü‚·
->>>>>>> main
+
+        //bool testBool = Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Fire2");//‚±‚±•ª‚©‚è‚Ã‚ç‚·‚¬‚é‚Ì‚Å‚ ‚Æ‚Å’¼‚µ‚Ü‚·
+
 
         Debug.Log(testBool);
 

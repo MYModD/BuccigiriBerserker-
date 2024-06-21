@@ -1001,7 +1001,7 @@ LineRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 648371306}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -6365,17 +6365,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1025315011}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 411172ddf609c054bbe464975938e0d7, type: 3}
+  m_Script: {fileID: 11500000, guid: d343ceae068992e4aa7a5ae44fb2f1c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  moveForceMultiplier: 0
-  yawTorqueMagnitude: 30
-  pitchTorqueMagnitude: 60
-  rollTorqueMagnitude: 0
-  restoringTorqueMagnitude: 100
 --- !u!1001 &1084692888
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6953,13 +6947,13 @@ PrefabInstance:
       addedObject: {fileID: 1025315014}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 82f0fddd728e8e84a9c1d816836ff73d, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 1025315023}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 82f0fddd728e8e84a9c1d816836ff73d, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 1025315018}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 82f0fddd728e8e84a9c1d816836ff73d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1025315015}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 82f0fddd728e8e84a9c1d816836ff73d, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1025315023}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 82f0fddd728e8e84a9c1d816836ff73d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1025315013}

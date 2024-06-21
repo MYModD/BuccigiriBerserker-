@@ -30,8 +30,8 @@ namespace test
         [SerializeField]
         float move_min_y;
 
-        [SerializeField] float rotationSpeed = 100f;
-        [SerializeField] float rotationAngle = 45f;
+        //[SerializeField] float rotationSpeed = 100f;
+        //[SerializeField] float rotationAngle = 45f;
         //public float speedX ;
         //public float speedY ;
 
