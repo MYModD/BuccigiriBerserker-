@@ -15,8 +15,20 @@ namespace test
 
         private float VerticalValue;
 
+        [SerializeField] float rotationSpeed = 100f; // ‰ñ“]‘¬“x
+
+        Quaternion targetRotation = Quaternion.identity; // –Ú•W‚Ì‰ñ“]Šp“x
+
         [SerializeField]
         float speed = 5f;
+        [SerializeField]
+        float move_max_x;
+        [SerializeField]
+        float move_min_x;
+        [SerializeField]
+        float move_max_y;
+        [SerializeField]
+        float move_min_y;
         //public float speedX ;
         //public float speedY ;
 
@@ -34,14 +46,15 @@ namespace test
         // Update is called once per frame
         void Update()
         {
-            // Debug.Log(HolizontalValue);
-            //Debug.Log(VerticalValue);
-            // ‘Oi‚ÍŽ©“®
+           //ˆÚ“®§ŒÀ
 
+            Vector3 playerpos = transform.position;
 
-            //ù‰ñ
+            playerpos.x = Mathf.Clamp(playerpos.x, move_min_x, move_max_x);
+            playerpos.y = Mathf.Clamp(playerpos.y, move_min_y, move_max_y);
+            transform.position = playerpos;
 
-
+           
         }
 
         private void FixedUpdate()
@@ -55,26 +68,31 @@ namespace test
             if (HolizontalValue > 0.6f)
             {
                 transform.Translate(Vector3.left * speed * Time.deltaTime);
-
+               
             }
 
             if (HolizontalValue < -0.6f)
             {
                 transform.Translate(Vector3.right * speed * Time.deltaTime);
-
+               
             }
 
             if (VerticalValue > 0.6f)
             {
-                transform.Translate(Vector3.up * speed * Time.deltaTime);
-
+                transform.Translate(Vector3.down * speed * Time.deltaTime);
+               
             }
 
             if (VerticalValue < -0.6f)
             {
-                transform.Translate(Vector3.down * speed * Time.deltaTime);
-
+                transform.Translate(Vector3.up * speed * Time.deltaTime);
+               
             }
+
+             
+
+
+           
         }
     }
 }
