@@ -8,18 +8,20 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI TimerText;
     [SerializeField] private TextMeshProUGUI GamejudgeText;
     [SerializeField] private GameObject Button;
-    [SerializeField] private int gameTime = 180; // ゲームの時間（秒）を設定（3分 = 180秒）
+    [SerializeField] private float gameTime; // ゲームの時間（秒）を設定（3分 = 180秒）
     private bool timeUp = false;
     private bool allEnemiesDefeatedCheck = false;
     private bool allEnemiesDefeated = false;
     private int cntenemy;
+    private int cntdestoroy;
     CuntUD cntud;
     void Start()
     {
         // ゲーム開始時に時間のカウントダウンを開始する
-        Invoke("CheckGameTime", gameTime);
+        //Invoke("CheckGameTime", gameTime);
         cntud = GameObject.FindGameObjectWithTag("EnemyNumber").GetComponent<CuntUD>();
-      cntenemy = cntud.currentCount;
+        cntenemy = cntud.currentCount;
+        cntdestoroy = cntud.DestoroyEnemies;
     }
 
     void Update()
@@ -33,15 +35,21 @@ public class GameManager : MonoBehaviour
             allEnemiesDefeatedCheck = true;
             ShowAllEnemiesDefeatedUI();
         }
-
+        gameTime -= Time.deltaTime;
+        Debug.Log("Remaining Time: " + gameTime); // デバッグログを追加して確認
         if (!timeUp && !allEnemiesDefeatedCheck)
         {
-            gameTime -= (int)Time.deltaTime; // 経過時間を gameTime から減算します
+            //gameTime -= (int)Time.deltaTime; // 経過時間を gameTime から減算します
+            //print(gameTime);
             if (gameTime <= 0)
             {
                 gameTime = 0;
                 CheckGameTime();
             }
+        }
+        if(Input.GetKeyDown(KeyCode.A))
+        {
+            cntenemy -= 1;
         }
     }
 
@@ -58,7 +66,7 @@ public class GameManager : MonoBehaviour
     void ShowTimeUpUI()
     {
         // 「Time's Up!」のUIを表示する処理（例として、Textコンポーネントの表示を切り替える）
-        EnemyText.text = "99";
+        EnemyText.text = "DestroyEnemies: " + cntdestoroy.ToString();
         TimerText.text = "Time: " + FormatTime(gameTime);
         GamejudgeText.text = "Time Up! ";
         EnemyText.gameObject.SetActive(true);
@@ -70,19 +78,19 @@ public class GameManager : MonoBehaviour
     void ShowAllEnemiesDefeatedUI()
     {
         // 「All enemies defeated!」のUIを表示する処理（例として、Textコンポーネントの表示を切り替える）
-        EnemyText.text = "99"; // 元のコードの意図が不明なため、そのまま残します
+        EnemyText.text = "DestroyEnemies: " + cntdestoroy.ToString();
         TimerText.text = "Time: " + FormatTime(gameTime);
-        GamejudgeText.text = "AllEnemiesDestoroy!";
+        GamejudgeText.text = "AllEnemiesDestroy!";
         EnemyText.gameObject.SetActive(true);
         TimerText.gameObject.SetActive(true);
         GamejudgeText.gameObject.SetActive(true);
         Button.gameObject.SetActive(true);
     }
-
-    string FormatTime(int seconds)
+    string FormatTime(float seconds)
     {
-        int minutes = seconds / 60;
-        int remainingSeconds = seconds % 60;
+        int minutes = Mathf.FloorToInt(seconds / 60); // 分を取得
+        int remainingSeconds = Mathf.FloorToInt(seconds % 60); // 秒を取得
+
         return string.Format("{0:00}:{1:00}", minutes, remainingSeconds);
     }
 }
