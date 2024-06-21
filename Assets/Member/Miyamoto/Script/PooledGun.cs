@@ -4,27 +4,26 @@ using UnityEngine.Pool;
 
 public class PooledGun : MonoBehaviour
 {
-    [Header("class�Q��")]
+    [Header("クラス参照")]
     [SerializeField] private Bullet gunPrefab;
-    [Header("�e�ۂ̑���")]
+    [Header("弾の速度")]
     [SerializeField] private float muzzleVelocity = 100f;
-    [Header("���ˈʒu")]
+    [Header("発射位置")]
     [SerializeField] private Transform muzzlePosition;
-    [Header("�N�[���^�C��")]
+    [Header("クールダウン時間")]
     [SerializeField] private float cooldownFire;
-    [Header("�΂炯��̗�")]
+    [Header("拡散量の範囲")]
     [Range(0, 0.1f)]
     [SerializeField] private float spreadAmount = 0.1f;
 
-    private IObjectPool<Bullet> objectPool; // bullet�N���X�^�݈̂���
+    private IObjectPool<Bullet> objectPool; // Bulletクラスだけを保持
 
-    [Header("�ŏ��̐������ɉ�����")]
-    [Header("missile��timer��ς���")]
+    [Header("初期の弾の数を設定")]
     [SerializeField] private int defaultCapacity = 20;
-    [Header("�ő吔")]
+    [Header("最大容量")]
     [SerializeField] private int maxSize = 100;
 
-    private float nextTimeToShoot; // ���̎��Ԍv�Z������
+    private float nextTimeToShoot; // 次の発射時間を計算するための変数
 
     void Awake()
     {
@@ -36,7 +35,7 @@ public class PooledGun : MonoBehaviour
             true, defaultCapacity, maxSize
         );
 
-        // �ŏ��ɑ�ʂɐ������Ďg����
+        // 初期に弾を生成してプールに入れる
         for (int i = 0; i < defaultCapacity; i++)
         {
             Bullet projectile = CreateProjectile();
@@ -44,9 +43,9 @@ public class PooledGun : MonoBehaviour
         }
     }
 
-    #region �I�u�W�F�N�g�v�[���̏���
+    #region オブジェクトプールの関数
 
-    // �������s���֐�
+    // 弾を生成する関数
     private Bullet CreateProjectile()
     {
         Bullet bulletInstance = Instantiate(gunPrefab);
@@ -60,7 +59,7 @@ public class PooledGun : MonoBehaviour
         return bulletInstance;
     }
 
-    // �v�[������݂��o�����̏���
+    // プールから取得した時の処理
     private void OnGetFromPool(Bullet bulletObject)
     {
         bulletObject.GetComponent<Bullet>().enabled = true;
@@ -71,7 +70,7 @@ public class PooledGun : MonoBehaviour
         Debug.Log("Bullet activated: " + bulletObject.gameObject.name);
     }
 
-    // �v�[���ɕԋp���鎞�̏���
+    // プールに戻す時の処理
     private void OnReleaseToPool(Bullet pooledObject)
     {
         pooledObject.GetComponent<Bullet>().enabled = false;
@@ -80,11 +79,11 @@ public class PooledGun : MonoBehaviour
         pooledObject.GetComponent<Rigidbody>().isKinematic = true;
     }
 
-    // �v�[���̋��e�ʂ𒴂������̍폜����
+    // プールのオブジェクトを破棄する処理
     private void OnDestroyPooledObject(Bullet pooledObject)
     {
         Destroy(pooledObject);
-        Debug.LogError("�ő吔�𒴂����̂ō폜�����");
+        Debug.LogError("最大容量を超えたためオブジェクトを破棄しました");
     }
 
     #endregion
@@ -93,20 +92,18 @@ public class PooledGun : MonoBehaviour
     {
         Debug.Log(Random.insideUnitCircle);
 
-
-
-        bool testBool = Input.GetKey(KeyCode.G) || Input.GetButtonDown("submit");
-
-        
-        
-       
+        bool testBool = Input.GetKey(KeyCode.G) || Input.GetButtonDown("Submit");
 
         if (testBool && Time.time > nextTimeToShoot && objectPool != null)
         {
             Bullet bulletObject = objectPool.Get();
-            if (bulletObject == null) return; Debug.LogError("�ʂ�null���ɂ�");
+            if (bulletObject == null)
+            {
+                Debug.LogError("弾がnullです");
+                return;
+            }
 
-            // �΂炯��
+            // 拡散量
             Vector3 randomSpread = new Vector3(
                 Random.Range(-spreadAmount, spreadAmount),
                 Random.Range(-spreadAmount, spreadAmount),
@@ -114,12 +111,10 @@ public class PooledGun : MonoBehaviour
             );
             Vector3 shootDirection = muzzlePosition.forward + randomSpread;
 
-
-            //SetPositionAndRotation�̂ق����y���炵��������
+            // SetPositionAndRotationで位置と回転を設定
             bulletObject.transform.SetPositionAndRotation(muzzlePosition.position, Quaternion.LookRotation(shootDirection));
 
-
-            //force���[�h��Acceleration�ɂ���Əd���֌W�Ȃ����
+            // forceを使って弾を発射
             bulletObject.GetComponent<Rigidbody>().AddForce(shootDirection.normalized * muzzleVelocity, ForceMode.Acceleration);
 
             nextTimeToShoot = Time.time + cooldownFire;

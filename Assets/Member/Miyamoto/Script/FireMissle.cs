@@ -4,37 +4,31 @@ using UnityEngine;
 using UnityEngine.Pool;
 using UnityEngine.Rendering;
 
-
 public class FireMissle : MonoBehaviour
 {
-    
+    [Header("ターゲット位置")]
+    public List<Transform> targetObjectList;
 
-    [Header("�^�[�Q�b�g�ڕW")]
-    public List<Transform> targetObjectList ;
-
-    [Header("lockOnMnager�Q��")]
+    [Header("lockOnManager参照")]
     public LockOnManager lockOnManager;
 
-    [Header("������N���X�Q��")]
+    [Header("発射音クラス参照")]
     public Fire1SE fire1SE;
 
-    [Header("���ˈʒu")]
+    [Header("発射位置")]
     [SerializeField] private Transform muzzlePosition;
-    [Header("�N�[���^�C��")]
+    [Header("クールダウン時間")]
     [SerializeField] private float cooldownFire;
-
 
     private IObjectPool<Missile> objectPool;
 
-    private float nextTimeToShoot; // ���̎��Ԍv�Z������
+    private float nextTimeToShoot; // 次の発射時間を計算するための変数
 
     // Start is called before the first frame update
     void Start()
     {
-        PooledMissile pooledMissile = GetComponent<PooledMissile>();//FireMissle��PooledMissile�������I�u�W�F�N�g�ɂȂ��ƃ_������
+        PooledMissile pooledMissile = GetComponent<PooledMissile>(); // FireMissleはPooledMissileを含むオブジェクトにアタッチされている必要がある
         objectPool = pooledMissile.objectPool;
-
-       
     }
 
     // Update is called once per frame
@@ -42,14 +36,7 @@ public class FireMissle : MonoBehaviour
     {
         targetObjectList = lockOnManager.targetsInCone;
 
-
-       
-
-
-        bool testBool = Input.GetKey(KeyCode.Space) || Input.GetButtonDown("Submit");//����������Â炷����̂ł��ƂŒ����܂�
-
-        //bool testBool = Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Fire2");//����������Â炷����̂ł��ƂŒ����܂�
-
+        bool testBool = Input.GetKey(KeyCode.Space) || Input.GetButtonDown("Submit"); // スペースキーが押されたかどうかをチェック
 
         Debug.Log(testBool);
 
@@ -57,30 +44,26 @@ public class FireMissle : MonoBehaviour
         {
             foreach (Transform target in lockOnManager.targetsInCone)
             {
-                // Missile�N���X�̃I�u�W�F�N�g���擾
+                // Missileクラスのオブジェクトを取得
                 Missile missileObject = objectPool.Get();
-                
-                if (missileObject == null) Debug.Log("�I�u�W�F�N�g���Ȃ���");
 
+                if (missileObject == null) Debug.Log("オブジェクトが取得できませんでした");
 
-                missileObject.target = target;//�Ƃ肠��������� 
+                missileObject.target = target; // 取得したミサイルのターゲットを設定
 
-                // SetPositionAndRotation�̂ق�����ʂɐ��������Ƃ��y��
+                // SetPositionAndRotationで位置と回転を設定
                 missileObject.transform.SetPositionAndRotation(muzzlePosition.position, muzzlePosition.rotation);
 
                 Debug.LogWarning($"{missileObject.name}{missileObject.transform.position}");
 
-                // ���˂��ꂽ�獡�̎��ԂɃN�[���_�E����ǉ�����
+                // 次に発射できる時間を計算
                 nextTimeToShoot = Time.time + cooldownFire;
 
-                fire1SE.fire1SE();
+                fire1SE.fire1SE(); // 発射音を再生
 
                 lockOnManager.targetsInCone.Clear();
                 Debug.LogWarning(lockOnManager.targetsInCone[0]);
             }
-
         }
     }
-
-    
 }
