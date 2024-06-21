@@ -7,29 +7,31 @@ using UnityEngine.Rendering;
 
 public class FireMissle : MonoBehaviour
 {
-    private IObjectPool<Missile> objectPool;
+    
 
-    [Header("ƒ^[ƒQƒbƒg–Ú•W")]
+    [Header("ï¿½^ï¿½[ï¿½Qï¿½bï¿½gï¿½Ú•W")]
     public List<Transform> targetObjectList ;
 
-    public LockOnManager lockOnManager;//‚Â‚¬‚±‚±’¼‚·
+    [Header("lockOnMnagerï¿½Qï¿½ï¿½")]
+    public LockOnManager lockOnManager;
 
+    [Header("ï¿½ï¿½ï¿½Â‚ï¿½ï¿½ï¿½Nï¿½ï¿½ï¿½Xï¿½Qï¿½ï¿½")]
     public Fire1SE fire1SE;
 
-    [Header("”­ËˆÊ’u")]
+    [Header("ï¿½ï¿½ï¿½ËˆÊ’u")]
     [SerializeField] private Transform muzzlePosition;
-    [Header("ƒN[ƒ‹ƒ^ƒCƒ€")]
+    [Header("ï¿½Nï¿½[ï¿½ï¿½ï¿½^ï¿½Cï¿½ï¿½")]
     [SerializeField] private float cooldownFire;
 
-   
 
+    private IObjectPool<Missile> objectPool;
 
-    private float nextTimeToShoot; // Ÿ‚ÌŠÔŒvZ‚·‚é‚â‚Â
+    private float nextTimeToShoot; // ï¿½ï¿½ï¿½Ìï¿½ï¿½ÔŒvï¿½Zï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
     // Start is called before the first frame update
     void Start()
     {
-        PooledMissile pooledMissile = GetComponent<PooledMissile>();//FireMissle‚ÆPooledMissile‚ª“¯‚¶ƒIƒuƒWƒFƒNƒg‚É‚È‚¢‚Æƒ_ƒ‚¾‚æ
+        PooledMissile pooledMissile = GetComponent<PooledMissile>();//FireMissleï¿½ï¿½PooledMissileï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½É‚È‚ï¿½ï¿½Æƒ_ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         objectPool = pooledMissile.objectPool;
 
        
@@ -40,13 +42,14 @@ public class FireMissle : MonoBehaviour
     {
         targetObjectList = lockOnManager.targetsInCone;
 
-       
+
+        bool testBool = Input.GetKey(KeyCode.Space) || Input.GetButtonDown("Submit");//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã‚ç‚·ï¿½ï¿½ï¿½ï¿½Ì‚Å‚ï¿½ï¿½Æ‚Å’ï¿½ï¿½ï¿½ï¿½Ü‚ï¿½
 
 
 
-        bool testBool = Input.GetKey(KeyCode.Space) || Input.GetButtonDown("Submit");//‚±‚±•ª‚©‚è‚Ã‚ç‚·‚¬‚é‚Ì‚Å‚ ‚Æ‚Å’¼‚µ‚Ü‚·
+        bool testBool = Input.GetKey(KeyCode.Space) || Input.GetButtonDown("Submit");//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã‚ç‚·ï¿½ï¿½ï¿½ï¿½Ì‚Å‚ï¿½ï¿½Æ‚Å’ï¿½ï¿½ï¿½ï¿½Ü‚ï¿½
 
-        //bool testBool = Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Fire2");//‚±‚±•ª‚©‚è‚Ã‚ç‚·‚¬‚é‚Ì‚Å‚ ‚Æ‚Å’¼‚µ‚Ü‚·
+        //bool testBool = Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Fire2");//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã‚ç‚·ï¿½ï¿½ï¿½ï¿½Ì‚Å‚ï¿½ï¿½Æ‚Å’ï¿½ï¿½ï¿½ï¿½Ü‚ï¿½
 
 
         Debug.Log(testBool);
@@ -55,20 +58,20 @@ public class FireMissle : MonoBehaviour
         {
             foreach (Transform target in lockOnManager.targetsInCone)
             {
-                // MissileƒNƒ‰ƒX‚ÌƒIƒuƒWƒFƒNƒg‚ğæ“¾
+                // Missileï¿½Nï¿½ï¿½ï¿½Xï¿½ÌƒIï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½ï¿½ï¿½æ“¾
                 Missile missileObject = objectPool.Get();
                 
-                if (missileObject == null) Debug.Log("ƒIƒuƒWƒFƒNƒg‚ª‚È‚¢‚æ");
+                if (missileObject == null) Debug.Log("ï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½ï¿½ï¿½È‚ï¿½ï¿½ï¿½");
 
 
-                missileObject.target = target;//‚Æ‚è‚ ‚¦‚¸ˆê‚Â‚©‚ç 
+                missileObject.target = target;//ï¿½Æ‚è‚ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â‚ï¿½ï¿½ï¿½ 
 
-                // SetPositionAndRotation‚Ì‚Ù‚¤‚ª‘å—Ê‚É¶¬‚µ‚½‚Æ‚«Œy‚¢
+                // SetPositionAndRotationï¿½Ì‚Ù‚ï¿½ï¿½ï¿½ï¿½ï¿½Ê‚Éï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ‚ï¿½ï¿½yï¿½ï¿½
                 missileObject.transform.SetPositionAndRotation(muzzlePosition.position, muzzlePosition.rotation);
 
                 Debug.LogWarning($"{missileObject.name}{missileObject.transform.position}");
 
-                // ”­Ë‚³‚ê‚½‚ç¡‚ÌŠÔ‚ÉƒN[ƒ‹ƒ_ƒEƒ“‚ğ’Ç‰Á‚·‚é
+                // ï¿½ï¿½ï¿½Ë‚ï¿½ï¿½ê‚½ï¿½ç¡ï¿½Ìï¿½ï¿½Ô‚ÉƒNï¿½[ï¿½ï¿½ï¿½_ï¿½Eï¿½ï¿½ï¿½ï¿½Ç‰ï¿½ï¿½ï¿½ï¿½ï¿½
                 nextTimeToShoot = Time.time + cooldownFire;
 
                 fire1SE.fire1SE();
