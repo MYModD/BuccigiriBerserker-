@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Pool;
 using UnityEngine.Rendering;
 
+
 public class FireMissle : MonoBehaviour
 {
     private IObjectPool<Missile> objectPool;
@@ -12,6 +13,8 @@ public class FireMissle : MonoBehaviour
     public List<Transform> targetObjectList ;
 
     public LockOnManager lockOnManager;//つぎここ直す
+
+    public Fire1SE fire1SE;
 
     [Header("発射位置")]
     [SerializeField] private Transform muzzlePosition;
@@ -37,9 +40,12 @@ public class FireMissle : MonoBehaviour
     {
         targetObjectList = lockOnManager.targetsInCone;
 
-        
+       
+
 
         bool testBool = Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Fire2");//ここ分かりづらすぎるのであとで直します
+
+        Debug.Log(testBool);
 
         if (testBool && Time.time > nextTimeToShoot && objectPool != null)
         {
@@ -47,6 +53,7 @@ public class FireMissle : MonoBehaviour
             {
                 // Missileクラスのオブジェクトを取得
                 Missile missileObject = objectPool.Get();
+                
                 if (missileObject == null) Debug.Log("オブジェクトがないよ");
 
 
@@ -55,8 +62,15 @@ public class FireMissle : MonoBehaviour
                 // SetPositionAndRotationのほうが大量に生成したとき軽い
                 missileObject.transform.SetPositionAndRotation(muzzlePosition.position, muzzlePosition.rotation);
 
+                Debug.LogWarning($"{missileObject.name}{missileObject.transform.position}");
+
                 // 発射されたら今の時間にクールダウンを追加する
                 nextTimeToShoot = Time.time + cooldownFire;
+
+                fire1SE.fire1SE();
+
+                lockOnManager.targetsInCone.Clear();
+                Debug.LogWarning(lockOnManager.targetsInCone[0]);
             }
 
         }
