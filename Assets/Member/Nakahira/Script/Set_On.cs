@@ -47,7 +47,7 @@ public class Set_On : MonoBehaviour
         //Transform target3 = teki.transform.Find("tekiko");
         float distance = Vector3.Distance(transform.position, plyer.position);
         print(distance);
-        if (distance > plykyori)
+        if (distance < plykyori)
         {
             //“G‚Ì‚µ‚ã‚Â‚°‚ñ
             myhako.enabled = true;
