@@ -43,8 +43,7 @@ public class FireMissle : MonoBehaviour
         targetObjectList = lockOnManager.targetsInCone;
 
 
-        bool testBool = Input.GetKey(KeyCode.Space) || Input.GetButtonDown("Submit");//����������Â炷����̂ł��ƂŒ����܂�
-
+       
 
 
         bool testBool = Input.GetKey(KeyCode.Space) || Input.GetButtonDown("Submit");//����������Â炷����̂ł��ƂŒ����܂�
