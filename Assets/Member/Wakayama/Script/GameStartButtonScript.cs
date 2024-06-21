@@ -5,10 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class GameStartButtonScript : MonoBehaviour
 {
+    AsyncOperation GameSceneStarter;//ƒQ[ƒ€ƒV[ƒ“‚Ìæ“¾
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        GameSceneStarter = SceneManager.LoadSceneAsync("Enemy");
+
+        GameSceneStarter.allowSceneActivation = false;
     }
 
     // Update is called once per frame
@@ -19,7 +23,8 @@ public class GameStartButtonScript : MonoBehaviour
 
     public void SceneChange()
     {
-        SceneManager.LoadScene("Enemy");
+        GameSceneStarter.allowSceneActivation = true;
+        SceneManager.UnloadSceneAsync("HowtoPlayScene");
         return;
     }
 }
