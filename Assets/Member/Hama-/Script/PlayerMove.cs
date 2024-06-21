@@ -67,13 +67,13 @@ namespace test
 
             if (VerticalValue > 0.6f)
             {
-                transform.Translate(Vector3.up * speed * Time.deltaTime);
+                transform.Translate(Vector3.down * speed * Time.deltaTime);
                 //transform.Translate(Vector3.back);
             }
 
             if (VerticalValue < -0.6f)
             {
-                transform.Translate(Vector3.down * speed * Time.deltaTime);
+                transform.Translate(Vector3.up * speed * Time.deltaTime);
                 //transform.Translate(Vector3.back);
             }
         }
