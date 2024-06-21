@@ -329,6 +329,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 450796153934759087, guid: 19ecb613f8db77447b350c8b5ae2da1e, type: 3}
+      propertyPath: m_VerticalDamping
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 450796153934759087, guid: 19ecb613f8db77447b350c8b5ae2da1e, type: 3}
+      propertyPath: m_HorizontalDamping
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2828734017463439676, guid: 19ecb613f8db77447b350c8b5ae2da1e, type: 3}
       propertyPath: m_Name
       value: Virtual Camera
@@ -367,11 +375,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8309897281213122745, guid: 19ecb613f8db77447b350c8b5ae2da1e, type: 3}
       propertyPath: m_FollowOffset.z
-      value: -1
+      value: -3.286255
       objectReference: {fileID: 0}
     - target: {fileID: 9173306726161093884, guid: 19ecb613f8db77447b350c8b5ae2da1e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.03
+      value: 0.030021638
       objectReference: {fileID: 0}
     - target: {fileID: 9173306726161093884, guid: 19ecb613f8db77447b350c8b5ae2da1e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -379,7 +387,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9173306726161093884, guid: 19ecb613f8db77447b350c8b5ae2da1e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -230.18
+      value: -232.46625
       objectReference: {fileID: 0}
     - target: {fileID: 9173306726161093884, guid: 19ecb613f8db77447b350c8b5ae2da1e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2377,7 +2385,7 @@ Transform:
   m_GameObject: {fileID: 376099638}
   serializedVersion: 2
   m_LocalRotation: {x: 0.14737439, y: -0.000977343, z: 0.0001456255, w: 0.9890803}
-  m_LocalPosition: {x: 0.03, y: 4.626404, z: -230.18}
+  m_LocalPosition: {x: 0.030021638, y: 4.626404, z: -232.46625}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8909,7 +8917,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_VertexColorAlwaysGammaSpace: 0
+  m_VertexColorAlwaysGammaSpace: 1
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
@@ -11792,11 +11800,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2264940241835221188, guid: 30ca4e76283e170418e5c7c38860b6d4, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.0000006194299
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2264940241835221188, guid: 30ca4e76283e170418e5c7c38860b6d4, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -3.330669e-15
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2264940241835221188, guid: 30ca4e76283e170418e5c7c38860b6d4, type: 3}
       propertyPath: m_LocalRotation.y
@@ -11804,7 +11812,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2264940241835221188, guid: 30ca4e76283e170418e5c7c38860b6d4, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2264940241835221188, guid: 30ca4e76283e170418e5c7c38860b6d4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -11866,6 +11874,22 @@ PrefabInstance:
       propertyPath: speed
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 7116351648223372453, guid: 30ca4e76283e170418e5c7c38860b6d4, type: 3}
+      propertyPath: move_max_x
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 7116351648223372453, guid: 30ca4e76283e170418e5c7c38860b6d4, type: 3}
+      propertyPath: move_max_y
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 7116351648223372453, guid: 30ca4e76283e170418e5c7c38860b6d4, type: 3}
+      propertyPath: move_min_x
+      value: -35
+      objectReference: {fileID: 0}
+    - target: {fileID: 7116351648223372453, guid: 30ca4e76283e170418e5c7c38860b6d4, type: 3}
+      propertyPath: move_min_y
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7396508633645292793, guid: 30ca4e76283e170418e5c7c38860b6d4, type: 3}
       propertyPath: missile
       value: 
@@ -11881,11 +11905,20 @@ PrefabInstance:
     - target: {fileID: 8222332716781120740, guid: 30ca4e76283e170418e5c7c38860b6d4, type: 3}
       propertyPath: missilePrefab
       value: 
+<<<<<<< HEAD
+      objectReference: {fileID: 1357773537}
+    m_RemovedComponents: []
+=======
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6494074296686782721, guid: 30ca4e76283e170418e5c7c38860b6d4, type: 3}
     - {fileID: 7396508633645292793, guid: 30ca4e76283e170418e5c7c38860b6d4, type: 3}
+<<<<<<< HEAD
     - {fileID: 8222332716781120740, guid: 30ca4e76283e170418e5c7c38860b6d4, type: 3}
+=======
+    - {fileID: 401446777088861056, guid: 30ca4e76283e170418e5c7c38860b6d4, type: 3}
+>>>>>>> main
+>>>>>>> origin/Hama2
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 2264940241835221188, guid: 30ca4e76283e170418e5c7c38860b6d4, type: 3}
