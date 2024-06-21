@@ -16007,7 +16007,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7116351648223372453, guid: 30ca4e76283e170418e5c7c38860b6d4, type: 3}
       propertyPath: move_max_x
-      value: 30
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 7116351648223372453, guid: 30ca4e76283e170418e5c7c38860b6d4, type: 3}
       propertyPath: move_max_y
@@ -16015,7 +16015,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7116351648223372453, guid: 30ca4e76283e170418e5c7c38860b6d4, type: 3}
       propertyPath: move_min_x
-      value: -30
+      value: -35
       objectReference: {fileID: 0}
     - target: {fileID: 7116351648223372453, guid: 30ca4e76283e170418e5c7c38860b6d4, type: 3}
       propertyPath: move_min_y
