@@ -6,13 +6,13 @@ using UnityEngine.SceneManagement;
 public class GameStartButtonScript : MonoBehaviour
 {
     private AsyncOperation GameSceneStarter;//ゲームシーンの取得
-    [SerializeField]private float SceneOpenTime;//ゲームシーンを一度止めるまでの時間
+    [SerializeField]private float SceneStopTime　= default;//ゲームシーンを一度止めるまでの時間
 
     // Start is called before the first frame update
     void Start()
     {
         GameSceneStarter = SceneManager.LoadSceneAsync("Enemy");//ゲームシーンを出力
-        Invoke("GameSceneReadyStop",SceneOpenTime);//指定時間経過したらゲームシーンを一度止める
+        Invoke("GameSceneReadyStop",SceneStopTime);//指定時間経過したらゲームシーンを一度止める
         
     }
 
