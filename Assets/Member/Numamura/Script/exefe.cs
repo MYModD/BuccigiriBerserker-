@@ -23,14 +23,11 @@ public class exefe : MonoBehaviour
         // 爆発エフェクトのプレハブをインスタンス化して生成する
         if (explosionPrefab != null)
         {
-            
             GameObject explosion = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
-            
             //Destroy(explosion, 3.0f); // 爆発エフェクトを3秒後に破棄する（任意の時間）
             //Destroy(this.gameObject,0.5f);
-
-        }audioSource.PlayOneShot(Explosion1);
-
+        }
+        audioSource.PlayOneShot(Explosion1);
         // ここに他の処理を追加する（例えば、音の再生、オブジェクトの破壊など）
     }
 }
