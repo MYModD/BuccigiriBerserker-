@@ -36,11 +36,7 @@ public class TrackingUI : MonoBehaviour
 
     private void UpdateUIPositions(List<Transform> targets, GameObject[] uiElements)
     {
-        
-        
-        
-        
-        
+            
         for (int i = 0; i < targets.Count; i++)
         {
             if (i < uiElements.Length)

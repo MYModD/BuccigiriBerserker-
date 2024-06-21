@@ -33,19 +33,30 @@ public class LockOnManager : MonoBehaviour
     
     private Plane[] cameraPlanes;  //カメラの六面体座標
 
+    private float updateInterval = 0.1f;  // 0.1秒ごとに更新
+    private float lastUpdate = 0f;
+
 
     void Update()
     {
-        // ターゲットリストを更新
-        UpdateTargets();
+
+        transform.position += new Vector3(0, 0, 0.1f);
+
+        if (Time.time - lastUpdate > updateInterval)
+        {
+            // ターゲットリストを更新
+            UpdateTargets();
+
+            //コーンがカメラから外れたらリストから削除する
+            RemoveTargetInCone();
 
 
-        //コーンがカメラから外れたらリストから削除する
-        RemoveTargetInCone();
+            DebugMatarialChange();
+            lastUpdate = Time.time;
 
+        }
 
-        DebugMatarialChange();
-
+        
     }
 
     // ターゲットリストを更新するメソッド
@@ -121,10 +132,6 @@ public class LockOnManager : MonoBehaviour
 
 
 
-
-
-
-
     /// <summary>
     /// オブジェクトが円錐内にあるかどうかを確認するメソッド
     /// </summary>
@@ -169,22 +176,25 @@ public class LockOnManager : MonoBehaviour
     /// </summary>
     private void RemoveTargetInCone()
     {
+        //リストから削除するためのリスト  繰り返す中で配列エラーが起きる可能性がある
+        List<Transform> targetsToRemove = new List<Transform>();
+
 
         foreach (Transform target in targetsInCone)
         {
-            if (GeometryUtility.TestPlanesAABB(cameraPlanes, target.GetComponent<Collider>().bounds))
+            if (!GeometryUtility.TestPlanesAABB(cameraPlanes, target.GetComponent<Collider>().bounds))
             {
-                //AABBで取れないものだけListからRemove↓
-            }
-            else
-            {
-                targetsInCone.Remove(target);
+                targetsToRemove.Add(target);
             }
         }
 
 
-
+        foreach (Transform target in targetsToRemove)
+        {
+            targetsInCone.Remove(target);
+        }
     }
+
 
     /// <summary>
     /// デバッグ用のギズモを描画するメソッド unity側のメソッド
