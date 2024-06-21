@@ -5,14 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class GameStartButtonScript : MonoBehaviour
 {
-    AsyncOperation GameSceneStarter;//ゲームシーンの取得
+    private AsyncOperation GameSceneStarter;//ゲームシーンの取得
+    [SerializeField]private float SceneOpenTime;//ゲームシーンを一度止めるまでの時間
 
     // Start is called before the first frame update
     void Start()
     {
-        GameSceneStarter = SceneManager.LoadSceneAsync("Enemy");
-
-        GameSceneStarter.allowSceneActivation = false;
+        GameSceneStarter = SceneManager.LoadSceneAsync("Enemy");//ゲームシーンを出力
+        Invoke("GameSceneReadyStop",SceneOpenTime);//指定時間経過したらゲームシーンを一度止める
+        
     }
 
     // Update is called once per frame
@@ -21,10 +22,15 @@ public class GameStartButtonScript : MonoBehaviour
         
     }
 
+    public void GameSceneReadyStop()
+    {
+        GameSceneStarter.allowSceneActivation = false;//ゲームシーンを一度止める
+    }
+
     public void SceneChange()
     {
-        GameSceneStarter.allowSceneActivation = true;
-        SceneManager.UnloadSceneAsync("HowtoPlayScene");
+        GameSceneStarter.allowSceneActivation = true;//ゲームシーンを起動する
+        SceneManager.UnloadSceneAsync("HowtoPlayScene");//操作説明シーンを消去する
         return;
     }
 }
