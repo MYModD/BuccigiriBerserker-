@@ -422,14 +422,14 @@ MonoBehaviour:
   elevator:
   - {fileID: 606669260}
   - {fileID: 1193608093}
-  ruddersDegreeRange: {x: -20, y: 20}
-  flapsDegreeRange: {x: -20, y: 20}
-  elevatorDegreeRange: {x: -10, y: 10}
-  elevator222DegreeRange: {x: -10, y: 10}
+  ruddersDegreeRange: 20
+  flapsDegreeRange: 10
+  elevatorUpDownDegreeRange: 40
+  elevatorLeftRightDegreeRange: 30
   multiplyValue: 40.58
   lerpTRudder: 0.1
   lerpTFlaps: 0.01
-  lerpTElevators: 0.61
+  lerpTElevators: 0.54
   lerpTRightLeftElevators: 0.5
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

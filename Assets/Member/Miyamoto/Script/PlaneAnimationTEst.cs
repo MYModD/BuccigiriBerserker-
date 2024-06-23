@@ -11,18 +11,28 @@ public class PlaneAnimationTest : MonoBehaviour
     public Transform[] elevator; // ¸~‘Ç
 
     [Header("‰Â“®”ÍˆÍ")]
-    public Vector2 ruddersDegreeRange = new Vector2(-20, 20); // •ûŒü‘Ç‚Ì‰ñ“]”ÍˆÍ
-    public Vector2 flapsDegreeRange = new Vector2(-20, 20); // ƒtƒ‰ƒbƒv‚Ì‰ñ“]”ÍˆÍ
-    public Vector2 elevatorDegreeRange = new Vector2(-10, 10); // ¸~‘Ç‚Ìã‰º•ûŒü‚Ì‰ñ“]”ÍˆÍ
-    public Vector2 elevator222DegreeRange = new Vector2(-10, 10); // ¸~‘Ç‚Ì¶‰E•ûŒü‚Ì‰ñ“]”ÍˆÍ
+
+    [Range(0,30f)]
+    public float ruddersDegreeRange = 20f; // •ûŒü‘Ç‚Ì‰ñ“]”ÍˆÍ
+    [Range(0, 30f)]
+    public float flapsDegreeRange = 20f; // ƒtƒ‰ƒbƒv‚Ì‰ñ“]”ÍˆÍ
+    [Range(0, 40f)]
+    public float elevatorUpDownDegreeRange = 10f; // ¸~‘Ç‚Ìã‰º•ûŒü‚Ì‰ñ“]”ÍˆÍ
+    [Range(0, 40f)]
+    public float elevatorLeftRightDegreeRange = 10f; // ¸~‘Ç‚Ì¶‰E•ûŒü‚Ì‰ñ“]”ÍˆÍ
 
     [Header("‰Â“®”{—¦")]
     public float multiplyValue = 1f; // “ü—Í‚Ì”{—¦
 
     [Header("•âŠÔ‘¬“x")]
+
+    [Range(0, 1f)]
     public float lerpTRudder = 0.1f; // •ûŒü‘Ç‚Ì•âŠÔ‘¬“x
+    [Range(0, 1f)]
     public float lerpTFlaps = 0.1f; // ƒtƒ‰ƒbƒv‚Ì•âŠÔ‘¬“x
+    [Range(0, 1f)]
     public float lerpTElevators = 0.1f; // ¸~‘Ç‚Ì•âŠÔ‘¬“x
+    [Range(0, 1f)]
     public float lerpTRightLeftElevators = 0.1f; // ¸~‘Çi¶‰Ej‚Ì•âŠÔ‘¬“x
 
     // Start is called before the first frame update
@@ -43,7 +53,7 @@ public class PlaneAnimationTest : MonoBehaviour
     private void RotateRudder()
     {
         float input = Input.GetAxis("Horizontal") * multiplyValue;
-        input = Mathf.Clamp(input, ruddersDegreeRange.x, ruddersDegreeRange.y);
+        input = Mathf.Clamp(input, -ruddersDegreeRange, ruddersDegreeRange);
         Vector3 rotation = new Vector3(0, input, 0);
         Quaternion targetRotation = Quaternion.Euler(-rotation);
         Quaternion currentRotation = Quaternion.Lerp(rudders[0].transform.rotation, targetRotation, lerpTRudder);
@@ -56,7 +66,7 @@ public class PlaneAnimationTest : MonoBehaviour
     private void RotateFlaps()
     {
         float input = Input.GetAxis("Vertical") * multiplyValue;
-        input = Mathf.Clamp(input, flapsDegreeRange.x, flapsDegreeRange.y);
+        input = Mathf.Clamp(input, -flapsDegreeRange, flapsDegreeRange);
         Vector3 rotation = new Vector3(input, 0, 0);
         Quaternion targetRotation = Quaternion.Euler(-rotation);
         Quaternion currentRotation = Quaternion.Lerp(flaps[1].transform.rotation, targetRotation, lerpTFlaps);
@@ -76,7 +86,7 @@ public class PlaneAnimationTest : MonoBehaviour
     private void RotateElevatorUpDown()
     {
         float input = Input.GetAxis("Vertical") * multiplyValue;
-        input = Mathf.Clamp(input, elevatorDegreeRange.x, elevatorDegreeRange.y);
+        input = Mathf.Clamp(input, -elevatorUpDownDegreeRange, elevatorUpDownDegreeRange);
         Vector3 rotation = new Vector3(input, 0, 0);
         Quaternion targetRotation = Quaternion.Euler(-rotation);
         Quaternion currentRotation = Quaternion.Lerp(elevator[0].transform.rotation, targetRotation, lerpTElevators);
@@ -89,7 +99,7 @@ public class PlaneAnimationTest : MonoBehaviour
     private void RotateElevatorLeftRight()
     {
         float input = Input.GetAxis("Horizontal") * multiplyValue;
-        input = Mathf.Clamp(input, elevator222DegreeRange.x, elevator222DegreeRange.y);
+        input = Mathf.Clamp(input, -elevatorLeftRightDegreeRange, elevatorLeftRightDegreeRange);
         Vector3 rotation = new Vector3(input, 0, 0);
         Quaternion targetRotation1 = Quaternion.Euler(rotation);
         Quaternion targetRotation2 = Quaternion.Euler(-rotation);
