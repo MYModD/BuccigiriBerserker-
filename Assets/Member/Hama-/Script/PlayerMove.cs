@@ -15,8 +15,23 @@ namespace test
 
         private float VerticalValue;
 
+        private Vector3 Player_pos;
+
+        private new Rigidbody rigidbody;
+
         [SerializeField]
         float speed = 5f;
+        [SerializeField]
+        float move_max_x;
+        [SerializeField]
+        float move_min_x;
+        [SerializeField]
+        float move_max_y;
+        [SerializeField]
+        float move_min_y;
+
+        //[SerializeField] float rotationSpeed = 100f;
+        //[SerializeField] float rotationAngle = 45f;
         //public float speedX ;
         //public float speedY ;
 
@@ -24,6 +39,7 @@ namespace test
         void Start()
         {
             rb = GetComponent<Rigidbody>();
+           
         }
 
         // Update is called once per frame
@@ -34,14 +50,16 @@ namespace test
         // Update is called once per frame
         void Update()
         {
-            // Debug.Log(HolizontalValue);
-            //Debug.Log(VerticalValue);
-            // ‘Oi‚ÍŽ©“®
+           //ˆÚ“®§ŒÀ
 
+            Vector3 playerpos = transform.position;
 
-            //ù‰ñ
+            playerpos.x = Mathf.Clamp(playerpos.x, move_min_x, move_max_x);
+            playerpos.y = Mathf.Clamp(playerpos.y, move_min_y, move_max_y);
+            transform.position = playerpos;
 
-
+           
+            
         }
 
         private void FixedUpdate()
@@ -55,27 +73,28 @@ namespace test
             if (HolizontalValue > 0.6f)
             {
                 transform.Translate(Vector3.left * speed * Time.deltaTime);
-                //transform.Translate(Vector3.back);
-                //speedX -= Time.deltaTime * 10f;
+               
             }
 
             if (HolizontalValue < -0.6f)
             {
                 transform.Translate(Vector3.right * speed * Time.deltaTime);
-                //transform.Translate(Vector3.back);
+                
             }
 
             if (VerticalValue > 0.6f)
             {
                 transform.Translate(Vector3.down * speed * Time.deltaTime);
-                //transform.Translate(Vector3.back);
+               
             }
 
             if (VerticalValue < -0.6f)
             {
                 transform.Translate(Vector3.up * speed * Time.deltaTime);
-                //transform.Translate(Vector3.back);
+               
             }
+
         }
+       
     }
 }
