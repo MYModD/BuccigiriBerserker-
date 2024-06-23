@@ -31,14 +31,15 @@ namespace test
         float move_min_y;
 
         private float rotationSpeed = 45;
-        private float rotationx;
+        private float rotationx = 0f;
         private float rotationz = 0f;          // zŽ²‚Ì‰ñ“]Šp“x
-        private float resettime = 20;
+        private float resetrotation = 0;
+        private float resettime = 30f;
         // Start is called before the first frame update
         void Start()
         {
             rb = GetComponent<Rigidbody>();
-           
+
         }
 
         // Update is called once per frame
@@ -60,30 +61,57 @@ namespace test
             playerpos.y = Mathf.Clamp(playerpos.y, move_min_y, move_max_y);
             transform.position = playerpos;
 
+            Roll_Move roll_Move = GetComponent<Roll_Move>();
 
-
-            float rotationChangez = HolizontalValue * rotationSpeed * Time.deltaTime*5;
-
-            rotationz += rotationChangez;
-
-            rotationz = Mathf.Clamp(rotationz,-rotationSpeed,rotationSpeed);
-
-            float rotationChangex = VerticalValue * rotationSpeed * Time.deltaTime*5;
-
-            rotationx += rotationChangex;
-
-            rotationx = Mathf.Clamp(rotationx, -rotationSpeed, rotationSpeed);
-
-            if(HolizontalValue == 0&&VerticalValue == 0)
+            if (roll_Move._isRotating == false)
             {
-                Debug.Log("AWAASDSDASD");
-                rotationx = 0;
-                rotationz = 0;
+                float rotationChangez = HolizontalValue * rotationSpeed * Time.deltaTime * 5;
+
+                rotationz += rotationChangez;
+
+                rotationz = Mathf.Clamp(rotationz, -rotationSpeed, rotationSpeed);
+
+                float rotationChangex = VerticalValue * rotationSpeed * Time.deltaTime * 5;
+
+                rotationx += rotationChangex;
+
+                rotationx = Mathf.Clamp(rotationx, -rotationSpeed, rotationSpeed);
+
+                if (HolizontalValue == 0 && VerticalValue == 0 || rotationx !=0 && rotationz != 0)
+                {
+                    if (rotationx > 0)
+                    {
+                        rotationx -= resettime * Time.deltaTime * 5;
+                    }
+                    else if (rotationx < 0)
+                    {
+                        rotationx += resettime * Time.deltaTime * 5;
+                    }
+
+                    if (rotationz > 0)
+                    {
+                        rotationz -= resettime * Time.deltaTime * 5;
+                    }
+                    else if (rotationz < 0)
+                    {
+                        rotationz += resettime * Time.deltaTime * 5;
+                    }
+
+                    //rotationz -= resettime * Time.deltaTime;
+                    if (transform.rotation.x == 0 && transform.rotation.z == 0)
+                    {
+                        rotationx = 0;
+                        rotationz = 0;
+                    }
+                  
+                }
+
+                transform.rotation = Quaternion.Euler(rotationx, 180, rotationz);
+
             }
-
-            transform.rotation = Quaternion.Euler(rotationx, 180 ,rotationz);
-
         }
+
+
 
         private void FixedUpdate()
         {
@@ -91,33 +119,33 @@ namespace test
 
             VerticalValue = Input.GetAxisRaw("Vertical");
 
-            transform.Translate(Vector3.back);
+            //transform.Translate(Vector3.back);
 
             if (HolizontalValue > 0.3f)
             {
                 transform.Translate(Vector3.left * speed * Time.deltaTime);
-                
+
             }
 
             if (HolizontalValue < -0.3f)
             {
                 transform.Translate(Vector3.right * speed * Time.deltaTime);
-                
+
             }
 
             if (VerticalValue > 0.3f)
             {
                 transform.Translate(Vector3.down * speed * Time.deltaTime);
-               
+
             }
 
             if (VerticalValue < -0.3f)
             {
                 transform.Translate(Vector3.up * speed * Time.deltaTime);
-               
+
             }
 
         }
-       
+
     }
 }

@@ -8,7 +8,7 @@ public class Roll_Move : MonoBehaviour
 
     public int _numberRotations = 3; // 回転回数
 
-    private bool _isRotating = false; // 回転中かどうかを示すフラグ
+    public bool _isRotating = false; // 回転中かどうかを示すフラグ
 
     private Collider objectCollider; // オブジェクトのコライダー
 
