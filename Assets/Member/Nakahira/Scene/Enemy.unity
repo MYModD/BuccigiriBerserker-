@@ -3221,7 +3221,7 @@ PrefabInstance:
       objectReference: {fileID: 666707523}
     - target: {fileID: -270520324573595726, guid: 22a59c83ad00cc444931b22b11743190, type: 3}
       propertyPath: plykyori
-      value: 300
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 1695391852178105936, guid: 22a59c83ad00cc444931b22b11743190, type: 3}
       propertyPath: m_Name
@@ -11215,7 +11215,7 @@ PrefabInstance:
       objectReference: {fileID: 738601122}
     - target: {fileID: -270520324573595726, guid: 22a59c83ad00cc444931b22b11743190, type: 3}
       propertyPath: plykyori
-      value: 200
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 1695391852178105936, guid: 22a59c83ad00cc444931b22b11743190, type: 3}
       propertyPath: m_Name
