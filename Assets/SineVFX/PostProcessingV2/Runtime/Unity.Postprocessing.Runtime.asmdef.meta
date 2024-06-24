@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: d60799ab2a985554ea1a39cd38695018
+AssemblyDefinitionImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 102387
+  packageName: Magic Missiles and Lasers
+  packageVersion: 1.2
+  assetPath: Assets/SineVFX/PostProcessingV2/Runtime/Unity.Postprocessing.Runtime.asmdef
+  uploadId: 626937

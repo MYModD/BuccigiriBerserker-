@@ -1,51 +1,64 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class TrackingUI : MonoBehaviour
 {
-    public List<Transform> _enemyTransform = new List<Transform>();
-    [SerializeField] private Transform[] _uiTransform;
+    [SerializeField] private GameObject[] _enemyIncameraUI; // 視錐台内の敵のImage
+    [SerializeField] private GameObject[] _enemyInCone; // 円錐内の敵のImage
 
-    private Plane[] planes;
+    public LockOnManager lockOnManager;
 
-    // Start is called before the first frame update
+    private Image[] _enemyInCameraImages;               //キャッシュ用の
+                                                        //Imageコンポーネント
+    private Image[] _enemyInConeImages;
+
     void Start()
     {
+        _enemyInCameraImages = InitializeUIElements(_enemyIncameraUI);
+        _enemyInConeImages = InitializeUIElements(_enemyInCone);
     }
 
-    // Update is called once per frame
     void Update()
     {
-        planes = GeometryUtility.CalculateFrustumPlanes(Camera.main);
-        Debug.Log(string.Join("", planes));
+        UpdateUIPositions(lockOnManager.targetsInCamera, _enemyInCameraImages);
+        UpdateUIPositions(lockOnManager.targetsInCone, _enemyInConeImages);
+    }
 
-        for (int i = 0; i < _enemyTransform.Count; i++)
+    /// <summary>
+    /// UI内のImageコンポーネントを初期化し、キャッシュを作成
+    /// </summary>
+    private Image[] InitializeUIElements(GameObject[] uiElements)
+    {
+        Image[] images = new Image[uiElements.Length];
+        for (int i = 0; i < uiElements.Length; i++)
         {
-            Vector3 enemyScreenPosition = RectTransformUtility.WorldToScreenPoint(Camera.main, _enemyTransform[i].position);
-            _uiTransform[i].GetComponent<RectTransform>().position = enemyScreenPosition;
+            images[i] = uiElements[i].GetComponent<Image>();
+            images[i].enabled = false;
+        }
+        return images;
+    }
 
 
-
-            // AABB 軸平行境界ボックス Axis-Aligned Bounding Box   六面体同士で判定を行うものらしいです
-            // boundsはcolliderのサイズ、中心データが入ってる コライダーなかったらとれない
-
-            bool inPlanes = GeometryUtility.TestPlanesAABB(planes, _enemyTransform[i].GetComponent<Collider>().bounds);
-            
-            if (inPlanes)
+    /// <summary>
+    /// updateごとに
+    /// </summary>
+    private void UpdateUIPositions(List<Transform> targets, Image[] uiElements)
+    {
+        for (int i = 0; i < targets.Count; i++)
+        {
+            if (i < uiElements.Length)
             {
-                _uiTransform[i].GetComponent<Image>().enabled = true;
-            }
-            else
-            {
-                _uiTransform[i].GetComponent<Image>().enabled = false;
+                Vector3 enemyScreenPosition = RectTransformUtility.WorldToScreenPoint(Camera.main, targets[i].position);
+                uiElements[i].transform.position = enemyScreenPosition;
+                uiElements[i].enabled = true;
             }
         }
-        
-        for(int i = _enemyTransform.Count; i < _uiTransform.Length;i++)//いらないやつはOFFにする
+
+        // 余ったUI要素を非表示にする
+        for (int i = targets.Count; i < uiElements.Length; i++)
         {
-            _uiTransform[i].GetComponent<Image>().enabled = false;
+            uiElements[i].enabled = false;
         }
     }
 }

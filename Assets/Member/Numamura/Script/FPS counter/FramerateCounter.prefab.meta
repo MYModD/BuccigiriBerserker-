@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: e9beeb512b3803144a261669463b08bb
+timeCreated: 1485998960
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 81802
+  packageName: Fog Volume 3
+  packageVersion: 3.4.5
+  assetPath: Assets/FogVolume/Scripts/Other/FPS counter/FramerateCounter.prefab
+  uploadId: 600861
