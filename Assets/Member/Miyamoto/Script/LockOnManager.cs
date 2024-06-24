@@ -238,7 +238,7 @@ public class LockOnManager : MonoBehaviour
     /// </summary>
     private void DebugMatarialChange()
     {
-        for (int i = 0; i < targetsInCamera.Count; i++)
+        /*for (int i = 0; i < targetsInCamera.Count; i++)
         {
             targetsInCamera[i].GetComponent<MeshRenderer>().material.color = Color.blue;
         }
@@ -247,7 +247,7 @@ public class LockOnManager : MonoBehaviour
             targetsInCone[i].GetComponent<MeshRenderer>().material.color = Color.red;
         }
 
-
+        */
     }
 
 
@@ -260,6 +260,8 @@ public class LockOnManager : MonoBehaviour
         {
             _coneRange = _searchRadius;
         }
+
+        
 
     }
 }
