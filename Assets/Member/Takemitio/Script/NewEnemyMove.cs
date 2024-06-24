@@ -49,5 +49,4 @@ public class NewEnemyMove : MonoBehaviour
             transform.position = transform.position - transform.forward * moveSpeed * 2 * Time.deltaTime;
         }
     }
-
 }
