@@ -24,11 +24,15 @@ public class FireMissle : MonoBehaviour
 
     private float nextTimeToShoot; // 次の発射時間を計算するための変数
 
+    public AudioClip SE;
+    AudioSource audioSource;
+
     // Start is called before the first frame update
     void Start()
     {
         PooledMissile pooledMissile = GetComponent<PooledMissile>(); // FireMissleはPooledMissileを含むオブジェクトにアタッチされている必要がある
         objectPool = pooledMissile.objectPool;
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -59,11 +63,20 @@ public class FireMissle : MonoBehaviour
                 // 次に発射できる時間を計算
                 nextTimeToShoot = Time.time + cooldownFire;
 
-                fire1SE.fire1SE(); // 発射音を再生
+                missileSE(); // 発射音を再生
 
                 lockOnManager.targetsInCone.Clear();
                 Debug.LogWarning(lockOnManager.targetsInCone[0]);
             }
         }
+    }
+
+    void missileSE()
+    {
+        if (SE != null)
+        {
+            audioSource.PlayOneShot(SE);
+        }
+        // ここに他の処理を追加する（例えば、音の再生、オブジェクトの破壊など）
     }
 }
