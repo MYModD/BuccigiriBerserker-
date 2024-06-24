@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlaneAnimation : MonoBehaviour
+public class PlaneAnimation2 : MonoBehaviour
 {
     [Header("‰Â“®•”‚ÌTransform")]
     public Transform[] rudders; // •ûŒü‘Ç

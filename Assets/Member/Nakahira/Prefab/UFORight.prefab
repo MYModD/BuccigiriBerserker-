@@ -50,12 +50,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 9d300515fbb6bf944a2fe4d8e2e38794, type: 3}
       propertyPath: m_Name
-      value: UFO 2
+      value: UFORight
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9d300515fbb6bf944a2fe4d8e2e38794, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -1354711563834949048}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9d300515fbb6bf944a2fe4d8e2e38794, type: 3}
       insertIndex: -1
       addedObject: {fileID: -4730335504981041887}
@@ -77,6 +80,20 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 9d300515fbb6bf944a2fe4d8e2e38794, type: 3}
   m_PrefabInstance: {fileID: 3006810050253832269}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &-1354711563834949048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2700818504247508252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f5b655055fcf1942bbf4a0eb3532766, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  missilePrefab: {fileID: 0}
+  spawnInterval: 2
 --- !u!114 &-4730335504981041887
 MonoBehaviour:
   m_ObjectHideFlags: 0
