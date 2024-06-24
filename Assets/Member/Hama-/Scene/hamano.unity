@@ -360,13 +360,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 201234587}
   serializedVersion: 2
-<<<<<<< HEAD
-  m_LocalRotation: {x: 0.0528263, y: -0.0004388808, z: 0.00002321687, w: 0.99860364}
-  m_LocalPosition: {x: -13.990468, y: 5.1390243, z: 283.82}
-=======
   m_LocalRotation: {x: 0.12577404, y: 0.0011253763, z: -0.00014267623, w: 0.9920583}
   m_LocalPosition: {x: -0.1, y: 5.0656815, z: 291}
->>>>>>> a0682a8a1b0a54fbf57d5dcbdeddc4ac0910476b
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -477,13 +472,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 215242732}
   serializedVersion: 2
-<<<<<<< HEAD
-  m_LocalRotation: {x: 0.0528263, y: -0.0004388808, z: 0.00002321687, w: 0.99860364}
-  m_LocalPosition: {x: -13.990468, y: 5.1390243, z: 283.82}
-=======
   m_LocalRotation: {x: 0.057067893, y: 0.00007580669, z: -0.00000433319, w: 0.9983703}
   m_LocalPosition: {x: -14.02417, y: 4.278688, z: 293.88513}
->>>>>>> a0682a8a1b0a54fbf57d5dcbdeddc4ac0910476b
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -586,11 +576,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00b874a804cab824093f87758b122037, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
-  _lockcamera: {fileID: 2086112403}
-=======
   _lockcamera: {fileID: 201234589}
->>>>>>> a0682a8a1b0a54fbf57d5dcbdeddc4ac0910476b
   _player: {fileID: 1025315011}
 --- !u!1 &333534307
 GameObject:
@@ -11547,11 +11533,7 @@ MonoBehaviour:
   m_DeselectOnBackgroundClick: 1
   m_PointerBehavior: 0
   m_CursorLockBehavior: 0
-<<<<<<< HEAD
---- !u!1 &1554328787
-=======
 --- !u!1 &1492061183
->>>>>>> a0682a8a1b0a54fbf57d5dcbdeddc4ac0910476b
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -11559,43 +11541,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-<<<<<<< HEAD
-  - component: {fileID: 1554328789}
-  - component: {fileID: 1554328788}
-  m_Layer: 0
-  m_Name: GameObject
-=======
   - component: {fileID: 1492061186}
   - component: {fileID: 1492061185}
   - component: {fileID: 1492061184}
   m_Layer: 0
   m_Name: PooledManage
->>>>>>> a0682a8a1b0a54fbf57d5dcbdeddc4ac0910476b
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-<<<<<<< HEAD
-  m_IsActive: 1
---- !u!114 &1554328788
-=======
   m_IsActive: 0
 --- !u!114 &1492061184
->>>>>>> a0682a8a1b0a54fbf57d5dcbdeddc4ac0910476b
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
-  m_GameObject: {fileID: 1554328787}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20509cf72417d684783ba0c2c49751e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &1554328789
-=======
   m_GameObject: {fileID: 1492061183}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -11626,23 +11587,15 @@ MonoBehaviour:
   maxSize: 100
   testList: []
 --- !u!4 &1492061186
->>>>>>> a0682a8a1b0a54fbf57d5dcbdeddc4ac0910476b
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
-  m_GameObject: {fileID: 1554328787}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.0000014305115, y: 1.2378632, z: 320.50424}
-=======
   m_GameObject: {fileID: 1492061183}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -6.813301, y: 0.036209106, z: 304.9469}
->>>>>>> a0682a8a1b0a54fbf57d5dcbdeddc4ac0910476b
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12148,12 +12101,8 @@ SceneRoots:
   - {fileID: 1084692888}
   - {fileID: 1302151267}
   - {fileID: 2144050540}
-<<<<<<< HEAD
-  - {fileID: 1554328789}
-=======
   - {fileID: 1492061186}
   - {fileID: 22496004}
   - {fileID: 377815934}
   - {fileID: 68725783}
   - {fileID: 1061395889}
->>>>>>> a0682a8a1b0a54fbf57d5dcbdeddc4ac0910476b
