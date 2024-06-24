@@ -15,7 +15,10 @@ public class Fire1SE : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+        if (Input.GetButtonDown("Fire1"))
+        {
+            fire1SE();
+        }
     }
 
     public void fire1SE()
