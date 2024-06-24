@@ -4941,11 +4941,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  hissatsu: 0
-  lerpT: 0.1
+  hissatsu: 1
+  lerpT: 0.88
   speed: 100
   timer: 20
-  randomPower: 0
+  randomPower: 0.15
   randomTimer: 10
   maxAcceleration: 10
 --- !u!54 &7883338570026377371
