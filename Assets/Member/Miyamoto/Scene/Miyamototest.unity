@@ -3485,13 +3485,6 @@ PrefabInstance:
       objectReference: {fileID: 963194227}
     - target: {fileID: 6239685098025949782, guid: 19ecb613f8db77447b350c8b5ae2da1e, type: 3}
       propertyPath: _coneAngle
-<<<<<<< HEAD
-      value: 67
-      objectReference: {fileID: 0}
-    - target: {fileID: 6239685098025949782, guid: 19ecb613f8db77447b350c8b5ae2da1e, type: 3}
-      propertyPath: _coneRange
-      value: 144
-=======
       value: 82
       objectReference: {fileID: 0}
     - target: {fileID: 6239685098025949782, guid: 19ecb613f8db77447b350c8b5ae2da1e, type: 3}
@@ -3501,7 +3494,6 @@ PrefabInstance:
     - target: {fileID: 6239685098025949782, guid: 19ecb613f8db77447b350c8b5ae2da1e, type: 3}
       propertyPath: _searchRadius
       value: 220.9
->>>>>>> main
       objectReference: {fileID: 0}
     - target: {fileID: 9173306726161093884, guid: 19ecb613f8db77447b350c8b5ae2da1e, type: 3}
       propertyPath: m_LocalPosition.x
