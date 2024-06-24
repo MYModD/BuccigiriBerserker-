@@ -34,11 +34,12 @@ namespace test
         private float rotationx = 0f;
         private float rotationz = 0f;          // z軸の回転角度
         private float resettime = 30f;
+        private Roll_Move roll_move;
         // Start is called before the first frame update
         void Start()
         {
             rb = GetComponent<Rigidbody>();
-
+            Roll_Move roll_move = GetComponent<Roll_Move>();
         }
 
         // Update is called once per frame
@@ -60,27 +61,27 @@ namespace test
             playerpos.y = Mathf.Clamp(playerpos.y, move_min_y, move_max_y);
             transform.position = playerpos;
 
-            Roll_Move roll_Move = GetComponent<Roll_Move>();
-
-            if (roll_Move._isRotating == false)
+            //Roll＿Moveのかいてんがないとき動く
+            if (roll_move._isRotating == false)
             {
+                //Z軸の傾き
                 float rotationChangez = HolizontalValue * rotationSpeed * Time.deltaTime * 5;
 
                 rotationz += rotationChangez;
 
                 rotationz = Mathf.Clamp(rotationz, -rotationSpeed, rotationSpeed);
-
+                //X軸の傾き
                 float rotationChangex = VerticalValue * -rotationSpeed * Time.deltaTime * 5;
 
                 rotationx += rotationChangex;
 
                 rotationx = Mathf.Clamp(rotationx, -rotationSpeed, rotationSpeed);
-
+                //入力がないかつrotationx.zが０じゃないとき
                 if (HolizontalValue == 0 && VerticalValue == 0 && (rotationx != 0 || rotationz != 0))
                 {
                     // Reduce rotationx and rotationz towards 0
-                    float resetAmount = resettime * Time.deltaTime * 5;
-
+                    float resetAmount = resettime * Time.deltaTime * 7;
+                    //傾きリセット
                     if (rotationx != 0)
                     {
                         rotationx = Mathf.MoveTowards(rotationx, 0, resetAmount);
@@ -104,32 +105,21 @@ namespace test
 
             VerticalValue = Input.GetAxisRaw("Vertical");
 
-            transform.Translate(Vector3.back * speed * Time.deltaTime);
+            // プレイヤーの基本的な進行方向を設定します（例：後方向に進む場合）
+            Vector3 moveDirection = Vector3.forward;
 
-            if (HolizontalValue > 0.3f)
+            // プレイヤーの移動方向を左右および上下の入力に基づいて調整します
+            moveDirection += Vector3.right * HolizontalValue;
+            moveDirection += Vector3.down * VerticalValue;
+
+            // Rigidbody に力を加えて移動させます
+            rb.velocity = moveDirection.normalized * speed;
+
+            // プレイヤーの向きを移動方向に合わせて常に更新します
+            if (moveDirection != Vector3.zero)
             {
-                transform.Translate(Vector3.left * speed * Time.deltaTime);
-
+                rb.rotation = Quaternion.LookRotation(Vector3.forward, moveDirection);
             }
-
-            if (HolizontalValue < -0.3f)
-            {
-                transform.Translate(Vector3.right * speed * Time.deltaTime);
-
-            }
-
-            if (VerticalValue > 0.3f)
-            {
-                transform.Translate(Vector3.down * speed * Time.deltaTime);
-
-            }
-
-            if (VerticalValue < -0.3f)
-            {
-                transform.Translate(Vector3.up * speed * Time.deltaTime);
-
-            }
-
         }
 
     }

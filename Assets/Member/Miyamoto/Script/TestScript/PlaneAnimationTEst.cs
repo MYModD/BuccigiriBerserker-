@@ -3,6 +3,17 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
+
+
+
+
+namespace AnimationTest
+{
+
+
+
+
+
 public class PlaneAnimationTest : MonoBehaviour
 {
     [Header("‰Â“®•”‚ÌTransform")]
@@ -111,3 +122,7 @@ public class PlaneAnimationTest : MonoBehaviour
         elevator[1].transform.rotation = currentRotation2;
     }
 }
+
+
+}
+
