@@ -38,7 +38,7 @@ public class FireMissle : MonoBehaviour
 
         bool testBool = Input.GetKey(KeyCode.Space) || Input.GetButtonDown("Submit"); // スペースキーが押されたかどうかをチェック
 
-        Debug.Log(testBool);
+        //Debug.Log(testBool);
 
         if (testBool && Time.time > nextTimeToShoot && objectPool != null)
         {
