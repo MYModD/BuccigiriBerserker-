@@ -67,6 +67,8 @@ public class Roll_Move : MonoBehaviour
         Quaternion finalRotation = Quaternion.AngleAxis(targetRotation - totalRotation, Vector3.forward);
         transform.rotation *= finalRotation;
 
+        objectCollider.enabled = true;
+
         _isRotating = false;
     }
 
