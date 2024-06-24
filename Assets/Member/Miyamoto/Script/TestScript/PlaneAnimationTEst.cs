@@ -1,21 +1,9 @@
 using UnityEngine;
 
 
-<<<<<<< HEAD
 
-
-
-namespace AnimationTest
-{
-
-
-
-
-
-public class PlaneAnimationTest : MonoBehaviour
-=======
 namespace PlaneAnimation
->>>>>>> main
+
 {
 
 
@@ -130,5 +118,5 @@ namespace PlaneAnimation
 }
 
 
-}
+
 
