@@ -1,33 +1,37 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 
 public class GamingMaterialTEst : MonoBehaviour
 {
-    MeshRenderer meshRenderer;
-    public List<MeshRenderer> meshRenderers = new List<MeshRenderer>();
+    
+    public List<MeshRenderer> めっしゅれんだー = new List<MeshRenderer>();
+
+    
 
     [Range(0, 10f)]
-    public float value;
+    public float ばりゅー;
 
-    private float calulatevalue = 0;
+    private float かりゅきゅれいとばりゅー = 0;
     // Start is called before the first frame update
     void Start()
     {
-        
+       
     }
 
     // Update is called once per frame
     void Update()
     {
-        calulatevalue += value;
-        if(calulatevalue > 360f)
+        かりゅきゅれいとばりゅー += ばりゅー;
+        if(かりゅきゅれいとばりゅー > 360f)
         {
-            calulatevalue = 0;
+            かりゅきゅれいとばりゅー = 0;
         }
-        foreach (var item in meshRenderers)
+        foreach (var item in めっしゅれんだー)
         {
-            item.material.color = Color.HSVToRGB(calulatevalue / 360f, 1, 1);
+            item.material.color = Color.HSVToRGB(かりゅきゅれいとばりゅー / 360f, 1, 1);
         }
 
     }

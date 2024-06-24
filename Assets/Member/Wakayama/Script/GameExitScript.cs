@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GameExitScript : MonoBehaviour
+
 {
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -18,6 +18,7 @@ public class GameExitScript : MonoBehaviour
 
     public void GameEnd()
     {
-            Application.Quit();//ビルドされたゲームプレイを終了
+ 
+        Application.Quit();//ビルドされたゲームプレイを終了
     }
 }

@@ -8,7 +8,6 @@ public class GameStartButtonScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -19,7 +18,7 @@ public class GameStartButtonScript : MonoBehaviour
 
     public void SceneChange()
     {
-        SceneManager.LoadScene("ResultScene");
+        SceneManager.LoadScene("Enemy");
         return;
     }
 }

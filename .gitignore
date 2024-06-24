@@ -56,3 +56,7 @@ sysinfo.txt
 crashlytics-build.properties
 ~*
 .DS_Store
+/UserSettings/Layouts
+/UserSettings/Layouts
+/UserSettings
+Assets/SmallMods/WaveOcean/Ocean.mat

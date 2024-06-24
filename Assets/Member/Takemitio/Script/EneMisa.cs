@@ -10,15 +10,14 @@ public class EneMisa : MonoBehaviour
     {
         defaultTarget = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         // spawnInterval秒ごとにSpawnMissile関数を呼び出す
-        InvokeRepeating("SpawnMissile", 0f, spawnInterval * Time.deltaTime);
+        //InvokeRepeating("SpawnMissile", 0f, spawnInterval * Time.deltaTime);
+        InvokeRepeating("SpawnMissile", Random.Range(5,15), Random.Range(7,20));
     }
 
     void SpawnMissile()
     {
         // missilePrefabをインスタンス化し、Missileコンポーネントを取得
         GameObject newMissile = Instantiate(missilePrefab, transform.position, transform.rotation);
-        
-        
         newMissile.GetComponent<EnemyMissile>().target = defaultTarget;
     }
 }

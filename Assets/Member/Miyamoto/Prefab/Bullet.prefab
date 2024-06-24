@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c70f453dcbd5f144913794867c1b736, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravity: -5
+  gravity: 0
   timer: 4
 --- !u!33 &5855453274697425174
 MeshFilter:

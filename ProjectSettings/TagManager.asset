@@ -4,8 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - missile
   - Enemy
+  - missile
   layers:
   - Default
   - TransparentFX

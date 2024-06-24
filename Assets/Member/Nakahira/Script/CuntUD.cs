@@ -12,6 +12,7 @@ public class CuntUD : MonoBehaviour
     private int previousCount; // 前回のカウント数
     public int currentCount; // 現在のカウント数
     private int counthome;
+    public int DestoroyEnemies;
     private int juu = 10;
     void Start()
     {
@@ -38,11 +39,13 @@ public class CuntUD : MonoBehaviour
         if(counthome == juu)
         {
             homekotoba.text = "Excellent!";
+            counthome = 0;
         }
         // カウントが減少した場合のみ更新する
         if (currentCount < previousCount)
         {
             counthome += 1;
+            DestoroyEnemies += 1;
             previousCount = currentCount; // 前回のカウントを更新
             UpdateCountText(); // テキストを更新
             print("a");
