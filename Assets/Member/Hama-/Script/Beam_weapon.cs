@@ -4,29 +4,50 @@ using UnityEngine;
 
 public class Beam_weapon : MonoBehaviour
 {
-    public ParticleSystem startWavePS;
-    public ParticleSystem startParticles;
-    public ParticleSystem smallMissiles;
-    public int smallMissilesCount = 100;
+    private float _timer;
+    private ParticleSystem longparticleSystem;
+    private bool isParticlesActive = false;
+    private float particleDuration = 5f; 
+    private CapsuleCollider beamCol;
+    void Start()
+    {
+        beamCol = GetComponent<CapsuleCollider>();
+        longparticleSystem = GetComponent<ParticleSystem>();
+        longparticleSystem.Stop(); 
+        _timer = 0f;
+
+    }
 
     void Update()
     {
-        if (Input.GetButtonDown("Fire3"))
+        _timer += Time.deltaTime;
+        if (_timer > 2f)
         {
-            startWavePS.Emit(1);
-            startParticles.Emit(smallMissilesCount);
+            
+            if (Input.GetKeyDown(KeyCode.Space) && !isParticlesActive)
+            {
+                isParticlesActive = true;
+                longparticleSystem.Play();
+                beamCol.enabled = true;
+                
+                Invoke("StopParticles", particleDuration);
+            }
         }
 
-        if (Input.GetMouseButton(0))
+    }
+
+    void StopParticles()
+    {//nullでない
+        if (longparticleSystem != null)
         {
-            var em = smallMissiles.emission;
-            em.enabled = true;
+            beamCol.enabled = false;
+            longparticleSystem.Stop();
+            isParticlesActive = false;
+            _timer = 0f;
         }
-        else
-        {
-            var em = smallMissiles.emission;
-            em.enabled = false;
-        }
+
     }
 }
+
+
 
