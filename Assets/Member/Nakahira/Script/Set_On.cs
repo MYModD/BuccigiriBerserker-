@@ -6,6 +6,8 @@ public class Set_On : MonoBehaviour
 {
     // ゲームオブジェクトのボックスコライダーとメッシュレンダラー
     public Collider myhako;
+    private NewEnemyMove enemymove;
+    private EneMisa missile;
     //public MeshRenderer mymmes;
     // プレイヤーの位置とプレイヤーとの距離
     public Transform plyer;
@@ -25,6 +27,8 @@ public class Set_On : MonoBehaviour
     {
         // メッシュレンダラーを非表示にする
         //mymmes.enabled = false;
+        enemymove = gameObject.GetComponent<NewEnemyMove>();
+        missile = gameObject.GetComponent<EneMisa>();
         myhako.enabled = false;
         //GameObject[] tekif = GameObject.FindGameObjectsWithTag("teki");
         //foreach (GameObject obj in tekif)
@@ -44,16 +48,27 @@ public class Set_On : MonoBehaviour
     }
     public void Setonp()
     {
-        //Transform target3 = teki.transform.Find("tekiko");
-        float distance = Vector3.Distance(transform.position, plyer.position);
-        print(distance);
-        if (distance > plykyori)
+        float sqrDistance = (transform.position - plyer.position).sqrMagnitude;
+        print(sqrDistance);
+        if (sqrDistance < plykyori * plykyori) // plykyoriの二乗を比較します
         {
-            //敵のしゅつげん
+            // 敵の出現
             myhako.enabled = true;
+            enemymove.enabled = true;
+            missile.enabled = true;
             //mymmes.enabled = true;
-
-          
         }
+        //Transform target3 = teki.transform.Find("tekiko");
+        //float distance = Vector3.Distance(transform.position, plyer.position);
+        //print(distance);
+        //if (distance < plykyori)
+        //{
+        //    //敵のしゅつげん
+        //    myhako.enabled = true;
+        //    enemymove.enabled = true;
+        //    //mymmes.enabled = true;
+
+
+        //}
     }
 }

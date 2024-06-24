@@ -53,7 +53,11 @@ PrefabInstance:
       value: UFORight
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: -168051006817133204, guid: 9d300515fbb6bf944a2fe4d8e2e38794, type: 3}
+    - {fileID: 2654713335656134247, guid: 9d300515fbb6bf944a2fe4d8e2e38794, type: 3}
+    - {fileID: -8700617353114198275, guid: 9d300515fbb6bf944a2fe4d8e2e38794, type: 3}
+    - {fileID: 65702495048144492, guid: 9d300515fbb6bf944a2fe4d8e2e38794, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9d300515fbb6bf944a2fe4d8e2e38794, type: 3}
@@ -107,7 +111,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosionPrefab: {fileID: 0}
-  Explosion1: {fileID: 0}
+  ExplodeAudioSource: {fileID: 0}
 --- !u!114 &-537464574741058857
 MonoBehaviour:
   m_ObjectHideFlags: 0
