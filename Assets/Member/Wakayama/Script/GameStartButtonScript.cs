@@ -11,8 +11,9 @@ public class GameStartButtonScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameSceneStarter = SceneManager.LoadSceneAsync("Enemy");//ゲームシーンを出力
+        GameSceneStarter = SceneManager.LoadSceneAsync("Enemy",LoadSceneMode.Additive);//ゲームシーンを出力
         Invoke("GameSceneReadyStop",SceneStopTime);//指定時間経過したらゲームシーンを一度止める
+        Time.timeScale = 0f;
         
     }
 
@@ -31,6 +32,7 @@ public class GameStartButtonScript : MonoBehaviour
     {
         GameSceneStarter.allowSceneActivation = true;//ゲームシーンを起動する
         SceneManager.UnloadSceneAsync("HowtoPlayScene");//操作説明シーンを消去する
+        Time.timeScale = 1f;
         return;
     }
 }
