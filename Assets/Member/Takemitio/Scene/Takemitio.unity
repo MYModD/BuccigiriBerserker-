@@ -201,7 +201,7 @@ MonoBehaviour:
   distanceToLeft: 0
   moveSpeed: 100
   target: {fileID: 1030479751916733278}
-  stopDistance: 80
+  stopDistance: 150
 --- !u!1001 &60514811
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -344,7 +344,7 @@ MonoBehaviour:
   distanceToLeft: 0
   moveSpeed: 100
   target: {fileID: 1030479751916733278}
-  stopDistance: 80
+  stopDistance: 150
 --- !u!1 &174473338 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9066839583605974035, guid: 90d5ca663351cd9478d16518160b9945, type: 3}
@@ -365,7 +365,7 @@ MonoBehaviour:
   distanceToLeft: 0
   moveSpeed: 100
   target: {fileID: 1030479751916733278}
-  stopDistance: 80
+  stopDistance: 150
 --- !u!1 &206252861 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9066839583605974035, guid: 90d5ca663351cd9478d16518160b9945, type: 3}
@@ -386,7 +386,7 @@ MonoBehaviour:
   distanceToLeft: 0
   moveSpeed: 100
   target: {fileID: 1030479751916733278}
-  stopDistance: 80
+  stopDistance: 150
 --- !u!1001 &210433925
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -651,7 +651,7 @@ MonoBehaviour:
   distanceToLeft: 0
   moveSpeed: 100
   target: {fileID: 1030479751916733278}
-  stopDistance: 80
+  stopDistance: 150
 --- !u!1 &308716904 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9066839583605974035, guid: 90d5ca663351cd9478d16518160b9945, type: 3}
@@ -765,7 +765,7 @@ MonoBehaviour:
   distanceToLeft: 0
   moveSpeed: 100
   target: {fileID: 1030479751916733278}
-  stopDistance: 80
+  stopDistance: 150
 --- !u!1 &390102860 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9066839583605974035, guid: 90d5ca663351cd9478d16518160b9945, type: 3}
@@ -786,7 +786,7 @@ MonoBehaviour:
   distanceToLeft: 0
   moveSpeed: 100
   target: {fileID: 1030479751916733278}
-  stopDistance: 80
+  stopDistance: 150
 --- !u!1 &437040572 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9066839583605974035, guid: 90d5ca663351cd9478d16518160b9945, type: 3}
@@ -807,7 +807,7 @@ MonoBehaviour:
   distanceToLeft: 0
   moveSpeed: 100
   target: {fileID: 1030479751916733278}
-  stopDistance: 80
+  stopDistance: 150
 --- !u!1 &457007269 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9066839583605974035, guid: 90d5ca663351cd9478d16518160b9945, type: 3}
@@ -828,7 +828,7 @@ MonoBehaviour:
   distanceToLeft: 0
   moveSpeed: 100
   target: {fileID: 1030479751916733278}
-  stopDistance: 80
+  stopDistance: 150
 --- !u!1 &494331819 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9066839583605974035, guid: 90d5ca663351cd9478d16518160b9945, type: 3}
@@ -849,7 +849,7 @@ MonoBehaviour:
   distanceToLeft: 0
   moveSpeed: 100
   target: {fileID: 1030479751916733278}
-  stopDistance: 80
+  stopDistance: 150
 --- !u!1001 &511713662
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -931,7 +931,7 @@ MonoBehaviour:
   distanceToLeft: 0
   moveSpeed: 100
   target: {fileID: 1030479751916733278}
-  stopDistance: 80
+  stopDistance: 150
 --- !u!1001 &592029343
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1074,7 +1074,7 @@ MonoBehaviour:
   distanceToLeft: 0
   moveSpeed: 100
   target: {fileID: 1030479751916733278}
-  stopDistance: 80
+  stopDistance: 150
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1250,7 +1250,7 @@ MonoBehaviour:
   distanceToLeft: 0
   moveSpeed: 100
   target: {fileID: 1030479751916733278}
-  stopDistance: 80
+  stopDistance: 150
 --- !u!1 &838589770 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9066839583605974035, guid: 90d5ca663351cd9478d16518160b9945, type: 3}
@@ -1271,7 +1271,7 @@ MonoBehaviour:
   distanceToLeft: 0
   moveSpeed: 100
   target: {fileID: 1030479751916733278}
-  stopDistance: 80
+  stopDistance: 150
 --- !u!1001 &855902691
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1353,7 +1353,7 @@ MonoBehaviour:
   distanceToLeft: 0
   moveSpeed: 100
   target: {fileID: 1030479751916733278}
-  stopDistance: 80
+  stopDistance: 150
 --- !u!1 &948587395 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9066839583605974035, guid: 90d5ca663351cd9478d16518160b9945, type: 3}
@@ -1374,7 +1374,7 @@ MonoBehaviour:
   distanceToLeft: 0
   moveSpeed: 100
   target: {fileID: 1030479751916733278}
-  stopDistance: 80
+  stopDistance: 150
 --- !u!1 &961423214 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9066839583605974035, guid: 90d5ca663351cd9478d16518160b9945, type: 3}
@@ -1395,7 +1395,7 @@ MonoBehaviour:
   distanceToLeft: 0
   moveSpeed: 100
   target: {fileID: 1030479751916733278}
-  stopDistance: 80
+  stopDistance: 150
 --- !u!1 &963048231 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9066839583605974035, guid: 90d5ca663351cd9478d16518160b9945, type: 3}
@@ -1416,7 +1416,7 @@ MonoBehaviour:
   distanceToLeft: 0
   moveSpeed: 100
   target: {fileID: 1030479751916733278}
-  stopDistance: 80
+  stopDistance: 150
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1590,7 +1590,7 @@ MonoBehaviour:
   distanceToLeft: 0
   moveSpeed: 100
   target: {fileID: 1030479751916733278}
-  stopDistance: 80
+  stopDistance: 150
 --- !u!1001 &991670538
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1672,7 +1672,7 @@ MonoBehaviour:
   distanceToLeft: 0
   moveSpeed: 100
   target: {fileID: 1030479751916733278}
-  stopDistance: 80
+  stopDistance: 150
 --- !u!1001 &997370762
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1936,7 +1936,7 @@ MonoBehaviour:
   distanceToLeft: 0
   moveSpeed: 100
   target: {fileID: 1030479751916733278}
-  stopDistance: 80
+  stopDistance: 150
 --- !u!1 &1099268670 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9066839583605974035, guid: 90d5ca663351cd9478d16518160b9945, type: 3}
@@ -1957,7 +1957,7 @@ MonoBehaviour:
   distanceToLeft: 0
   moveSpeed: 100
   target: {fileID: 1030479751916733278}
-  stopDistance: 80
+  stopDistance: 150
 --- !u!1 &1109499692 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9066839583605974035, guid: 90d5ca663351cd9478d16518160b9945, type: 3}
@@ -1978,7 +1978,7 @@ MonoBehaviour:
   distanceToLeft: 0
   moveSpeed: 100
   target: {fileID: 1030479751916733278}
-  stopDistance: 80
+  stopDistance: 150
 --- !u!1 &1117450071 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9066839583605974035, guid: 90d5ca663351cd9478d16518160b9945, type: 3}
@@ -1999,7 +1999,7 @@ MonoBehaviour:
   distanceToLeft: 0
   moveSpeed: 100
   target: {fileID: 1030479751916733278}
-  stopDistance: 80
+  stopDistance: 150
 --- !u!1001 &1150204900
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2142,7 +2142,7 @@ MonoBehaviour:
   distanceToLeft: 0
   moveSpeed: 100
   target: {fileID: 1030479751916733278}
-  stopDistance: 80
+  stopDistance: 150
 --- !u!1001 &1212638551
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2285,7 +2285,7 @@ MonoBehaviour:
   distanceToLeft: 0
   moveSpeed: 100
   target: {fileID: 1030479751916733278}
-  stopDistance: 80
+  stopDistance: 150
 --- !u!1 &1266497677 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9066839583605974035, guid: 90d5ca663351cd9478d16518160b9945, type: 3}
@@ -2306,7 +2306,7 @@ MonoBehaviour:
   distanceToLeft: 0
   moveSpeed: 100
   target: {fileID: 1030479751916733278}
-  stopDistance: 80
+  stopDistance: 150
 --- !u!1001 &1291441535
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2754,7 +2754,7 @@ MonoBehaviour:
   distanceToLeft: 0
   moveSpeed: 100
   target: {fileID: 1030479751916733278}
-  stopDistance: 80
+  stopDistance: 150
 --- !u!1001 &1476062627
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2836,7 +2836,7 @@ MonoBehaviour:
   distanceToLeft: 0
   moveSpeed: 100
   target: {fileID: 1030479751916733278}
-  stopDistance: 80
+  stopDistance: 150
 --- !u!1 &1514533118 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9066839583605974035, guid: 90d5ca663351cd9478d16518160b9945, type: 3}
@@ -2857,7 +2857,7 @@ MonoBehaviour:
   distanceToLeft: 0
   moveSpeed: 100
   target: {fileID: 1030479751916733278}
-  stopDistance: 80
+  stopDistance: 150
 --- !u!1001 &1531325554
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2939,7 +2939,7 @@ MonoBehaviour:
   distanceToLeft: 0
   moveSpeed: 100
   target: {fileID: 1030479751916733278}
-  stopDistance: 80
+  stopDistance: 150
 --- !u!1001 &1537156781
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3143,7 +3143,7 @@ MonoBehaviour:
   distanceToLeft: 0
   moveSpeed: 100
   target: {fileID: 1030479751916733278}
-  stopDistance: 80
+  stopDistance: 150
 --- !u!1 &1607463940 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9066839583605974035, guid: 90d5ca663351cd9478d16518160b9945, type: 3}
@@ -3164,7 +3164,7 @@ MonoBehaviour:
   distanceToLeft: 0
   moveSpeed: 100
   target: {fileID: 1030479751916733278}
-  stopDistance: 80
+  stopDistance: 150
 --- !u!1001 &1670491940
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3307,7 +3307,7 @@ MonoBehaviour:
   distanceToLeft: 0
   moveSpeed: 100
   target: {fileID: 1030479751916733278}
-  stopDistance: 80
+  stopDistance: 150
 --- !u!1 &1702633024 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9066839583605974035, guid: 90d5ca663351cd9478d16518160b9945, type: 3}
@@ -3328,7 +3328,7 @@ MonoBehaviour:
   distanceToLeft: 0
   moveSpeed: 100
   target: {fileID: 1030479751916733278}
-  stopDistance: 80
+  stopDistance: 150
 --- !u!1001 &1716932781
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3410,7 +3410,7 @@ MonoBehaviour:
   distanceToLeft: 0
   moveSpeed: 100
   target: {fileID: 1030479751916733278}
-  stopDistance: 80
+  stopDistance: 150
 --- !u!1 &1751887956 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9066839583605974035, guid: 90d5ca663351cd9478d16518160b9945, type: 3}
@@ -3431,7 +3431,7 @@ MonoBehaviour:
   distanceToLeft: 0
   moveSpeed: 100
   target: {fileID: 1030479751916733278}
-  stopDistance: 80
+  stopDistance: 150
 --- !u!1 &1755865003 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9066839583605974035, guid: 90d5ca663351cd9478d16518160b9945, type: 3}
@@ -3452,7 +3452,7 @@ MonoBehaviour:
   distanceToLeft: 0
   moveSpeed: 100
   target: {fileID: 1030479751916733278}
-  stopDistance: 80
+  stopDistance: 150
 --- !u!1 &1762207170 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9066839583605974035, guid: 90d5ca663351cd9478d16518160b9945, type: 3}
@@ -3473,7 +3473,7 @@ MonoBehaviour:
   distanceToLeft: 0
   moveSpeed: 100
   target: {fileID: 1030479751916733278}
-  stopDistance: 80
+  stopDistance: 150
 --- !u!1 &1772015359 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9066839583605974035, guid: 90d5ca663351cd9478d16518160b9945, type: 3}
@@ -3494,7 +3494,7 @@ MonoBehaviour:
   distanceToLeft: 0
   moveSpeed: 100
   target: {fileID: 1030479751916733278}
-  stopDistance: 80
+  stopDistance: 150
 --- !u!1001 &1788382087
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3576,7 +3576,7 @@ MonoBehaviour:
   distanceToLeft: 0
   moveSpeed: 100
   target: {fileID: 1030479751916733278}
-  stopDistance: 80
+  stopDistance: 150
 --- !u!1 &1803451942
 GameObject:
   m_ObjectHideFlags: 0
@@ -3773,7 +3773,7 @@ MonoBehaviour:
   distanceToLeft: 0
   moveSpeed: 100
   target: {fileID: 1030479751916733278}
-  stopDistance: 80
+  stopDistance: 150
 --- !u!1001 &1954218513
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3855,7 +3855,7 @@ MonoBehaviour:
   distanceToLeft: 0
   moveSpeed: 100
   target: {fileID: 1030479751916733278}
-  stopDistance: 80
+  stopDistance: 150
 --- !u!1 &1995504097 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9066839583605974035, guid: 90d5ca663351cd9478d16518160b9945, type: 3}
@@ -3876,7 +3876,7 @@ MonoBehaviour:
   distanceToLeft: 0
   moveSpeed: 100
   target: {fileID: 1030479751916733278}
-  stopDistance: 80
+  stopDistance: 150
 --- !u!1001 &2024030417
 PrefabInstance:
   m_ObjectHideFlags: 0
