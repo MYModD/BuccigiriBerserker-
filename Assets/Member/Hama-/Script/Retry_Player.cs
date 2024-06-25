@@ -1,11 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
-using Cinemachine;
 using UnityEngine;
 
 public class Retry_Player : MonoBehaviour
 {
     private PlayerLife playerlife;
+
+    public MeshRenderer[] meshRenderer;
 
     void Start()
     {
@@ -14,19 +13,24 @@ public class Retry_Player : MonoBehaviour
 
     void Update()
     {
-        if(playerlife._IsRetry == true)
-        {
-            this.GetComponent<MeshRenderer>().enabled = false;
-        }
+        foreach (MeshRenderer renderer in meshRenderer)
+                {
+            if (playerlife._IsRetry == true)
+            {
+                renderer.enabled = false;
+            }
 
-        if(playerlife._IsRetry == false)
-        {
-            this.GetComponent<MeshRenderer>().enabled = true;
-        }
-            
-            
-       
+            if (playerlife._IsRetry == false)
+            {
+                renderer.enabled = true;
+            }
+             }
+
+
+
+
+
     }
 
-   
+
 }

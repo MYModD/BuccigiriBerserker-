@@ -6,22 +6,39 @@ public class PlayerLife : MonoBehaviour
 {
     [SerializeField] GameObject player;
 
-    private float _playerlife = 5;
+    public float _playerlife = 5;
 
-    private float spawnspeed = 50.0f;
+    private float spawnspeed = 20.0f;
 
     public bool _IsRetry;
 
-    // Update is called once per frame
+    private Animator anim = null;
+
+    private void Start()
+    {
+        anim = GetComponent<Animator>();
+    }
+
     void Update()
     {
+
+
         if (_playerlife == 0)
         {
 
             _IsRetry = true;
             this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z - spawnspeed * Time.deltaTime);
-            //アニメーションで無敵時間再現したいな
-            Invoke(nameof(refresh), 3f);
+            Invoke(nameof(refresh), 5f);
+            anim.SetBool("invincible", true);
+            anim.SetBool("Normal", false);
+
+        }
+
+        if (_playerlife >= 5)
+        {
+            anim.SetBool("invincible", false);
+            anim.SetBool("Normal", true);
+            _IsRetry = false;
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
@@ -41,7 +58,7 @@ public class PlayerLife : MonoBehaviour
 
     void refresh()
     {
-        Debug.Log("NAKAHIRA");
+
         _playerlife = 5;
 
     }

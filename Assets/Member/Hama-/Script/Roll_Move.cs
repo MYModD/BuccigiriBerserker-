@@ -22,7 +22,7 @@ public class Roll_Move : MonoBehaviour
     void Update()
     {
 
-        if(Input.GetButtonDown("Right_Roll") && !_isRotating)
+        if (Input.GetButtonDown("Right_Roll") && !_isRotating)
         {
             StartCoroutine(RotateObject_Right());
         }
@@ -31,38 +31,24 @@ public class Roll_Move : MonoBehaviour
         {
             StartCoroutine(RotateObject_Left());
         }
-
-        //float _moveX = Input.GetAxis("Horizontal") * Time.deltaTime;
-        //float _moveY = Input.GetAxis("Vertical") * Time.deltaTime;
-
-        //transform.Translate(new Vector3(_moveX, _moveY, 0));
     }
-
+    
     private IEnumerator RotateObject_Right()
     {
         _isRotating = true;
         objectCollider.enabled = false;
-      
 
         float totalRotation = 0f;
         float targetRotation = 360f * _numberRotations;
 
-       
-
-
         while (totalRotation < targetRotation)
         {
             float _rotationFrame = _rotationSpeed * Time.deltaTime;
-            //transform.Rotate(Vector3.forward, _rotationFrame);
             Quaternion deltaRotation = Quaternion.AngleAxis(_rotationFrame, Vector3.forward);
             transform.rotation *= deltaRotation;
             totalRotation += _rotationFrame;
             yield return null;
         }
-
-        //transform.Rotate(Vector3.forward, targetRotation - totalRotation);
-
-        //objectCollider.enabled = true;
 
         Quaternion finalRotation = Quaternion.AngleAxis(targetRotation - totalRotation, Vector3.forward);
         transform.rotation *= finalRotation;
@@ -83,14 +69,11 @@ public class Roll_Move : MonoBehaviour
         while (totalRotation < targetRotation)
         {
             float _rotationFrame = _rotationSpeed * Time.deltaTime;
-            //transform.Rotate(Vector3.back,_rotationFrame);
             Quaternion deltaRotation = Quaternion.AngleAxis(_rotationFrame, Vector3.back);
             transform.rotation *= deltaRotation;
             totalRotation += _rotationFrame;
             yield return null;
         }
-
-        //transform.Rotate(Vector3.back, targetRotation - totalRotation);
 
         // ÅI“I‚È”÷’²®
         Quaternion finalRotation = Quaternion.AngleAxis(targetRotation - totalRotation, Vector3.back);
