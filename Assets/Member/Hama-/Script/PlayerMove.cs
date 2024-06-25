@@ -94,23 +94,23 @@ namespace test
 
         private void FixedUpdate()
         {
-            HolizontalValue = Input.GetAxisRaw("Horizontal");
+        //    HolizontalValue = Input.GetAxisRaw("Horizontal");
 
-            VerticalValue = Input.GetAxisRaw("Vertical");
+        //    VerticalValue = Input.GetAxisRaw("Vertical");
 
-            // プレイヤーの前進方向ベクトルを計算
-            Vector3 moveDirection = Vector3.forward;
+        //    // プレイヤーの前進方向ベクトルを計算
+        //    Vector3 moveDirection = Vector3.forward;
 
-            // プレイヤーの移動方向を左右および上下の入力に基づいて調整します
-            moveDirection += Vector3.right * HolizontalValue;
+        //    // プレイヤーの移動方向を左右および上下の入力に基づいて調整します
+        //    moveDirection += Vector3.right * HolizontalValue;
 
-            moveDirection += Vector3.down * VerticalValue;
+        //    moveDirection += Vector3.down * VerticalValue;
 
-            // Rigidbody に力を加えて移動させます
-            rb.velocity = moveDirection.normalized * speed;
+        //    // Rigidbody に力を加えて移動させます
+        //    rb.velocity = moveDirection.normalized * speed;
 
-            // Rigidbodyに速度を与えて移動させる
-            rb.velocity = moveDirection * speed;
+        //    // Rigidbodyに速度を与えて移動させる
+        //    rb.velocity = moveDirection * speed;
         }
     }
 }

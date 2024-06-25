@@ -8,20 +8,10 @@ public class PlayerLife : MonoBehaviour
 
     private float _playerlife = 5;
 
+    private float spawnspeed = 50.0f;
+
     public bool _IsRetry;
 
-    private bool _Ismesh;
-
-    private bool _Iscolider;
-
-    
-
-    
-
-    //private void Start()
-    //{
-        
-    //}
     // Update is called once per frame
     void Update()
     {
@@ -29,10 +19,12 @@ public class PlayerLife : MonoBehaviour
         {
 
             _IsRetry = true;
-            Invoke(nameof(Dead), 5f);
+            this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z - spawnspeed * Time.deltaTime);
+            //アニメーションで無敵時間再現したいな
+            Invoke(nameof(refresh), 3f);
         }
 
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             _playerlife = _playerlife - 1;
         }
@@ -47,11 +39,10 @@ public class PlayerLife : MonoBehaviour
 
     }
 
-    void Dead()
+    void refresh()
     {
-        //_Ismesh = false;
-        //_Iscolider = false;
-        //this.gameObject.SetActive(false);
+        Debug.Log("NAKAHIRA");
+        _playerlife = 5;
 
     }
 }
