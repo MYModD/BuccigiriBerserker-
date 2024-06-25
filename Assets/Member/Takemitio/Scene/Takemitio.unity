@@ -3683,9 +3683,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectsToSpawn:
   - {fileID: 9066839583605974035, guid: 90d5ca663351cd9478d16518160b9945, type: 3}
-  - {fileID: 9066839583605974035, guid: 90d5ca663351cd9478d16518160b9945, type: 3}
   interval: 8
-  spawnDistance: 300
+  spawnDistance: 500
+  maxSpawnCount: 2
 --- !u!1001 &1806663455
 PrefabInstance:
   m_ObjectHideFlags: 0
