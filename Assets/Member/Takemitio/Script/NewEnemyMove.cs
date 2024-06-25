@@ -18,6 +18,7 @@ public class NewEnemyMove : MonoBehaviour
 
     private void Start()
     {
+        target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         // ¶‚ÉˆÚ“®‚·‚é–Ú•WˆÊ’u‚ğŒvZ
         targetPosition = transform.position + Vector3.left * distanceToLeft;
     }

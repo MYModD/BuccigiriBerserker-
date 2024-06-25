@@ -926,7 +926,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1765510325}
-  - component: {fileID: 1765510324}
+  - component: {fileID: 1765510326}
   m_Layer: 0
   m_Name: ResultManager
   m_TagString: Untagged
@@ -934,23 +934,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1765510324
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1765510323}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4112cc67537606245a815ebf17a06ab4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  EnemyText: {fileID: 2070303179}
-  TimerText: {fileID: 2140653623}
-  GamejudgeText: {fileID: 50164652}
-  Button: {fileID: 441021602}
-  gameTime: 180
 --- !u!4 &1765510325
 Transform:
   m_ObjectHideFlags: 0
@@ -966,6 +949,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1765510326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1765510323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 679ada5f8907f5545a7487a8d4167860, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EnemyText: {fileID: 2070303179}
+  TimerText: {fileID: 2140653623}
+  GamejudgeText: {fileID: 50164652}
+  Button: {fileID: 441021602}
+  gameTime: 5
 --- !u!1 &2070303176
 GameObject:
   m_ObjectHideFlags: 0

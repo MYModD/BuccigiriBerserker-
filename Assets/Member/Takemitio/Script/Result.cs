@@ -56,10 +56,6 @@ public class GameManager : MonoBehaviour
                 CheckGameTime();
             }
         }
-        if(Input.GetKeyDown(KeyCode.A))
-        {
-            cntenemy -= 1;
-        }
 
     }
 
