@@ -385,6 +385,17 @@
                 },
                 {
                     "name": "",
+                    "id": "e804834a-b458-49c0-b7ef-4d65049bbcc6",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Submit",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "4e109866-8572-4592-aa96-dd1edea36024",
                     "path": "*/{Cancel}",
                     "interactions": "",
