@@ -14,15 +14,14 @@ public class PlayerLife : MonoBehaviour
 
     private bool _Iscolider;
 
-    private PlayerLife playerlife;
+    
 
     
 
-    private void Start()
-    {
-        _Ismesh = this.gameObject.GetComponent<MeshRenderer>().enabled = true;
-        _Iscolider = this.gameObject.GetComponent<CapsuleCollider>().enabled = true;
-    }
+    //private void Start()
+    //{
+        
+    //}
     // Update is called once per frame
     void Update()
     {
@@ -50,8 +49,9 @@ public class PlayerLife : MonoBehaviour
 
     void Dead()
     {
-        _Ismesh = false;
-        _Iscolider = false;
+        //_Ismesh = false;
+        //_Iscolider = false;
+        //this.gameObject.SetActive(false);
 
     }
 }

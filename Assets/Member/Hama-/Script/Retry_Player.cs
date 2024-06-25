@@ -5,49 +5,6 @@ using UnityEngine;
 
 public class Retry_Player : MonoBehaviour
 {
-    //  private PlayerLife playerlife;
-
-    //  private Vector3 playerPosition;
-
-    //  private Quaternion playerRotation;
-
-    //  [SerializeField]
-    //  GameObject player;
-
-    //  [SerializeField]
-    //  float spawnpos = 2f;
-
-    //  // Start is called before the first frame update
-    //  void Start()
-    //  {
-    //      PlayerLife playerLife = GetComponent<PlayerLife>();
-    //      // 最初にプレイヤーの位置と向きを取得しておく
-    //      playerPosition = transform.position;
-    //      playerRotation = transform.rotation;
-    //  }
-
-    //  // Update is called once per frame
-    //  void Update()
-    //  {
-    //      if(playerlife._IsRetry == true)
-    //      {
-    //          Debug.Log("SSAASSAA");
-    //          // プレイヤーの位置と向きを取得
-    //          Vector3 playerPosition = transform.position;
-    //          Quaternion playerRotation = transform.rotation;
-    //          //Invoke(nameof(Retry), 3f);
-    //          Retry();
-    //      }
-    //  }
-
-    //void Retry()
-    //  {
-    //      Debug.Log("DDDFFF");
-    //      Vector3 spawnPosition = playerPosition - transform.forward * spawnpos; // プレイヤーの後ろに2メートルずらす例
-    //      Instantiate(player, spawnPosition, playerRotation);
-
-
-    //  }
 
     public GameObject playerPrefab; // プレイヤーのプレハブ
     public CinemachineVirtualCameraBase newvirtualCamera; // 新しいVirtual Cameraのプレハブ
@@ -58,17 +15,18 @@ public class Retry_Player : MonoBehaviour
 
     void Start()
     {
-        // プレイヤーを生成する
-        SpawnPlayer();
+        // プレイヤー
+        playerPrefab = GameObject.Find("Player");
     }
 
     void Update()
     {
         // プレイヤーがやられた場合
-        if (playerInstance == null)
+        if (playerPrefab == null)
         {
             // 新しいVirtual Cameraを生成して設定する
-            SetupNewVirtualCamera();
+            //SetupNewVirtualCamera();
+            SpawnPlayer();
         }
     }
 
