@@ -24,6 +24,9 @@ public class FireMissle : MonoBehaviour
 
     private float nextTimeToShoot; // 次の発射時間を計算するための変数
 
+    public AudioClip SE;
+    AudioSource audioSource;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -59,11 +62,12 @@ public class FireMissle : MonoBehaviour
                 // 次に発射できる時間を計算
                 nextTimeToShoot = Time.time + cooldownFire;
 
-                fire1SE.fire1SE(); // 発射音を再生
+                audioSource.PlayOneShot(SE); // 発射音を再生
 
                 lockOnManager.targetsInCone.Clear();
                 Debug.LogWarning(lockOnManager.targetsInCone[0]);
             }
         }
     }
+
 }

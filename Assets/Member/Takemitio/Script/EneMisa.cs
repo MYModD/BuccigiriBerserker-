@@ -11,7 +11,7 @@ public class EneMisa : MonoBehaviour
         defaultTarget = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         // spawnInterval•b‚²‚Æ‚ÉSpawnMissileŠÖ”‚ğŒÄ‚Ño‚·
         //InvokeRepeating("SpawnMissile", 0f, spawnInterval * Time.deltaTime);
-        InvokeRepeating("SpawnMissile", Random.Range(5,15), Random.Range(7,20));
+        InvokeRepeating("SpawnMissile", Random.Range(10,15), Random.Range(10,20));
     }
 
     void SpawnMissile()
