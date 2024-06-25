@@ -348,16 +348,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myhako: {fileID: 0}
-  mymmes: {fileID: 0}
   plyer: {fileID: 0}
   plykyori: 0
-  target: {fileID: 0}
-  moveSpeed: 0
-  stop: 0
-  mo: 0
-  st: 0
-  target2: {fileID: 0}
-  thisobj: {fileID: 0}
 --- !u!1 &392218889 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 82f0fddd728e8e84a9c1d816836ff73d, type: 3}
@@ -597,16 +589,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myhako: {fileID: 561736380}
-  mymmes: {fileID: 561736381}
   plyer: {fileID: 392218891}
   plykyori: 200
-  target: {fileID: 392218891}
-  moveSpeed: 500
-  stop: 100
-  mo: 0
-  st: 0
-  target2: {fileID: 259841999}
-  thisobj: {fileID: 561736383}
 --- !u!65 &561736380
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -872,6 +856,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tagname: Enemy
   countTexts: {fileID: 1316823372}
+  homekotoba: {fileID: 0}
+  currentCount: 0
+  DestoroyEnemies: 0
 --- !u!4 &685039625
 Transform:
   m_ObjectHideFlags: 0
@@ -904,7 +891,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &706567107
 MonoBehaviour:
   m_ObjectHideFlags: 0
