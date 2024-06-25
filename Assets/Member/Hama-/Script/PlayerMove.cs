@@ -4,20 +4,15 @@ using UnityEngine;
 
 namespace test
 {
-
     public class PlayerMove : MonoBehaviour
     {
-        //private const float threshold = 0.5f;
-
         private Rigidbody rb;
 
         private float HolizontalValue;
 
         private float VerticalValue;
 
-        private Vector3 Player_pos;
-
-        private new Rigidbody rigidbody;
+        private Vector3 _startPosition;
 
         [SerializeField]
         float speed = 5f;
@@ -30,71 +25,34 @@ namespace test
         [SerializeField]
         float move_min_y;
 
-        //[SerializeField] float rotationSpeed = 100f;
-        //[SerializeField] float rotationAngle = 45f;
-        //public float speedX ;
-        //public float speedY ;
-
-        // Start is called before the first frame update
         void Start()
         {
             rb = GetComponent<Rigidbody>();
-           
+            _startPosition = transform.position;
         }
 
-        // Update is called once per frame
-
-
-
-
-        // Update is called once per frame
         void Update()
         {
-           //移動制限
-
-            Vector3 playerpos = transform.position;
-
-            playerpos.x = Mathf.Clamp(playerpos.x, move_min_x, move_max_x);
-            playerpos.y = Mathf.Clamp(playerpos.y, move_min_y, move_max_y);
-            transform.position = playerpos;
-
-           
-            
+            HolizontalValue = Input.GetAxisRaw("Horizontal");
+            VerticalValue = Input.GetAxisRaw("Vertical");
         }
 
         private void FixedUpdate()
         {
-            HolizontalValue = Input.GetAxisRaw("Horizontal");
+            // 移動量を計算
+            Vector3 moveDirection = new Vector3(HolizontalValue, VerticalValue, 0).normalized;
+            Vector3 moveAmount = moveDirection * speed * Time.fixedDeltaTime;
 
-            VerticalValue = Input.GetAxisRaw("Vertical");
+            // 現在の位置を取得し、移動量を加算
+            Vector3 newPosition = rb.position + moveAmount;
 
-            transform.Translate(Vector3.back);
+            // 初期位置を基準にして移動範囲を制限
+            float clampedX = Mathf.Clamp(newPosition.x, _startPosition.x + move_min_x, _startPosition.x + move_max_x);
+            float clampedY = Mathf.Clamp(newPosition.y, _startPosition.y + move_min_y, _startPosition.y + move_max_y);
 
-            if (HolizontalValue > 0.6f)
-            {
-                transform.Translate(Vector3.left * speed * Time.deltaTime);
-               
-            }
-
-            if (HolizontalValue < -0.6f)
-            {
-                transform.Translate(Vector3.right * speed * Time.deltaTime);
-                
-            }
-
-            if (VerticalValue > 0.6f)
-            {
-                transform.Translate(Vector3.down * speed * Time.deltaTime);
-               
-            }
-
-            if (VerticalValue < -0.6f)
-            {
-                transform.Translate(Vector3.up * speed * Time.deltaTime);
-               
-            }
-
+            // 制限された位置に設定
+            Vector3 clampedPosition = new Vector3(clampedX, clampedY, newPosition.z);
+            rb.MovePosition(clampedPosition);
         }
-       
     }
 }

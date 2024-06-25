@@ -143,7 +143,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myhako: {fileID: 5035517949644975491}
   plyer: {fileID: 2264940241835221188, guid: 30ca4e76283e170418e5c7c38860b6d4, type: 3}
-  plykyori: 200
+  plykyori: 300
 --- !u!114 &5384088663446125053
 MonoBehaviour:
   m_ObjectHideFlags: 0
