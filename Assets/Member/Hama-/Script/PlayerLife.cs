@@ -6,34 +6,42 @@ public class PlayerLife : MonoBehaviour
 {
     [SerializeField] GameObject player;
 
-    private float _playerlife = 5;
+    public float _playerlife = 5;
+
+    private float spawnspeed = 20.0f;
 
     public bool _IsRetry;
 
-    private bool _Ismesh;
-
-    private bool _Iscolider;
-
-    private PlayerLife playerlife;
-
-    
+    private Animator anim = null;
 
     private void Start()
     {
-        _Ismesh = this.gameObject.GetComponent<MeshRenderer>().enabled = true;
-        _Iscolider = this.gameObject.GetComponent<CapsuleCollider>().enabled = true;
+        anim = GetComponent<Animator>();
     }
-    // Update is called once per frame
+
     void Update()
     {
+
+
         if (_playerlife == 0)
         {
 
             _IsRetry = true;
-            Invoke(nameof(Dead), 5f);
+            this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z - spawnspeed * Time.deltaTime);
+            Invoke(nameof(refresh), 5f);
+            anim.SetBool("invincible", true);
+            anim.SetBool("Normal", false);
+
         }
 
-        if (Input.GetKeyDown(KeyCode.A))
+        if (_playerlife >= 5)
+        {
+            anim.SetBool("invincible", false);
+            anim.SetBool("Normal", true);
+            _IsRetry = false;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             _playerlife = _playerlife - 1;
         }
@@ -48,10 +56,10 @@ public class PlayerLife : MonoBehaviour
 
     }
 
-    void Dead()
+    void refresh()
     {
-        _Ismesh = false;
-        _Iscolider = false;
+
+        _playerlife = 5;
 
     }
 }
