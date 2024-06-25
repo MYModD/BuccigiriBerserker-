@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace test
@@ -39,7 +37,7 @@ namespace test
         void Start()
         {
             rb = GetComponent<Rigidbody>();
-           
+
         }
 
         // Update is called once per frame
@@ -50,7 +48,7 @@ namespace test
         // Update is called once per frame
         void Update()
         {
-           //ˆÚ“®§ŒÀ
+            //ˆÚ“®§ŒÀ
 
             Vector3 playerpos = transform.position;
 
@@ -58,8 +56,8 @@ namespace test
             playerpos.y = Mathf.Clamp(playerpos.y, move_min_y, move_max_y);
             transform.position = playerpos;
 
-           
-            
+
+
         }
 
         private void FixedUpdate()
@@ -73,28 +71,28 @@ namespace test
             if (HolizontalValue > 0.6f)
             {
                 transform.Translate(Vector3.left * speed * Time.deltaTime);
-               
+
             }
 
             if (HolizontalValue < -0.6f)
             {
                 transform.Translate(Vector3.right * speed * Time.deltaTime);
-                
+
             }
 
             if (VerticalValue > 0.6f)
             {
                 transform.Translate(Vector3.down * speed * Time.deltaTime);
-               
+
             }
 
             if (VerticalValue < -0.6f)
             {
                 transform.Translate(Vector3.up * speed * Time.deltaTime);
-               
+
             }
 
         }
-       
+
     }
 }

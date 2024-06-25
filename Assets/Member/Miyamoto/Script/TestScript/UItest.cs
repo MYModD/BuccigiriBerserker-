@@ -10,7 +10,7 @@ public class UItest : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetButtonDown())
+        //if(Input.GetButtonDown())
 
 
 
