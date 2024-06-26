@@ -4941,7 +4941,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  hissatsu: 1
+  hissatsu: 0
   lerpT: 0.88
   speed: 100
   timer: 20

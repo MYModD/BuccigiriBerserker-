@@ -8,13 +8,13 @@ onBoardingDoNotAskAgain = true
 showPackageIndexes = false
 showStatusBar = false
 scopes = {
-	"last_search.6DF93126" = ""
+	"last_search.6DF93126" = "GeometryUtility.TestPlanesAABB"
 	"OpenInspectorPreview.6DF93126" = "0"
 	"currentGroup.6DF93126" = "scene"
-	"last_search.98CF4AA6" = ""
+	"last_search.98CF4AA6" = "GeometryUtility.TestPlanesAABB"
 	"OpenInspectorPreview.98CF4AA6" = "0"
 	"currentGroup.98CF4AA6" = "scene"
-	"last_search.45C55C1A" = ""
+	"last_search.45C55C1A" = "GeometryUtility.TestPlanesAABB"
 	"OpenInspectorPreview.45C55C1A" = "0"
 	"currentGroup.45C55C1A" = "asset"
 	"last_search.8DF93126" = "GeometryUtility.TestPlanesAABB"
@@ -81,6 +81,8 @@ providers = {
 objectSelectors = {
 }
 recentSearches = [
+	"Plan"
+	"PlaneAnimation"
 	"GeometryUtility.TestPlanesAABB"
 	""
 ]
