@@ -613,6 +613,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1374871190}
   - component: {fileID: 1374871189}
+  - component: {fileID: 1374871191}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: EnemyNumber
@@ -635,7 +636,7 @@ MonoBehaviour:
   tagname: 
   countTexts: {fileID: 0}
   homekotoba: {fileID: 0}
-  currentCount: 0
+  CountText: 0
   DestoroyEnemies: 80
 --- !u!4 &1374871190
 Transform:
@@ -652,6 +653,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1374871191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1374871188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfe321b36336e994590b0b52db69a205, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentCount: {fileID: 0}
+  Initial_Value: 0
 --- !u!1 &1605429254
 GameObject:
   m_ObjectHideFlags: 0
