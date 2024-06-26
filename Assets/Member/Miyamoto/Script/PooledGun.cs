@@ -76,9 +76,9 @@ public class PooledGun : MonoBehaviour
 
     #endregion
 
-    private void FixedUpdate()
+    private void Update()
     {
-        if ((Input.GetKey(KeyCode.G) || Input.GetButtonDown("Submit")) && Time.time > nextTimeToShoot && objectPool != null)
+        if ((Input.GetKey(KeyCode.G) || Input.GetButton("Submit")) && Time.time > nextTimeToShoot )
         {
             Bullet bulletObject = objectPool.Get();
             if (bulletObject == null)

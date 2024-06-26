@@ -7,11 +7,11 @@ public class LockOnManager : MonoBehaviour
 
 
     [Header("カメラの視界に入っているターゲットのリスト")]
-    [HideInInspector]
+    //[HideInInspector]
     public List<Transform> targetsInCamera = new List<Transform>();
 
     [Header("錐体内に入っているターゲットのリスト")]
-    [HideInInspector]
+    //[HideInInspector]
     public List<Transform> targetsInCone = new List<Transform>();
 
     [Header("上のリストで一番距離が短いターゲット")]
