@@ -172,7 +172,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 1
-  controlID: 55
+  controlID: 66
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -198,7 +198,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 50}
   m_MaxSize: {x: 24288, y: 8096}
   vertical: 0
-  controlID: 56
+  controlID: 67
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -395,7 +395,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: d6faffff907d0000c27d0000
+      m_ExpandedIDs: 0eebffff62f1fffff4ffffff188b0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1038,9 +1038,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 0, y: 0, z: 0}
+    m_Target: {x: 575.2772, y: -595.20654, z: -251.81912}
     speed: 2
-    m_Value: {x: 0, y: 0, z: 0}
+    m_Value: {x: 575.2772, y: -595.20654, z: -251.81912}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1073,7 +1073,7 @@ MonoBehaviour:
         m_Value: 1
       m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
       m_Pivot: {x: 0, y: 0, z: 0}
-      m_Size: {x: 0.5, y: 0.5}
+      m_Size: {x: 1, y: 1}
     zGrid:
       m_Fade:
         m_Target: 0
@@ -1086,13 +1086,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
+    m_Target: {x: -0.40068513, y: 0.08801405, z: -0.038704813, w: -0.91115946}
     speed: 2
-    m_Value: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
+    m_Value: {x: -0.40068424, y: 0.08801385, z: -0.038704723, w: -0.91115737}
   m_Size:
-    m_Target: 1659.3544
+    m_Target: 1059.9084
     speed: 2
-    m_Value: 1659.3544
+    m_Value: 1059.9084
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -1213,7 +1213,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Member/Nakahira/Scene
+    - Assets/Member/Nakahira/Script
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -1223,16 +1223,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 53
   m_LastFolders:
-  - Assets/Member/Nakahira/Scene
+  - Assets/Member/Nakahira/Script
   m_LastFoldersGridSize: 53
   m_LastProjectPath: C:\Users\s20237013\Documents\GitHub\BuccigiriBerserker-
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 139}
-    m_SelectedIDs: c0800000
-    m_LastClickedID: 32960
-    m_ExpandedIDs: 00000000147f0000167f0000187f00001a7f00001c7f000000ca9a3bffffff7f
+    m_SelectedIDs: d48a0000
+    m_LastClickedID: 35540
+    m_ExpandedIDs: 0000000026890000288900002a8900002c89000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1260,7 +1260,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000147f0000167f0000187f00001a7f00001c7f0000
+    m_ExpandedIDs: 0000000026890000288900002a8900002c890000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1285,9 +1285,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: a27d0000
-    m_LastClickedInstanceID: 32162
-    m_HadKeyboardFocusLastEvent: 0
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000a2a70000
     m_RenameOverlay:
       m_UserAcceptedRename: 0

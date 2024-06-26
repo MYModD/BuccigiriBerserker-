@@ -4,7 +4,8 @@ using UnityEngine;
 using TMPro;
 public class Misail_Hit2 : MonoBehaviour
 {
-    public int DesEne ;
+    public int DesEne;
+    public int _desEne { get => DesEne; }
     public GameObject explosionPrefab; // 爆発エフェクトのプレハブ
     public AudioSource ExplodeAudioSource;
     void Start()
