@@ -2,11 +2,10 @@ using System;
 using UnityEngine;
 
 using UnityEngine.Pool;
-using UnityEngine.UIElements;
 
 public class Missile : MonoBehaviour
 {
-    
+
     [Header("目標ターゲット")]
     public Transform target;                //あとでset = value get privateに変えるかも
 
@@ -38,7 +37,7 @@ public class Missile : MonoBehaviour
 
 
 
-    private new  Rigidbody rigidbody;
+    private new Rigidbody rigidbody;
     private float OFFtimeValue; //ミサイルの時間計算用
     private float OFFtimeRandomValue; //ミサイルの時間計算用
     private Vector3 previousVelocity; //前の加速度
@@ -51,17 +50,29 @@ public class Missile : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (target == null) { Debug.LogError("アタッチされてないよ"); return; }
+        if (target == null)
+        {
+            Debug.LogError("アタッチされてないよ"); return;
+        }
+
+
+        if (target.gameObject.activeSelf == false)  //ターゲットのアクティブがfalseのとき返す
+        {
+            PoolReurn();
+        }
 
         OFFtimeValue = Mathf.Max(0, OFFtimeValue - Time.fixedDeltaTime);
 
-        if(OFFtimeValue == 0) PoolReurn();//時間切れになったら返す
+        if (OFFtimeValue == 0)
+        {
+            PoolReurn();
+        }//時間切れになったら返す
 
 
         CalculationFlying();
 
     }
-    
+
 
 
     private void CalculationFlying()
@@ -78,7 +89,7 @@ public class Missile : MonoBehaviour
 
         //加速度の大きさ          1G=9.81 m/s2で割ってる
         float gForce = acceleration.magnitude / oneG;
-        
+
 
         //GforceがmaxAcceleration超えている かつhissatsuがfalseのとき return 処理なくす
         if (gForce > maxAcceleration && !hissatsu) return;
@@ -119,6 +130,6 @@ public class Missile : MonoBehaviour
     private void OnEnable()
     {
         OFFtimeValue = timer;
-        OFFtimeRandomValue = randomTimer;
+        OFFtimeRandomValue = randomTimer;   //オンになったらタイマーの値を初期化
     }
 }

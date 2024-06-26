@@ -4,16 +4,9 @@ using UnityEngine;
 
 public class LifebarManager : MonoBehaviour
 {
-    public GameObject[] lifeArray = new GameObject[6];
-    
+    public GameObject[] lifeArray = new GameObject[3];
     private int lifePoint = 6;
 
-
-    private void Start()
-    {
-        PlayerLife playerlife = GetComponent<PlayerLife>();
-        int value = playerlife.playerLife
-    }
     void Update()
     {
         if (Input.GetMouseButtonDown(0) && lifePoint < 6)

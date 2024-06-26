@@ -210,7 +210,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 82f0fddd728e8e84a9c1d816836ff73d, type: 3}
       propertyPath: m_Name
-      value: f15
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 82f0fddd728e8e84a9c1d816836ff73d, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -326,6 +330,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  move_max_x: 0
+  move_min_x: 0
+  move_max_y: 0
+  move_min_y: 0
 --- !u!114 &8222332716781120740
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -372,6 +380,7 @@ MonoBehaviour:
   muzzleVelocity: 100
   muzzlePosition: {fileID: 6986225060925412395}
   cooldownFire: 3
+  spreadAmount: 0.1
   defaultCapacity: 20
   maxSize: 100
 --- !u!114 &4473236534816253417

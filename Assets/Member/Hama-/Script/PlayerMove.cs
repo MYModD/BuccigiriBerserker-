@@ -17,7 +17,6 @@ namespace test
 
         private Vector3 Player_pos;
 
-        private new Rigidbody rigidbody;
 
         [SerializeField]
         float speed = 5f;
@@ -30,16 +29,17 @@ namespace test
         [SerializeField]
         float move_min_y;
 
-        //[SerializeField] float rotationSpeed = 100f;
-        //[SerializeField] float rotationAngle = 45f;
-        //public float speedX ;
-        //public float speedY ;
-
+        private float rotationSpeed = 45f;
+        private float rotationx = 0f;
+        private float rotationz = 0f;          // z軸の回転角度
+        private float resetTime = 30f;
+        private float rotaiony = 180f;
+        private Roll_Move roll_move;
         // Start is called before the first frame update
         void Start()
         {
             rb = GetComponent<Rigidbody>();
-           
+            roll_move = GetComponent<Roll_Move>(); // ここで修正
         }
 
         // Update is called once per frame
@@ -50,17 +50,46 @@ namespace test
         // Update is called once per frame
         void Update()
         {
-           //移動制限
 
-            Vector3 playerpos = transform.position;
 
-            playerpos.x = Mathf.Clamp(playerpos.x, move_min_x, move_max_x);
-            playerpos.y = Mathf.Clamp(playerpos.y, move_min_y, move_max_y);
-            transform.position = playerpos;
+            if (roll_move._isRotating == false)
+            {
+                float horizontalInput = Input.GetAxis("Horizontal");
+                float verticalInput = Input.GetAxis("Vertical");
 
-           
-            
+                // Z軸の回転
+                float rotationChangez = horizontalInput * rotationSpeed * Time.deltaTime * 5;
+                rotationz += rotationChangez;
+                rotationz = Mathf.Clamp(rotationz, -rotationSpeed, rotationSpeed);
+
+                // X軸の回転
+                float rotationChangex = verticalInput * -rotationSpeed * Time.deltaTime * 5;
+                rotationx += rotationChangex;
+                rotationx = Mathf.Clamp(rotationx, -rotationSpeed, rotationSpeed);
+
+                // 入力がないかつ回転が残っている場合、リセット
+                if (horizontalInput == 0 && verticalInput == 0 && (rotationx != 0 || rotationz != 0))
+                {
+                    float resetAmount = resetTime * Time.deltaTime * 5;
+                    if (rotationx != 0)
+                    {
+                        rotationx = Mathf.MoveTowards(rotationx, 0f, resetAmount);
+                    }
+                    if (rotationz != 0)
+                    {
+                        rotationz = Mathf.MoveTowards(rotationz, 0f, resetAmount);
+                    }
+                }
+
+                // プレイヤーの回転を適用
+                transform.rotation = Quaternion.Euler(rotationx, rotaiony, rotationz);
+            }
+
         }
+
+
+
+
 
         private void FixedUpdate()
         {
@@ -68,33 +97,23 @@ namespace test
 
             VerticalValue = Input.GetAxisRaw("Vertical");
 
-            transform.Translate(Vector3.back);
+            // プレイヤーの前進方向ベクトルを計算
+           Vector3 moveDirection = Vector3.forward;
 
-            if (HolizontalValue > 0.6f)
-            {
-                transform.Translate(Vector3.left * speed * Time.deltaTime);
-               
-            }
+            // プレイヤーの移動方向を左右および上下の入力に基づいて調整します
+            moveDirection += Vector3.right * HolizontalValue;
 
-            if (HolizontalValue < -0.6f)
-            {
-                transform.Translate(Vector3.right * speed * Time.deltaTime);
-                
-            }
+            moveDirection += Vector3.down * VerticalValue;
 
-            if (VerticalValue > 0.6f)
-            {
-                transform.Translate(Vector3.down * speed * Time.deltaTime);
-               
-            }
+            // Rigidbody に力を加えて移動させます
+            rb.velocity = moveDirection.normalized * speed;
 
-            if (VerticalValue < -0.6f)
-            {
-                transform.Translate(Vector3.up * speed * Time.deltaTime);
-               
-            }
-
+            // Rigidbodyに速度を与えて移動させる
+            rb.velocity = moveDirection * speed;
         }
-       
     }
 }
+
+
+
+

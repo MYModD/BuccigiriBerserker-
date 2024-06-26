@@ -272,7 +272,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: d6be04826650eb8418e07e94e9d3ac5f, type: 3}
     m_FontSize: 64
     m_FontStyle: 0
     m_BestFit: 0
@@ -476,7 +476,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 6551e5536d3c56549a76b7778f978bc0, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.3
+  m_Volume: 0.25
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -822,7 +822,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bb8664c73c912647b400d608a6219a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SE: {fileID: 8300000, guid: 9bf5ca54ed9bbfa4cb02508a09aa4ee3, type: 3}
+  SE: {fileID: 8300000, guid: 4e8b38d2c4e18784197ac26db2110d15, type: 3}
 --- !u!82 &2088645110
 AudioSource:
   m_ObjectHideFlags: 0

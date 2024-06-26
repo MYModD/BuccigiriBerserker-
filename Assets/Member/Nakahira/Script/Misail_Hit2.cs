@@ -4,10 +4,9 @@ using UnityEngine;
 using TMPro;
 public class Misail_Hit2 : MonoBehaviour
 {
-
+    public int DesEne = 0;
     public GameObject explosionPrefab; // 爆発エフェクトのプレハブ
-    public AudioClip Explosion1;
-    AudioSource audioSource;
+    public AudioSource ExplodeAudioSource;
     void Start()
     {
        
@@ -23,13 +22,14 @@ public class Misail_Hit2 : MonoBehaviour
         if (coll.gameObject.tag == "missile")
         {
             Explode();
+            ExplodeSE();
             PooledReturn();
-            
 
         }
         if (coll.gameObject.tag == "????")
         {
             Explode();
+            ExplodeSE();
             PooledReturn();
             
 
@@ -37,6 +37,7 @@ public class Misail_Hit2 : MonoBehaviour
     }
     public void PooledReturn()
     {
+        DesEne = +1;
         this.gameObject.SetActive(false);
        
     }
@@ -49,8 +50,16 @@ public class Misail_Hit2 : MonoBehaviour
             //Destroy(explosion, 3.0f); // 爆発エフェクトを3秒後に破棄する（任意の時間）
             //Destroy(this.gameObject,0.5f);
         }
-        audioSource.PlayOneShot(Explosion1);
         // ここに他の処理を追加する（例えば、音の再生、オブジェクトの破壊など）
+    }
+
+    void ExplodeSE()
+        
+    {
+        if(ExplodeAudioSource != null)
+        {
+            ExplodeAudioSource.Play();
+        }
     }
 
 }
