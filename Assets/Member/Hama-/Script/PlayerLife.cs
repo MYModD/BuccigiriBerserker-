@@ -4,62 +4,76 @@ using UnityEngine;
 
 public class PlayerLife : MonoBehaviour
 {
-    [SerializeField] GameObject player;
+    [SerializeField]
+    float playerLife = 5;
+    [SerializeField]
+    float spawnSpeed = 50.0f;
 
-    public float _playerlife = 5;
+    public bool _IsRetry = false;
 
-    private float spawnspeed = 20.0f;
+    private Animator anim;
+    private Vector3 originalPosition;
 
-    public bool _IsRetry;
-
-    private Animator anim = null;
-
-    private void Start()
+    void Start()
     {
         anim = GetComponent<Animator>();
+        originalPosition = transform.position;
     }
 
     void Update()
     {
-
-
-        if (_playerlife == 0)
+        if (playerLife == 0)
         {
-
             _IsRetry = true;
-            this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z - spawnspeed * Time.deltaTime);
-            Invoke(nameof(refresh), 5f);
-            anim.SetBool("invincible", true);
-            anim.SetBool("Normal", false);
-
+            // originalPosition = transform.position;  // この行は不要です（Start()で既に設定済み）
+            StartCoroutine(Respawn());
         }
 
-        if (_playerlife >= 5)
+        if (playerLife > 0)
         {
-            anim.SetBool("invincible", false);
-            anim.SetBool("Normal", true);
+            anim.SetBool("invincible", false);  // パラメーター名を修正
+            anim.SetBool("Normal", true);       // パラメーター名を修正
             _IsRetry = false;
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            _playerlife = _playerlife - 1;
+            playerLife--;
         }
     }
 
-    private void OnTriggerEnter(Collider colider)
+    IEnumerator Respawn()
     {
-        if (colider.gameObject.tag == "Enemy")
+        // プレイヤーが後ろに動く距離（例としてspawnSpeed * 5秒分後退）
+        float moveDistance = spawnSpeed * 5 * Time.deltaTime;
+
+        // 後退開始
+        while (transform.position.z > originalPosition.z - moveDistance)
         {
-            _playerlife = _playerlife - 1;
+            transform.Translate(Vector3.forward * spawnSpeed * Time.deltaTime);  // 後ろに動かすためにbackを使用
+            yield return null;
         }
 
+        anim.SetBool("invincible", true);   // パラメーター名を修正
+        anim.SetBool("Normal", false);      // パラメーター名を修正
+
+        yield return new WaitForSeconds(3f);
+
+        // 後退後のアニメーションの後に必要な処理を記述する
+        // 例えば、位置のリセットや他の処理を行う
+        transform.position = originalPosition; // 位置を元に戻す（実際のゲームに合わせて適切な位置に）
+        playerLife = 5; // プレイヤーのライフをリセットする（実際のゲームに合わせて適切な値に）
+
+        // アニメーションのリセットなどもここで行う
+        anim.SetBool("invincible", false);  // パラメーター名を修正
+        anim.SetBool("Normal", true);       // パラメーター名を修正
     }
 
-    void refresh()
+    private void OnTriggerEnter(Collider other)
     {
-
-        _playerlife = 5;
-
+        if (other.gameObject.tag == "Enemy")
+        {
+            playerLife--;
+        }
     }
 }
