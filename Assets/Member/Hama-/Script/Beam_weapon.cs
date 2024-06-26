@@ -24,7 +24,7 @@ public class Beam_weapon : MonoBehaviour
         if (_timer > 2f)
         {
             
-            if (Input.GetKeyDown(KeyCode.Space) && !isParticlesActive)
+            if (Input.GetButtonDown("Beam") && !isParticlesActive)
             {
                 isParticlesActive = true;
                 longparticleSystem.Play();

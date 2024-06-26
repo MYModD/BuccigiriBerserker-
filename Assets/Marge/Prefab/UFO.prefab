@@ -48,9 +48,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -1018664272722485354, guid: 9d300515fbb6bf944a2fe4d8e2e38794, type: 3}
+      propertyPath: m_Layer
+      value: 31
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 9d300515fbb6bf944a2fe4d8e2e38794, type: 3}
       propertyPath: m_Name
       value: UFO
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9d300515fbb6bf944a2fe4d8e2e38794, type: 3}
+      propertyPath: m_Layer
+      value: 31
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 9d300515fbb6bf944a2fe4d8e2e38794, type: 3}
       propertyPath: m_TagString
@@ -82,6 +90,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9d300515fbb6bf944a2fe4d8e2e38794, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5035517949644975491}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9d300515fbb6bf944a2fe4d8e2e38794, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -5398279760103279716}
   m_SourcePrefab: {fileID: 100100000, guid: 9d300515fbb6bf944a2fe4d8e2e38794, type: 3}
 --- !u!1 &1767966212240345159 stripped
 GameObject:
@@ -95,15 +106,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1767966212240345159}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ffcceb3144245234992c045d7b8f0004, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   distanceToLeft: 0
-  moveSpeed: 0
-  target: {fileID: 0}
-  stopDistance: 0
+  moveSpeed: 80
+  target: {fileID: 2264940241835221188, guid: 30ca4e76283e170418e5c7c38860b6d4, type: 3}
+  stopDistance: 80
 --- !u!114 &-218414962186709217
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -131,8 +142,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myhako: {fileID: 5035517949644975491}
-  plyer: {fileID: 0}
-  plykyori: 0
+  plyer: {fileID: 2264940241835221188, guid: 30ca4e76283e170418e5c7c38860b6d4, type: 3}
+  plykyori: 300
 --- !u!114 &5384088663446125053
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -140,12 +151,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1767966212240345159}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3f5b655055fcf1942bbf4a0eb3532766, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  missilePrefab: {fileID: 0}
+  missilePrefab: {fileID: 8100528506423630510, guid: 1ce4a43987288294d9682339feebe9cb, type: 3}
   spawnInterval: 2
 --- !u!54 &-631316045981333428
 Rigidbody:
@@ -189,9 +200,51 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &-5398279760103279716
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1767966212240345159}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}

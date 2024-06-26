@@ -4,32 +4,76 @@ using UnityEngine;
 
 public class PlayerLife : MonoBehaviour
 {
-    [SerializeField] GameObject player;
+    [SerializeField]
+    float playerLife = 5;
+    [SerializeField]
+    float spawnSpeed = 50.0f;
 
-    private float _playerlife = 5;
-    // Start is called before the first frame update
+    public bool _IsRetry = false;
+
+    private Animator anim;
+    private Vector3 originalPosition;
+
     void Start()
     {
-
+        anim = GetComponent<Animator>();
+        originalPosition = transform.position;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (_playerlife == 0)
+        if (playerLife == 0)
         {
-            //Debug.Log("ぐわーー");
-            _playerlife = 5;
+            _IsRetry = true;
+            // originalPosition = transform.position;  // この行は不要です（Start()で既に設定済み）
+            StartCoroutine(Respawn());
         }
 
+        if (playerLife > 0)
+        {
+            anim.SetBool("invincible", false);  // パラメーター名を修正
+            anim.SetBool("Normal", true);       // パラメーター名を修正
+            _IsRetry = false;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            playerLife--;
+        }
     }
 
-    private void OnTriggerEnter(Collider colider)
+    IEnumerator Respawn()
     {
-       if(colider.gameObject.tag == "Enemy")
+        // プレイヤーが後ろに動く距離（例としてspawnSpeed * 5秒分後退）
+        float moveDistance = spawnSpeed * 5 * Time.deltaTime;
+
+        // 後退開始
+        while (transform.position.z > originalPosition.z - moveDistance)
         {
-            _playerlife = _playerlife - 1;
+            transform.Translate(Vector3.forward * spawnSpeed * Time.deltaTime);  // 後ろに動かすためにbackを使用
+            yield return null;
         }
 
+        anim.SetBool("invincible", true);   // パラメーター名を修正
+        anim.SetBool("Normal", false);      // パラメーター名を修正
+
+        yield return new WaitForSeconds(3f);
+
+        // 後退後のアニメーションの後に必要な処理を記述する
+        // 例えば、位置のリセットや他の処理を行う
+        transform.position = originalPosition; // 位置を元に戻す（実際のゲームに合わせて適切な位置に）
+        playerLife = 5; // プレイヤーのライフをリセットする（実際のゲームに合わせて適切な値に）
+
+        // アニメーションのリセットなどもここで行う
+        anim.SetBool("invincible", false);  // パラメーター名を修正
+        anim.SetBool("Normal", true);       // パラメーター名を修正
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Enemy")
+        {
+            playerLife--;
+        }
     }
 }
