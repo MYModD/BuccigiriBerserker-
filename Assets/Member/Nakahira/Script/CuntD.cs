@@ -8,7 +8,7 @@ public class CuntD : MonoBehaviour
    
     //[SerializeField] private string tagname; // タグ名を指定するための変数
     [SerializeField] private TextMeshProUGUI currentCount; // カウントを表示するテキスト要素
-    [SerializeField] private int Initial_Value;
+    [SerializeField] public int Initial_Value;
     
     void Start()
     {
