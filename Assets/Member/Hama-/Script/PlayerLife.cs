@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerLife : MonoBehaviour
 {
     [SerializeField]
-    float playerLife = 5;
+   public float playerLife = 5;
    
 
     public bool _IsRetry = false;

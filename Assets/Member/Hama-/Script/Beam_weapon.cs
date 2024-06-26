@@ -6,46 +6,53 @@ public class Beam_weapon : MonoBehaviour
 {
     private float _timer;
     private ParticleSystem longparticleSystem;
-    private bool isParticlesActive = false;
-    private float particleDuration = 5f; 
-    private CapsuleCollider beamCol;
+    public bool _isParticlesActive = false;
+    private float beam_distance = 95f;
+    private Collider beamCol;
+
     void Start()
     {
-        beamCol = GetComponent<CapsuleCollider>();
+        beamCol = GetComponent<BoxCollider>();
         longparticleSystem = GetComponent<ParticleSystem>();
-        longparticleSystem.Stop(); 
+        longparticleSystem.Stop();
         _timer = 0f;
-
     }
 
     void Update()
     {
         _timer += Time.deltaTime;
-        if (_timer > 2f)
+
+        if (_timer > 5f)
         {
-            
-            if (Input.GetButtonDown("Beam") && !isParticlesActive)
+            if (Input.GetButtonDown("Beam") && !_isParticlesActive)
             {
-                isParticlesActive = true;
+                _isParticlesActive = true;
+
                 longparticleSystem.Play();
+
+                RaycastHit hit;
+                Physics.BoxCast(transform.position, (Vector3.one * 0.5f), new Vector3(0, 0, 7), out hit, Quaternion.identity, 1);
+
+                Gizmos.DrawRay(transform.position, transform.forward * hit.distance);
+
                 beamCol.enabled = true;
-                
-                Invoke("StopParticles", particleDuration);
+
+                StartCoroutine(StopParticlesAfterDelay(beam_distance));
             }
         }
-
     }
 
-    void StopParticles()
-    {//nullでない
+    IEnumerator StopParticlesAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
         if (longparticleSystem != null)
         {
             beamCol.enabled = false;
             longparticleSystem.Stop();
-            isParticlesActive = false;
+            _isParticlesActive = false;
             _timer = 0f;
         }
-
     }
 }
 
