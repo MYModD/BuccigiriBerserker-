@@ -6,37 +6,38 @@ public class PlayerLife : MonoBehaviour
 {
     [SerializeField]
     float playerLife = 5;
-    [SerializeField]
-    float spawnSpeed = 50.0f;
+   
 
     public bool _IsRetry = false;
 
     private MoveMiyamotoTest move;
 
     private Animator anim;
-    private Vector3 originalPosition;
 
     void Start()
     {
         anim = GetComponent<Animator>();
         move = GetComponent<MoveMiyamotoTest>();
-        originalPosition = transform.position;
+       
+        anim.SetBool("invincible", false); 
+        anim.SetBool("Normal", false);
     }
 
     void Update()
     {
         if (playerLife == 0)
         {
-            _IsRetry = true;
-            // originalPosition = transform.position;  // この行は不要です（Start()で既に設定済み）
+            anim.SetBool("invincible", false);  // パラメーター名を修正
+            anim.SetBool("Normal", true);
+            _IsRetry = false;
             StartCoroutine(Respawn());
         }
 
         if (playerLife > 0)
         {
-            anim.SetBool("invincible", false);  // パラメーター名を修正
-            anim.SetBool("Normal", true);       // パラメーター名を修正
-            _IsRetry = false;
+          
+            _IsRetry = true;
+          
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
@@ -48,24 +49,15 @@ public class PlayerLife : MonoBehaviour
     IEnumerator Respawn()
     {
         move.enabled = false;
-        // プレイヤーが後ろに動く距離（例としてspawnSpeed * 5秒分後退）
-        float moveDistance = spawnSpeed * 5 * Time.deltaTime;
 
-        // 後退開始
-        while (transform.position.z > originalPosition.z - moveDistance)
-        {
-            transform.Translate(Vector3.forward * spawnSpeed * Time.deltaTime);  // 後ろに動かすためにbackを使用
-            yield return null;
-        }
 
         anim.SetBool("invincible", true);   // パラメーター名を修正
         anim.SetBool("Normal", false);      // パラメーター名を修正
 
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(4f);
 
-        // 後退後のアニメーションの後に必要な処理を記述する
-        // 例えば、位置のリセットや他の処理を行う
-        transform.position = originalPosition; // 位置を元に戻す（実際のゲームに合わせて適切な位置に）
+        
+      
         playerLife = 5; // プレイヤーのライフをリセットする（実際のゲームに合わせて適切な値に）
 
         // アニメーションのリセットなどもここで行う
