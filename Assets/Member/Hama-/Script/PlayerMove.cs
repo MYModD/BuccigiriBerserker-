@@ -17,7 +17,7 @@ namespace test
 
         private Vector3 Player_pos;
 
-        private new Rigidbody rigidbody;
+        
 
         [SerializeField]
         float speed = 5f;
@@ -50,7 +50,8 @@ namespace test
         // Update is called once per frame
         void Update()
         {
-           //ˆÚ“®§ŒÀ
+           
+            //ˆÚ“®§ŒÀ
 
             Vector3 playerpos = transform.position;
 
