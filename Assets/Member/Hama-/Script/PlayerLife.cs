@@ -6,7 +6,8 @@ public class PlayerLife : MonoBehaviour
 {
     [SerializeField]
    public float playerLife = 5;
-   
+
+    private float playerlifesub;
 
     public bool _IsRetry = false;
 
@@ -21,6 +22,9 @@ public class PlayerLife : MonoBehaviour
        
         anim.SetBool("invincible", false); 
         anim.SetBool("Normal", false);
+
+        playerlifesub = playerLife;
+
     }
 
     void Update()
@@ -58,7 +62,7 @@ public class PlayerLife : MonoBehaviour
 
         
       
-        playerLife = 5; // プレイヤーのライフをリセットする（実際のゲームに合わせて適切な値に）
+        playerLife =playerlifesub ; // プレイヤーのライフをリセットする（実際のゲームに合わせて適切な値に）
 
         // アニメーションのリセットなどもここで行う
         anim.SetBool("invincible", false);  // パラメーター名を修正
