@@ -19209,6 +19209,10 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 1451706688844544638, guid: 30ca4e76283e170418e5c7c38860b6d4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1451706688844544638, guid: 30ca4e76283e170418e5c7c38860b6d4, type: 3}
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
