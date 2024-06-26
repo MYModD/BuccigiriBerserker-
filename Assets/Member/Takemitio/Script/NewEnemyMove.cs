@@ -18,6 +18,7 @@ public class NewEnemyMove : MonoBehaviour
 
     private void Start()
     {
+        target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         // 左に移動する目標位置を計算
         targetPosition = transform.position + Vector3.left * distanceToLeft;
     }
@@ -31,22 +32,20 @@ public class NewEnemyMove : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
 
             // オブジェクトとターゲットオブジェクトの距離判定
-            float leftdistance = Vector3.Distance(transform.position, target.position);
-            if (leftdistance <= stopDistance)
+            float squaredDistance = (transform.position - target.position).sqrMagnitude;
+            if (squaredDistance <= stopDistance * stopDistance)
             {
                 reachedTarget = true; // ターゲットに到達したらフラグを立てる
             }
         }
-    
 
-    // ターゲットに向かって移動
-    Vector3 targetPos = target.position;
+        // ターゲットに向かって移動
+        Vector3 targetPos = target.position;
         targetPos.y = transform.position.y;
-        //transform.LookAt(targetPos);
 
         // オブジェクトとターゲットオブジェクトの距離判定
-        float distance = Vector3.Distance(transform.position, target.position);
-        if (distance <= stopDistance)
+        float squaredDist = (transform.position - target.position).sqrMagnitude;
+        if (squaredDist <= stopDistance * stopDistance)
         {
             transform.position = transform.position - transform.forward * moveSpeed * 2 * Time.deltaTime;
         }

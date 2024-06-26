@@ -57,7 +57,11 @@ PrefabInstance:
       value: Enemy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: -168051006817133204, guid: 9d300515fbb6bf944a2fe4d8e2e38794, type: 3}
+    - {fileID: 2654713335656134247, guid: 9d300515fbb6bf944a2fe4d8e2e38794, type: 3}
+    - {fileID: -8700617353114198275, guid: 9d300515fbb6bf944a2fe4d8e2e38794, type: 3}
+    - {fileID: 65702495048144492, guid: 9d300515fbb6bf944a2fe4d8e2e38794, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9d300515fbb6bf944a2fe4d8e2e38794, type: 3}
@@ -69,6 +73,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9d300515fbb6bf944a2fe4d8e2e38794, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1797867216179082727}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9d300515fbb6bf944a2fe4d8e2e38794, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5384088663446125053}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9d300515fbb6bf944a2fe4d8e2e38794, type: 3}
       insertIndex: -1
       addedObject: {fileID: -631316045981333428}
@@ -109,6 +116,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f535339d2e5144478a2fb2367e4f36f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosionPrefab: {fileID: 0}
+  ExplodeAudioSource: {fileID: 0}
 --- !u!114 &1797867216179082727
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124,6 +133,20 @@ MonoBehaviour:
   myhako: {fileID: 5035517949644975491}
   plyer: {fileID: 0}
   plykyori: 0
+--- !u!114 &5384088663446125053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1767966212240345159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f5b655055fcf1942bbf4a0eb3532766, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  missilePrefab: {fileID: 0}
+  spawnInterval: 2
 --- !u!54 &-631316045981333428
 Rigidbody:
   m_ObjectHideFlags: 0
