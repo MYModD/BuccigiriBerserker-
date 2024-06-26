@@ -98,7 +98,7 @@ namespace test
             VerticalValue = Input.GetAxisRaw("Vertical");
 
             // プレイヤーの前進方向ベクトルを計算
-            Vector3 moveDirection = Vector3.forward;
+           Vector3 moveDirection = Vector3.forward;
 
             // プレイヤーの移動方向を左右および上下の入力に基づいて調整します
             moveDirection += Vector3.right * HolizontalValue;
