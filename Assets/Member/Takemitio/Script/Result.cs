@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
         //Invoke("CheckGameTime", gameTime);
         cntud = GameObject.FindGameObjectWithTag("EnemyNumber").GetComponent<CuntUD>();
         cntd = GameObject.FindGameObjectWithTag("EnemyNumber").GetComponent<CuntD>();
-        //cntenemy = cntd.;
+        cntenemy = cntd.Initial_Value;
         cntdestoroy = cntud.DestoroyEnemies;
 
     }
