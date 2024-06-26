@@ -5024,6 +5024,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MissileFireCube(test
       objectReference: {fileID: 0}
+    - target: {fileID: 1489961496109342615, guid: 79ed6e4da1bc6a24fb24c3c8e22509fe, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5138088387224570829, guid: 79ed6e4da1bc6a24fb24c3c8e22509fe, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -6268,6 +6272,10 @@ PrefabInstance:
     - target: {fileID: 388435507468837040, guid: e77ebb491679d7f45b614f6f5127c7a7, type: 3}
       propertyPath: m_Name
       value: GunFireCube(test
+      objectReference: {fileID: 0}
+    - target: {fileID: 388435507468837040, guid: e77ebb491679d7f45b614f6f5127c7a7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 457460188443662405, guid: e77ebb491679d7f45b614f6f5127c7a7, type: 3}
       propertyPath: spreadAmount
@@ -11559,6 +11567,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rotationSpeed: 720
   _numberRotations: 1
+  _isRotating: 0
 --- !u!4 &1142384278 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2264940241835221188, guid: 30ca4e76283e170418e5c7c38860b6d4, type: 3}
@@ -11660,6 +11669,44 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1142384285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1142384267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a8bd2dec56a5eb40bbf919a3a182244, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
+  _moveMinMaxX: {x: -40, y: 40}
+  _moveMinMaxY: {x: 10, y: 60}
+  multiplyAxis: 80
+--- !u!95 &1142384286
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1142384267}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b0a164406a9bc904fa429c36c06e4146, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1161491208
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19209,9 +19256,25 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4473236534816253417, guid: 30ca4e76283e170418e5c7c38860b6d4, type: 3}
+      propertyPath: _IsRetry
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4473236534816253417, guid: 30ca4e76283e170418e5c7c38860b6d4, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4473236534816253417, guid: 30ca4e76283e170418e5c7c38860b6d4, type: 3}
+      propertyPath: spawnSpeed
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6494074296686782721, guid: 30ca4e76283e170418e5c7c38860b6d4, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6535950056278294893, guid: 30ca4e76283e170418e5c7c38860b6d4, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6986225060925412395, guid: 30ca4e76283e170418e5c7c38860b6d4, type: 3}
       propertyPath: m_LocalPosition.y
@@ -19240,6 +19303,10 @@ PrefabInstance:
     - target: {fileID: 7116351648223372453, guid: 30ca4e76283e170418e5c7c38860b6d4, type: 3}
       propertyPath: speed
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7116351648223372453, guid: 30ca4e76283e170418e5c7c38860b6d4, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7116351648223372453, guid: 30ca4e76283e170418e5c7c38860b6d4, type: 3}
       propertyPath: move_max_x
@@ -19293,10 +19360,16 @@ PrefabInstance:
       addedObject: {fileID: 1142384277}
     - targetCorrespondingSourceObject: {fileID: 1451706688844544638, guid: 30ca4e76283e170418e5c7c38860b6d4, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 1142384285}
+    - targetCorrespondingSourceObject: {fileID: 1451706688844544638, guid: 30ca4e76283e170418e5c7c38860b6d4, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 1142384276}
     - targetCorrespondingSourceObject: {fileID: 1451706688844544638, guid: 30ca4e76283e170418e5c7c38860b6d4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1142384279}
+    - targetCorrespondingSourceObject: {fileID: 1451706688844544638, guid: 30ca4e76283e170418e5c7c38860b6d4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1142384286}
   m_SourcePrefab: {fileID: 100100000, guid: 30ca4e76283e170418e5c7c38860b6d4, type: 3}
 --- !u!1001 &2027914689
 PrefabInstance:
