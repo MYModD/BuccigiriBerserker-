@@ -45,6 +45,7 @@ public class CuntUD : MonoBehaviour
         if (currentCount < previousCount)
         {
             counthome += 1;
+            homekotoba.text = "";
             DestoroyEnemies += 1;
             previousCount = currentCount; // 前回のカウントを更新
             UpdateCountText(); // テキストを更新
