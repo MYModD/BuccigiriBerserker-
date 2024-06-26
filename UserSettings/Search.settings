@@ -10,16 +10,10 @@ showStatusBar = false
 scopes = {
 	"last_search.6DF93126" = "GeometryUtility.TestPlanesAABB"
 	"OpenInspectorPreview.6DF93126" = "0"
-	"currentGroup.6DF93126" = "scene"
-	"last_search.98CF4AA6" = "GeometryUtility.TestPlanesAABB"
-	"OpenInspectorPreview.98CF4AA6" = "0"
-	"currentGroup.98CF4AA6" = "scene"
+	"currentGroup.6DF93126" = "asset"
 	"last_search.45C55C1A" = "GeometryUtility.TestPlanesAABB"
 	"OpenInspectorPreview.45C55C1A" = "0"
 	"currentGroup.45C55C1A" = "asset"
-	"last_search.8DF93126" = "GeometryUtility.TestPlanesAABB"
-	"OpenInspectorPreview.8DF93126" = "0"
-	"currentGroup.8DF93126" = "settings"
 }
 providers = {
 	asset = {
@@ -76,10 +70,6 @@ providers = {
 objectSelectors = {
 }
 recentSearches = [
-	"Plan"
-	"PlaneAnimation"
-	"GeometryUtility.TestPlanesAABB"
-	""
 ]
 searchItemFavorites = [
 ]

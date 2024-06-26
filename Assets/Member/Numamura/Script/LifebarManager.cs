@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LifebarManager : MonoBehaviour
 {
-    public GameObject[] lifeArray = new GameObject[3];
+    public GameObject[] lifeArray = new GameObject[6];
     private int lifePoint = 6;
 
     void Update()

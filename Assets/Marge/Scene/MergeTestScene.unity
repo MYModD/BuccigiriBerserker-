@@ -199,10 +199,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a8bd2dec56a5eb40bbf919a3a182244, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  holizontalValue: 0
+  verticalValue: 0
+  Player_pos: {x: 0, y: 0, z: 0}
+  rigidbody: {fileID: 0}
   speed: 15.68
   _moveMinMaxX: {x: -20, y: 20}
   _moveMinMaxY: {x: -30, y: 30}
   multiplyAxis: 40
+  rotationSpeed: 45
+  rotationx: 0
+  rotationz: 0
+  resetTime: 30
+  rotaiony: 180
+  roll_move: {fileID: 0}
+  startPostion: {x: 0, y: 0, z: 0}
 --- !u!1001 &541768246
 PrefabInstance:
   m_ObjectHideFlags: 0
