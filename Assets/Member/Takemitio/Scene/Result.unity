@@ -635,7 +635,7 @@ MonoBehaviour:
   tagname: 
   countTexts: {fileID: 0}
   homekotoba: {fileID: 0}
-  currentCount: 1
+  currentCount: 0
   DestoroyEnemies: 80
 --- !u!4 &1374871190
 Transform:

@@ -15,26 +15,20 @@ public class GameManager : MonoBehaviour
     private int cntenemy;
     private int cntdestoroy;
     CuntUD cntud;
+    CuntD  cntd;
     void Start()
     {
         // ゲーム開始時に時間のカウントダウンを開始する
         //Invoke("CheckGameTime", gameTime);
         cntud = GameObject.FindGameObjectWithTag("EnemyNumber").GetComponent<CuntUD>();
-        cntenemy = cntud.currentCount;
+        cntd = GameObject.FindGameObjectWithTag("EnemyNumber").GetComponent<CuntD>();
+        //cntenemy = cntd.currentCount;
         cntdestoroy = cntud.DestoroyEnemies;
 
     }
 
     void Update()
     {
-//<<<<<<< HEAD
-//        // 敵を全部倒した場合の条件判定
-//        if (!allEnemiesDefeated)
-//        {
-//            allEnemiesDefeated = true;
-//            ShowAllEnemiesDefeatedUI();
-//        }
-//=======
         if (cntenemy == 0)
             allEnemiesDefeated = true;
 
@@ -62,9 +56,6 @@ public class GameManager : MonoBehaviour
     void CheckGameTime()
     {
         // 時間がゼロになった場合の条件判定
-//<<<<<<< HEAD
-//        if (!timeUp)
-//=======
         if (!timeUp && !allEnemiesDefeatedCheck)
 
         {
@@ -73,19 +64,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-//<<<<<<< HEAD
-//    //bool AllEnemiesDefeated()
-//    //{
-//    //    // 敵を全部倒したかどうかを判定する処理（例として、EnemyManagerが管理する敵の数が0になったとする）
-//    //    //return EnemyManager.Instance.EnemyCount == 0;
-//    //}
-
-//    void ShowTimeUpUI()
-//    {
-//        // 「Time's Up!」のUIを表示する処理（例として、Textコンポーネントの表示を切り替える）
-//        infoText.text = "Time's Up!";
-//        infoText.gameObject.SetActive(true);
-//=======
     void ShowTimeUpUI()
     {
         // 「Time's Up!」のUIを表示する処理（例として、Textコンポーネントの表示を切り替える）
@@ -101,11 +79,6 @@ public class GameManager : MonoBehaviour
 
     void ShowAllEnemiesDefeatedUI()
     {
-//        // 「All enemies defeated!」のUIを表示する処理（例として、Textコンポーネントの表示を切り替える）
-//<<<<<<< HEAD
-//        infoText.text = "All enemies defeated!";
-//        infoText.gameObject.SetActive(true);
-//=======
         EnemyText.text = "DestroyEnemies: " + cntdestoroy.ToString();
         TimerText.text = "Time: " + FormatTime(gameTime);
         GamejudgeText.text = "AllEnemiesDestroy!";
