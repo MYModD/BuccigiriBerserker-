@@ -5,7 +5,6 @@ using UnityEngine;
 public class Set_On : MonoBehaviour
 {
 
-    // ゲームオブジェクトのボックスコライダーとメッシュレンダラー
     public Collider myhako;
     private NewEnemyMove enemymove;
     private EneMisa missile;
@@ -21,27 +20,64 @@ public class Set_On : MonoBehaviour
         myhako.enabled = false;
     }
 
-    void OnTriggerEnter(Collider other)
+    void Update()
     {
-        if (other.transform == plyer)
+        // プレイヤーとの距離を計算
+        float sqrDistance = (transform.position - plyer.position).sqrMagnitude;
+
+        // 距離が指定した範囲内であれば敵のオブジェクトを有効化
+        if (sqrDistance < plykyori * plykyori)
         {
-            // プレイヤーが範囲内に入った時に処理を有効化
             myhako.enabled = true;
             enemymove.enabled = true;
             missile.enabled = true;
         }
+        //else
+        //{
+        //    // 範囲外であれば敵のオブジェクトを無効化
+        //    myhako.enabled = false;
+        //    enemymove.enabled = false;
+        //    missile.enabled = false;
+        //}
     }
 
-    void OnTriggerExit(Collider other)
-    {
-        if (other.transform == plyer)
-        {
-            // プレイヤーが範囲外に出た時に処理を無効化
-            myhako.enabled = false;
-            enemymove.enabled = false;
-            missile.enabled = false;
-        }
-    }
+    //// ゲームオブジェクトのボックスコライダーとメッシュレンダラー
+    //public Collider myhako;
+    //private NewEnemyMove enemymove;
+    //private EneMisa missile;
+    //// プレイヤーの位置とプレイヤーとの距離
+    //public Transform plyer;
+    //public float plykyori;
+
+    //void Start()
+    //{
+    //    // 初期化
+    //    enemymove = GetComponent<NewEnemyMove>();
+    //    missile = GetComponent<EneMisa>();
+    //    myhako.enabled = false;
+    //}
+
+    //void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.transform == plyer)
+    //    {
+    //        // プレイヤーが範囲内に入った時に処理を有効化
+    //        myhako.enabled = true;
+    //        enemymove.enabled = true;
+    //        missile.enabled = true;
+    //    }
+    //}
+
+    //void OnTriggerExit(Collider other)
+    //{
+    //    if (other.transform == plyer)
+    //    {
+    //        // プレイヤーが範囲外に出た時に処理を無効化
+    //        myhako.enabled = false;
+    //        enemymove.enabled = false;
+    //        missile.enabled = false;
+    //    }
+    //}
     //// ゲームオブジェクトのボックスコライダーとメッシュレンダラー
     //public Collider myhako;
     //private NewEnemyMove enemymove;

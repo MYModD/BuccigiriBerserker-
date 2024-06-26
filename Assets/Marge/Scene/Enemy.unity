@@ -180,6 +180,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UFO
       objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
+      objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
       value: 3.74
@@ -359,6 +363,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UFO
       objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
+      objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
       value: 3.74
@@ -373,6 +381,87 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
   m_PrefabInstance: {fileID: 5310741}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &5819612
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5819614}
+  - component: {fileID: 5819613}
+  - component: {fileID: 5819615}
+  m_Layer: 31
+  m_Name: GameObject
+  m_TagString: Enemy
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &5819613
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5819612}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &5819614
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5819612}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -16.6, y: 358.2736, z: 19.3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &5819615
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5819612}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &12134415
 GameObject:
   m_ObjectHideFlags: 0
@@ -853,6 +942,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UFO
       objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
+      objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
       value: 3.74
@@ -1032,6 +1125,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UFO
       objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
+      objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
       value: 3.74
@@ -1189,15 +1286,15 @@ PrefabInstance:
       objectReference: {fileID: 376099640}
     - target: {fileID: 6239685098025949782, guid: 19ecb613f8db77447b350c8b5ae2da1e, type: 3}
       propertyPath: _coneAngle
-      value: 80.62813
+      value: 62.7
       objectReference: {fileID: 0}
     - target: {fileID: 6239685098025949782, guid: 19ecb613f8db77447b350c8b5ae2da1e, type: 3}
       propertyPath: _coneRange
-      value: 283.9
+      value: 157.8
       objectReference: {fileID: 0}
     - target: {fileID: 6239685098025949782, guid: 19ecb613f8db77447b350c8b5ae2da1e, type: 3}
       propertyPath: _searchRadius
-      value: 283.9
+      value: 201.8
       objectReference: {fileID: 0}
     - target: {fileID: 8309897281213122745, guid: 19ecb613f8db77447b350c8b5ae2da1e, type: 3}
       propertyPath: m_FollowOffset.y
@@ -1213,7 +1310,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9173306726161093884, guid: 19ecb613f8db77447b350c8b5ae2da1e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.626404
+      value: 290
       objectReference: {fileID: 0}
     - target: {fileID: 9173306726161093884, guid: 19ecb613f8db77447b350c8b5ae2da1e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1221,27 +1318,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9173306726161093884, guid: 19ecb613f8db77447b350c8b5ae2da1e, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9890803
+      value: 0.9997441
       objectReference: {fileID: 0}
     - target: {fileID: 9173306726161093884, guid: 19ecb613f8db77447b350c8b5ae2da1e, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.14737439
+      value: -0.022600124
       objectReference: {fileID: 0}
     - target: {fileID: 9173306726161093884, guid: 19ecb613f8db77447b350c8b5ae2da1e, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000977343
+      value: -0.0009858251
       objectReference: {fileID: 0}
     - target: {fileID: 9173306726161093884, guid: 19ecb613f8db77447b350c8b5ae2da1e, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0001456255
+      value: -0.00002228547
       objectReference: {fileID: 0}
     - target: {fileID: 9173306726161093884, guid: 19ecb613f8db77447b350c8b5ae2da1e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: -2.59
       objectReference: {fileID: 0}
     - target: {fileID: 9173306726161093884, guid: 19ecb613f8db77447b350c8b5ae2da1e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -0.113
       objectReference: {fileID: 0}
     - target: {fileID: 9173306726161093884, guid: 19ecb613f8db77447b350c8b5ae2da1e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -1428,6 +1525,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UFO
       objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
+      objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
       value: 3.74
@@ -1502,6 +1603,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UFO
       objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
+      objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
       value: 3.74
@@ -1532,6 +1637,10 @@ PrefabInstance:
       propertyPath: ExplodeAudioSource
       value: 
       objectReference: {fileID: 1685130596}
+    - target: {fileID: 382080742793684837, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1142384278}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -1587,6 +1696,10 @@ PrefabInstance:
     - target: {fileID: 1767966212240345159, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Name
       value: UFO
+      objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
       objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
@@ -1661,6 +1774,10 @@ PrefabInstance:
     - target: {fileID: 1767966212240345159, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Name
       value: UFO
+      objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
       objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
@@ -2261,6 +2378,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UFO
       objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
+      objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
       value: 3.74
@@ -2291,6 +2412,10 @@ PrefabInstance:
       propertyPath: ExplodeAudioSource
       value: 
       objectReference: {fileID: 1685130596}
+    - target: {fileID: 382080742793684837, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1142384278}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -2346,6 +2471,10 @@ PrefabInstance:
     - target: {fileID: 1767966212240345159, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Name
       value: UFO
+      objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
       objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
@@ -2526,6 +2655,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UFO
       objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
+      objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
       value: 3.74
@@ -2661,6 +2794,10 @@ PrefabInstance:
       propertyPath: ExplodeAudioSource
       value: 
       objectReference: {fileID: 1685130596}
+    - target: {fileID: 382080742793684837, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1142384278}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -2716,6 +2853,10 @@ PrefabInstance:
     - target: {fileID: 1767966212240345159, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Name
       value: UFO
+      objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
       objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
@@ -2791,6 +2932,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UFO
       objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
+      objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
       value: 3.74
@@ -2864,6 +3009,10 @@ PrefabInstance:
     - target: {fileID: 1767966212240345159, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Name
       value: UFO
+      objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
       objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
@@ -2939,6 +3088,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UFO
       objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
+      objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
       value: 3.74
@@ -3012,6 +3165,10 @@ PrefabInstance:
     - target: {fileID: 1767966212240345159, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Name
       value: UFO
+      objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
       objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
@@ -3402,6 +3559,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UFO
       objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
+      objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
       value: 3.74
@@ -3425,9 +3586,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 314690656}
-  m_Layer: 0
+  m_Layer: 31
   m_Name: EnemiesHadObject
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3441,7 +3602,7 @@ Transform:
   m_GameObject: {fileID: 314690655}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.56076944, y: 1.033162, z: -1.2838929}
+  m_LocalPosition: {x: 0.56076944, y: 325.9736, z: -1.2838929}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3716,6 +3877,10 @@ PrefabInstance:
       propertyPath: ExplodeAudioSource
       value: 
       objectReference: {fileID: 1685130596}
+    - target: {fileID: 382080742793684837, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1142384278}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -3771,6 +3936,10 @@ PrefabInstance:
     - target: {fileID: 1767966212240345159, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Name
       value: UFO
+      objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
       objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
@@ -3850,6 +4019,10 @@ PrefabInstance:
     - target: {fileID: 1767966212240345159, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Name
       value: UFO
+      objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
       objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
@@ -4161,8 +4334,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 376099638}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.14737439, y: -0.000977343, z: 0.0001456255, w: 0.9890803}
-  m_LocalPosition: {x: 0.030021638, y: 4.626404, z: -232.46625}
+  m_LocalRotation: {x: -0.022600124, y: -0.0009858251, z: -0.00002228547, w: 0.9997441}
+  m_LocalPosition: {x: 0.030021638, y: 290, z: -232.46625}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4262,6 +4435,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UFO
       objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
+      objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
       value: 3.74
@@ -4292,6 +4469,10 @@ PrefabInstance:
       propertyPath: ExplodeAudioSource
       value: 
       objectReference: {fileID: 1685130596}
+    - target: {fileID: 382080742793684837, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1142384278}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -4347,6 +4528,10 @@ PrefabInstance:
     - target: {fileID: 1767966212240345159, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Name
       value: UFO
+      objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
       objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
@@ -4421,6 +4606,10 @@ PrefabInstance:
     - target: {fileID: 1767966212240345159, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Name
       value: UFO
+      objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
       objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
@@ -4557,6 +4746,10 @@ PrefabInstance:
       propertyPath: ExplodeAudioSource
       value: 
       objectReference: {fileID: 1685130596}
+    - target: {fileID: 382080742793684837, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1142384278}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -4613,6 +4806,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UFO
       objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4639,6 +4836,10 @@ PrefabInstance:
       propertyPath: ExplodeAudioSource
       value: 
       objectReference: {fileID: 1685130596}
+    - target: {fileID: 382080742793684837, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1142384278}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -4694,6 +4895,10 @@ PrefabInstance:
     - target: {fileID: 1767966212240345159, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Name
       value: UFO
+      objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
       objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
@@ -4769,6 +4974,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UFO
       objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
+      objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
       value: 3.74
@@ -4797,7 +5006,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: 2dcec153082509347b7303651ab9cefe, type: 3}
     - target: {fileID: 1400747944959988947, guid: 79ed6e4da1bc6a24fb24c3c8e22509fe, type: 3}
       propertyPath: cooldownFire
-      value: 0.1
+      value: 1.29
       objectReference: {fileID: 0}
     - target: {fileID: 1400747944959988947, guid: 79ed6e4da1bc6a24fb24c3c8e22509fe, type: 3}
       propertyPath: lockOnManager
@@ -4825,7 +5034,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6798146108069399556, guid: 79ed6e4da1bc6a24fb24c3c8e22509fe, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 64.49705
+      value: 349.87064
       objectReference: {fileID: 0}
     - target: {fileID: 6798146108069399556, guid: 79ed6e4da1bc6a24fb24c3c8e22509fe, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4928,6 +5137,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UFO
       objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
+      objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
       value: 3.74
@@ -4958,6 +5171,10 @@ PrefabInstance:
       propertyPath: ExplodeAudioSource
       value: 
       objectReference: {fileID: 1685130596}
+    - target: {fileID: 382080742793684837, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1142384278}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -5014,6 +5231,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UFO
       objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
+      objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
       value: 3.74
@@ -5044,6 +5265,10 @@ PrefabInstance:
       propertyPath: ExplodeAudioSource
       value: 
       objectReference: {fileID: 1685130596}
+    - target: {fileID: 382080742793684837, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1142384278}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -5099,6 +5324,10 @@ PrefabInstance:
     - target: {fileID: 1767966212240345159, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Name
       value: UFO
+      objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
       objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
@@ -5165,6 +5394,10 @@ PrefabInstance:
     - target: {fileID: 4561666722628627611, guid: 1e11cec070db25f47beac6ef05feea18, type: 3}
       propertyPath: m_Name
       value: Ocean
+      objectReference: {fileID: 0}
+    - target: {fileID: 6197416243248725960, guid: 1e11cec070db25f47beac6ef05feea18, type: 3}
+      propertyPath: viewer
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5259,7 +5492,7 @@ Transform:
   m_GameObject: {fileID: 467434102}
   serializedVersion: 2
   m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalPosition: {x: 0, y: 288.3736, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5429,6 +5662,10 @@ PrefabInstance:
     - target: {fileID: 1767966212240345159, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Name
       value: UFO
+      objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
       objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
@@ -5714,6 +5951,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UFO
       objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
+      objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
       value: 3.74
@@ -5998,6 +6239,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UFO
       objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
+      objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
       value: 3.74
@@ -6038,7 +6283,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1268434831018561964, guid: e77ebb491679d7f45b614f6f5127c7a7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 37.459927
+      value: 322.83353
       objectReference: {fileID: 0}
     - target: {fileID: 1268434831018561964, guid: e77ebb491679d7f45b614f6f5127c7a7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6347,6 +6592,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UFO
       objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
+      objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
       value: 3.74
@@ -6420,6 +6669,10 @@ PrefabInstance:
     - target: {fileID: 1767966212240345159, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Name
       value: UFO
+      objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
       objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
@@ -6556,6 +6809,10 @@ PrefabInstance:
       propertyPath: ExplodeAudioSource
       value: 
       objectReference: {fileID: 1685130596}
+    - target: {fileID: 382080742793684837, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1142384278}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -6611,6 +6868,10 @@ PrefabInstance:
     - target: {fileID: 1767966212240345159, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Name
       value: UFO
+      objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
       objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
@@ -6925,6 +7186,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UFO
       objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
+      objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
       value: 3.74
@@ -6998,6 +7263,10 @@ PrefabInstance:
     - target: {fileID: 1767966212240345159, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Name
       value: UFO
+      objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
       objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
@@ -7178,6 +7447,10 @@ PrefabInstance:
     - target: {fileID: 1767966212240345159, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Name
       value: UFO
+      objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
       objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
@@ -7553,6 +7826,10 @@ PrefabInstance:
       propertyPath: ExplodeAudioSource
       value: 
       objectReference: {fileID: 1685130596}
+    - target: {fileID: 382080742793684837, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1142384278}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -7608,6 +7885,10 @@ PrefabInstance:
     - target: {fileID: 1767966212240345159, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Name
       value: UFO
+      objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
       objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
@@ -7683,6 +7964,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UFO
       objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
+      objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
       value: 3.74
@@ -7757,6 +8042,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UFO
       objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
+      objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
       value: 3.74
@@ -7787,6 +8076,10 @@ PrefabInstance:
       propertyPath: ExplodeAudioSource
       value: 
       objectReference: {fileID: 1685130596}
+    - target: {fileID: 382080742793684837, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1142384278}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -7842,6 +8135,10 @@ PrefabInstance:
     - target: {fileID: 1767966212240345159, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Name
       value: UFO
+      objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
       objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
@@ -7917,6 +8214,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UFO
       objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
+      objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
       value: 3.74
@@ -7990,6 +8291,10 @@ PrefabInstance:
     - target: {fileID: 1767966212240345159, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Name
       value: UFO
+      objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
       objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
@@ -8170,6 +8475,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UFO
       objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
+      objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
       value: 3.74
@@ -8349,6 +8658,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UFO
       objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
+      objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
       value: 3.74
@@ -8379,6 +8692,10 @@ PrefabInstance:
       propertyPath: ExplodeAudioSource
       value: 
       objectReference: {fileID: 1685130596}
+    - target: {fileID: 382080742793684837, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1142384278}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -8435,6 +8752,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UFO
       objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
+      objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
       value: 3.74
@@ -8465,6 +8786,10 @@ PrefabInstance:
       propertyPath: ExplodeAudioSource
       value: 
       objectReference: {fileID: 1685130596}
+    - target: {fileID: 382080742793684837, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1142384278}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -8521,9 +8846,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: UFO
       objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
+      objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
       value: 3.74
+      objectReference: {fileID: 0}
+    - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8699,6 +9032,10 @@ PrefabInstance:
     - target: {fileID: 1767966212240345159, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Name
       value: UFO
+      objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
       objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
@@ -9089,6 +9426,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UFO
       objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
+      objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
       value: 3.74
@@ -9119,6 +9460,10 @@ PrefabInstance:
       propertyPath: ExplodeAudioSource
       value: 
       objectReference: {fileID: 1685130596}
+    - target: {fileID: 382080742793684837, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1142384278}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -9175,6 +9520,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UFO
       objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
+      objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
       value: 3.74
@@ -9205,6 +9554,10 @@ PrefabInstance:
       propertyPath: ExplodeAudioSource
       value: 
       objectReference: {fileID: 1685130596}
+    - target: {fileID: 382080742793684837, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1142384278}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -9260,6 +9613,10 @@ PrefabInstance:
     - target: {fileID: 1767966212240345159, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Name
       value: UFO
+      objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
       objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
@@ -9396,6 +9753,10 @@ PrefabInstance:
       propertyPath: ExplodeAudioSource
       value: 
       objectReference: {fileID: 1685130596}
+    - target: {fileID: 382080742793684837, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1142384278}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -9452,6 +9813,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UFO
       objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
+      objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
       value: 3.74
@@ -9482,6 +9847,10 @@ PrefabInstance:
       propertyPath: ExplodeAudioSource
       value: 
       objectReference: {fileID: 1685130596}
+    - target: {fileID: 382080742793684837, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1142384278}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -9537,6 +9906,10 @@ PrefabInstance:
     - target: {fileID: 1767966212240345159, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Name
       value: UFO
+      objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
       objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
@@ -9673,6 +10046,10 @@ PrefabInstance:
       propertyPath: ExplodeAudioSource
       value: 
       objectReference: {fileID: 1685130596}
+    - target: {fileID: 382080742793684837, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1142384278}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -9729,6 +10106,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UFO
       objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
+      objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
       value: 3.74
@@ -9736,7 +10117,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1767966212240345159, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1194229570}
   m_SourcePrefab: {fileID: 100100000, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
 --- !u!4 &980045880 stripped
 Transform:
@@ -9802,6 +10186,10 @@ PrefabInstance:
     - target: {fileID: 1767966212240345159, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Name
       value: UFO
+      objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
       objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
@@ -9877,6 +10265,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UFO
       objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
+      objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
       value: 3.74
@@ -9907,6 +10299,10 @@ PrefabInstance:
       propertyPath: ExplodeAudioSource
       value: 
       objectReference: {fileID: 1685130596}
+    - target: {fileID: 382080742793684837, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1142384278}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -9962,6 +10358,10 @@ PrefabInstance:
     - target: {fileID: 1767966212240345159, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Name
       value: UFO
+      objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
       objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
@@ -10037,6 +10437,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UFO (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
+      objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
       value: 3.74
@@ -10110,6 +10514,10 @@ PrefabInstance:
     - target: {fileID: 1767966212240345159, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Name
       value: UFO
+      objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
       objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
@@ -10395,6 +10803,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UFO
       objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
+      objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
       value: 3.74
@@ -10679,6 +11091,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UFO
       objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
+      objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
       value: 3.74
@@ -10752,6 +11168,10 @@ PrefabInstance:
     - target: {fileID: 1767966212240345159, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Name
       value: UFO
+      objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
       objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
@@ -10827,6 +11247,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UFO
       objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
+      objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
       value: 3.74
@@ -10901,6 +11325,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UFO
       objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
+      objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
       value: 3.74
@@ -10974,6 +11402,10 @@ PrefabInstance:
     - target: {fileID: 1767966212240345159, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Name
       value: UFO
+      objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
       objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
@@ -11106,7 +11538,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1142384267}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 552465ab89de15a4f814b99b785e02d2, type: 3}
   m_Name: 
@@ -11288,6 +11720,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UFO
       objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
+      objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
       value: 3.74
@@ -11362,6 +11798,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UFO
       objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
+      objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
       value: 3.74
@@ -11392,6 +11832,10 @@ PrefabInstance:
       propertyPath: ExplodeAudioSource
       value: 
       objectReference: {fileID: 1685130596}
+    - target: {fileID: 382080742793684837, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1142384278}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -11447,6 +11891,10 @@ PrefabInstance:
     - target: {fileID: 1767966212240345159, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Name
       value: UFO
+      objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
       objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
@@ -11522,6 +11970,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UFO
       objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
+      objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
       value: 3.74
@@ -11536,6 +11988,53 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
   m_PrefabInstance: {fileID: 1188265885}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1194229563 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1767966212240345159, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+  m_PrefabInstance: {fileID: 980045879}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &1194229570
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1194229563}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!224 &1202279410 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1501710498933812486, guid: 828122ac8756cca439d9e04dbe9d3287, type: 3}
@@ -11706,6 +12205,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UFO
       objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
+      objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
       value: 3.74
@@ -11780,6 +12283,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UFO
       objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
+      objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
       value: 3.74
@@ -11853,6 +12360,10 @@ PrefabInstance:
     - target: {fileID: 1767966212240345159, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Name
       value: UFO
+      objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
       objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
@@ -12033,6 +12544,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UFO
       objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
+      objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
       value: 3.74
@@ -12168,6 +12683,10 @@ PrefabInstance:
       propertyPath: ExplodeAudioSource
       value: 
       objectReference: {fileID: 1685130596}
+    - target: {fileID: 382080742793684837, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1142384278}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -12223,6 +12742,10 @@ PrefabInstance:
     - target: {fileID: 1767966212240345159, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Name
       value: UFO
+      objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
       objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
@@ -12297,6 +12820,10 @@ PrefabInstance:
     - target: {fileID: 1767966212240345159, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Name
       value: UFO
+      objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
       objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
@@ -12538,6 +13065,10 @@ PrefabInstance:
       propertyPath: ExplodeAudioSource
       value: 
       objectReference: {fileID: 1685130596}
+    - target: {fileID: 382080742793684837, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1142384278}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -12593,6 +13124,10 @@ PrefabInstance:
     - target: {fileID: 1767966212240345159, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Name
       value: UFO
+      objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
       objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
@@ -12817,6 +13352,10 @@ PrefabInstance:
     - target: {fileID: 1767966212240345159, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Name
       value: UFO
+      objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
       objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
@@ -13067,7 +13606,7 @@ Transform:
   m_GameObject: {fileID: 1397662230}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -242.4927, y: -159.15521, z: 2032}
+  m_LocalPosition: {x: -242.4927, y: 126.21838, z: 2032}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -13277,6 +13816,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UFO
       objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
+      objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
       value: 3.74
@@ -13307,6 +13850,10 @@ PrefabInstance:
       propertyPath: ExplodeAudioSource
       value: 
       objectReference: {fileID: 1685130596}
+    - target: {fileID: 382080742793684837, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1142384278}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -13363,6 +13910,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UFO
       objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
+      objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
       value: 3.74
@@ -13393,6 +13944,10 @@ PrefabInstance:
       propertyPath: ExplodeAudioSource
       value: 
       objectReference: {fileID: 1685130596}
+    - target: {fileID: 382080742793684837, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1142384278}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -13448,6 +14003,10 @@ PrefabInstance:
     - target: {fileID: 1767966212240345159, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Name
       value: UFO
+      objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
       objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
@@ -13628,6 +14187,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UFO
       objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
+      objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
       value: 3.74
@@ -13701,6 +14264,10 @@ PrefabInstance:
     - target: {fileID: 1767966212240345159, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Name
       value: UFO
+      objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
       objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
@@ -13881,6 +14448,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UFO
       objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
+      objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
       value: 3.74
@@ -14059,6 +14630,10 @@ PrefabInstance:
     - target: {fileID: 1767966212240345159, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Name
       value: UFO
+      objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
       objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
@@ -14239,6 +14814,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UFO
       objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
+      objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
       value: 3.74
@@ -14313,6 +14892,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UFO
       objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
+      objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
       value: 3.74
@@ -14327,6 +14910,102 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
   m_PrefabInstance: {fileID: 1565088829}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1581855598
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1581855602}
+  - component: {fileID: 1581855603}
+  - component: {fileID: 1581855604}
+  m_Layer: 31
+  m_Name: Cube
+  m_TagString: Enemy
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1581855602
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1581855598}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 34.487167, y: 387.9736, z: 64.3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1581855603
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1581855598}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1581855604
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1581855598}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &1601821270
 GameObject:
   m_ObjectHideFlags: 0
@@ -14448,6 +15127,10 @@ PrefabInstance:
       propertyPath: ExplodeAudioSource
       value: 
       objectReference: {fileID: 1685130596}
+    - target: {fileID: 382080742793684837, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1142384278}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -14504,6 +15187,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UFO
       objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
+      objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
       value: 3.74
@@ -14534,6 +15221,10 @@ PrefabInstance:
       propertyPath: ExplodeAudioSource
       value: 
       objectReference: {fileID: 1685130596}
+    - target: {fileID: 382080742793684837, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1142384278}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -14590,6 +15281,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UFO
       objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
+      objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
       value: 3.74
@@ -14624,6 +15319,10 @@ PrefabInstance:
       propertyPath: ExplodeAudioSource
       value: 
       objectReference: {fileID: 1685130596}
+    - target: {fileID: 382080742793684837, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1142384278}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -14679,6 +15378,10 @@ PrefabInstance:
     - target: {fileID: 1767966212240345159, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Name
       value: UFO
+      objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
       objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
@@ -14859,6 +15562,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UFO
       objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
+      objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
       value: 3.74
@@ -14932,6 +15639,10 @@ PrefabInstance:
     - target: {fileID: 1767966212240345159, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Name
       value: UFO
+      objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
       objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
@@ -15046,7 +15757,7 @@ Transform:
   m_GameObject: {fileID: 1684218009}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9, y: -1, z: 281.3}
+  m_LocalPosition: {x: 9, y: 284.3736, z: 281.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -15275,7 +15986,7 @@ Transform:
   m_GameObject: {fileID: 1691850950}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 285.3736, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -15686,6 +16397,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UFO
       objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
+      objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
       value: 3.74
@@ -15932,7 +16647,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6295814912980535194, guid: 3982e962871e0614d94790663928a426, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -105
+      value: 298.5736
       objectReference: {fileID: 0}
     - target: {fileID: 6295814912980535194, guid: 3982e962871e0614d94790663928a426, type: 3}
       propertyPath: m_LocalPosition.z
@@ -16030,6 +16745,10 @@ PrefabInstance:
     - target: {fileID: 1767966212240345159, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Name
       value: UFO
+      objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
       objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
@@ -16166,6 +16885,10 @@ PrefabInstance:
       propertyPath: ExplodeAudioSource
       value: 
       objectReference: {fileID: 1685130596}
+    - target: {fileID: 382080742793684837, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1142384278}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -16221,6 +16944,10 @@ PrefabInstance:
     - target: {fileID: 1767966212240345159, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Name
       value: UFO
+      objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
       objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
@@ -16384,7 +17111,7 @@ Transform:
   m_GameObject: {fileID: 1789521643}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -49.756927, y: -114.2886, z: 199.0793}
+  m_LocalPosition: {x: -49.61, y: 171.08499, z: 199.0793}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -16449,6 +17176,10 @@ PrefabInstance:
     - target: {fileID: 1767966212240345159, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Name
       value: UFO
+      objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
       objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
@@ -16585,6 +17316,10 @@ PrefabInstance:
       propertyPath: ExplodeAudioSource
       value: 
       objectReference: {fileID: 1685130596}
+    - target: {fileID: 382080742793684837, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1142384278}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -16641,6 +17376,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UFO
       objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
+      objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
       value: 3.74
@@ -16680,7 +17419,7 @@ Transform:
   m_GameObject: {fileID: 1851645559}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -242.4927, y: -159.15521, z: 1548}
+  m_LocalPosition: {x: -242.4927, y: 126.21838, z: 1548}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -16786,6 +17525,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UFO
       objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
+      objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
       value: 3.74
@@ -16816,6 +17559,10 @@ PrefabInstance:
       propertyPath: ExplodeAudioSource
       value: 
       objectReference: {fileID: 1685130596}
+    - target: {fileID: 382080742793684837, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1142384278}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -16871,6 +17618,10 @@ PrefabInstance:
     - target: {fileID: 1767966212240345159, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Name
       value: UFO
+      objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
       objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
@@ -16945,6 +17696,10 @@ PrefabInstance:
     - target: {fileID: 1767966212240345159, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Name
       value: UFO
+      objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
       objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
@@ -17081,6 +17836,10 @@ PrefabInstance:
       propertyPath: ExplodeAudioSource
       value: 
       objectReference: {fileID: 1685130596}
+    - target: {fileID: 382080742793684837, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1142384278}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -17136,6 +17895,10 @@ PrefabInstance:
     - target: {fileID: 1767966212240345159, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Name
       value: UFO
+      objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -17206,6 +17969,10 @@ PrefabInstance:
     - target: {fileID: 1767966212240345159, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Name
       value: UFO
+      objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
       objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
@@ -17320,7 +18087,7 @@ Transform:
   m_GameObject: {fileID: 1911070610}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.3, y: 1, z: 184}
+  m_LocalPosition: {x: 3.3, y: 286.3736, z: 184}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -17529,6 +18296,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UFO
       objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
+      objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
       value: 3.74
@@ -17602,6 +18373,10 @@ PrefabInstance:
     - target: {fileID: 1767966212240345159, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Name
       value: UFO
+      objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
       objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
@@ -17738,6 +18513,10 @@ PrefabInstance:
       propertyPath: ExplodeAudioSource
       value: 
       objectReference: {fileID: 1685130596}
+    - target: {fileID: 382080742793684837, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1142384278}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -17794,6 +18573,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UFO
       objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
+      objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
       value: 3.74
@@ -17824,6 +18607,10 @@ PrefabInstance:
       propertyPath: ExplodeAudioSource
       value: 
       objectReference: {fileID: 1685130596}
+    - target: {fileID: 382080742793684837, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1142384278}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -17879,6 +18666,10 @@ PrefabInstance:
     - target: {fileID: 1767966212240345159, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Name
       value: UFO
+      objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
       objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
@@ -18059,6 +18850,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UFO
       objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
+      objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
       value: 3.74
@@ -18089,6 +18884,10 @@ PrefabInstance:
       propertyPath: ExplodeAudioSource
       value: 
       objectReference: {fileID: 1685130596}
+    - target: {fileID: 382080742793684837, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1142384278}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -18144,6 +18943,10 @@ PrefabInstance:
     - target: {fileID: 1767966212240345159, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Name
       value: UFO
+      objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
       objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
@@ -18218,6 +19021,10 @@ PrefabInstance:
     - target: {fileID: 1767966212240345159, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Name
       value: UFO
+      objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
       objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
@@ -18364,7 +19171,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2264940241835221188, guid: 30ca4e76283e170418e5c7c38860b6d4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 285.3736
       objectReference: {fileID: 0}
     - target: {fileID: 2264940241835221188, guid: 30ca4e76283e170418e5c7c38860b6d4, type: 3}
       propertyPath: m_LocalPosition.z
@@ -18408,11 +19215,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6986225060925412395, guid: 30ca4e76283e170418e5c7c38860b6d4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.78
+      value: -8.6
       objectReference: {fileID: 0}
     - target: {fileID: 6986225060925412395, guid: 30ca4e76283e170418e5c7c38860b6d4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -18.6
+      value: -70
       objectReference: {fileID: 0}
     - target: {fileID: 6986225060925412395, guid: 30ca4e76283e170418e5c7c38860b6d4, type: 3}
       propertyPath: m_LocalRotation.w
@@ -18440,7 +19247,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7116351648223372453, guid: 30ca4e76283e170418e5c7c38860b6d4, type: 3}
       propertyPath: move_max_y
-      value: 50
+      value: 346
       objectReference: {fileID: 0}
     - target: {fileID: 7116351648223372453, guid: 30ca4e76283e170418e5c7c38860b6d4, type: 3}
       propertyPath: move_min_x
@@ -18466,7 +19273,12 @@ PrefabInstance:
       propertyPath: missilePrefab
       value: 
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8222332716781120740, guid: 30ca4e76283e170418e5c7c38860b6d4, type: 3}
+    - {fileID: 6494074296686782721, guid: 30ca4e76283e170418e5c7c38860b6d4, type: 3}
+    - {fileID: 4043453252890168165, guid: 30ca4e76283e170418e5c7c38860b6d4, type: 3}
+    - {fileID: 7396508633645292793, guid: 30ca4e76283e170418e5c7c38860b6d4, type: 3}
+    - {fileID: 401446777088861056, guid: 30ca4e76283e170418e5c7c38860b6d4, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 2264940241835221188, guid: 30ca4e76283e170418e5c7c38860b6d4, type: 3}
@@ -18545,6 +19357,10 @@ PrefabInstance:
     - target: {fileID: 1767966212240345159, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Name
       value: UFO
+      objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
       objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
@@ -18725,6 +19541,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UFO
       objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
+      objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
       value: 3.74
@@ -18755,6 +19575,10 @@ PrefabInstance:
       propertyPath: ExplodeAudioSource
       value: 
       objectReference: {fileID: 1685130596}
+    - target: {fileID: 382080742793684837, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1142384278}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -18810,6 +19634,10 @@ PrefabInstance:
     - target: {fileID: 1767966212240345159, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Name
       value: UFO
+      objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
       objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
@@ -18885,6 +19713,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UFO
       objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
+      objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
       value: 3.74
@@ -18958,6 +19790,10 @@ PrefabInstance:
     - target: {fileID: 1767966212240345159, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Name
       value: UFO
+      objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
       objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
@@ -19094,6 +19930,10 @@ PrefabInstance:
       propertyPath: ExplodeAudioSource
       value: 
       objectReference: {fileID: 1685130596}
+    - target: {fileID: 382080742793684837, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1142384278}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -19149,6 +19989,10 @@ PrefabInstance:
     - target: {fileID: 1767966212240345159, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Name
       value: UFO
+      objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
       objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
@@ -19223,6 +20067,10 @@ PrefabInstance:
     - target: {fileID: 1767966212240345159, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Name
       value: UFO
+      objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
       objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
@@ -19403,6 +20251,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UFO
       objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
+      objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
       value: 3.74
@@ -19433,6 +20285,10 @@ PrefabInstance:
       propertyPath: ExplodeAudioSource
       value: 
       objectReference: {fileID: 1685130596}
+    - target: {fileID: 382080742793684837, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1142384278}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -19488,6 +20344,10 @@ PrefabInstance:
     - target: {fileID: 1767966212240345159, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Name
       value: UFO
+      objectReference: {fileID: 0}
+    - target: {fileID: 1797867216179082727, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
+      propertyPath: plykyori
+      value: 536.1
       objectReference: {fileID: 0}
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
@@ -19622,7 +20482,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7418900790480846265, guid: e0133808cc682e04895488bb403505df, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.5
+      value: 284.8736
       objectReference: {fileID: 0}
     - target: {fileID: 7418900790480846265, guid: e0133808cc682e04895488bb403505df, type: 3}
       propertyPath: m_LocalPosition.z
@@ -19682,3 +20542,5 @@ SceneRoots:
   - {fileID: 1397662231}
   - {fileID: 1851645560}
   - {fileID: 1736577365}
+  - {fileID: 5819614}
+  - {fileID: 1581855602}
