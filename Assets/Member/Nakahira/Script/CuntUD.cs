@@ -5,7 +5,7 @@ using TMPro;
 public class CuntUD : MonoBehaviour
 {
    
-   [SerializeField] private string tagname; // タグ名を指定するための変数
+   //[SerializeField] private string tagname; // タグ名を指定するための変数
     [SerializeField] private TextMeshProUGUI countTexts; // カウントを表示するテキスト要素
     [SerializeField] private TextMeshProUGUI homekotoba;
     public int CountText; // 現在のカウント数
@@ -15,14 +15,15 @@ public class CuntUD : MonoBehaviour
     public int DestoroyEnemies;
     private int juu = 10;
     private int saisyo = 0;
-    Misail_Hit2 Enemydec;
+    public Misail_Hit2 Enemydec;
     private int maedec;
     void Start()
     {
-
+        Enemydec = GetComponent<Misail_Hit2>();
         // タグ名に対応するゲームオブジェクトの配列を取得
         //GameObject[] tagObjects = GameObject.FindGameObjectsWithTag(tagname);
-
+        // Enemydecを初期化する（例としてFindObjectOfTypeを使用する）
+        //Enemydec = FindObjectOfType<Misail_Hit2>();
         // ゲームオブジェクトの総数を取得
         DestoroyEnemies = saisyo;
 
@@ -39,8 +40,9 @@ public class CuntUD : MonoBehaviour
     void Update()
     {
         //敵が倒された時
-        if(Enemydec.DesEne> maedec)
+        if(Enemydec.DesEne > maedec)
         {
+            Debug.Log("kff");
             DestoroyEnemies += 1;
             counthome += 1;
             homekotoba.text = "";
@@ -73,7 +75,7 @@ public class CuntUD : MonoBehaviour
     //}
     void UpdateCountText()
     {
-        countTexts.text = "" + DestoroyEnemies; // 現在のカウントでテキストを更新する
+        countTexts.text = "" + DestoroyEnemies.ToString(); // 現在のカウントでテキストを更新する
         
     }
 }

@@ -4,12 +4,12 @@ using UnityEngine;
 using TMPro;
 public class Misail_Hit2 : MonoBehaviour
 {
-    public int DesEne = 0;
+    public int DesEne ;
     public GameObject explosionPrefab; // 爆発エフェクトのプレハブ
     public AudioSource ExplodeAudioSource;
     void Start()
     {
-       
+        DesEne = 0;
     }
 
     // Update is called once per frame
