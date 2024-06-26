@@ -11,12 +11,15 @@ public class PlayerLife : MonoBehaviour
 
     public bool _IsRetry = false;
 
+    private MoveMiyamotoTest move;
+
     private Animator anim;
     private Vector3 originalPosition;
 
     void Start()
     {
         anim = GetComponent<Animator>();
+        move = GetComponent<MoveMiyamotoTest>();
         originalPosition = transform.position;
     }
 
@@ -44,6 +47,7 @@ public class PlayerLife : MonoBehaviour
 
     IEnumerator Respawn()
     {
+        move.enabled = false;
         // プレイヤーが後ろに動く距離（例としてspawnSpeed * 5秒分後退）
         float moveDistance = spawnSpeed * 5 * Time.deltaTime;
 
@@ -67,6 +71,7 @@ public class PlayerLife : MonoBehaviour
         // アニメーションのリセットなどもここで行う
         anim.SetBool("invincible", false);  // パラメーター名を修正
         anim.SetBool("Normal", true);       // パラメーター名を修正
+        move.enabled = true;
     }
 
     private void OnTriggerEnter(Collider other)
