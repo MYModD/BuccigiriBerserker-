@@ -44,17 +44,19 @@ public class FireMissile : MonoBehaviour
             // 次に発射できる時間を計算
             nextTimeToShoot = Time.time + cooldownFire;
 
+            Debug.Log($"ターゲット数: {lockOnManager.targetsInCone.Count}");
+
             foreach (Transform target in lockOnManager.targetsInCone)
             {
+                Debug.Log($"ターゲット: {target.name}");
 
-                Debug.Log($"{"発射したよ"}+{target.name}");
-                
                 // Missileクラスのオブジェクトを取得
                 Missile missileObject = objectPool.Get();
 
                 if (missileObject == null)
                 {
                     Debug.Log("オブジェクトが取得できませんでした");
+                    continue; // オブジェクトが取得できなかった場合は次のターゲットに進む
                 }
 
                 missileObject.target = target; // 取得したミサイルのターゲットを設定
@@ -62,7 +64,7 @@ public class FireMissile : MonoBehaviour
                 // SetPositionAndRotationで位置と回転を設定
                 missileObject.transform.SetPositionAndRotation(muzzlePosition.position, muzzlePosition.rotation);
 
-                Debug.LogWarning($"{missileObject.name} {missileObject.transform.position}");
+                Debug.LogWarning($"{missileObject.name} 発射位置: {missileObject.transform.position}");
 
                 fire1SE.fire1SE(); // 発射音を再生
             }
