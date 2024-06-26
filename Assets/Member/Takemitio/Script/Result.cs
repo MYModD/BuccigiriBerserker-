@@ -93,7 +93,7 @@ public class Result : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
 
         // ResultScene‚É‘JˆÚ‚·‚é
-        SceneManager.LoadScene("ResultScene");
+        SceneManager.LoadScene("NewResultScene");
     }
 
     void ShowAllEnemiesDefeatedUI()
@@ -103,6 +103,6 @@ public class Result : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
 
         // ResultScene‚É‘JˆÚ‚·‚é
-        SceneManager.LoadScene("ResultScene");
+        SceneManager.LoadScene("NewResultScene");
     }
 }

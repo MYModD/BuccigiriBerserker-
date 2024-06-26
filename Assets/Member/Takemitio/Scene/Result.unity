@@ -944,7 +944,7 @@ GameObject:
   - component: {fileID: 1765510326}
   m_Layer: 0
   m_Name: ResultManager
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -976,10 +976,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 679ada5f8907f5545a7487a8d4167860, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyText: {fileID: 2070303179}
-  TimerText: {fileID: 2140653623}
-  GamejudgeText: {fileID: 50164652}
-  Button: {fileID: 441021602}
+  EnemyText: {fileID: 0}
+  TimerText: {fileID: 0}
+  GamejudgeText: {fileID: 0}
   gameTime: 5
 --- !u!1 &2070303176
 GameObject:

@@ -12,11 +12,15 @@ public class ResultSceneManager : MonoBehaviour
     void Start()
     {
         // GameManagerからResultDataを取得する
-        Result.ResultData resultData = Result.Instance.GetComponent<Result.ResultData>();
+        Result.ResultData resultData = GameObject.FindGameObjectWithTag("GameController").GetComponent<Result.ResultData>();
 
+        print(resultData.gameResult);
+        print(resultData.destroyedEnemies);
+        print(resultData.remainingTime);
         // 結果を表示する
         resultText.text = resultData.gameResult;
         enemiesDestroyedText.text = "Destroyed Enemies: " + resultData.destroyedEnemies.ToString();
+        //this.gameObject.SetActive(true);
         timeText.text = "Time: " + FormatTime(resultData.remainingTime);
 
         // GameManagerのインスタンスを破棄する（不要になったら破棄する）
