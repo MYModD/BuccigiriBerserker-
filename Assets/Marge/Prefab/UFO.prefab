@@ -127,9 +127,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f535339d2e5144478a2fb2367e4f36f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hako: {fileID: 5035517949644975491}
   DesEne: 0
   explosionPrefab: {fileID: 0}
   ExplodeAudioSource: {fileID: 0}
+  countObject: {fileID: 1217021699367483545, guid: 8d4162eb44616f841a13a189f1d71bb1, type: 3}
 --- !u!114 &1797867216179082727
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137,7 +139,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1767966212240345159}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 952984110c960874884a05a7077acbc9, type: 3}
   m_Name: 
