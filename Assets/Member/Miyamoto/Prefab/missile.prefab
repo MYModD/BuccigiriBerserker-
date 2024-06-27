@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1030238610488008287}
   - component: {fileID: 288795109706203570}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Smoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4941,8 +4941,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  hissatsu: 1
-  lerpT: 0.88
+  hissatsu: 0
+  lerpT: 0.398
   speed: 100
   timer: 20
   randomPower: 0.15

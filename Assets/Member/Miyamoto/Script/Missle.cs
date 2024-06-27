@@ -52,7 +52,8 @@ public class Missile : MonoBehaviour
     {
         if (target == null)
         {
-            Debug.LogError("アタッチされてないよ"); return;
+            Debug.LogError("アタッチされてないよ"); 
+            return;
         }
 
 
@@ -132,4 +133,6 @@ public class Missile : MonoBehaviour
         OFFtimeValue = timer;
         OFFtimeRandomValue = randomTimer;   //オンになったらタイマーの値を初期化
     }
+
+    
 }
