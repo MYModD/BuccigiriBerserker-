@@ -7,10 +7,14 @@ public class LockOnManager : MonoBehaviour
 
 
     [Header("カメラの視界に入っているターゲットのリスト")]
+    //[HideInInspector]重くなる要因なのでコメントなくす
     public List<Transform> targetsInCamera = new List<Transform>();
 
     [Header("錐体内に入っているターゲットのリスト")]
+    //[HideInInspector]重くなる要因なのでコメントなくす
     public List<Transform> targetsInCone = new List<Transform>();
+
+    [Header("上のリストで一番距離が短いターゲット")]
 
     [SerializeField, Header("カメラ指定")]
     private Camera _camera;
@@ -28,6 +32,9 @@ public class LockOnManager : MonoBehaviour
 
 
 
+
+
+
     readonly private Vector3 DrawOrigin = new Vector3(90, 0, 0);    //コーンの円周を向けるためのやつ offset
     
     
@@ -40,7 +47,7 @@ public class LockOnManager : MonoBehaviour
     void Update()
     {
 
-        transform.position += new Vector3(0, 0, 0.1f);
+        
 
         if (Time.time - lastUpdate > updateInterval)
         {
@@ -105,7 +112,7 @@ public class LockOnManager : MonoBehaviour
             Transform target = hit.transform;
             Renderer renderer = target.GetComponent<Renderer>();
 
-            if (renderer != null && IsInFrustum(renderer, planes))         //&& renderer.GetComponent<hogehoge>.isdead == false
+            if (renderer != null && IsInFrustum(renderer, planes) && hit.gameObject.activeSelf == true)         //&& renderer.GetComponent<hogehoge>.isdead == false
                                                                            //死んでなかったら追加
             {
                 targetsInCamera.Add(target);              //カメラ範囲内のリストにいれる
@@ -150,7 +157,7 @@ public class LockOnManager : MonoBehaviour
         // ターゲットまでの距離を計算
         float distanceToObject = toObject.magnitude;                     // ベクトルの長さ（距離）
 
-        Debug.Log($"{"ターゲットの距離の長さ  "}{distanceToObject}+{"  "}{target.gameObject.name}");
+        
 
 
         if (distanceToObject <= _coneRange)                           // ターゲットが検索半径内にあるかどうかを確認
@@ -159,7 +166,7 @@ public class LockOnManager : MonoBehaviour
 
             float angle = Vector3.Angle(cameraForward, toObjectNormalized); // カメラの前方向とターゲットへの方向との角度を計算
 
-            Debug.Log(angle);
+            //Debug.Log(angle);
             return angle <= _coneAngle / 2;                                // 角度がコーンの半分の角度以下であればtrueを返す
         }
 
@@ -185,6 +192,8 @@ public class LockOnManager : MonoBehaviour
             if (!GeometryUtility.TestPlanesAABB(cameraPlanes, target.GetComponent<Collider>().bounds))
             {
                 targetsToRemove.Add(target);
+
+                
             }
         }
 
@@ -260,8 +269,5 @@ public class LockOnManager : MonoBehaviour
         {
             _coneRange = _searchRadius;
         }
-
-        
-
     }
 }

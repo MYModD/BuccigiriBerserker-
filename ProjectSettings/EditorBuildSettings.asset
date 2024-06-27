@@ -15,6 +15,12 @@ EditorBuildSettings:
     path: Assets/Marge/Scene/Enemy.unity
     guid: 0cade0330648a31448789746516963cd
   - enabled: 1
+    path: Assets/Member/Takemitio/Scene/Result.unity
+    guid: cd89e2929da6fbb4ba077bff1800c85c
+  - enabled: 1
+    path: Assets/Member/Takemitio/Scene/NewResultScene.unity
+    guid: d5af402c6a90600479111bf87063d780
+  - enabled: 0
     path: Assets/Marge/Scene/ResultScene.unity
     guid: 4c86784b04be5d84299a9309db267214
   m_configObjects:

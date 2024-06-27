@@ -4,12 +4,17 @@ using UnityEngine;
 using TMPro;
 public class Misail_Hit2 : MonoBehaviour
 {
-
+    public Collider hako;
+    private MeshRenderer childRenderer ;
+    public int DesEne;
+    public int _desEne { get => DesEne; }
     public GameObject explosionPrefab; // 爆発エフェクトのプレハブ
     public AudioSource ExplodeAudioSource;
     void Start()
     {
-       
+        childRenderer = GetComponentInChildren<MeshRenderer>();
+        DesEne = 0;
+      
     }
 
     // Update is called once per frame
@@ -19,7 +24,7 @@ public class Misail_Hit2 : MonoBehaviour
     }
     private void OnTriggerEnter(Collider coll)
     {
-        if (coll.gameObject.tag == "missile")
+        if (coll.gameObject.tag == "Missile")
         {
             Explode();
             ExplodeSE();
@@ -37,7 +42,11 @@ public class Misail_Hit2 : MonoBehaviour
     }
     public void PooledReturn()
     {
-        this.gameObject.SetActive(false);
+        childRenderer = GetComponentInChildren<MeshRenderer>();
+        DesEne = +1;
+        childRenderer.enabled = false;
+        hako.enabled = false;
+        //this.gameObject.SetActive(false);
        
     }
     void Explode()

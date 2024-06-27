@@ -4,32 +4,102 @@ using UnityEngine;
 
 public class PlayerLife : MonoBehaviour
 {
-    [SerializeField] GameObject player;
+    [SerializeField]
+   public float playerLife = 5;
 
-    private float _playerlife = 5;
-    // Start is called before the first frame update
+    private float playerlifesub;
+
+    public bool _IsRetry = false;
+
+    private MoveMiyamotoTest move;
+
+    private Animator anim;
+
+    public GameObject explosionPrefab; // 爆発エフェクトのプレハブ
+    public AudioClip ExplodeAudioClip;
+    public AudioSource audioSource;
+
+    private bool explod = false;
+
     void Start()
     {
+        anim = GetComponent<Animator>();
+        move = GetComponent<MoveMiyamotoTest>();
+       
+        anim.SetBool("invincible", false); 
+        anim.SetBool("Normal", false);
+
+        playerlifesub = playerLife;
 
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (_playerlife == 0)
+        if (playerLife == 0 && explod != true)
         {
-            //Debug.Log("ぐわーー");
-            _playerlife = 5;
+            anim.SetBool("invincible", false);
+            anim.SetBool("Normal", true);
+            _IsRetry = false;
+            Explode();
+            explod = true;
+            StartCoroutine(Respawn());
         }
 
+        if (playerLife > 0)
+        {
+          
+            _IsRetry = true;
+            explod = false;
+          
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            playerLife--;
+        }
     }
 
-    private void OnTriggerEnter(Collider colider)
+    IEnumerator Respawn()
     {
-       if(colider.gameObject.tag == "Enemy")
-        {
-            _playerlife = _playerlife - 1;
-        }
+        move.enabled = false;
 
+        //無敵時間開始
+        anim.SetBool("invincible", true);   
+        anim.SetBool("Normal", false);      
+
+        yield return new WaitForSeconds(4f);
+
+        
+      
+        playerLife =playerlifesub ; // プレイヤーのライフをリセットする
+
+       
+        anim.SetBool("invincible", false);  
+        anim.SetBool("Normal", true);      
+        move.enabled = true;
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Enemy")
+        {
+            playerLife--;
+        }
+    }
+
+    void Explode()
+    {
+        // 爆発エフェクトのプレハブをインスタンス化して生成する
+        if (explosionPrefab != null)
+        {
+            GameObject explosion = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+            //Destroy(explosion, 3.0f); // 爆発エフェクトを3秒後に破棄する（任意の時間）
+        }
+        if (ExplodeAudioClip != null)
+        {
+            audioSource.PlayOneShot(ExplodeAudioClip);
+        }
+    }
+
+    
 }
