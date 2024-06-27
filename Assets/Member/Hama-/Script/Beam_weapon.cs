@@ -21,7 +21,7 @@ public class Beam_weapon : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (buster._BusterGaugeCheck == true)
         {
             StartBeam();
         }
@@ -29,8 +29,8 @@ public class Beam_weapon : MonoBehaviour
         if (check)
         {
             Beam();
-            time += Time.deltaTime;
-            if (time >= 5f)
+           
+            if (buster._BusterGaugeCheck == false)
             {
                 EndBeam();
             }
