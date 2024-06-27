@@ -17,9 +17,15 @@ scopes = {
 	"last_search.45C55C1A" = "GeometryUtility.TestPlanesAABB"
 	"OpenInspectorPreview.45C55C1A" = "0"
 	"currentGroup.45C55C1A" = "asset"
+<<<<<<< HEAD
 	"last_search.8DF93126" = ""
 	"OpenInspectorPreview.8DF93126" = "0"
 	"currentGroup.8DF93126" = "settings"
+=======
+	"last_search.98CF4AA6" = "GeometryUtility.TestPlanesAABB"
+	"OpenInspectorPreview.98CF4AA6" = "0"
+	"currentGroup.98CF4AA6" = "scene"
+>>>>>>> main
 }
 providers = {
 	asset = {
