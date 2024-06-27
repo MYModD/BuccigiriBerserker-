@@ -54,11 +54,14 @@ public class Beam_weapon : MonoBehaviour
     {
         var scale = transform.lossyScale.x * 2f;
 
+        // ボックスのサイズを定義する変数
+        Vector3 boxSize = new Vector3(6f, 6f, 2f);
+
         // レイキャストの結果を格納する変数
         RaycastHit[] hits;
 
         // BoxCastAllを使用してすべてのヒットを取得する
-        hits = Physics.BoxCastAll(transform.position, Vector3.one * scale, transform.forward, transform.rotation, distance);
+        hits = Physics.BoxCastAll(transform.position, boxSize, transform.forward, transform.rotation, distance);
 
         // ヒットしたすべてのオブジェクトに対して処理を行う
         foreach (RaycastHit hit in hits)

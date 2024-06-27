@@ -37,7 +37,7 @@ public class PlayerLife : MonoBehaviour
     {
         if (playerLife == 0 && explod != true)
         {
-            anim.SetBool("invincible", false);  // パラメーター名を修正
+            anim.SetBool("invincible", false);
             anim.SetBool("Normal", true);
             _IsRetry = false;
             Explode();
@@ -63,19 +63,19 @@ public class PlayerLife : MonoBehaviour
     {
         move.enabled = false;
 
-
-        anim.SetBool("invincible", true);   // パラメーター名を修正
-        anim.SetBool("Normal", false);      // パラメーター名を修正
+        //無敵時間開始
+        anim.SetBool("invincible", true);   
+        anim.SetBool("Normal", false);      
 
         yield return new WaitForSeconds(4f);
 
         
       
-        playerLife =playerlifesub ; // プレイヤーのライフをリセットする（実際のゲームに合わせて適切な値に）
+        playerLife =playerlifesub ; // プレイヤーのライフをリセットする
 
-        // アニメーションのリセットなどもここで行う
-        anim.SetBool("invincible", false);  // パラメーター名を修正
-        anim.SetBool("Normal", true);       // パラメーター名を修正
+       
+        anim.SetBool("invincible", false);  
+        anim.SetBool("Normal", true);      
         move.enabled = true;
     }
 
