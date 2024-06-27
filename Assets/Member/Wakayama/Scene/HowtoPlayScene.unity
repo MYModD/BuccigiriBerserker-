@@ -284,7 +284,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: GameStart
+  m_Text: Trigger:GameStart
 --- !u!222 &345495433
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -398,7 +398,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 1531911661}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &671185225
@@ -432,17 +432,17 @@ MonoBehaviour:
   m_MoveRepeatDelay: 0.5
   m_MoveRepeatRate: 0.1
   m_XRTrackingOrigin: {fileID: 0}
-  m_ActionsAsset: {fileID: -944628639613478452, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_PointAction: {fileID: -1654692200621890270, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_MoveAction: {fileID: -8784545083839296357, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_SubmitAction: {fileID: 392368643174621059, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_CancelAction: {fileID: 7727032971491509709, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_LeftClickAction: {fileID: 3001919216989983466, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_MiddleClickAction: {fileID: -2185481485913320682, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_RightClickAction: {fileID: -4090225696740746782, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_ScrollWheelAction: {fileID: 6240969308177333660, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_TrackedDevicePositionAction: {fileID: 6564999863303420839, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_TrackedDeviceOrientationAction: {fileID: 7970375526676320489, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_ActionsAsset: {fileID: -944628639613478452, guid: dec006556f363294da4b8d70d7c537c0, type: 3}
+  m_PointAction: {fileID: 1054132383583890850, guid: dec006556f363294da4b8d70d7c537c0, type: 3}
+  m_MoveAction: {fileID: 3373583485492381327, guid: dec006556f363294da4b8d70d7c537c0, type: 3}
+  m_SubmitAction: {fileID: 1502934368785442275, guid: dec006556f363294da4b8d70d7c537c0, type: 3}
+  m_CancelAction: {fileID: -8648468803285395175, guid: dec006556f363294da4b8d70d7c537c0, type: 3}
+  m_LeftClickAction: {fileID: 7126802738137555345, guid: dec006556f363294da4b8d70d7c537c0, type: 3}
+  m_MiddleClickAction: {fileID: 3217244672041857509, guid: dec006556f363294da4b8d70d7c537c0, type: 3}
+  m_RightClickAction: {fileID: -7289743809196194427, guid: dec006556f363294da4b8d70d7c537c0, type: 3}
+  m_ScrollWheelAction: {fileID: -4385183537795557510, guid: dec006556f363294da4b8d70d7c537c0, type: 3}
+  m_TrackedDevicePositionAction: {fileID: -8873032474066482501, guid: dec006556f363294da4b8d70d7c537c0, type: 3}
+  m_TrackedDeviceOrientationAction: {fileID: -1948925686938408941, guid: dec006556f363294da4b8d70d7c537c0, type: 3}
   m_DeselectOnBackgroundClick: 1
   m_PointerBehavior: 0
   m_CursorLockBehavior: 0
@@ -551,7 +551,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 6551e5536d3c56549a76b7778f978bc0, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.146
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -699,7 +699,7 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 1, g: 0.7529412, b: 0, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -781,6 +781,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28aa502fb15de2b40b8ac38404def176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SceneStopTime: 0
+  isGameStart: 0
 --- !u!1 &2088645104
 GameObject:
   m_ObjectHideFlags: 0
@@ -857,7 +859,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_VertexColorAlwaysGammaSpace: 0
+  m_VertexColorAlwaysGammaSpace: 1
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
