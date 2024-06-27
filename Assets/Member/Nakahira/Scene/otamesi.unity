@@ -203,7 +203,7 @@ GameObject:
   - component: {fileID: 436672437}
   m_Layer: 0
   m_Name: teki
-  m_TagString: missile
+  m_TagString: Missile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -223,7 +223,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -865,7 +865,7 @@ MonoBehaviour:
   homekotoba: {fileID: 586355322}
   CountText: 0
   DestoroyEnemies: 0
-  Enemydec: {fileID: 1415578891275922183}
+  Enemydec: {fileID: 0}
 --- !u!1001 &1430312490
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1406,17 +1406,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5734246071633621614, guid: 1112f44b05e1b8242a0a5ed049c031e8, type: 3}
   m_PrefabInstance: {fileID: 1415578891275922181}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1415578891275922183 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: -8306377254048908623, guid: 1112f44b05e1b8242a0a5ed049c031e8, type: 3}
-  m_PrefabInstance: {fileID: 1415578891275922181}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f535339d2e5144478a2fb2367e4f36f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
