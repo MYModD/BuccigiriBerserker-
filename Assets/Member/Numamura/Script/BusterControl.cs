@@ -10,7 +10,7 @@ public class BusterControl : MonoBehaviour
     private float targetFillAmount = 1f; // ゲージが溜まる目標値
 
     public bool _BusterGaugeCheck = default;
-    private bool _Beamshot = default;
+    public bool _Beamshot = default;
     void Start()
     {
         if (gaugeImage != null)
@@ -38,6 +38,7 @@ public class BusterControl : MonoBehaviour
         if (gaugeImage.fillAmount == 0)
         {
             _BusterGaugeCheck = false;
+            _Beamshot = false;
         }
 
         if (_BusterGaugeCheck == true)
@@ -53,25 +54,14 @@ public class BusterControl : MonoBehaviour
             }
         }
 
-        if (_BusterGaugeCheck == true)
-        {
-            if (Input.GetKeyDown(KeyCode.Space) )
-            {
+        if (_Beamshot == true)
+        { 
                 if (gaugeImage != null && gaugeImage.fillAmount >= 0)
                 {
-                    // 時間経過に応じてゲージを増加
+                    // 時間経過に応じてゲージを減少
                     gaugeImage.fillAmount -= fillSpeed * 2 * Time.deltaTime;
                 }
-            }
-
-            if (Input.GetButtonDown("Fire1"))
-            {
-                if (gaugeImage != null && gaugeImage.fillAmount >= 0)
-                {
-                    // 時間経過に応じてゲージを増加
-                    gaugeImage.fillAmount -= fillSpeed * 2 * Time.deltaTime;
-                }
-            }
+            
         }
     }
 }
