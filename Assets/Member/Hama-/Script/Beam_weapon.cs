@@ -8,20 +8,30 @@ public class Beam_weapon : MonoBehaviour
     ParticleSystem longparticleSystem;
     [SerializeField]
     float distance = 10f;
-    private BusterControl buster;
+    public BusterControl buster;
     private bool check;
     private float time;
 
     private void Start()
     {
-        buster = GetComponent<BusterControl>();
+
+        // もしまだアタッチされていない場合は、ここで GetComponent を使って初期化する
+        if (buster == null)
+        {
+            buster = GetComponent<BusterControl>();
+        }
         check = false;
+        if (longparticleSystem == null)
+        {
+            longparticleSystem = GetComponent<ParticleSystem>();
+        }
+
         longparticleSystem.Stop();
     }
 
     private void Update()
     {
-        if (buster._Beamshot == true)
+        if (buster._Beamshot)
         {
             StartBeam();
         }
@@ -29,25 +39,31 @@ public class Beam_weapon : MonoBehaviour
         if (check)
         {
             Beam();
-           
-            if (buster._Beamshot == false)
-            {
-                EndBeam();
-            }
+        }
+
+        if (check && !buster._Beamshot)
+        {
+            EndBeam();
         }
     }
 
     void StartBeam()
     {
+
         check = true;
         time = 0f;
+        // パーティクルシステムを再生する
+
         longparticleSystem.Play();
+
     }
 
     void EndBeam()
     {
         check = false;
+        // パーティクルシステムを停止する
         longparticleSystem.Stop();
+
     }
 
     void Beam()
