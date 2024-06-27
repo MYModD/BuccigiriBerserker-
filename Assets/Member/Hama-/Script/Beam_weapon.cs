@@ -4,75 +4,69 @@ using UnityEngine;
 
 public class Beam_weapon : MonoBehaviour
 {
-    private float _timer;
-    private ParticleSystem longparticleSystem;
-    private bool _isParticlesActive = false;
-    private Collider beamCol;
+    [SerializeField]
+    ParticleSystem longparticleSystem;
     [SerializeField]
     float distance = 10f;
-    void Start()
+    private BusterControl buster;
+    private bool check;
+    private float time;
+
+    private void Start()
     {
-        beamCol = GetComponent<BoxCollider>();
-        longparticleSystem = GetComponent<ParticleSystem>();
+        buster = GetComponent<BusterControl>();
+        check = false;
         longparticleSystem.Stop();
-        _timer = 0f;
     }
 
-    void Update()
+    private void Update()
     {
-
-        if (Input.GetButtonDown("Beam"))
+        if (Input.GetButtonDown("Fire1"))
         {
-            _isParticlesActive = true;
-            longparticleSystem.Play();
-            if (_isParticlesActive == true)
+            StartBeam();
+        }
+
+        if (check)
+        {
+            Beam();
+            time += Time.deltaTime;
+            if (time >= 5f)
             {
-                Vector3 origin = transform.position; // Boxcastの始点（この例ではオブジェクト自身の位置）
-                Vector3 direction = transform.forward; // Boxcastの方向（この例ではオブジェクトの正面方向）
-                float distance = 250f; // Boxcastの距離
-
-                Vector3 size = new Vector3(12f, 12f, 1f); // Boxcastのサイズ（この例では幅1、高さ1、奥行き1のBox）
-                Quaternion orientation = Quaternion.identity; // Boxcastの向き（この例では回転なし）
-
-                RaycastHit hitInfo; // 衝突情報を受け取るための変数
-
-                // Boxcastを実行して衝突判定を行う
-                bool hit = Physics.BoxCast(origin, size, direction, out hitInfo, orientation, distance);
-
-                if (hit)
-                {
-                    Debug.Log("Boxcast hit object: " + hitInfo.collider.gameObject.name);
-
-                }
-                else
-                {
-                    Debug.Log("Boxcast did not hit anything.");
-                    // 衝突しなかった場合の処理を記述する
-                }
-
-                Invoke(nameof(Delay), 4f);
+                EndBeam();
             }
+        }
+    }
 
+    void StartBeam()
+    {
+        check = true;
+        time = 0f;
+        longparticleSystem.Play();
+    }
 
+    void EndBeam()
+    {
+        check = false;
+        longparticleSystem.Stop();
+    }
 
+    void Beam()
+    {
+        var scale = transform.lossyScale.x * 2f;
 
+        // ���C�L���X�g�̌��ʂ��i�[����ϐ�
+        RaycastHit[] hits;
+
+        // BoxCastAll���g�p���Ă��ׂẴq�b�g���擾����
+        hits = Physics.BoxCastAll(transform.position, Vector3.one * scale, transform.forward, transform.rotation, distance);
+
+        // �q�b�g�������ׂẴI�u�W�F�N�g�ɑ΂��ď������s��
+        foreach (RaycastHit hit in hits)
+        {
+            Debug.Log("HIT");
         }
 
     }
-    IEnumerator Delay()
-    {
-
-       
-        
-           
-            longparticleSystem.Stop();
-            _isParticlesActive = false;
-            _timer = 0f;
-        
-
-        yield return new WaitForSeconds(3f);
-    }
-
 }
 
 

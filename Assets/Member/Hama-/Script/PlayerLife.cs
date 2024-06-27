@@ -15,6 +15,12 @@ public class PlayerLife : MonoBehaviour
 
     private Animator anim;
 
+    public GameObject explosionPrefab; // 爆発エフェクトのプレハブ
+    public AudioClip ExplodeAudioClip;
+    public AudioSource audioSource;
+
+    private bool explod = false;
+
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -29,11 +35,13 @@ public class PlayerLife : MonoBehaviour
 
     void Update()
     {
-        if (playerLife == 0)
+        if (playerLife == 0 && explod != true)
         {
             anim.SetBool("invincible", false);  // パラメーター名を修正
             anim.SetBool("Normal", true);
             _IsRetry = false;
+            Explode();
+            explod = true;
             StartCoroutine(Respawn());
         }
 
@@ -41,6 +49,7 @@ public class PlayerLife : MonoBehaviour
         {
           
             _IsRetry = true;
+            explod = false;
           
         }
 
@@ -77,4 +86,20 @@ public class PlayerLife : MonoBehaviour
             playerLife--;
         }
     }
+
+    void Explode()
+    {
+        // 爆発エフェクトのプレハブをインスタンス化して生成する
+        if (explosionPrefab != null)
+        {
+            GameObject explosion = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+            //Destroy(explosion, 3.0f); // 爆発エフェクトを3秒後に破棄する（任意の時間）
+        }
+        if (ExplodeAudioClip != null)
+        {
+            audioSource.PlayOneShot(ExplodeAudioClip);
+        }
+    }
+
+    
 }
