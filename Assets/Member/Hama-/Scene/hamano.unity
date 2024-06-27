@@ -1359,7 +1359,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d343ceae068992e4aa7a5ae44fb2f1c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  longparticleSystem: {fileID: 1977036005317841794}
+  particle: {fileID: 1977036005317841794}
   distance: 12
   buster: {fileID: 899661399}
 --- !u!224 &899661398 stripped
@@ -7246,6 +7246,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5059292302690422984, guid: b7f15a2219985b44babe9d914f4a08f6, type: 3}
+      propertyPath: buster
+      value: 
+      objectReference: {fileID: 899661399}
+    - target: {fileID: 5059292302690422984, guid: b7f15a2219985b44babe9d914f4a08f6, type: 3}
       propertyPath: distance
       value: 100
       objectReference: {fileID: 0}
@@ -7253,6 +7257,10 @@ PrefabInstance:
       propertyPath: isEnable
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5059292302690422984, guid: b7f15a2219985b44babe9d914f4a08f6, type: 3}
+      propertyPath: particle
+      value: 
+      objectReference: {fileID: 1977036005317841794}
     - target: {fileID: 5059292302690422984, guid: b7f15a2219985b44babe9d914f4a08f6, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -7274,7 +7282,7 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: 5059292302690422984, guid: b7f15a2219985b44babe9d914f4a08f6, type: 3}
+    - {fileID: 6031308651043924072, guid: b7f15a2219985b44babe9d914f4a08f6, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

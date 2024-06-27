@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class Beam_weapon : MonoBehaviour
 {
-    [SerializeField]
-    ParticleSystem longparticleSystem;
+
+    [SerializeField] private ParticleSystem particle;
     [SerializeField]
     float distance = 10f;
     public BusterControl buster;
     private bool check;
-    private float time;
+
 
     private void Start()
     {
@@ -21,19 +21,37 @@ public class Beam_weapon : MonoBehaviour
             buster = GetComponent<BusterControl>();
         }
         check = false;
-        if (longparticleSystem == null)
+
+
+        if (particle == null)
         {
-            longparticleSystem = GetComponent<ParticleSystem>();
+            particle = GetComponent<ParticleSystem>();
         }
 
-        longparticleSystem.Stop();
+        StopParticle();
+
+
+
+
     }
 
     private void Update()
     {
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            particle.Play();
+
+        }
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            particle.Stop();
+        }
+
         if (buster._Beamshot)
         {
             StartBeam();
+
         }
 
         if (check)
@@ -44,26 +62,38 @@ public class Beam_weapon : MonoBehaviour
         if (check && !buster._Beamshot)
         {
             EndBeam();
+
+
         }
     }
 
-    void StartBeam()
+    private void StartBeam()
     {
-
+        particle = GetComponent<ParticleSystem>();
+        Debug.Log("START");
         check = true;
-        time = 0f;
-        // パーティクルシステムを再生する
+        // パーティクルシステムを再生す
 
-        longparticleSystem.Play();
 
     }
 
-    void EndBeam()
+    private void EndBeam()
     {
+        particle = GetComponent<ParticleSystem>();
+        Debug.Log("END");
         check = false;
         // パーティクルシステムを停止する
-        longparticleSystem.Stop();
+        StopParticle();
 
+    }
+
+    private void StopParticle()
+    {
+        // パーティクルが再生中であれば停止する
+        if (particle.isPlaying)
+        {
+            particle.Stop();
+        }
     }
 
     void Beam()
@@ -85,7 +115,11 @@ public class Beam_weapon : MonoBehaviour
             Debug.Log("HIT");
         }
 
+        particle.Play();
+
     }
+
+
 }
 
 
