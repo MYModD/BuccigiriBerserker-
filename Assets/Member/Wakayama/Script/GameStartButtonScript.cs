@@ -8,7 +8,7 @@ public class GameStartButtonScript : MonoBehaviour
     private AsyncOperation GameSceneStarter;//ゲームシーンの取得
     [SerializeField]private float SceneStopTime　= default;//ゲームシーンを一度止めるまでの時間
     private float TrueTimeScale = 1f;//TimeScaleの設定
-    public bool isGameStart = default;
+    public bool isGameReady = default;//ゲームシーンの起動許可
 
     // Start is called before the first frame update
     void Start()
@@ -28,13 +28,17 @@ public class GameStartButtonScript : MonoBehaviour
     {
         GameSceneStarter.allowSceneActivation = false;//ゲームシーンを一度止める
         Time.timeScale = 0f;//シーンのオブジェクトの動きを止める
+        isGameReady = true;//ゲームシーンへの切り替え準備が完了したことを伝える
     }
 
     public void SceneChange()
     {
-        GameSceneStarter.allowSceneActivation = true;//ゲームシーンを起動する
-        SceneManager.UnloadSceneAsync("HowtoPlayScene");//操作説明シーンを消去する
-        Time.timeScale = TrueTimeScale;//シーンのオブジェクトの動きを再開する
-        return;
+        if (isGameReady)//ゲームシーンへの切り替え準備が完了している場合
+        {
+            GameSceneStarter.allowSceneActivation = true;//ゲームシーンを起動する
+            SceneManager.UnloadSceneAsync("HowtoPlayScene");//操作説明シーンを消去する
+            Time.timeScale = TrueTimeScale;//シーンのオブジェクトの動きを再開する
+            return;
+        }
     }
 }
