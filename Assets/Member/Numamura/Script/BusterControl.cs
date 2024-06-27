@@ -10,7 +10,7 @@ public class BusterControl : MonoBehaviour
     private float targetFillAmount = 1f; // ゲージが溜まる目標値
 
     public bool _BusterGaugeCheck = default;
-    private bool _Beamshot = default;
+    public bool _Beamshot = default;
     void Start()
     {
         if (gaugeImage != null)
