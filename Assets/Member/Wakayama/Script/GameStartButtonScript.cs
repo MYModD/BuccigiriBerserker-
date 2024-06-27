@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameStartButtonScript : MonoBehaviour
 {
     private AsyncOperation GameSceneStarter;//ゲームシーンの取得
-    [SerializeField]private float SceneStopTime　= default;//ゲームシーンを一度止めるまでの時間
+    private float SceneStopTime　= 2f;//ゲームシーンを一度止めるまでの時間
     private float TrueTimeScale = 1f;//TimeScaleの設定
     public bool isGameReady = default;//ゲームシーンの起動許可
 
