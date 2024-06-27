@@ -21,7 +21,7 @@ public class Beam_weapon : MonoBehaviour
 
     private void Update()
     {
-        if (buster._BusterGaugeCheck == true)
+        if (buster._Beamshot == true)
         {
             StartBeam();
         }
@@ -30,7 +30,7 @@ public class Beam_weapon : MonoBehaviour
         {
             Beam();
            
-            if (buster._BusterGaugeCheck == false)
+            if (buster._Beamshot == false)
             {
                 EndBeam();
             }
