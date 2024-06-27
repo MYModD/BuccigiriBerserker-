@@ -53,7 +53,7 @@ public class PlayerLife : MonoBehaviour
           
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.H))
         {
             playerLife--;
         }
