@@ -45,13 +45,14 @@ public class PlayerLife : MonoBehaviour
             StartCoroutine(Respawn());
         }
 
-        if (playerLife > 0)
+        if (playerLife >=5)
         {
           
             _IsRetry = true;
             explod = false;
           
         }
+        
 
         if (Input.GetKeyDown(KeyCode.H))
         {
@@ -84,6 +85,7 @@ public class PlayerLife : MonoBehaviour
         if (other.gameObject.tag == "Enemy")
         {
             playerLife--;
+            Respawn();
         }
     }
 
