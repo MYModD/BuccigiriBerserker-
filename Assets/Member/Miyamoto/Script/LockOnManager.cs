@@ -7,11 +7,11 @@ public class LockOnManager : MonoBehaviour
 
 
     [Header("カメラの視界に入っているターゲットのリスト")]
-    //[HideInInspector]重くなる要因なのでコメントなくす
+    [HideInInspector]//重くなる要因なのでコメントなくす
     public List<Transform> targetsInCamera = new List<Transform>();
 
     [Header("錐体内に入っているターゲットのリスト")]
-    //[HideInInspector]重くなる要因なのでコメントなくす
+    [HideInInspector]//重くなる要因なのでコメントなくす
     public List<Transform> targetsInCone = new List<Transform>();
 
     [Header("上のリストで一番距離が短いターゲット")]
@@ -20,15 +20,15 @@ public class LockOnManager : MonoBehaviour
     private Camera _camera;
 
     [SerializeField, Header("spherecastの半径")]
-    private float _searchRadius = 95f;
+    public float _searchRadius = 95f;
 
     [SerializeField, Range(0f, 180f)]
     [Header("コーンの角度")]
-    private float _coneAngle = 45f;
+    public float _coneAngle = 45f;
 
     [SerializeField]
     [Header("コーンの長さ、半径")]
-    private float _coneRange;
+    public float _coneRange;
 
 
 
@@ -73,6 +73,7 @@ public class LockOnManager : MonoBehaviour
         cameraPlanes = GeometryUtility.CalculateFrustumPlanes(_camera);
 
         targetsInCamera.Clear();
+        targetsInCone.Clear();
 
 
         Collider[] hits = GetSphereOverlapHits();    //colliderが返り値
@@ -119,7 +120,7 @@ public class LockOnManager : MonoBehaviour
 
                 if (IsInCone(target))
                 {
-                    if (!targetsInCone.Contains(target))
+                    if (!targetsInCone.Contains(target) && hit.gameObject.activeSelf == true)
 
                         targetsInCone.Add(target);            //コーン内のリストにいれる
                 }

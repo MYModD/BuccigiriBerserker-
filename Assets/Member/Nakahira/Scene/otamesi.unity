@@ -860,7 +860,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b77beb1f88b6f44fb136aeeae79fb1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inactiveMisailHit2Coun: 0
   countTexts: {fileID: 2007334405}
   homekotoba: {fileID: 586355322}
   CountText: 0
