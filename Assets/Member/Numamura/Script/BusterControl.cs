@@ -48,7 +48,7 @@ public class BusterControl : MonoBehaviour
                 _Beamshot = true;
             }
 
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetButton("Fire1"))
             {
                 _Beamshot = true;
             }
