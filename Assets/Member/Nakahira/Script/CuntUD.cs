@@ -5,9 +5,11 @@ using TMPro;
 public class CuntUD : MonoBehaviour
 {
 
-   
+  
+
     // Misail_Hit2 スクリプトがアタッチされているオブジェクトのうち、SetActive(false)に設定されているものの数をカウントする
-    public int inactiveMisailHit2Coun;
+    private Misail_Hit2 misailHit2; // Misail_Hit2 スクリプトへの参照
+
 
     //[SerializeField] private string tagname; // タグ名を指定するための変数
     [SerializeField] private TextMeshProUGUI countTexts; // カウントを表示するテキスト要素
@@ -22,15 +24,15 @@ public class CuntUD : MonoBehaviour
     private int saisyo = 0;
     public Misail_Hit2 Enemydec;
     private int maedec;
-    
+
     void Start()
     {
         //Misail_Hit2 Eneyd = GameObject.FindGameObjectWithTag("Enemy").GetComponent<Misail_Hit2>();
-        
+        //misailHit2 = GameObject.FindGameObjectWithTag("Enemy").GetComponent<Misail_Hit2>();
         inactiveMisailHit2Count = 0;
         //Misail_Hit2 Enemydec = GameObject.FindGameObjectWithTag("Enemy").GetComponent<Misail_Hit2>();
 
-
+       
         // タグ名に対応するゲームオブジェクトの配列を取得
         //GameObject[] tagObjects = GameObject.FindGameObjectsWithTag(tagname);
         // Enemydecを初期化する（例としてFindObjectOfTypeを使用する）
@@ -52,11 +54,11 @@ public class CuntUD : MonoBehaviour
     {
 
 
-      //Misail_Hit2 Enemydec = GameObject.FindGameObjectWithTag("Enemy").GetComponent<Misail_Hit2>();
+        //Misail_Hit2 Enemydec = GameObject.FindGameObjectWithTag("Enemy").GetComponent<Misail_Hit2>();
         //敵が倒された時
         if (inactiveMisailHit2Count > maedec)
         {
-            Debug.Log( inactiveMisailHit2Count);
+            Debug.Log(inactiveMisailHit2Count);
             DestoroyEnemies += 1;
             counthome += 1;
             homekotoba.text = "";
@@ -87,9 +89,10 @@ public class CuntUD : MonoBehaviour
     //    GameObject[] tagObjects = GameObject.FindGameObjectsWithTag(tagname);
     //    return tagObjects.Length;
     //}
-    void UpdateCountText()
+    public void UpdateCountText()
     {
-        countTexts.text = "" + DestoroyEnemies.ToString(); // 現在のカウントでテキストを更新する
-    
+        //countTexts.text = misailHit2._desEne.ToString(); // Misail_Hit2 の DesEne を参照して UI を更新する
+        countTexts.text = misailHit2._desEne.ToString();
+
     }
 }
