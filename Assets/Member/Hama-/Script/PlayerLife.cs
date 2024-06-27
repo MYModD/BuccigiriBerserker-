@@ -93,7 +93,7 @@ public class PlayerLife : MonoBehaviour
         if (explosionPrefab != null)
         {
             GameObject explosion = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
-            //Destroy(explosion, 3.0f); // 爆発エフェクトを3秒後に破棄する（任意の時間）
+            Destroy(explosion, 3.0f); // 爆発エフェクトを3秒後に破棄する（任意の時間）
         }
         if (ExplodeAudioClip != null)
         {

@@ -129,9 +129,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hako: {fileID: 5035517949644975491}
   DesEne: 0
-  explosionPrefab: {fileID: 0}
+  explosionPrefab: {fileID: 100000, guid: e4954c9188969dc4588d3da21f31945d, type: 3}
   ExplodeAudioSource: {fileID: 0}
-  countObject: {fileID: 1217021699367483545, guid: 8d4162eb44616f841a13a189f1d71bb1, type: 3}
+  destroyEnemyCount: {fileID: 0}
 --- !u!114 &1797867216179082727
 MonoBehaviour:
   m_ObjectHideFlags: 0

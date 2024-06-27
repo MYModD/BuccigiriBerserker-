@@ -73,6 +73,7 @@ public class LockOnManager : MonoBehaviour
         cameraPlanes = GeometryUtility.CalculateFrustumPlanes(_camera);
 
         targetsInCamera.Clear();
+        targetsInCone.Clear();
 
 
         Collider[] hits = GetSphereOverlapHits();    //colliderが返り値
@@ -119,7 +120,7 @@ public class LockOnManager : MonoBehaviour
 
                 if (IsInCone(target))
                 {
-                    if (!targetsInCone.Contains(target))
+                    if (!targetsInCone.Contains(target) && hit.gameObject.activeSelf == true)
 
                         targetsInCone.Add(target);            //コーン内のリストにいれる
                 }
