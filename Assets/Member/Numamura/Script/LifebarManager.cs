@@ -6,43 +6,26 @@ public class LifebarManager : MonoBehaviour
 {
     public GameObject[] lifeArray = new GameObject[6];
     
-    private int lifePoint;
-    private int StartLife;
+    private int lifePoint = 6;
 
 
-    public PlayerLife playerLife;
     private void Start()
     {
-        StartLife = (int)playerLife.playerLife;
-        Debug.LogWarning(playerLife.playerLife);
+        PlayerLife playerlife = GetComponent<PlayerLife>();
+        /int value = playerlife.playerLife;
     }
     void Update()
     {
-        lifePoint = (int)playerLife.playerLife;
-        //if (Input.GetMouseButtonDown(0) && lifePoint < 6)
-        //{
-            //lifePoint++;
-        //}
-
-        //else if (Input.GetMouseButtonDown(1) && lifePoint > 0)
-        //{
-            //lifePoint--;
-       // }
-
-        if (lifePoint < 6 && lifePoint >= 0)
+        if (Input.GetMouseButtonDown(0) && lifePoint < 6)
         {
-            lifeArray[lifePoint].SetActive(false);
+            lifePoint++;
+            lifeArray[lifePoint - 1].SetActive(true);
         }
 
-        if(lifePoint == 0)
-            
+        else if (Input.GetMouseButtonDown(1) && lifePoint > 0)
         {
-            while(StartLife >= lifePoint)
-            {
-                lifeArray[lifePoint].SetActive(true);
-                lifePoint++;
-            }
+            lifeArray[lifePoint - 1].SetActive(false);
+            lifePoint--;
         }
-
     }
 }
