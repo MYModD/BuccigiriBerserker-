@@ -5,35 +5,52 @@ using UnityEngine;
 public class PlayerLife : MonoBehaviour
 {
     [SerializeField]
-    float playerLife = 5;
-    [SerializeField]
-    float spawnSpeed = 50.0f;
+   public float playerLife = 5;
+
+    private float playerlifesub;
 
     public bool _IsRetry = false;
 
+    private MoveMiyamotoTest move;
+
     private Animator anim;
-    private Vector3 originalPosition;
+
+    public GameObject explosionPrefab; // 爆発エフェクトのプレハブ
+    public AudioClip ExplodeAudioClip;
+    public AudioSource audioSource;
+
+    private bool explod = false;
 
     void Start()
     {
         anim = GetComponent<Animator>();
-        originalPosition = transform.position;
+        move = GetComponent<MoveMiyamotoTest>();
+       
+        anim.SetBool("invincible", false); 
+        anim.SetBool("Normal", false);
+
+        playerlifesub = playerLife;
+
     }
 
     void Update()
     {
-        if (playerLife == 0)
+        if (playerLife == 0 && explod != true)
         {
-            _IsRetry = true;
-            // originalPosition = transform.position;  // この行は不要です（Start()で既に設定済み）
+            anim.SetBool("invincible", false);
+            anim.SetBool("Normal", true);
+            _IsRetry = false;
+            Explode();
+            explod = true;
             StartCoroutine(Respawn());
         }
 
         if (playerLife > 0)
         {
-            anim.SetBool("invincible", false);  // パラメーター名を修正
-            anim.SetBool("Normal", true);       // パラメーター名を修正
-            _IsRetry = false;
+          
+            _IsRetry = true;
+            explod = false;
+          
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
@@ -44,29 +61,22 @@ public class PlayerLife : MonoBehaviour
 
     IEnumerator Respawn()
     {
-        // プレイヤーが後ろに動く距離（例としてspawnSpeed * 5秒分後退）
-        float moveDistance = spawnSpeed * 5 * Time.deltaTime;
+        move.enabled = false;
 
-        // 後退開始
-        while (transform.position.z > originalPosition.z - moveDistance)
-        {
-            transform.Translate(Vector3.forward * spawnSpeed * Time.deltaTime);  // 後ろに動かすためにbackを使用
-            yield return null;
-        }
+        //無敵時間開始
+        anim.SetBool("invincible", true);   
+        anim.SetBool("Normal", false);      
 
-        anim.SetBool("invincible", true);   // パラメーター名を修正
-        anim.SetBool("Normal", false);      // パラメーター名を修正
+        yield return new WaitForSeconds(4f);
 
-        yield return new WaitForSeconds(3f);
+        
+      
+        playerLife =playerlifesub ; // プレイヤーのライフをリセットする
 
-        // 後退後のアニメーションの後に必要な処理を記述する
-        // 例えば、位置のリセットや他の処理を行う
-        transform.position = originalPosition; // 位置を元に戻す（実際のゲームに合わせて適切な位置に）
-        playerLife = 5; // プレイヤーのライフをリセットする（実際のゲームに合わせて適切な値に）
-
-        // アニメーションのリセットなどもここで行う
-        anim.SetBool("invincible", false);  // パラメーター名を修正
-        anim.SetBool("Normal", true);       // パラメーター名を修正
+       
+        anim.SetBool("invincible", false);  
+        anim.SetBool("Normal", true);      
+        move.enabled = true;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -76,4 +86,20 @@ public class PlayerLife : MonoBehaviour
             playerLife--;
         }
     }
+
+    void Explode()
+    {
+        // 爆発エフェクトのプレハブをインスタンス化して生成する
+        if (explosionPrefab != null)
+        {
+            GameObject explosion = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+            //Destroy(explosion, 3.0f); // 爆発エフェクトを3秒後に破棄する（任意の時間）
+        }
+        if (ExplodeAudioClip != null)
+        {
+            audioSource.PlayOneShot(ExplodeAudioClip);
+        }
+    }
+
+    
 }

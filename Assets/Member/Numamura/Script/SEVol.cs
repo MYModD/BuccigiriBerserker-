@@ -1,32 +1,31 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SEVol : MonoBehaviour
 {
-    public AudioSource audioSource;
-    private float initialVolume;
-    private float targetVolume = 1.0f;
-    private float fadeDuration = 3.0f;
-    // Start is called before the first frame update
+    private AudioSource audioSource;
+
     void Start()
     {
-        if(audioSource == null)
-        {
-            audioSource = GetComponent<AudioSource>();
-        }
+        // オブジェクトにアタッチされているAudioSourceコンポーネントを取得
+        audioSource = GetComponent<AudioSource>();
 
-        if(audioSource != null)
-        {
-            initialVolume = audioSource.volume;
-            audioSource.volume = 0.0f;
-            Invoke("FadeInVolume", fadeDuration);
-        }
+        // ボリュームを0にする
+        SetVolume(0f);
+
+        // 4秒後にボリュームを1にする
+        Invoke("RestoreVolume", 4f);
     }
 
-    void FadeInVolume()
+    void SetVolume(float volume)
     {
-        audioSource.volume = targetVolume;
+        if (audioSource != null)
+        {
+            audioSource.volume = volume;
+        }
     }
 
+    void RestoreVolume()
+    {
+        SetVolume(1f);
+    }
 }

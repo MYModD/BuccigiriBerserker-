@@ -4,50 +4,77 @@ using UnityEngine;
 
 public class Beam_weapon : MonoBehaviour
 {
-    private float _timer;
-    private ParticleSystem longparticleSystem;
-    private bool isParticlesActive = false;
-    private float particleDuration = 5f; 
-    private CapsuleCollider beamCol;
-    void Start()
-    {
-        beamCol = GetComponent<CapsuleCollider>();
-        longparticleSystem = GetComponent<ParticleSystem>();
-        longparticleSystem.Stop(); 
-        _timer = 0f;
+    [SerializeField]
+    ParticleSystem longparticleSystem;
+    [SerializeField]
+    float distance = 10f;
+    private BusterControl buster;
+    private bool check;
+    private float time;
 
+    private void Start()
+    {
+        buster = GetComponent<BusterControl>();
+        check = false;
+        longparticleSystem.Stop();
     }
 
-    void Update()
+    private void Update()
     {
-        _timer += Time.deltaTime;
-        if (_timer > 2f)
+        if (buster._Beamshot == true)
         {
-            
-            if (Input.GetButtonDown("Beam") && !isParticlesActive)
-            {
-                isParticlesActive = true;
-                longparticleSystem.Play();
-                beamCol.enabled = true;
-                
-                Invoke("StopParticles", particleDuration);
-            }
+            StartBeam();
         }
 
+        if (check)
+        {
+            Beam();
+           
+            if (buster._Beamshot == false)
+            {
+                EndBeam();
+            }
+        }
     }
 
-    void StopParticles()
-    {//nullã§ãªã„
-        if (longparticleSystem != null)
+    void StartBeam()
+    {
+        check = true;
+        time = 0f;
+        longparticleSystem.Play();
+    }
+
+    void EndBeam()
+    {
+        check = false;
+        longparticleSystem.Stop();
+    }
+
+    void Beam()
+    {
+        var scale = transform.lossyScale.x * 2f;
+
+        // ƒ{ƒbƒNƒX‚ÌƒTƒCƒY‚ğ’è‹`‚·‚é•Ï”
+        Vector3 boxSize = new Vector3(6f, 6f, 2f);
+
+        // ƒŒƒCƒLƒƒƒXƒg‚ÌŒ‹‰Ê‚ğŠi”[‚·‚é•Ï”
+        RaycastHit[] hits;
+
+        // BoxCastAll‚ğg—p‚µ‚Ä‚·‚×‚Ä‚Ìƒqƒbƒg‚ğæ“¾‚·‚é
+        hits = Physics.BoxCastAll(transform.position, boxSize, transform.forward, transform.rotation, distance);
+
+        // ƒqƒbƒg‚µ‚½‚·‚×‚Ä‚ÌƒIƒuƒWƒFƒNƒg‚É‘Î‚µ‚Äˆ—‚ğs‚¤
+        foreach (RaycastHit hit in hits)
         {
-            beamCol.enabled = false;
-            longparticleSystem.Stop();
-            isParticlesActive = false;
-            _timer = 0f;
+            Debug.Log("HIT");
         }
 
     }
 }
+
+
+
+
 
 
 
