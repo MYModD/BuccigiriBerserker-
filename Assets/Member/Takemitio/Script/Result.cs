@@ -10,18 +10,21 @@ public class Result : MonoBehaviour
     private bool allEnemiesDefeated = false;
     private int cntenemy;
     private int cntdestoroy;
+    public GameObject _destory;
     [HideInInspector] public string _strDestoryEnemy;
     [HideInInspector] public string _strTime;
     [HideInInspector] public string _gamejudge;
     CuntUD cntud;
     CuntD cntd;
+    private DestroyEnemyCount _destroyEnemyCount;
     void Start()
     {
+        _destroyEnemyCount = _destory.GetComponent<DestroyEnemyCount>();
         DontDestroyOnLoad(this);
         cntud = GameObject.FindGameObjectWithTag("EnemyNumber").GetComponent<CuntUD>();
         cntd = GameObject.FindGameObjectWithTag("EnemyNumber").GetComponent<CuntD>();
         cntenemy = cntd.Initial_Value;
-        cntdestoroy = cntud.DestoroyEnemies;
+        cntdestoroy = _destroyEnemyCount.value;
     }
     void Update()
     {
@@ -47,10 +50,10 @@ public class Result : MonoBehaviour
                 CheckGameTime();
             }
         }
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            cntdestoroy += 1;
-        }
+        //if (Input.GetKeyDown(KeyCode.A))
+        //{
+        //    cntdestoroy += 1;
+        //}
     }
 
     void CheckGameTime()
