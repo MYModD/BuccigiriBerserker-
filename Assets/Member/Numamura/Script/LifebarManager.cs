@@ -19,17 +19,15 @@ public class LifebarManager : MonoBehaviour
     void Update()
     {
         lifePoint = (int)playerLife.playerLife;
-        if (Input.GetMouseButtonDown(0) && lifePoint < 6)
-        {
-            lifePoint++;
-            lifeArray[lifePoint - 1].SetActive(true);
-        }
+        //if (Input.GetMouseButtonDown(0) && lifePoint < 6)
+        //{
+            //lifePoint++;
+        //}
 
-        else if (Input.GetMouseButtonDown(1) && lifePoint > 0)
-        {
-            lifeArray[lifePoint - 1].SetActive(false);
-            lifePoint--;
-        }
+        //else if (Input.GetMouseButtonDown(1) && lifePoint > 0)
+        //{
+            //lifePoint--;
+       // }
 
         if (lifePoint < 6 && lifePoint >= 0)
         {
