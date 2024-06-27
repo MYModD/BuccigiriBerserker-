@@ -8,6 +8,11 @@ onBoardingDoNotAskAgain = true
 showPackageIndexes = false
 showStatusBar = false
 scopes = {
+<<<<<<< HEAD
+	"last_search.8DF93126" = ""
+	"OpenInspectorPreview.8DF93126" = "0"
+	"currentGroup.8DF93126" = "settings"
+=======
 	"last_search.6DF93126" = "GeometryUtility.TestPlanesAABB"
 	"OpenInspectorPreview.6DF93126" = "0"
 	"currentGroup.6DF93126" = "scene"
@@ -25,6 +30,7 @@ scopes = {
 	"last_search.0B486DF2" = ""
 	"OpenInspectorPreview.0B486DF2" = "0"
 	"currentGroup.0B486DF2" = null
+>>>>>>> main
 }
 providers = {
 	asset = {
@@ -81,10 +87,13 @@ providers = {
 objectSelectors = {
 }
 recentSearches = [
+<<<<<<< HEAD
+=======
 	"Plan"
 	"PlaneAnimation"
 	"GeometryUtility.TestPlanesAABB"
 	""
+>>>>>>> main
 ]
 searchItemFavorites = [
 ]
