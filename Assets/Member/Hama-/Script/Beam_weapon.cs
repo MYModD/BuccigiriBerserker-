@@ -4,73 +4,77 @@ using UnityEngine;
 
 public class Beam_weapon : MonoBehaviour
 {
-    private float _timer;
-    private ParticleSystem longparticleSystem;
-    public bool _isParticlesActive = false;
-    private Collider beamCol;
+    [SerializeField]
+    ParticleSystem longparticleSystem;
+    [SerializeField]
+    float distance = 10f;
+    private BusterControl buster;
+    private bool check;
+    private float time;
 
-    void Start()
+    private void Start()
     {
-        beamCol = GetComponent<BoxCollider>();
-        longparticleSystem = GetComponent<ParticleSystem>();
+        buster = GetComponent<BusterControl>();
+        check = false;
         longparticleSystem.Stop();
-        _timer = 0f;
     }
 
-    void Update()
+    private void Update()
     {
-        _timer += Time.deltaTime;
-
-        if (_timer > 5f)
+        if (buster._Beamshot == true)
         {
-            if (Input.GetButtonDown("Beam") && !_isParticlesActive)
+            StartBeam();
+        }
+
+        if (check)
+        {
+            Beam();
+           
+            if (buster._Beamshot == false)
             {
-                _isParticlesActive = true;
-                longparticleSystem.Play();
-
-                RaycastHit hit;
-                if (Physics.BoxCast(transform.position, Vector3.one * 0.5f, -transform.up, out hit, transform.rotation, 6.0f))
-                {
-                    // ビームが何かに衝突した場合の処理
-                    Debug.Log("Hit object: " + hit.collider.gameObject.name);
-                    ShowBeamImpact(hit.point);
-                    // ここで何かしらの処理を行う（例えばダメージを与える、特定の効果を発生させるなど）
-                }
-                else
-                {
-                    // BoxCast が何にも衝突しなかった場合の処理
-                    Debug.Log("No hit detected.");
-                }
-
-                beamCol.enabled = true;
-
-                StartCoroutine(StopParticlesAfterDelay(7f));
+                EndBeam();
             }
         }
     }
 
-    IEnumerator StopParticlesAfterDelay(float delay)
+    void StartBeam()
     {
-        yield return new WaitForSeconds(delay);
-
-        if (longparticleSystem != null)
-        {
-            beamCol.enabled = false;
-            longparticleSystem.Stop();
-            _isParticlesActive = false;
-            _timer = 0f;
-        }
+        check = true;
+        time = 0f;
+        longparticleSystem.Play();
     }
 
-    void ShowBeamImpact(Vector3 position)
+    void EndBeam()
     {
-        // 衝突点を示すエフェクトやラインを描画する処理をここに記述する
-        // 例えば、パーティクルを再生する、ラインを引く、オブジェクトを生成するなどの方法があります。
-        Debug.Log("DDAA");
-        Debug.DrawRay(position, Vector3.forward * 10f, Color.red, 7.0f);
-        // ここでその他のビジュアルエフェクトを追加することもできます。
+        check = false;
+        longparticleSystem.Stop();
+    }
+
+    void Beam()
+    {
+        var scale = transform.lossyScale.x * 2f;
+
+        // �{�b�N�X�̃T�C�Y���`����ϐ�
+        Vector3 boxSize = new Vector3(6f, 6f, 2f);
+
+        // ���C�L���X�g�̌��ʂ��i�[����ϐ�
+        RaycastHit[] hits;
+
+        // BoxCastAll���g�p���Ă��ׂẴq�b�g���擾����
+        hits = Physics.BoxCastAll(transform.position, boxSize, transform.forward, transform.rotation, distance);
+
+        // �q�b�g�������ׂẴI�u�W�F�N�g�ɑ΂��ď������s��
+        foreach (RaycastHit hit in hits)
+        {
+            Debug.Log("HIT");
+        }
+
     }
 }
+
+
+
+
 
 
 
