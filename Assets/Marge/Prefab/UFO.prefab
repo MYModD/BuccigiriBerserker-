@@ -127,6 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f535339d2e5144478a2fb2367e4f36f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DesEne: 0
   explosionPrefab: {fileID: 0}
   ExplodeAudioSource: {fileID: 0}
 --- !u!114 &1797867216179082727
@@ -204,7 +205,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.5
+  m_Radius: 4.06
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &-5398279760103279716
 MeshRenderer:
