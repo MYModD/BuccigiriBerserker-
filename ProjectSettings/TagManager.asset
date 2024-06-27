@@ -7,6 +7,8 @@ TagManager:
   - Enemy
   - missile
   - EnemyMissile
+  - EnemyNumber
+  - ResultManager
   layers:
   - Default
   - TransparentFX
