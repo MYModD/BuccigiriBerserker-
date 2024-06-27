@@ -1151,7 +1151,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8100528506423630510, guid: 8bcb95d99c810c94289b2af4d9549090, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8872385310336352276, guid: 8bcb95d99c810c94289b2af4d9549090, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4487,7 +4487,7 @@ PrefabInstance:
       objectReference: {fileID: 8100528506423630510, guid: 9b1b9f1001ab9ee41971ef355b8d5e28, type: 3}
     - target: {fileID: 1400747944959988947, guid: 79ed6e4da1bc6a24fb24c3c8e22509fe, type: 3}
       propertyPath: cooldownFire
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1400747944959988947, guid: 79ed6e4da1bc6a24fb24c3c8e22509fe, type: 3}
       propertyPath: lockOnManager
@@ -4523,11 +4523,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6670509052717316866, guid: 79ed6e4da1bc6a24fb24c3c8e22509fe, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 46.3
+      value: 6.9
       objectReference: {fileID: 0}
     - target: {fileID: 6670509052717316866, guid: 79ed6e4da1bc6a24fb24c3c8e22509fe, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 58.8
+      value: -1.09
       objectReference: {fileID: 0}
     - target: {fileID: 6798146108069399556, guid: 79ed6e4da1bc6a24fb24c3c8e22509fe, type: 3}
       propertyPath: m_LocalPosition.x

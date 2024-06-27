@@ -7,11 +7,11 @@ public class LockOnManager : MonoBehaviour
 
 
     [Header("カメラの視界に入っているターゲットのリスト")]
-    //[HideInInspector]
+    //[HideInInspector]重くなる要因なのでコメントなくす
     public List<Transform> targetsInCamera = new List<Transform>();
 
     [Header("錐体内に入っているターゲットのリスト")]
-    //[HideInInspector]
+    //[HideInInspector]重くなる要因なのでコメントなくす
     public List<Transform> targetsInCone = new List<Transform>();
 
     [Header("上のリストで一番距離が短いターゲット")]
@@ -112,7 +112,7 @@ public class LockOnManager : MonoBehaviour
             Transform target = hit.transform;
             Renderer renderer = target.GetComponent<Renderer>();
 
-            if (renderer != null && IsInFrustum(renderer, planes))         //&& renderer.GetComponent<hogehoge>.isdead == false
+            if (renderer != null && IsInFrustum(renderer, planes) && hit.gameObject.activeSelf == true)         //&& renderer.GetComponent<hogehoge>.isdead == false
                                                                            //死んでなかったら追加
             {
                 targetsInCamera.Add(target);              //カメラ範囲内のリストにいれる
@@ -157,7 +157,7 @@ public class LockOnManager : MonoBehaviour
         // ターゲットまでの距離を計算
         float distanceToObject = toObject.magnitude;                     // ベクトルの長さ（距離）
 
-        //Debug.Log($"{"ターゲットの距離の長さ  "}{distanceToObject}+{"  "}{target.gameObject.name}");
+        
 
 
         if (distanceToObject <= _coneRange)                           // ターゲットが検索半径内にあるかどうかを確認
@@ -269,8 +269,5 @@ public class LockOnManager : MonoBehaviour
         {
             _coneRange = _searchRadius;
         }
-
-        
-
     }
 }
