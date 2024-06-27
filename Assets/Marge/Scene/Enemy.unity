@@ -1286,15 +1286,15 @@ PrefabInstance:
       objectReference: {fileID: 376099640}
     - target: {fileID: 6239685098025949782, guid: 19ecb613f8db77447b350c8b5ae2da1e, type: 3}
       propertyPath: _coneAngle
-      value: 43
+      value: 62.7
       objectReference: {fileID: 0}
     - target: {fileID: 6239685098025949782, guid: 19ecb613f8db77447b350c8b5ae2da1e, type: 3}
       propertyPath: _coneRange
-      value: 106.4
+      value: 157.8
       objectReference: {fileID: 0}
     - target: {fileID: 6239685098025949782, guid: 19ecb613f8db77447b350c8b5ae2da1e, type: 3}
       propertyPath: _searchRadius
-      value: 174.6
+      value: 201.8
       objectReference: {fileID: 0}
     - target: {fileID: 8309897281213122745, guid: 19ecb613f8db77447b350c8b5ae2da1e, type: 3}
       propertyPath: m_FollowOffset.y
@@ -1634,10 +1634,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 100000, guid: e4954c9188969dc4588d3da21f31945d, type: 3}
     - target: {fileID: -218414962186709217, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
-      propertyPath: destroyEnemyCount
-      value: 
-      objectReference: {fileID: 1109512773}
-    - target: {fileID: -218414962186709217, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: ExplodeAudioSource
       value: 
       objectReference: {fileID: 1685130596}
@@ -1651,11 +1647,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1696,10 +1692,6 @@ PrefabInstance:
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1767966212240345159, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Name
@@ -2417,10 +2409,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 100000, guid: e4954c9188969dc4588d3da21f31945d, type: 3}
     - target: {fileID: -218414962186709217, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
-      propertyPath: destroyEnemyCount
-      value: 
-      objectReference: {fileID: 1109512773}
-    - target: {fileID: -218414962186709217, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: ExplodeAudioSource
       value: 
       objectReference: {fileID: 1685130596}
@@ -2434,11 +2422,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2479,10 +2467,6 @@ PrefabInstance:
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1767966212240345159, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Name
@@ -2971,10 +2955,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 100000, guid: e4954c9188969dc4588d3da21f31945d, type: 3}
     - target: {fileID: -218414962186709217, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
-      propertyPath: destroyEnemyCount
-      value: 
-      objectReference: {fileID: 1109512773}
-    - target: {fileID: -218414962186709217, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: ExplodeAudioSource
       value: 
       objectReference: {fileID: 1685130596}
@@ -2988,11 +2968,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3033,10 +3013,6 @@ PrefabInstance:
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1767966212240345159, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Name
@@ -4061,10 +4037,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 100000, guid: e4954c9188969dc4588d3da21f31945d, type: 3}
     - target: {fileID: -218414962186709217, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
-      propertyPath: destroyEnemyCount
-      value: 
-      objectReference: {fileID: 1109512773}
-    - target: {fileID: -218414962186709217, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: ExplodeAudioSource
       value: 
       objectReference: {fileID: 1685130596}
@@ -4078,11 +4050,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4123,10 +4095,6 @@ PrefabInstance:
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1767966212240345159, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Name
@@ -4661,10 +4629,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 100000, guid: e4954c9188969dc4588d3da21f31945d, type: 3}
     - target: {fileID: -218414962186709217, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
-      propertyPath: destroyEnemyCount
-      value: 
-      objectReference: {fileID: 1109512773}
-    - target: {fileID: -218414962186709217, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: ExplodeAudioSource
       value: 
       objectReference: {fileID: 1685130596}
@@ -4678,11 +4642,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4723,10 +4687,6 @@ PrefabInstance:
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1767966212240345159, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Name
@@ -4946,10 +4906,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 100000, guid: e4954c9188969dc4588d3da21f31945d, type: 3}
     - target: {fileID: -218414962186709217, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
-      propertyPath: destroyEnemyCount
-      value: 
-      objectReference: {fileID: 1109512773}
-    - target: {fileID: -218414962186709217, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: ExplodeAudioSource
       value: 
       objectReference: {fileID: 1685130596}
@@ -5044,10 +5000,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 100000, guid: e4954c9188969dc4588d3da21f31945d, type: 3}
     - target: {fileID: -218414962186709217, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
-      propertyPath: destroyEnemyCount
-      value: 
-      objectReference: {fileID: 1109512773}
-    - target: {fileID: -218414962186709217, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: ExplodeAudioSource
       value: 
       objectReference: {fileID: 1685130596}
@@ -5061,11 +5013,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5106,10 +5058,6 @@ PrefabInstance:
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1767966212240345159, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Name
@@ -5391,10 +5339,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 100000, guid: e4954c9188969dc4588d3da21f31945d, type: 3}
     - target: {fileID: -218414962186709217, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
-      propertyPath: destroyEnemyCount
-      value: 
-      objectReference: {fileID: 1109512773}
-    - target: {fileID: -218414962186709217, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: ExplodeAudioSource
       value: 
       objectReference: {fileID: 1685130596}
@@ -5408,11 +5352,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5454,10 +5398,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1767966212240345159, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Name
       value: UFO
@@ -5493,10 +5433,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 100000, guid: e4954c9188969dc4588d3da21f31945d, type: 3}
     - target: {fileID: -218414962186709217, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
-      propertyPath: destroyEnemyCount
-      value: 
-      objectReference: {fileID: 1109512773}
-    - target: {fileID: -218414962186709217, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: ExplodeAudioSource
       value: 
       objectReference: {fileID: 1685130596}
@@ -5510,11 +5446,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5555,10 +5491,6 @@ PrefabInstance:
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1767966212240345159, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Name
@@ -7049,10 +6981,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 100000, guid: e4954c9188969dc4588d3da21f31945d, type: 3}
     - target: {fileID: -218414962186709217, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
-      propertyPath: destroyEnemyCount
-      value: 
-      objectReference: {fileID: 1109512773}
-    - target: {fileID: -218414962186709217, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: ExplodeAudioSource
       value: 
       objectReference: {fileID: 1685130596}
@@ -7066,11 +6994,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7111,10 +7039,6 @@ PrefabInstance:
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1767966212240345159, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Name
@@ -8010,10 +7934,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1767966212240345159, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Name
       value: UFO
@@ -8205,10 +8125,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 100000, guid: e4954c9188969dc4588d3da21f31945d, type: 3}
     - target: {fileID: -218414962186709217, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
-      propertyPath: destroyEnemyCount
-      value: 
-      objectReference: {fileID: 1109512773}
-    - target: {fileID: -218414962186709217, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: ExplodeAudioSource
       value: 
       objectReference: {fileID: 1685130596}
@@ -8222,11 +8138,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8267,10 +8183,6 @@ PrefabInstance:
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1767966212240345159, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Name
@@ -8829,10 +8741,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 100000, guid: e4954c9188969dc4588d3da21f31945d, type: 3}
     - target: {fileID: -218414962186709217, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
-      propertyPath: destroyEnemyCount
-      value: 
-      objectReference: {fileID: 1109512773}
-    - target: {fileID: -218414962186709217, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: ExplodeAudioSource
       value: 
       objectReference: {fileID: 1685130596}
@@ -8846,11 +8754,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8892,10 +8800,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1767966212240345159, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Name
       value: UFO
@@ -8931,10 +8835,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 100000, guid: e4954c9188969dc4588d3da21f31945d, type: 3}
     - target: {fileID: -218414962186709217, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
-      propertyPath: destroyEnemyCount
-      value: 
-      objectReference: {fileID: 1109512773}
-    - target: {fileID: -218414962186709217, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: ExplodeAudioSource
       value: 
       objectReference: {fileID: 1685130596}
@@ -8948,11 +8848,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8993,10 +8893,6 @@ PrefabInstance:
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1767966212240345159, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Name
@@ -9613,10 +9509,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 100000, guid: e4954c9188969dc4588d3da21f31945d, type: 3}
     - target: {fileID: -218414962186709217, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
-      propertyPath: destroyEnemyCount
-      value: 
-      objectReference: {fileID: 1109512773}
-    - target: {fileID: -218414962186709217, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: ExplodeAudioSource
       value: 
       objectReference: {fileID: 1685130596}
@@ -9630,11 +9522,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9676,10 +9568,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1767966212240345159, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Name
       value: UFO
@@ -9715,10 +9603,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 100000, guid: e4954c9188969dc4588d3da21f31945d, type: 3}
     - target: {fileID: -218414962186709217, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
-      propertyPath: destroyEnemyCount
-      value: 
-      objectReference: {fileID: 1109512773}
-    - target: {fileID: -218414962186709217, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: ExplodeAudioSource
       value: 
       objectReference: {fileID: 1685130596}
@@ -9732,11 +9616,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9777,10 +9661,6 @@ PrefabInstance:
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1767966212240345159, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Name
@@ -10024,10 +9904,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 100000, guid: e4954c9188969dc4588d3da21f31945d, type: 3}
     - target: {fileID: -218414962186709217, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
-      propertyPath: destroyEnemyCount
-      value: 
-      objectReference: {fileID: 1109512773}
-    - target: {fileID: -218414962186709217, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: ExplodeAudioSource
       value: 
       objectReference: {fileID: 1685130596}
@@ -10041,11 +9917,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10087,10 +9963,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1767966212240345159, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Name
       value: UFO
@@ -10126,10 +9998,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 100000, guid: e4954c9188969dc4588d3da21f31945d, type: 3}
     - target: {fileID: -218414962186709217, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
-      propertyPath: destroyEnemyCount
-      value: 
-      objectReference: {fileID: 1109512773}
-    - target: {fileID: -218414962186709217, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: ExplodeAudioSource
       value: 
       objectReference: {fileID: 1685130596}
@@ -10143,11 +10011,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10188,10 +10056,6 @@ PrefabInstance:
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1767966212240345159, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Name
@@ -10337,10 +10201,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 100000, guid: e4954c9188969dc4588d3da21f31945d, type: 3}
     - target: {fileID: -218414962186709217, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
-      propertyPath: destroyEnemyCount
-      value: 
-      objectReference: {fileID: 1109512773}
-    - target: {fileID: -218414962186709217, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: ExplodeAudioSource
       value: 
       objectReference: {fileID: 1685130596}
@@ -10354,11 +10214,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10399,10 +10259,6 @@ PrefabInstance:
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1767966212240345159, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Name
@@ -10598,10 +10454,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 100000, guid: e4954c9188969dc4588d3da21f31945d, type: 3}
     - target: {fileID: -218414962186709217, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
-      propertyPath: destroyEnemyCount
-      value: 
-      objectReference: {fileID: 1109512773}
-    - target: {fileID: -218414962186709217, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: ExplodeAudioSource
       value: 
       objectReference: {fileID: 1685130596}
@@ -10615,11 +10467,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10660,10 +10512,6 @@ PrefabInstance:
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1767966212240345159, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Name
@@ -11731,17 +11579,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
   m_PrefabInstance: {fileID: 1109207723}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1109512773 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3589911885560448000, guid: 8d4162eb44616f841a13a189f1d71bb1, type: 3}
-  m_PrefabInstance: {fileID: 1370007037857089622}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 167a66f10df1e6348a87a4a9ccca8d95, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1129281565
 GameObject:
   m_ObjectHideFlags: 0
@@ -12189,10 +12026,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 100000, guid: e4954c9188969dc4588d3da21f31945d, type: 3}
     - target: {fileID: -218414962186709217, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
-      propertyPath: destroyEnemyCount
-      value: 
-      objectReference: {fileID: 1109512773}
-    - target: {fileID: -218414962186709217, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: ExplodeAudioSource
       value: 
       objectReference: {fileID: 1685130596}
@@ -12206,11 +12039,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalPosition.x
@@ -12251,10 +12084,6 @@ PrefabInstance:
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1767966212240345159, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Name
@@ -13053,10 +12882,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 100000, guid: e4954c9188969dc4588d3da21f31945d, type: 3}
     - target: {fileID: -218414962186709217, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
-      propertyPath: destroyEnemyCount
-      value: 
-      objectReference: {fileID: 1109512773}
-    - target: {fileID: -218414962186709217, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: ExplodeAudioSource
       value: 
       objectReference: {fileID: 1685130596}
@@ -13070,11 +12895,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalPosition.x
@@ -13116,10 +12941,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1767966212240345159, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Name
       value: UFO
@@ -13131,10 +12952,6 @@ PrefabInstance:
     - target: {fileID: 5035517949644975491, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Radius
       value: 3.74
-      objectReference: {fileID: 0}
-    - target: {fileID: 7170648828746933232, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13450,10 +13267,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 100000, guid: e4954c9188969dc4588d3da21f31945d, type: 3}
     - target: {fileID: -218414962186709217, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
-      propertyPath: destroyEnemyCount
-      value: 
-      objectReference: {fileID: 1109512773}
-    - target: {fileID: -218414962186709217, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: ExplodeAudioSource
       value: 
       objectReference: {fileID: 1685130596}
@@ -13467,11 +13280,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalPosition.x
@@ -13512,10 +13325,6 @@ PrefabInstance:
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1767966212240345159, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Name
@@ -14243,10 +14052,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 100000, guid: e4954c9188969dc4588d3da21f31945d, type: 3}
     - target: {fileID: -218414962186709217, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
-      propertyPath: destroyEnemyCount
-      value: 
-      objectReference: {fileID: 1109512773}
-    - target: {fileID: -218414962186709217, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: ExplodeAudioSource
       value: 
       objectReference: {fileID: 1685130596}
@@ -14260,11 +14065,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalPosition.x
@@ -14306,10 +14111,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1767966212240345159, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Name
       value: UFO
@@ -14345,10 +14146,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 100000, guid: e4954c9188969dc4588d3da21f31945d, type: 3}
     - target: {fileID: -218414962186709217, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
-      propertyPath: destroyEnemyCount
-      value: 
-      objectReference: {fileID: 1109512773}
-    - target: {fileID: -218414962186709217, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: ExplodeAudioSource
       value: 
       objectReference: {fileID: 1685130596}
@@ -14362,11 +14159,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalPosition.x
@@ -14407,10 +14204,6 @@ PrefabInstance:
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1767966212240345159, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Name
@@ -15539,10 +15332,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 100000, guid: e4954c9188969dc4588d3da21f31945d, type: 3}
     - target: {fileID: -218414962186709217, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
-      propertyPath: destroyEnemyCount
-      value: 
-      objectReference: {fileID: 1109512773}
-    - target: {fileID: -218414962186709217, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: ExplodeAudioSource
       value: 
       objectReference: {fileID: 1685130596}
@@ -15556,11 +15345,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalPosition.x
@@ -15602,10 +15391,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1767966212240345159, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Name
       value: UFO
@@ -15641,10 +15426,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 100000, guid: e4954c9188969dc4588d3da21f31945d, type: 3}
     - target: {fileID: -218414962186709217, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
-      propertyPath: destroyEnemyCount
-      value: 
-      objectReference: {fileID: 1109512773}
-    - target: {fileID: -218414962186709217, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: ExplodeAudioSource
       value: 
       objectReference: {fileID: 1685130596}
@@ -15658,11 +15439,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalPosition.x
@@ -15704,10 +15485,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1767966212240345159, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Name
       value: UFO
@@ -15747,10 +15524,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 100000, guid: e4954c9188969dc4588d3da21f31945d, type: 3}
     - target: {fileID: -218414962186709217, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
-      propertyPath: destroyEnemyCount
-      value: 
-      objectReference: {fileID: 1109512773}
-    - target: {fileID: -218414962186709217, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: ExplodeAudioSource
       value: 
       objectReference: {fileID: 1685130596}
@@ -15764,11 +15537,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalPosition.x
@@ -15809,10 +15582,6 @@ PrefabInstance:
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1767966212240345159, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Name
@@ -17320,10 +17089,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 100000, guid: e4954c9188969dc4588d3da21f31945d, type: 3}
     - target: {fileID: -218414962186709217, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
-      propertyPath: destroyEnemyCount
-      value: 
-      objectReference: {fileID: 1109512773}
-    - target: {fileID: -218414962186709217, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: ExplodeAudioSource
       value: 
       objectReference: {fileID: 1685130596}
@@ -17337,11 +17102,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalPosition.x
@@ -17382,10 +17147,6 @@ PrefabInstance:
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1767966212240345159, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Name
@@ -17862,10 +17623,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 100000, guid: e4954c9188969dc4588d3da21f31945d, type: 3}
     - target: {fileID: -218414962186709217, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
-      propertyPath: destroyEnemyCount
-      value: 
-      objectReference: {fileID: 1109512773}
-    - target: {fileID: -218414962186709217, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: ExplodeAudioSource
       value: 
       objectReference: {fileID: 1685130596}
@@ -17879,11 +17636,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalPosition.x
@@ -17924,10 +17681,6 @@ PrefabInstance:
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1767966212240345159, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Name
@@ -18113,10 +17866,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 100000, guid: e4954c9188969dc4588d3da21f31945d, type: 3}
     - target: {fileID: -218414962186709217, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
-      propertyPath: destroyEnemyCount
-      value: 
-      objectReference: {fileID: 1109512773}
-    - target: {fileID: -218414962186709217, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: ExplodeAudioSource
       value: 
       objectReference: {fileID: 1685130596}
@@ -18130,11 +17879,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalPosition.x
@@ -18175,10 +17924,6 @@ PrefabInstance:
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1767966212240345159, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Name
@@ -18398,10 +18143,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 100000, guid: e4954c9188969dc4588d3da21f31945d, type: 3}
     - target: {fileID: -218414962186709217, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
-      propertyPath: destroyEnemyCount
-      value: 
-      objectReference: {fileID: 1109512773}
-    - target: {fileID: -218414962186709217, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: ExplodeAudioSource
       value: 
       objectReference: {fileID: 1685130596}
@@ -18411,15 +18152,15 @@ PrefabInstance:
       objectReference: {fileID: 1142384278}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalPosition.x
@@ -18460,10 +18201,6 @@ PrefabInstance:
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1767966212240345159, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Name
@@ -19087,10 +18824,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 100000, guid: e4954c9188969dc4588d3da21f31945d, type: 3}
     - target: {fileID: -218414962186709217, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
-      propertyPath: destroyEnemyCount
-      value: 
-      objectReference: {fileID: 1109512773}
-    - target: {fileID: -218414962186709217, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: ExplodeAudioSource
       value: 
       objectReference: {fileID: 1685130596}
@@ -19104,11 +18837,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalPosition.x
@@ -19150,10 +18883,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1767966212240345159, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Name
       value: UFO
@@ -19189,10 +18918,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 100000, guid: e4954c9188969dc4588d3da21f31945d, type: 3}
     - target: {fileID: -218414962186709217, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
-      propertyPath: destroyEnemyCount
-      value: 
-      objectReference: {fileID: 1109512773}
-    - target: {fileID: -218414962186709217, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: ExplodeAudioSource
       value: 
       objectReference: {fileID: 1685130596}
@@ -19206,11 +18931,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalPosition.x
@@ -19251,10 +18976,6 @@ PrefabInstance:
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1767966212240345159, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Name
@@ -19474,10 +19195,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 100000, guid: e4954c9188969dc4588d3da21f31945d, type: 3}
     - target: {fileID: -218414962186709217, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
-      propertyPath: destroyEnemyCount
-      value: 
-      objectReference: {fileID: 1109512773}
-    - target: {fileID: -218414962186709217, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: ExplodeAudioSource
       value: 
       objectReference: {fileID: 1685130596}
@@ -19491,11 +19208,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalPosition.x
@@ -19536,10 +19253,6 @@ PrefabInstance:
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1767966212240345159, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Name
@@ -20203,10 +19916,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 100000, guid: e4954c9188969dc4588d3da21f31945d, type: 3}
     - target: {fileID: -218414962186709217, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
-      propertyPath: destroyEnemyCount
-      value: 
-      objectReference: {fileID: 1109512773}
-    - target: {fileID: -218414962186709217, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: ExplodeAudioSource
       value: 
       objectReference: {fileID: 1685130596}
@@ -20220,11 +19929,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalPosition.x
@@ -20265,10 +19974,6 @@ PrefabInstance:
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1767966212240345159, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Name
@@ -20566,10 +20271,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 100000, guid: e4954c9188969dc4588d3da21f31945d, type: 3}
     - target: {fileID: -218414962186709217, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
-      propertyPath: destroyEnemyCount
-      value: 
-      objectReference: {fileID: 1109512773}
-    - target: {fileID: -218414962186709217, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: ExplodeAudioSource
       value: 
       objectReference: {fileID: 1685130596}
@@ -20583,11 +20284,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalPosition.x
@@ -20628,10 +20329,6 @@ PrefabInstance:
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1767966212240345159, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Name
@@ -20929,10 +20626,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 100000, guid: e4954c9188969dc4588d3da21f31945d, type: 3}
     - target: {fileID: -218414962186709217, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
-      propertyPath: destroyEnemyCount
-      value: 
-      objectReference: {fileID: 1109512773}
-    - target: {fileID: -218414962186709217, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: ExplodeAudioSource
       value: 
       objectReference: {fileID: 1685130596}
@@ -20946,11 +20639,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalPosition.x
@@ -20991,10 +20684,6 @@ PrefabInstance:
     - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1423915162276647677, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1767966212240345159, guid: 42833f537d7cb204caeadbff78e5e199, type: 3}
       propertyPath: m_Name
@@ -21116,7 +20805,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8821044703407538008, guid: 8d4162eb44616f841a13a189f1d71bb1, type: 3}
       propertyPath: m_text
-      value: null
+      value: 1111111
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
