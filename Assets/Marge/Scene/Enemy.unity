@@ -9909,7 +9909,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 940451733}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
-<<<<<<< HEAD
 --- !u!23 &946995594 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 5863671109712936411, guid: 30ca4e76283e170418e5c7c38860b6d4, type: 3}
@@ -10017,8 +10016,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 344835296184885525, guid: 6534ff20afcd29b44aa9917591d9791f, type: 3}
   m_PrefabInstance: {fileID: 950691318}
   m_PrefabAsset: {fileID: 0}
-=======
->>>>>>> main
 --- !u!1001 &967861859
 PrefabInstance:
   m_ObjectHideFlags: 0

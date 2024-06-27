@@ -12,7 +12,7 @@ public class LifebarManager : MonoBehaviour
     private void Start()
     {
         PlayerLife playerlife = GetComponent<PlayerLife>();
-        int value = playerlife.playerLife
+        //int value = playerlife.playerLife;
     }
     void Update()
     {
