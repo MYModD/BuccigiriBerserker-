@@ -2578,6 +2578,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4474737624845241726, guid: a2c294e800ccabc47b3d04ac47703f76, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4474737624845241726, guid: a2c294e800ccabc47b3d04ac47703f76, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4474737624845241726, guid: a2c294e800ccabc47b3d04ac47703f76, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4523432780030671410, guid: a2c294e800ccabc47b3d04ac47703f76, type: 3}
       propertyPath: m_Name
       value: BusterGauge
