@@ -22,7 +22,7 @@ public class MoveMiyamotoTest : MonoBehaviour
     Vector2 _moveMinMaxX;
     [SerializeField]
     Vector2 _moveMinMaxY;
-    
+     
 
 
 
@@ -32,7 +32,7 @@ public class MoveMiyamotoTest : MonoBehaviour
 
     private float rotationSpeed = 45f;
     private float rotationx = 0f;
-    private float rotationz = 0f;          // z²‚Ì‰ñ“]Šp“x
+    private float rotationz = 0f;          // zè»¸ã®å›è»¢è§’åº¦
     private float resetTime = 30f;
     private float rotaiony = 180f;
     private Roll_Move roll_move;
@@ -41,7 +41,7 @@ public class MoveMiyamotoTest : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        roll_move = GetComponent<Roll_Move>(); // ‚±‚±‚ÅC³
+        roll_move = GetComponent<Roll_Move>(); // ã“ã“ã§ä¿®æ­£
         startPostion = transform.position;
     }
 
@@ -60,17 +60,17 @@ public class MoveMiyamotoTest : MonoBehaviour
             float horizontalInput = Input.GetAxis("Horizontal");
             float verticalInput = Input.GetAxis("Vertical");
 
-            // Z²‚Ì‰ñ“]
+            // Zè»¸ã®å›è»¢
             float rotationChangez = horizontalInput * rotationSpeed * Time.fixedDeltaTime * 5;
             rotationz += rotationChangez;
             rotationz = Mathf.Clamp(rotationz, -rotationSpeed, rotationSpeed);
 
-            // X²‚Ì‰ñ“]
+            // Xè»¸ã®å›è»¢
             float rotationChangex = verticalInput * -rotationSpeed * Time.fixedDeltaTime * 5;
             rotationx += rotationChangex;
             rotationx = Mathf.Clamp(rotationx, -rotationSpeed, rotationSpeed);
 
-            // “ü—Í‚ª‚È‚¢‚©‚Â‰ñ“]‚ªc‚Á‚Ä‚¢‚éê‡AƒŠƒZƒbƒg
+            // å…¥åŠ›ãŒãªã„ã‹ã¤å›è»¢ãŒæ®‹ã£ã¦ã„ã‚‹å ´åˆã€ãƒªã‚»ãƒƒãƒˆ
             if (horizontalInput == 0 && verticalInput == 0 && (rotationx != 0 || rotationz != 0))
             {
                 float resetAmount = resetTime * Time.fixedDeltaTime * 5;
@@ -84,7 +84,7 @@ public class MoveMiyamotoTest : MonoBehaviour
                 }
             }
 
-            // ƒvƒŒƒCƒ„[‚Ì‰ñ“]‚ğ“K—p
+            // ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®å›è»¢ã‚’é©ç”¨
             transform.rotation = Quaternion.Euler(rotationx, rotaiony, rotationz);
         }
 
@@ -118,18 +118,18 @@ public class MoveMiyamotoTest : MonoBehaviour
 
         rb.MovePosition(new Vector3(postionX, postionY, postionZ));
 
-        //// ƒvƒŒƒCƒ„[‚Ì‘Oi•ûŒüƒxƒNƒgƒ‹‚ğŒvZ
+        //// ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®å‰é€²æ–¹å‘ãƒ™ã‚¯ãƒˆãƒ«ã‚’è¨ˆç®—
         //Vector3 moveDirection = Vector3.forward;
 
-        //// ƒvƒŒƒCƒ„[‚ÌˆÚ“®•ûŒü‚ğ¶‰E‚¨‚æ‚Ñã‰º‚Ì“ü—Í‚ÉŠî‚Ã‚¢‚Ä’²®‚µ‚Ü‚·
+        //// ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ç§»å‹•æ–¹å‘ã‚’å·¦å³ãŠã‚ˆã³ä¸Šä¸‹ã®å…¥åŠ›ã«åŸºã¥ã„ã¦èª¿æ•´ã—ã¾ã™
         //moveDirection += Vector3.right * HolizontalValue;
 
         //moveDirection += Vector3.down * VerticalValue;
 
-        //// Rigidbody ‚É—Í‚ğ‰Á‚¦‚ÄˆÚ“®‚³‚¹‚Ü‚·
+        //// Rigidbody ã«åŠ›ã‚’åŠ ãˆã¦ç§»å‹•ã•ã›ã¾ã™
         //rb.velocity = moveDirection.normalized * speed;
 
-        //// Rigidbody‚É‘¬“x‚ğ—^‚¦‚ÄˆÚ“®‚³‚¹‚é
+        //// Rigidbodyã«é€Ÿåº¦ã‚’ä¸ãˆã¦ç§»å‹•ã•ã›ã‚‹
         //rb.velocity = moveDirection * speed;
     }
 
