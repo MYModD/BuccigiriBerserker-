@@ -8,6 +8,7 @@ onBoardingDoNotAskAgain = true
 showPackageIndexes = false
 showStatusBar = false
 scopes = {
+<<<<<<< HEAD
 	"last_search.6DF93126" = "GeometryUtility.TestPlanesAABB"
 	"OpenInspectorPreview.6DF93126" = "0"
 	"currentGroup.6DF93126" = "asset"
@@ -17,6 +18,11 @@ scopes = {
 	"last_search.98CF4AA6" = "GeometryUtility.TestPlanesAABB"
 	"OpenInspectorPreview.98CF4AA6" = "0"
 	"currentGroup.98CF4AA6" = "scene"
+=======
+	"last_search.8DF93126" = "GeometryUtility.TestPlanesAABB"
+	"OpenInspectorPreview.8DF93126" = "0"
+	"currentGroup.8DF93126" = "settings"
+>>>>>>> main
 }
 providers = {
 	asset = {
