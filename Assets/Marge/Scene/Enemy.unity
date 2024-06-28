@@ -1295,11 +1295,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6239685098025949782, guid: 19ecb613f8db77447b350c8b5ae2da1e, type: 3}
       propertyPath: _coneRange
-      value: 0
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 6239685098025949782, guid: 19ecb613f8db77447b350c8b5ae2da1e, type: 3}
       propertyPath: _searchRadius
-      value: 180
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 8309897281213122745, guid: 19ecb613f8db77447b350c8b5ae2da1e, type: 3}
       propertyPath: m_FollowOffset.y
