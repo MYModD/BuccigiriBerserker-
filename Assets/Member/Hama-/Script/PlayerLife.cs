@@ -113,7 +113,7 @@ public class PlayerLife : MonoBehaviour
         anim.SetBool("invincible", true);
         anim.SetBool("Normal", false);
 
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(2f);
 
         anim.SetBool("invincible", false);
         anim.SetBool("Normal", true);
