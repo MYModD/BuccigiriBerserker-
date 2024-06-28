@@ -22,7 +22,31 @@ public class TrackingUI : MonoBehaviour
     void Update()
     {
         UpdateUIPositions(lockOnManager.targetsInCamera, _enemyInCameraImages);
-        UpdateUIPositions(lockOnManager.targetsInCone, _enemyInConeImages);
+
+        if(lockOnManager.isSpecial == true)
+        {
+            UpdateUIPositions(lockOnManager.targetsInCone, _enemyInConeImages);
+        }
+        else
+        {
+            for (int i = 0; i < lockOnManager.targetsInSide.Length; i++)
+            {
+                if (i < _enemyInConeImages.Length)
+                {
+                    Vector3 enemyScreenPosition = RectTransformUtility.WorldToScreenPoint(Camera.main, lockOnManager.targetsInSide[i].position);
+                    _enemyInConeImages[i].transform.position = enemyScreenPosition;
+                    _enemyInConeImages[i].enabled = true;
+                }
+            }
+
+            // —]‚Á‚½UI—v‘f‚ð”ñ•\Ž¦‚É‚·‚é
+            for (int i = lockOnManager.targetsInSide.Length; i < _enemyInConeImages.Length; i++)
+            {
+                _enemyInConeImages[i].enabled = false;
+            }
+        }
+
+        
     }
 
     /// <summary>

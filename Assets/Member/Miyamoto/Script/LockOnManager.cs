@@ -4,66 +4,59 @@ using Utils;
 
 public class LockOnManager : MonoBehaviour
 {
-
-
     [Header("カメラの視界に入っているターゲットのリスト")]
-    //[HideInInspector]重くなる要因なのでコメントなくす
+    [HideInInspector] // コメントをなくす
     public List<Transform> targetsInCamera = new List<Transform>();
 
     [Header("錐体内に入っているターゲットのリスト")]
-    //[HideInInspector]重くなる要因なのでコメントなくす
+    [HideInInspector] // コメントをなくす
     public List<Transform> targetsInCone = new List<Transform>();
 
-    [Header("上のリストで一番距離が短いターゲット")]
+    private const int elementCountTargets = 3;
+    public Transform[] targetsInSide = new Transform[elementCountTargets]; // 要素数3つに固定
 
     [SerializeField, Header("カメラ指定")]
     private Camera _camera;
 
     [SerializeField, Header("spherecastの半径")]
-    private float _searchRadius = 95f;
+    public float _searchRadius = 95f;
 
     [SerializeField, Range(0f, 180f)]
     [Header("コーンの角度")]
-    private float _coneAngle = 45f;
+    public float _coneAngle = 45f;
 
     [SerializeField]
     [Header("コーンの長さ、半径")]
-    private float _coneRange;
+    public float _coneRange;
 
+    [Header("これはスペシャルですか")]
+    public bool isSpecial = false;
 
-
-
-
-
-    readonly private Vector3 DrawOrigin = new Vector3(90, 0, 0);    //コーンの円周を向けるためのやつ offset
     
-    
-    private Plane[] cameraPlanes;  //カメラの六面体座標
+
+    readonly private Vector3 DrawOrigin = new Vector3(90, 0, 0);    // コーンの円周を向けるためのやつ offset
+
+    private Plane[] cameraPlanes;  // カメラの六面体座標
 
     private float updateInterval = 0.1f;  // 0.1秒ごとに更新
     private float lastUpdate = 0f;
 
-
     void Update()
     {
-
-        
-
         if (Time.time - lastUpdate > updateInterval)
         {
             // ターゲットリストを更新
             UpdateTargets();
 
-            //コーンがカメラから外れたらリストから削除する
+            // コーンがカメラから外れたらリストから削除する
             RemoveTargetInCone();
 
+            // カメラに近い3つのターゲットを選定
+            UpdateClosestTargetsInSide();
 
             DebugMatarialChange();
             lastUpdate = Time.time;
-
         }
-
-        
     }
 
     // ターゲットリストを更新するメソッド
@@ -73,15 +66,14 @@ public class LockOnManager : MonoBehaviour
         cameraPlanes = GeometryUtility.CalculateFrustumPlanes(_camera);
 
         targetsInCamera.Clear();
+        targetsInCone.Clear();
 
-
-        Collider[] hits = GetSphereOverlapHits();    //colliderが返り値
+        Collider[] hits = GetSphereOverlapHits();    // colliderが返り値
 
         foreach (Collider hit in hits)
         {
             // ヒットしたオブジェクトを処理
             ProcessHit(hit, cameraPlanes);
-
         }
     }
 
@@ -93,18 +85,15 @@ public class LockOnManager : MonoBehaviour
         return Physics.OverlapSphere(
             _camera.transform.position,
             _searchRadius,
-            LayerMask.GetMask("Enemy")                        //レイヤーマスクがenemyかつtagがenemyのとき
+            LayerMask.GetMask("Enemy")                        // レイヤーマスクがenemyかつtagがenemyのとき
         );
     }
-
-
 
     /// <summary>
     /// ヒットしたオブジェクトを処理するメソッド  
     /// </summary>
     /// <param name="hit">コライダー型 オブジェクトを識別する</param>
     /// <param name="planes">カメラの図形をPlane型で表したもの</param>
-
     private void ProcessHit(Collider hit, Plane[] planes)
     {
         if (hit.CompareTag("Enemy"))
@@ -113,31 +102,26 @@ public class LockOnManager : MonoBehaviour
             Renderer renderer = target.GetComponent<Renderer>();
 
             if (renderer != null && IsInFrustum(renderer, planes) && hit.gameObject.activeSelf == true)         //&& renderer.GetComponent<hogehoge>.isdead == false
-                                                                           //死んでなかったら追加
+                                                                                                                //死んでなかったら追加
             {
-                targetsInCamera.Add(target);              //カメラ範囲内のリストにいれる
+                targetsInCamera.Add(target);              // カメラ範囲内のリストにいれる
 
                 if (IsInCone(target))
                 {
-                    if (!targetsInCone.Contains(target))
-
-                        targetsInCone.Add(target);            //コーン内のリストにいれる
+                    if (!targetsInCone.Contains(target) && hit.gameObject.activeSelf == true)
+                        targetsInCone.Add(target);            // コーン内のリストにいれる
                 }
             }
         }
     }
-
 
     /// <summary>
     /// オブジェクトが視錐台内にあるかどうかを確認するメソッド
     /// </summary>
     private bool IsInFrustum(Renderer renderer, Plane[] planes)
     {
-        return GeometryUtility.TestPlanesAABB(planes, renderer.bounds);    //testPlanesAABBでカメラの形とcoliderのboundsで見えているかを判断する
+        return GeometryUtility.TestPlanesAABB(planes, renderer.bounds);    // testPlanesAABBでカメラの形とcoliderのboundsで見えているかを判断する
     }
-
-
-
 
     /// <summary>
     /// オブジェクトが円錐内にあるかどうかを確認するメソッド
@@ -146,27 +130,19 @@ public class LockOnManager : MonoBehaviour
     /// <returns>オブジェクトが円錐内にある場合はtrue、それ以外の場合はfalse</returns>
     private bool IsInCone(Transform target)
     {
-
         Vector3 cameraPosition = _camera.transform.position;  // カメラの位置を取得
         Vector3 cameraForward = _camera.transform.forward;   // カメラの前方向ベクトルを取得
-
-        //Debug.Log($"{cameraPosition}+{cameraForward}");      // デバッグ用にカメラの位置と方向をログに出力
 
         Vector3 toObject = target.position - cameraPosition; // カメラ位置からターゲット位置へのベクトルを計算
 
         // ターゲットまでの距離を計算
         float distanceToObject = toObject.magnitude;                     // ベクトルの長さ（距離）
 
-        
-
-
         if (distanceToObject <= _coneRange)                           // ターゲットが検索半径内にあるかどうかを確認
         {
             Vector3 toObjectNormalized = toObject.normalized;                // ターゲットへのベクトルを正規化（方向のみを取得）
-
             float angle = Vector3.Angle(cameraForward, toObjectNormalized); // カメラの前方向とターゲットへの方向との角度を計算
 
-            //Debug.Log(angle);
             return angle <= _coneAngle / 2;                                // 角度がコーンの半分の角度以下であればtrueを返す
         }
 
@@ -174,29 +150,21 @@ public class LockOnManager : MonoBehaviour
         return false;
     }
 
-
-
-
-
     /// <summary>
     /// inconeにあるターゲットは発射しても消えないのでもう一回AABBで判定を取る
     /// </summary>
     private void RemoveTargetInCone()
     {
-        //リストから削除するためのリスト  繰り返す中で配列エラーが起きる可能性がある
+        // リストから削除するためのリスト  繰り返す中で配列エラーが起きる可能性がある
         List<Transform> targetsToRemove = new List<Transform>();
-
 
         foreach (Transform target in targetsInCone)
         {
             if (!GeometryUtility.TestPlanesAABB(cameraPlanes, target.GetComponent<Collider>().bounds))
             {
                 targetsToRemove.Add(target);
-
-                
             }
         }
-
 
         foreach (Transform target in targetsToRemove)
         {
@@ -204,6 +172,30 @@ public class LockOnManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// コーン内のターゲットからカメラに近い3つを選び、targetsInSideに追加する
+    /// </summary>
+    private void UpdateClosestTargetsInSide()
+    {
+        targetsInCone.Sort((a, b) =>
+        {
+            float distanceA = Vector3.Distance(_camera.transform.position, a.position);
+            float distanceB = Vector3.Distance(_camera.transform.position, b.position);
+            return distanceA.CompareTo(distanceB);
+        });
+
+        for (int i = 0; i < elementCountTargets; i++)
+        {
+            if (i < targetsInCone.Count)
+            {
+                targetsInSide[i] = targetsInCone[i];
+            }
+            else
+            {
+                targetsInSide[i] = null;
+            }
+        }
+    }
 
     /// <summary>
     /// デバッグ用のギズモを描画するメソッド unity側のメソッド
@@ -219,15 +211,10 @@ public class LockOnManager : MonoBehaviour
             // コーン上の円周を描画
             Gizmos.color = Color.yellow;
             float coneAngleRad = Mathf.Deg2Rad * _coneAngle / 2;
-
             Vector3 coneBaseCenter = _camera.transform.position + _camera.transform.forward * _coneRange;
-
             var hoge = DrawOrigin + transform.rotation.eulerAngles;
             hoge.z = 0;
-
             GizmosExtensions.DrawWireCircle(coneBaseCenter, _coneRange * Mathf.Tan(coneAngleRad), 20, Quaternion.Euler(hoge));
-
-            //Debug.LogError(_coneRange * Mathf.Sin(coneAngleRad));
 
             // コーンの範囲を描画
             Gizmos.color = Color.red;
@@ -241,24 +228,13 @@ public class LockOnManager : MonoBehaviour
         }
     }
 
-
     /// <summary>
     /// debug用にマテリアル変えるだけ いずれ消す
     /// </summary>
     private void DebugMatarialChange()
     {
-        /*for (int i = 0; i < targetsInCamera.Count; i++)
-        {
-            targetsInCamera[i].GetComponent<MeshRenderer>().material.color = Color.blue;
-        }
-        for (int i = 0; i < targetsInCone.Count; i++)
-        {
-            targetsInCone[i].GetComponent<MeshRenderer>().material.color = Color.red;
-        }
-
-        */
+        // デバッグ用コード
     }
-
 
     /// <summary>
     /// coneRangeをspherecast以下にする制御スクリプト
