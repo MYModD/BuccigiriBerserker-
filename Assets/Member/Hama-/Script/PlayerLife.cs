@@ -45,17 +45,20 @@ public class PlayerLife : MonoBehaviour
             StartCoroutine(Respawn());
         }
 
-        if (playerLife > 0)
+        if (playerLife >=5)
         {
           
             _IsRetry = true;
             explod = false;
           
         }
+        
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.H))
         {
-            playerLife--;
+            //playerLife--;
+            StartCoroutine(TakeDamage());
+
         }
     }
 
@@ -79,11 +82,12 @@ public class PlayerLife : MonoBehaviour
         move.enabled = true;
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider collider)
     {
-        if (other.gameObject.tag == "Enemy")
+        if (collider.gameObject.tag == "Enemy")
         {
-            playerLife--;
+            //playerLife--;
+            TakeDamage();
         }
     }
 
@@ -99,7 +103,20 @@ public class PlayerLife : MonoBehaviour
         {
             audioSource.PlayOneShot(ExplodeAudioClip);
         }
+       
     }
 
-    
+    IEnumerator TakeDamage()
+    {
+        playerLife--;
+        //–³“GŽžŠÔŠJŽn
+        anim.SetBool("invincible", true);
+        anim.SetBool("Normal", false);
+
+        yield return new WaitForSeconds(4f);
+
+        anim.SetBool("invincible", false);
+        anim.SetBool("Normal", true);
+    }
+
 }
