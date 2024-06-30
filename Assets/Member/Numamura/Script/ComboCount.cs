@@ -8,15 +8,16 @@ public class ComboCount : MonoBehaviour
    
     public Text ComboCountText; // UIテキストオブジェクト
     public int ComboValue;
-    private bool _ComboCheck;
+    private bool _ComboCheck = default;
 
-
+    public bool _toScore = default;
     public LifebarManager lifebarmanager;
     void Start()
     {
 
         ComboValue = 0;
         ComboCountText = GetComponent<Text>();
+        _toScore = false;
         UpdateUI(); // UIを更新して初期設定時間を表示
     }
 
@@ -27,6 +28,7 @@ public class ComboCount : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Y))
         {
             ComboValue++;
+            _toScore = true;
         }
 
         if(_ComboCheck == true)
