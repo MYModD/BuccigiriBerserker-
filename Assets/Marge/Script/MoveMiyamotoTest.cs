@@ -1,10 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class MoveMiyamotoTest : MonoBehaviour
 {
     //private const float threshold = 0.5f;
+
+    [Range(0, 90f)]
+    public float yokoRange;
+
+    [Range(0, 90f)]
+    public float tateRange;
+
+    [Range(0, 1f)]
+    public float yokoLerpT;
+
+    [Range(0, 1f)]
+    public float tateLerpT;
 
     private Rigidbody rb;
 
@@ -23,6 +36,7 @@ public class MoveMiyamotoTest : MonoBehaviour
     [SerializeField]
     Vector2 _moveMinMaxY;
     
+
 
 
 
@@ -57,35 +71,26 @@ public class MoveMiyamotoTest : MonoBehaviour
 
         if (roll_move._isRotating == false)
         {
-            float horizontalInput = Input.GetAxis("Horizontal");
-            float verticalInput = Input.GetAxis("Vertical");
+            holizontalValue = Input.GetAxisRaw("Horizontal") * multiplyAxis * -1f;
 
-            // Z軸の回転
-            float rotationChangez = horizontalInput * rotationSpeed * Time.fixedDeltaTime * 5;
-            rotationz += rotationChangez;
-            rotationz = Mathf.Clamp(rotationz, -rotationSpeed, rotationSpeed);
+            verticalValue = Input.GetAxisRaw("Vertical") * multiplyAxis;
 
-            // X軸の回転
-            float rotationChangex = verticalInput * -rotationSpeed * Time.fixedDeltaTime * 5;
-            rotationx += rotationChangex;
-            rotationx = Mathf.Clamp(rotationx, -rotationSpeed, rotationSpeed);
 
-            // 入力がないかつ回転が残っている場合、リセット
-            if (horizontalInput == 0 && verticalInput == 0 && (rotationx != 0 || rotationz != 0))
-            {
-                float resetAmount = resetTime * Time.fixedDeltaTime * 5;
-                if (rotationx != 0)
-                {
-                    rotationx = Mathf.MoveTowards(rotationx, 0f, resetAmount);
-                }
-                if (rotationz != 0)
-                {
-                    rotationz = Mathf.MoveTowards(rotationz, 0f, resetAmount);
-                }
-            }
 
-            // プレイヤーの回転を適用
-            transform.rotation = Quaternion.Euler(rotationx, rotaiony, rotationz);
+            holizontalValue = Mathf.Clamp(holizontalValue,yokoRange * -1,yokoRange);
+            verticalValue = Mathf.Clamp(holizontalValue, tateRange * -1, tateRange);
+
+
+            Vector3 yokoidou = new Vector3( verticalValue, transform.rotation.y +180f,    holizontalValue);
+
+
+            Quaternion hoge = Quaternion.Slerp(transform.rotation, Quaternion.Euler(yokoidou), yokoLerpT);
+
+            rb.rotation = hoge;
+
+            
+            
+
         }
 
     }
@@ -118,19 +123,14 @@ public class MoveMiyamotoTest : MonoBehaviour
 
         rb.MovePosition(new Vector3(postionX, postionY, postionZ));
 
-        //// プレイヤーの前進方向ベクトルを計算
-        //Vector3 moveDirection = Vector3.forward;
 
-        //// プレイヤーの移動方向を左右および上下の入力に基づいて調整します
-        //moveDirection += Vector3.right * HolizontalValue;
 
-        //moveDirection += Vector3.down * VerticalValue;
 
-        //// Rigidbody に力を加えて移動させます
-        //rb.velocity = moveDirection.normalized * speed;
 
-        //// Rigidbodyに速度を与えて移動させる
-        //rb.velocity = moveDirection * speed;
+
+
+
+        
     }
 
 }

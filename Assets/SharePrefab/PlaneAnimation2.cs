@@ -55,10 +55,10 @@ public class PlaneAnimation2 : MonoBehaviour
         input = Mathf.Clamp(input, -ruddersDegreeRange, ruddersDegreeRange);
         Vector3 rotation = new Vector3(0, input, 0);
         Quaternion targetRotation = Quaternion.Euler(-rotation);
-        Quaternion currentRotation = Quaternion.Lerp(rudders[0].transform.rotation, targetRotation, lerpTRudder);
+        Quaternion currentRotation = Quaternion.Lerp(rudders[0].transform.localRotation, targetRotation, lerpTRudder);
 
-        rudders[0].transform.rotation = currentRotation;
-        rudders[1].transform.rotation = currentRotation;
+        rudders[0].transform.localRotation = currentRotation;
+        rudders[1].transform.localRotation = currentRotation;
     }
 
     // ÉtÉâÉbÉvÇâÒì]Ç≥ÇπÇÈ
@@ -68,10 +68,12 @@ public class PlaneAnimation2 : MonoBehaviour
         input = Mathf.Clamp(input, -flapsDegreeRange, flapsDegreeRange);
         Vector3 rotation = new Vector3(input, 0, 0);
         Quaternion targetRotation = Quaternion.Euler(-rotation);
-        Quaternion currentRotation = Quaternion.Lerp(flaps[1].transform.rotation, targetRotation, lerpTFlaps);
+        Quaternion currentRotation = Quaternion.Lerp(flaps[1].transform.localRotation, targetRotation, lerpTFlaps);
 
-        flaps[0].transform.rotation = currentRotation;
-        flaps[1].transform.rotation = currentRotation;
+        Debug.Log(currentRotation.eulerAngles);
+
+        flaps[0].transform.localRotation = currentRotation;
+        flaps[1].transform.localRotation = currentRotation;
     }
 
     // è∏ç~ë«ÇâÒì]Ç≥ÇπÇÈ
@@ -88,10 +90,10 @@ public class PlaneAnimation2 : MonoBehaviour
         input = Mathf.Clamp(input, -elevatorUpDownDegreeRange, elevatorUpDownDegreeRange);
         Vector3 rotation = new Vector3(input, 0, 0);
         Quaternion targetRotation = Quaternion.Euler(-rotation);
-        Quaternion currentRotation = Quaternion.Lerp(elevator[0].transform.rotation, targetRotation, lerpTElevators);
+        Quaternion currentRotation = Quaternion.Lerp(elevator[0].transform.localRotation, targetRotation, lerpTElevators);
 
-        elevator[0].transform.rotation = currentRotation;
-        elevator[1].transform.rotation = currentRotation;
+        elevator[0].transform.localRotation = currentRotation;
+        elevator[1].transform.localRotation = currentRotation;
     }
 
     // è∏ç~ë«Çç∂âEÇ…âÒì]Ç≥ÇπÇÈ
@@ -103,10 +105,10 @@ public class PlaneAnimation2 : MonoBehaviour
         Quaternion targetRotation1 = Quaternion.Euler(rotation);
         Quaternion targetRotation2 = Quaternion.Euler(-rotation);
 
-        Quaternion currentRotation1 = Quaternion.Lerp(elevator[0].transform.rotation, targetRotation1, lerpTRightLeftElevators);
-        Quaternion currentRotation2 = Quaternion.Lerp(elevator[1].transform.rotation, targetRotation2, lerpTRightLeftElevators);
+        Quaternion currentRotation1 = Quaternion.Lerp(elevator[0].transform.localRotation, targetRotation1, lerpTRightLeftElevators);
+        Quaternion currentRotation2 = Quaternion.Lerp(elevator[1].transform.localRotation, targetRotation2, lerpTRightLeftElevators);
 
-        elevator[0].transform.rotation = currentRotation1;
-        elevator[1].transform.rotation = currentRotation2;
+        elevator[0].transform.localRotation = currentRotation1;
+        elevator[1].transform.localRotation = currentRotation2;
     }
 }

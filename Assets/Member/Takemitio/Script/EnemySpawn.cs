@@ -8,7 +8,7 @@ public class EnemySpawn : MonoBehaviour
     [SerializeField] private float interval = 2.0f;       // 生成間隔（秒）
     [SerializeField] private float spawnDistance = 10.0f; // プレイヤーからの生成距離
     [SerializeField] private int maxSpawnCount = 3;       // 最大同時スポーン数
-    private int _groupEnemycnt;
+    private int _groupEnemycnt = 0;
     [SerializeField] private int _totalEnemy;
 
     private Transform player;           // プレイヤーのTransform
@@ -27,8 +27,8 @@ public class EnemySpawn : MonoBehaviour
     {
         // 同時にスポーンするオブジェクト数をランダムで決定する
         int spawnCount = Random.Range(1, maxSpawnCount + 1);
-        if(_totalEnemy <= _groupEnemycnt)
-        {
+        //if(_totalEnemy <= _groupEnemycnt)
+        //{
             for (int i = 0; i < spawnCount; i++)
             {
                 // プレイヤーの前方に一定の距離を保ってオブジェクトを生成する
@@ -44,7 +44,7 @@ public class EnemySpawn : MonoBehaviour
                 Instantiate(objectsToSpawn[randomIndex], spawnPosition, transform.rotation);
             }
 
-        }
+        //}
 
     }
 }
