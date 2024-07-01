@@ -9,12 +9,14 @@ public class ComboCount : MonoBehaviour
     public Text ComboCountText; // UIテキストオブジェクト
     public int ComboValue;
     private bool _ComboCheck = default;
+    private int checkdestroy;
 
     public bool _toScore = default;
     public LifebarManager lifebarmanager;
+    public DestroyEnemyCount destroyEnemyCount;
     void Start()
     {
-
+        checkdestroy = destroyEnemyCount.value;
         ComboValue = 0;
         ComboCountText = GetComponent<Text>();
         _toScore = false;
@@ -25,10 +27,11 @@ public class ComboCount : MonoBehaviour
     {
         _ComboCheck = lifebarmanager._ComboReset;
 
-        if(Input.GetKeyDown(KeyCode.Y))
+        if(checkdestroy < destroyEnemyCount.value)
         {
             ComboValue++;
             _toScore = true;
+            checkdestroy = destroyEnemyCount.value;
         }
 
         if(_ComboCheck == true)
