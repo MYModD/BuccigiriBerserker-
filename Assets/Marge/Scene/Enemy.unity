@@ -3784,7 +3784,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &314690656
 Transform:
   m_ObjectHideFlags: 0
@@ -11934,6 +11934,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a8bd2dec56a5eb40bbf919a3a182244, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  yokoRange: 0
+  tateRange: 0
+  yokoLerpT: 0
+  tateLerpT: 0
   speed: 20.77
   _moveMinMaxX: {x: -40, y: 40}
   _moveMinMaxY: {x: 10, y: 60}
@@ -13935,7 +13939,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1397662231
 Transform:
   m_ObjectHideFlags: 0
@@ -17013,6 +17017,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 31
       objectReference: {fileID: 0}
+    - target: {fileID: 1425042379606537574, guid: 3982e962871e0614d94790663928a426, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6295814912980535194, guid: 3982e962871e0614d94790663928a426, type: 3}
       propertyPath: m_LocalPosition.x
       value: -86.2
@@ -17887,7 +17895,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1851645560
 Transform:
   m_ObjectHideFlags: 0

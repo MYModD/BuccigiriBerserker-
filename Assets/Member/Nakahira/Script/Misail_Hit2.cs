@@ -29,6 +29,7 @@ public class Misail_Hit2 : MonoBehaviour
     {
         if (coll.gameObject.tag == "Missile")
         {
+            print("a");
             destroyEnemyCount.CountUp();
             Explode();
             ExplodeSE();
