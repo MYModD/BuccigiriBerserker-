@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEditor.Rendering;
 public class Misail_Hit2 : MonoBehaviour
 {
     public Collider hako;
@@ -10,6 +11,8 @@ public class Misail_Hit2 : MonoBehaviour
     public int _desEne { get => DesEne; }
     public GameObject explosionPrefab; // 爆発エフェクトのプレハブ
     public AudioSource ExplodeAudioSource;
+
+    public DestroyEnemyCount destroyEnemyCount;
     void Start()
     {
         childRenderer = GetComponentInChildren<MeshRenderer>();
@@ -26,9 +29,11 @@ public class Misail_Hit2 : MonoBehaviour
     {
         if (coll.gameObject.tag == "Missile")
         {
+            destroyEnemyCount.CountUp();
             Explode();
             ExplodeSE();
             PooledReturn();
+            
 
         }
         if (coll.gameObject.tag == "????")
@@ -37,17 +42,20 @@ public class Misail_Hit2 : MonoBehaviour
             ExplodeSE();
             PooledReturn();
             
+            
 
         }
     }
     public void PooledReturn()
     {
-        childRenderer = GetComponentInChildren<MeshRenderer>();
-        DesEne = +1;
-        childRenderer.enabled = false;
-        hako.enabled = false;
-        //this.gameObject.SetActive(false);
-       
+        
+        //childRenderer = GetComponentInChildren<MeshRenderer>();
+        
+        //childRenderer.enabled = false;
+        //hako.enabled = false;
+        //Debug.Log("erro");
+        this.gameObject.SetActive(false);
+
     }
     void Explode()
     {
