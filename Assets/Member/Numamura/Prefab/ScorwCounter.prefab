@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3778733919295895959
+--- !u!1 &1613195626211351821
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,24 +8,24 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7437804764602909495}
-  - component: {fileID: 327677026195923139}
-  - component: {fileID: 5749603583390812106}
-  - component: {fileID: 8511567041024737240}
+  - component: {fileID: 7762223572369761317}
+  - component: {fileID: 389860927452907303}
+  - component: {fileID: 8944254662273194}
+  - component: {fileID: 6650568039893348212}
   m_Layer: 5
-  m_Name: ComboCounter
+  m_Name: ScorwCounter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &7437804764602909495
+--- !u!224 &7762223572369761317
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3778733919295895959}
+  m_GameObject: {fileID: 1613195626211351821}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -35,24 +35,24 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -601.2285, y: 458.98608}
+  m_AnchoredPosition: {x: -601.23, y: 368.99}
   m_SizeDelta: {x: 540, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &327677026195923139
+--- !u!222 &389860927452907303
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3778733919295895959}
+  m_GameObject: {fileID: 1613195626211351821}
   m_CullTransparentMesh: 1
---- !u!114 &5749603583390812106
+--- !u!114 &8944254662273194
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3778733919295895959}
+  m_GameObject: {fileID: 1613195626211351821}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
@@ -71,28 +71,27 @@ MonoBehaviour:
     m_FontSize: 70
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 6
-    m_MaxSize: 80
+    m_MinSize: 7
+    m_MaxSize: 70
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 0COMBO
---- !u!114 &8511567041024737240
+  m_Text: SCORE
+--- !u!114 &6650568039893348212
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3778733919295895959}
+  m_GameObject: {fileID: 1613195626211351821}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 624210558f7cfe54997b33bfe9e1aba6, type: 3}
+  m_Script: {fileID: 11500000, guid: 3fe534832ae8b874080d3a9d47acd49d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ComboCountText: {fileID: 5749603583390812106}
-  ComboValue: 0
-  _toScore: 0
-  lifebarmanager: {fileID: 0}
+  ScoreCountText: {fileID: 8944254662273194}
+  ScoreValue: 0
+  ComboCount: {fileID: 0}
