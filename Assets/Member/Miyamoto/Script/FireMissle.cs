@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Pool;
@@ -8,8 +7,11 @@ public class FireMissile : MonoBehaviour
 {
     private IObjectPool<Missile> objectPool;
 
-    [Header("ターゲット位置")]
-    public List<Transform> targetObjectList;
+    [Header("debug用InCone")]
+    public List<Transform> targetObjectInCone;
+
+    [Header("debug用InSide")]
+    public Transform[] targetObjectInSide;
 
     public LockOnManager lockOnManager;
 
@@ -49,35 +51,74 @@ public class FireMissile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        targetObjectList = lockOnManager.targetsInCone;
+        targetObjectInCone = lockOnManager.targetsInCone;
+        targetObjectInSide = lockOnManager.targetsInSide;
+
 
         bool testBool = Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Fire2");//スペースキーまたはFire2ボタンが押されたかどうかをチェック
 
         if (testBool && Time.time > nextTimeToShoot && objectPool != null)
         {
-            Debug.Log("発射条件を満たしました");
-            nextTimeToShoot = Time.time + cooldownFire;
-            foreach (Transform target in lockOnManager.targetsInCone)
-            {
-                Debug.Log($"ターゲット: {target.name}");
 
-                // Missileクラスのオブジェクトを取得
-                Missile missileObject = objectPool.Get();
-                if (missileObject == null)
+            if (lockOnManager.isSpecial)
+            {
+
+                Debug.Log("発射条件を満たしました");
+                nextTimeToShoot = Time.time + cooldownFire;
+                foreach (Transform target in lockOnManager.targetsInCone)
                 {
-                    Debug.LogError("オブジェクトが取得できませんでした");
-                    continue;
+                    Debug.Log($"ターゲット: {target.name}");
+
+                    // Missileクラスのオブジェクトを取得
+                    Missile missileObject = objectPool.Get();
+                    if (missileObject == null)
+                    {
+                        Debug.LogError("オブジェクトが取得できませんでした");
+                        continue;
+                    }
+
+                    missileObject.target = target; // 取得したミサイルのターゲットを設定
+
+                    // SetPositionAndRotationで位置と回転を設定
+                    missileObject.transform.SetPositionAndRotation(muzzlePosition.position, muzzlePosition.rotation);
+
+                    Debug.Log($"{missileObject.name} が発射されました");
+
+                    // 次に発射できる時間を計算k
+
                 }
 
-                missileObject.target = target; // 取得したミサイルのターゲットを設定
 
-                // SetPositionAndRotationで位置と回転を設定
-                missileObject.transform.SetPositionAndRotation(muzzlePosition.position, muzzlePosition.rotation);
+            }
+            else
+            {
+                foreach (Transform target in lockOnManager.targetsInSide)
+                {
+                    Debug.Log($"ターゲット: {target.name}");
 
-                Debug.Log($"{missileObject.name} が発射されました");
+                    // Missileクラスのオブジェクトを取得
+                    Missile missileObject = objectPool.Get();
+                    if (missileObject == null)
+                    {
+                        Debug.LogError("オブジェクトが取得できませんでした");
+                        continue;
+                    }
 
-                // 次に発射できる時間を計算
-                
+                    missileObject.target = target; // 取得したミサイルのターゲットを設定
+
+                    // SetPositionAndRotationで位置と回転を設定
+                    missileObject.transform.SetPositionAndRotation(muzzlePosition.position, muzzlePosition.rotation);
+
+                    Debug.Log($"{missileObject.name} が発射されました");
+
+
+                }
+
+
+
+
+
+
             }
         }
     }
