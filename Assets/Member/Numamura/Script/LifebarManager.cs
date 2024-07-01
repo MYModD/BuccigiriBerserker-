@@ -6,7 +6,9 @@ public class LifebarManager : MonoBehaviour
 {
     public GameObject[] lifeArray = new GameObject[6];
     
+    public bool _ComboReset = default;
     private int lifePoint;
+    private int lifeCheck;
     private int StartLife;
 
 
@@ -14,7 +16,9 @@ public class LifebarManager : MonoBehaviour
     private void Start()
     {
         StartLife = (int)playerLife.playerLife;
+        lifeCheck = (int)playerLife.playerLife;
         Debug.LogWarning(playerLife.playerLife);
+        _ComboReset = false;
     }
     void Update()
     {
@@ -34,7 +38,18 @@ public class LifebarManager : MonoBehaviour
             lifeArray[lifePoint].SetActive(false);
         }
 
-        if(lifePoint == 0)
+        if(lifeCheck > lifePoint)
+        {
+            lifeCheck = lifePoint;
+            _ComboReset = true;
+        }
+
+        
+
+        Debug.LogWarning(_ComboReset);
+        Debug.LogWarning(lifePoint);
+
+        if (lifePoint == 0)
             
         {
             while(StartLife >= lifePoint)
