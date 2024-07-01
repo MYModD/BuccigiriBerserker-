@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class HowtoPlayStartScript : MonoBehaviour
+public class EnemyStartScript : MonoBehaviour
 {
 
     public void SceneChange()
     {
-        SceneManager.LoadScene("HowToPlayScene");//‘€ìà–¾‰æ–Ê‚ÖˆÚ“®
+        SceneManager.LoadScene("Enemy");//‘€ìà–¾‰æ–Ê‚ÖˆÚ“®
         
     }
 }
