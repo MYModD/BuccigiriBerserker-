@@ -1011,7 +1011,7 @@ TrailRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Time: 1
-  m_PreviewTimeScale: 0
+  m_PreviewTimeScale: 1
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -1020,7 +1020,7 @@ TrailRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1
+        value: 0.13043404
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -4363,6 +4363,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2337717907700041698, guid: cbcfc71d9eecd184b88a99be554f5cfb, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1030479751916733277}
+    - targetCorrespondingSourceObject: {fileID: 2337717907700041698, guid: cbcfc71d9eecd184b88a99be554f5cfb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1030479751916733279}
   m_SourcePrefab: {fileID: 100100000, guid: cbcfc71d9eecd184b88a99be554f5cfb, type: 3}
 --- !u!1 &1030479751916733276 stripped
 GameObject:
@@ -4386,6 +4389,22 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3115064470678248792, guid: cbcfc71d9eecd184b88a99be554f5cfb, type: 3}
   m_PrefabInstance: {fileID: 1030479751916733275}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1030479751916733279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1030479751916733276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 501f1eda8cc6f51498aa12d47064cc73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minRotationAngle: -45
+  maxRotationAngle: 45
+  trailRenderers:
+  - {fileID: 525848711}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
