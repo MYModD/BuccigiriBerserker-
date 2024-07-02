@@ -8,7 +8,7 @@ onBoardingDoNotAskAgain = true
 showPackageIndexes = false
 showStatusBar = false
 scopes = {
-	"last_search.8DF93126" = "GeometryUtility.TestPlanesAABB"
+	"last_search.8DF93126" = "Cn"
 	"OpenInspectorPreview.8DF93126" = "0"
 	"currentGroup.8DF93126" = "settings"
 }
@@ -67,6 +67,7 @@ providers = {
 objectSelectors = {
 }
 recentSearches = [
+	"Cu"
 ]
 searchItemFavorites = [
 ]

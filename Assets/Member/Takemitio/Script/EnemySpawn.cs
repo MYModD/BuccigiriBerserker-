@@ -36,7 +36,7 @@ public class EnemySpawn : MonoBehaviour
 
 
                 // 生成位置にランダムなオフセットを加える（例として、-120～120のX軸方向、-80～80のY軸方向）
-                spawnPosition += new Vector3(Random.Range(-120f, 120f), Random.Range(-80f, 80f), 0f);
+                spawnPosition += new Vector3(Random.Range(-60f, 60f), Random.Range(-60f, 60f), 0f);
 
                 _groupEnemycnt += 5;
                 // 配列の中からランダムに選んでオブジェクトを生成する
