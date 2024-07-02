@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 56e512e0682324ccd8e671c6a3d5d47c, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.14238378, g: 0.19527152, b: 0.222577, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -304,6 +304,7 @@ GameObject:
   - component: {fileID: 671185225}
   - component: {fileID: 671185224}
   - component: {fileID: 671185226}
+  - component: {fileID: 671185227}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -348,7 +349,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 671185222}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
   m_Name: 
@@ -371,6 +372,36 @@ MonoBehaviour:
   m_DeselectOnBackgroundClick: 1
   m_PointerBehavior: 0
   m_CursorLockBehavior: 0
+--- !u!114 &671185227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 671185222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
+  m_MoveRepeatDelay: 0.5
+  m_MoveRepeatRate: 0.1
+  m_XRTrackingOrigin: {fileID: 0}
+  m_ActionsAsset: {fileID: -944628639613478452, guid: dec006556f363294da4b8d70d7c537c0, type: 3}
+  m_PointAction: {fileID: 1054132383583890850, guid: dec006556f363294da4b8d70d7c537c0, type: 3}
+  m_MoveAction: {fileID: 3373583485492381327, guid: dec006556f363294da4b8d70d7c537c0, type: 3}
+  m_SubmitAction: {fileID: 1502934368785442275, guid: dec006556f363294da4b8d70d7c537c0, type: 3}
+  m_CancelAction: {fileID: -8648468803285395175, guid: dec006556f363294da4b8d70d7c537c0, type: 3}
+  m_LeftClickAction: {fileID: 7126802738137555345, guid: dec006556f363294da4b8d70d7c537c0, type: 3}
+  m_MiddleClickAction: {fileID: 3217244672041857509, guid: dec006556f363294da4b8d70d7c537c0, type: 3}
+  m_RightClickAction: {fileID: -7289743809196194427, guid: dec006556f363294da4b8d70d7c537c0, type: 3}
+  m_ScrollWheelAction: {fileID: -4385183537795557510, guid: dec006556f363294da4b8d70d7c537c0, type: 3}
+  m_TrackedDevicePositionAction: {fileID: -8873032474066482501, guid: dec006556f363294da4b8d70d7c537c0, type: 3}
+  m_TrackedDeviceOrientationAction: {fileID: -1948925686938408941, guid: dec006556f363294da4b8d70d7c537c0, type: 3}
+  m_DeselectOnBackgroundClick: 1
+  m_PointerBehavior: 0
+  m_CursorLockBehavior: 0
 --- !u!1 &1122916816
 GameObject:
   m_ObjectHideFlags: 0
@@ -381,6 +412,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1122916819}
   - component: {fileID: 1122916818}
+  - component: {fileID: 1122916821}
   - component: {fileID: 1122916817}
   - component: {fileID: 1122916820}
   m_Layer: 0
@@ -408,7 +440,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.038376607, g: 0.3829911, b: 0.9245283, a: 0.65882355}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -560,6 +592,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1122916821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1122916816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6339ed39e0c903543b6e71a778475c76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1531911661
 GameObject:
   m_ObjectHideFlags: 0
@@ -573,6 +617,7 @@ GameObject:
   - component: {fileID: 1531911664}
   - component: {fileID: 1531911663}
   - component: {fileID: 1531911666}
+  - component: {fileID: 1531911667}
   m_Layer: 5
   m_Name: GameStartButton
   m_TagString: Untagged
@@ -624,7 +669,7 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 1, g: 0, b: 0, a: 0.6156863}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -644,9 +689,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1531911666}
-        m_TargetAssemblyTypeName: GameStartButtonScript, Assembly-CSharp
-        m_MethodName: SceneChange
+      - m_Target: {fileID: 1531911667}
+        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
+        m_MethodName: OnLoadSceneButtonClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -701,12 +746,24 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1531911661}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 28aa502fb15de2b40b8ac38404def176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneStopTime: 2
+  isGameReady: 0
+--- !u!114 &1531911667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1531911661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a32dee8406fb98b4e84baddf39faca6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2088645104
 GameObject:
   m_ObjectHideFlags: 0

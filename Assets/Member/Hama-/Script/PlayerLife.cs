@@ -11,6 +11,8 @@ public class PlayerLife : MonoBehaviour
 
     public bool _IsRetry = false;
 
+    public bool damage;
+
     private MoveMiyamotoTest move;
 
     private Animator anim;
@@ -96,6 +98,7 @@ public class PlayerLife : MonoBehaviour
         // 爆発エフェクトのプレハブをインスタンス化して生成する
         if (explosionPrefab != null)
         {
+            damage = true;
             GameObject explosion = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
             //Destroy(explosion, 3.0f); // 爆発エフェクトを3秒後に破棄する（任意の時間）
         }
@@ -109,11 +112,13 @@ public class PlayerLife : MonoBehaviour
     IEnumerator TakeDamage()
     {
         playerLife--;
+        damage = true;
+
         //無敵時間開始
         anim.SetBool("invincible", true);
         anim.SetBool("Normal", false);
 
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(2.5f);
 
         anim.SetBool("invincible", false);
         anim.SetBool("Normal", true);

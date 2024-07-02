@@ -8,6 +8,9 @@ TagManager:
   - Missile
   - EnemyMissile
   - Bullet
+  - missile
+  - Explosion
+  - Warp
   layers:
   - Default
   - TransparentFX
