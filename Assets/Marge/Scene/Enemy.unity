@@ -12167,7 +12167,7 @@ MonoBehaviour:
   tateLerpT: 0
   speed: 20.77
   _moveMinMaxX: {x: -100, y: 100}
-  _moveMinMaxY: {x: 5, y: 100}
+  _moveMinMaxY: {x: -100, y: 100}
   multiplyAxis: 80
 --- !u!95 &1142384286
 Animator:
@@ -20020,6 +20020,14 @@ PrefabInstance:
       propertyPath: spawnSpeed
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 4473236534816253417, guid: 30ca4e76283e170418e5c7c38860b6d4, type: 3}
+      propertyPath: explosionPrefab
+      value: 
+      objectReference: {fileID: 1696384031815542, guid: 4c25171f8b9c76b46906b6eb04215ab1, type: 3}
+    - target: {fileID: 4473236534816253417, guid: 30ca4e76283e170418e5c7c38860b6d4, type: 3}
+      propertyPath: ExplodeAudioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 02d55277e9f529f4792d87596879004b, type: 3}
     - target: {fileID: 6494074296686782721, guid: 30ca4e76283e170418e5c7c38860b6d4, type: 3}
       propertyPath: m_Enabled
       value: 0
