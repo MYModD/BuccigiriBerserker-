@@ -8,8 +8,8 @@ public class Result : MonoBehaviour
     private bool timeUp = false;
     private bool allEnemiesDefeatedCheck = false;
     private bool allEnemiesDefeated = false;
-    private int cntenemy;
-    private int cntdestoroy;
+    private int cntenemy = 100;
+    private int cntdestoroy = 0;
     public GameObject _destory;
     [HideInInspector] public string _strDestoryEnemy;
     [HideInInspector] public string _strTime;
@@ -29,7 +29,10 @@ public class Result : MonoBehaviour
     void Update()
     {
         if (cntenemy <= cntdestoroy)
+        {
+            print("EnemyAllDestory");
             allEnemiesDefeated = true;
+        }
 
         // 敵を全部倒した場合の条件判定
         if (!allEnemiesDefeatedCheck && allEnemiesDefeated)
@@ -41,7 +44,7 @@ public class Result : MonoBehaviour
             ShowAllEnemiesDefeatedUI();
         }
         gameTime -= Time.deltaTime;
-        Debug.Log("Remaining Time: " + gameTime); // デバッグログを追加して確認
+        //Debug.Log("Remaining Time: " + gameTime); // デバッグログを追加して確認
         if (!timeUp && !allEnemiesDefeatedCheck)
         {
             if (gameTime <= 0)
@@ -71,11 +74,11 @@ public class Result : MonoBehaviour
 
     void ShowTimeUpUI()
     {
-        SceneManager.LoadScene("NewResultScene");
+        SceneManager.LoadScene("ResultScene");
     }
     void ShowAllEnemiesDefeatedUI()
     {
-        SceneManager.LoadScene("NewResultScene");
+        SceneManager.LoadScene("ResultScene");
     }
     string FormatTime(float seconds)
     {

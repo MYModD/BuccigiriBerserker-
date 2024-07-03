@@ -11,6 +11,7 @@ TagManager:
   - missile
   - Explosion
   - Warp
+  - ResultManager
   layers:
   - Default
   - TransparentFX

@@ -17,9 +17,5 @@ public class ResultScene : MonoBehaviour
         GamejudgeText.text = _result._gamejudge;
         GameObject.FindGameObjectWithTag("ResultManager").gameObject.SetActive(true);
     }
-    void Update()
-    {
-
-    }
 }
 
