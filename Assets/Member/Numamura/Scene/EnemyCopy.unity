@@ -17132,11 +17132,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b77beb1f88b6f44fb136aeeae79fb1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagname: Enemy
+  inactiveMisailHit2Coun: 0
   countTexts: {fileID: 656282074}
   homekotoba: {fileID: 732472433}
   CountText: 0
   DestoroyEnemies: 0
+  Enemydec: {fileID: 0}
 --- !u!4 &1789521645
 Transform:
   m_ObjectHideFlags: 0
